@@ -1,7 +1,7 @@
 module.exports = {
-  // presets: [
-  //   require('./custom.preset.js')
-  // ],
+  presets: [
+    require('./rahvusarhiiv.preset.js')
+  ],
   mode: 'jit',
   content: [
     './views/**/*.html',
@@ -12,13 +12,5 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/line-clamp')
-  ],
-  theme: {
-    extend : {
-      fontFamily: {
-        inter: 'Inter, sans-serif'
-      }
-    }
-  },
-  variants: {},
+  ]
 }
