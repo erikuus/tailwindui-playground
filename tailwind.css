@@ -3,32 +3,53 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    font-family: 'Inter';
-    font-weight: 400;
-    font-display: swap;
-    font-style: normal;
-    src: url('./fonts/Inter-regular.ttf') format('ttf');
-  }
-  @font-face {
-    font-family: 'Inter';
-    font-weight: 500;
-    font-display: swap;
-    font-style: normal;
-    src: url('./fonts/Inter-Medium.ttf') format('ttf');
-  }
-  @font-face {
-    font-family: 'Inter';
-    font-weight: 600;
-    font-display: swap;
-    font-style: normal;
-    src: url('./fonts/Inter-SemiBold.ttf') format('ttf');
-  }
-  @font-face {
-    font-family: 'Inter';
-    font-weight: 700;
-    font-display: swap;
-    font-style: normal;
-    src: url('./fonts/Inter-Bold.ttf') format('ttf');
-  }
+	@font-face {
+		font-family: 'Raleway';
+		font-weight: 400;
+		font-display: swap;
+		font-style: normal;
+		src: url('./fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+	}
+	@font-face {
+		font-family: 'Raleway';
+		font-weight: 400;
+		font-display: swap;
+		font-style: italic;
+		src: url('./fonts/Raleway-Italic-VariableFont_wght.ttf') format('truetype');
+	}
+	@font-face {
+		font-family: 'Roboto';
+		font-weight: 400;
+		font-display: swap;
+		font-style: normal;
+		src: url('./fonts/Roboto-Regular.ttf') format('truetype');
+	}
+	@font-face {
+		font-family: 'Roboto';
+		font-weight: 500;
+		font-display: swap;
+		font-style: normal;
+		src: url('./fonts/Roboto-Medium.ttf') format('truetype');
+	}
+	@font-face {
+		font-family: 'Roboto';
+		font-weight: 700;
+		font-display: swap;
+		font-style: normal;
+		src: url('./fonts/Roboto-Bold.ttf') format('truetype');
+	}
+	@font-face {
+		font-family: 'Roboto';
+		font-weight: 400;
+		font-display: swap;
+		font-style: italic;
+		src: url('./fonts/Roboto-Italic.ttf') format('truetype');
+	}
+	@font-face {
+		font-family: 'Roboto';
+		font-weight: 700;
+		font-display: swap;
+		font-style: italic;
+		src: url('./fonts/Roboto-BoldItalic.ttf') format('truetype');
+	}
 }
