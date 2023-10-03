@@ -1,6 +1,6 @@
 /**
  * Rahvusarhiiv custom presets
- * @version 0.1.0
+ * @version 1.0.0
  */
 
 module.exports = {
@@ -130,7 +130,6 @@ module.exports = {
         "0px 43px 80px rgba(0, 0, 0, 0.02275), 0px 21.7687px 34.875px rgba(0, 0, 0, 0.035), 0px 8.6px 13px rgba(0, 0, 0, 0.04725), 0px 1.88125px 4.625px rgba(0, 0, 0, 0.07)",
       lg: "0px 65px 80px rgba(0, 0, 0, 0.02275), 0px 32.9062px 34.875px rgba(0, 0, 0, 0.035), 0px 13px 13px rgba(0, 0, 0, 0.04725), 0px 2.84375px 4.625px rgba(0, 0, 0, 0.07)",
       inner: "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)",
-      none: "none",
     },
     fontFamily: {
       heading: [

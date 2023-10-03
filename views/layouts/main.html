@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="../../style.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
+</head>
+<body>
+	<header x-data="{ open: false }" class="absolute inset-x-0 top-0 z-50 flex h-16 border-b border-gray-900/10">
+		<div class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+			<div class="flex flex-1 items-center gap-x-6">
+				<button @click="open = true" :class="open ? 'hidden' : 'block'" type="button" class="-m-3 p-3 md:hidden">
+				<span class="sr-only">Open main menu</span>
+				<svg class="h-5 w-5 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+					<path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+				</svg>
+				</button>
+				<img class="h-8 opacity-60" src="../../images/ra_logo.svg" alt="Rahvusarhiiv">
+			</div>
+			<nav class="hidden text-gray-700 md:flex md:gap-x-11 md:text-sm md:font-semibold md:leading-6">
+				<a href="#" class="border-transparent border-b-2 py-5 hover:border-gray-200">Tellimused</a>
+				<a href="#" class="border-transparent border-b-2 py-5 hover:border-gray-200">Arhiivipäringud</a>
+				<a href="#" class="border-transparent border-b-2 py-5 hover:border-gray-200">Veebipood</a>
+				<a href="#" class="border-transparent border-b-2 py-5 hover:border-gray-200">Lingimärkmik</a>
+			</nav>
+
+			<div class="flex flex-1 items-center justify-end gap-x-8 opacity-60 hover:opacity-100">
+				<a href="#" class="inline-flex flex-nowrap items-center text-sm font-medium text-center">
+					English
+					<svg class="ml-1 w-4 h-4" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24">
+					  <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z"></path>
+					</svg>
+				</a>
+			</div>
+		</div>
+		<!-- Mobile menu, show/hide based on menu open state. -->
+		<div x-show="open" class="lg:hidden" role="dialog" aria-modal="true">
+		<!-- Background backdrop, show/hide based on slide-over state. -->
+		<div class="fixed inset-0 z-50"></div>
+			<div class="fixed inset-y-0 left-0 z-50 w-full overflow-y-auto bg-white px-4 pb-6 sm:max-w-sm sm:px-6 sm:ring-1 sm:ring-gray-900/10">
+				<div class="-ml-0.5 flex h-16 items-center gap-x-6">
+					<button @click="open = false" :class="open ? 'block' : 'hidden'" type="button" class="-m-2.5 p-2.5 text-gray-700">
+						<span class="sr-only">Close menu</span>
+						<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+					</button>
+					<div class="-ml-0.5">
+						<a href="#" class="-m-1.5 block p-1.5">
+							<span class="sr-only">Rahvusarhiiv</span>
+							<img class="h-8 w-auto" src="../../images/ra_logo.svg" class="h-8" alt="Rahvusarhiiv">
+						</a>
+					</div>
+				</div>
+				<div class="mt-2 space-y-2">
+					<a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Tellimused</a>
+					<a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Arhiivipäringud</a>
+					<a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Veebipood</a>
+					<a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Lingimärkmik</a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main>
+		<header class="relative isolate pt-16">
+			<div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+				<div class="absolute left-16 top-full -mt-16 transform-gpu opacity-50 blur-3xl xl:left-1/2 xl:-ml-80">
+				<div class="aspect-[1154/678] w-[72.125rem] bg-gradient-to-br from-[#FF80B5] to-[#9089FC]" style="clip-path: polygon(100% 38.5%, 82.6% 100%, 60.2% 37.7%, 52.4% 32.1%, 47.5% 41.8%, 45.2% 65.6%, 27.5% 23.4%, 0.1% 35.3%, 17.9% 0%, 27.7% 23.4%, 76.2% 2.5%, 74.2% 56%, 100% 38.5%)"></div>
+				</div>
+				<div class="absolute inset-x-0 bottom-0 h-px bg-gray-900/5"></div>
+			</div>
+			<div class="mx-auto max-w-7xl py-8 px-4 sm:px-6 lg:px-8">
+				<div class="mx-auto flex max-w-2xl items-center justify-between gap-x-8 lg:mx-0 lg:max-w-none">
+					<img src="../../images/vau_logo.png" alt="Virtuaalne uurimissaal">
+					<a href="#" class="
+		      			inline-flex flex-nowrap items-center text-base py-3 px-5
+		      			font-medium text-center text-white bg-gray-900 rounded cursor-pointer border-none
+		      			no-underline hover:focus:active:no-underline focus:active:ring-2 focus:active:ring-green-300
+		      			hover:bg-gray-700 focus:active:bg-gray-800
+					">
+						Sisene
+					</a>
+				</div>
+			</div>
+		</header>
+		<div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+			<div class="mx-auto grid max-w-2xl grid-cols-1 grid-rows-1 items-start gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+			Sisu
+			</div>
+		</div>
+	</main>
+</body>
+</html>
