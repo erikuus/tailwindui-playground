@@ -73,8 +73,9 @@
 				<div class="mx-auto flex max-w-2xl items-center justify-between md:mx-0 md:max-w-none">
 					<img src="../../images/vau_logo.png" alt="Virtuaalne uurimissaal">
 					<div class="flex items-center gap-x-4 sm:gap-x-6">
-						<a href="#" class="hidden font-semibold leading-6 text-gray-900 text-base sm:block">Tagasiside</a>
-						<a href="#" class="hidden font-semibold leading-6 text-gray-900 text-base sm:block">KKK</a>
+						<a href="#" class="hidden font-semibold leading-6 text-gray-900 text-sm sm:block">Tagasiside</a>
+						<a href="#" class="hidden font-semibold leading-6 text-gray-900 text-sm sm:block">KKK</a>
+						<!-- Login button -->
 						<a href="#" class="
 							inline-flex flex-nowrap items-center text-base py-3 px-5
 							font-medium text-center text-white bg-gray-900 rounded cursor-pointer border-none
@@ -83,6 +84,25 @@
 						">
 							Sisene
 						</a>
+						<!-- Profile dropdown -->
+						<!-- 
+						<div x-data="{ open: false }" class="ml-3 relative">
+							<div>
+								<button @click="open = true" type="button" class="flex items-center bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+									<span class="inline-block h-8 w-8 overflow-hidden rounded-full bg-gray-100">
+										<svg class="h-full w-full text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+											<path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+										</svg>
+									</span>
+								</button>
+							</div>
+							<div x-show="open" @click.outside="open = false" class="absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+								<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+								<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+								<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+							</div>
+						</div> 
+						-->
 						<div x-data="{ open: false }" class="relative sm:hidden">
 							<button @click="open = true" type="button" class="-m-3 block p-3" id="more-menu-button" aria-expanded="false" aria-haspopup="true">
 								<span class="sr-only">More</span>
@@ -100,7 +120,21 @@
 			</div>
 		</header>
 		<div class="mx-auto max-w-7xl py-4 sm:py-6 xl:py-14 px-4 md:px-6 lg:px-8">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum tortor at ipsum efficitur varius. Etiam auctor dictum turpis, vel faucibus diam iaculis eu. Morbi in quam non mi consectetur tempor.
+			<!-- 3 column wrapper -->
+			<div class="mx-auto w-full max-w-7xl grow lg:flex xl:px-2">
+				<div class="flex-1 xl:flex">
+					<div class="border-b border-gray-200 px-4 py-6 sm:px-6 lg:pl-8 xl:w-64 xl:shrink-0 xl:border-b-0 xl:border-r xl:pl-6">
+						Left column area
+					</div>
+
+					<div class="px-4 py-6 sm:px-6 lg:pl-8 xl:flex-1 xl:pl-6">
+				    	Main
+				 	</div>
+				</div>
+				<div class="shrink-0 border-t border-gray-200 px-4 py-6 sm:px-6 lg:w-96 lg:border-l lg:border-t-0 lg:pr-8 xl:pr-6">
+					Right column area
+				</div>
+			</div>
 		</div>
 	</main>
 </body>
