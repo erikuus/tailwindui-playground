@@ -187,6 +187,9 @@ module.exports = {
       "5xl": ["3rem", { lineHeight: "120%" }],
     },
     extend: {
+      maxWidth: {
+        'xxl': '90rem !important'
+      },
       backgroundImage: {
         "theme-ais":
           "linear-gradient(96.04deg, rgba(247, 227, 204, 0.65) -17.14%, #ECDDF4 94.45%)",
