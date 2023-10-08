@@ -120,7 +120,10 @@
 		<div class="mx-auto max-w-7xl 2xl:max-w-xxl py-8 px-4 md:px-6 lg:px-8">
 			<div class="mx-auto flex max-w-2xl items-center justify-between md:mx-0 md:max-w-none">
 				<!-- VAU logo -->
-				<img src="../../images/vau_logo.png" alt="Virtuaalne uurimissaal">
+				<div class="flex items-center xl:-ml-2">
+					<img src="../../images/vau_logo.png" alt="Virtuaalne uurimissaal">
+					<h1 class="font-heading font-bold text-3xl text-gray-800 -ml-3 mt-4">VAU</h1>
+				</div>
 				<!-- Tagasiside lihtne või dünaamiline menüü, sisselogimise nupp või sisseloginud kasutaja rippmenüü -->
 				<div class="flex items-center gap-x-4 sm:gap-x-6">
 					<!-- Lihtne tagasiside menüü, mis on nähtav suurematel ekraanidel -->
@@ -163,8 +166,8 @@
 							</svg>
 						</button>
 						<div x-show="open" @click.outside="open = false" class="absolute right-0 z-10 mt-0.5 w-32 origin-top-right rounded-sm bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="more-menu-button" tabindex="-1">
-							<a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900" role="menuitem" tabindex="-1" id="more-menu-item-1">Tagasiside</a>
-							<a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900" role="menuitem" tabindex="-1" id="more-menu-item-1">KKK</a>
+							<a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900 hover:bg-gray-50" role="menuitem" tabindex="-1" id="more-menu-item-1">Tagasiside</a>
+							<a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900 hover:bg-gray-50" role="menuitem" tabindex="-1" id="more-menu-item-1">KKK</a>
 						</div>
 					</div>
 				</div>
@@ -222,7 +225,7 @@
 				<div class="grid xl:grid-cols-2 2xl:grid-cols-11 2xl:grid-flow-col gap-x-8 gap-y-12">
 					<!-- Virtuaalne uurimissaal -->
 					<div class="xl:col-span-2 2xl:col-span-8">
-						<h2 class="text-xl font-semibold text-gray-800">Virtuaalne uurimissaal</h2>
+						<h2 class="font-heading font-bold text-xl text-gray-800">Virtuaalne uurimissaal</h2>
 						<ul role="list" class="lg:-mx-2 mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
 							<li class="relative col-span-1 flex items-center rounded-full bg-[#f9f9f9] hover:bg-[#f0f0f0]">
 								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center bg-red-300 rounded-full text-sm font-medium text-white">AIS</div>
@@ -346,7 +349,7 @@
 					</div>
 					<!-- Veel andmebaase -->
 					<div class="2xl:col-span-8">
-						<h2 class="text-xl font-semibold text-gray-800">Veel andmebaase</h2>
+						<h2 class="font-heading font-bold text-xl text-gray-800">Veel andmebaase</h2>
 						<ul role="list">
 							<li class="relative group py-5 border-b border-gray-900/10 hover:border-b-2 hover:border-gray-200">
 								<p class="text-base font-semibold leading-6">
@@ -523,7 +526,7 @@
 						<div class="space-y-8">
 							<!-- Viimased teated -->
 							<div>
-								<h2 class="text-xl font-semibold text-gray-800">Viimased teated</h2>
+								<h2 class="font-heading font-bold text-xl text-gray-800">Viimased teated</h2>
 								<ul role="list">
 									<li class="relative group py-5 border-b border-gray-900/10 hover:border-b-2 hover:border-gray-200">
 										<p class="text-base font-semibold leading-6 text-gray-700">
@@ -564,7 +567,7 @@
 										</p>
 										<div class="border-b-2 border-transparent group-hover:border-b"></div>
 									</li>
-									<li class="py-5">
+									<li class="pt-5">
 										<p class="text-base font-medium leading-6 text-gray-700">
 											<a class="flex items-center" href="#">
 												Vaata kõiki teateid
@@ -578,8 +581,8 @@
 							</div>
 							<!-- Veebipoe uudis -->
 							<div>
-								<h2 class="text-xl font-semibold text-gray-800 mb-6">Veebipoe uudis</h2>
-								<div class="relative sm:flex pb-6">
+								<h2 class="font-heading font-bold text-xl text-gray-800">Veebipoe uudis</h2>
+								<div class="relative sm:flex pt-5">
 									<div class="mb-6 flex-shrink-0 sm:mb-0 sm:mr-6">
 										<a href="#" title="Tuna 2023 / 3">
 											<span class="absolute inset-0" aria-hidden="true"></span>

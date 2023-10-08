@@ -1683,6 +1683,42 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.-mt-2 {
+  margin-top: -0.5rem;
+}
+
+.mt-2\.5 {
+  margin-top: 0.625rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.mt-3\.5 {
+  margin-top: 0.875rem;
+}
+
+.-ml-2 {
+  margin-left: -0.5rem;
+}
+
+.-ml-2\.5 {
+  margin-left: -0.625rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.-ml-3 {
+  margin-left: -0.75rem;
+}
+
+.-ml-1 {
+  margin-left: -0.25rem;
+}
+
 .block {
   display: block;
 }
@@ -2397,6 +2433,10 @@ body {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+.font-heading {
+  font-family: Raleway, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 .text-sm {
   font-size: 0.8125rem;
   line-height: 120%;
@@ -2452,6 +2492,10 @@ body {
 
 .font-bold {
   font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
 }
 
 .uppercase {
@@ -2699,6 +2743,11 @@ body {
 
 .hover\:bg-gray-900\/10:hover {
   background-color: rgb(36 42 48 / 0.1);
+}
+
+.hover\:bg-gray-50:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 243 246 / var(--tw-bg-opacity));
 }
 
 .hover\:pb-4:hover {
@@ -3005,6 +3054,10 @@ body {
 
   .xl\:mr-12 {
     margin-right: 3rem;
+  }
+
+  .xl\:-ml-2 {
+    margin-left: -0.5rem;
   }
 
   .xl\:w-80 {
