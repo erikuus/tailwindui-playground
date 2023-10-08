@@ -17,7 +17,7 @@
 		<div class="flex-1 bg-gray-light-100 p-4">
 			<h1>Pages</h1>
 			<?php foreach(array_diff(scandir('./pages'), array('..', '.')) as $file): ?>
-				<a target="_blank" class="block mx-10 my-1 text-blue-500" href="./utilities/<?php echo $file ?>">
+				<a target="_blank" class="block mx-10 my-1 text-blue-500" href="./pages/<?php echo $file ?>">
 					<?php echo $file ?>
 				</a>
 			<?php endforeach; ?>
@@ -25,7 +25,7 @@
 		<div class="flex-1 bg-gray-light-100 p-4">
 			<h1>Portlets</h1>
 			<?php foreach(array_diff(scandir('./portlets'), array('..', '.')) as $file): ?>
-				<a target="_blank" class="block mx-10 my-1 text-blue-500" href="./forms/<?php echo $file ?>">
+				<a target="_blank" class="block mx-10 my-1 text-blue-500" href="./portlets/<?php echo $file ?>">
 					<?php echo $file ?>
 				</a>
 			<?php endforeach; ?>
@@ -33,7 +33,7 @@
 		<div class="flex-1 bg-gray-light-100 p-4">
 			<h1>Components</h1>
 			<?php foreach(array_diff(scandir('./components'), array('..', '.')) as $file): ?>
-				<a target="_blank" class="block mx-10 my-1 text-blue-500" href="./elements/<?php echo $file ?>">
+				<a target="_blank" class="block mx-10 my-1 text-blue-500" href="./components/<?php echo $file ?>">
 					<?php echo $file ?>
 				</a>
 			<?php endforeach; ?>
@@ -41,7 +41,7 @@
 		<div class="flex-1 bg-gray-light-100 p-4">
 			<h1>Experiments</h1>
 			<?php foreach(array_diff(scandir('./experiments'), array('..', '.')) as $file): ?>
-				<a target="_blank" class="block mx-10 my-1 text-blue-500" href="./navigation/<?php echo $file ?>">
+				<a target="_blank" class="block mx-10 my-1 text-blue-500" href="./experiments/<?php echo $file ?>">
 					<?php echo $file ?>
 				</a>
 			<?php endforeach; ?>
