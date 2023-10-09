@@ -1,5 +1,5 @@
 # Tailwind CSS UI Playground
 
-Minu katsetused tailwind CSS raamistikul põhinevate UI komponentidega
+Minu katsetused Tailwind CSS raamistiku ja RA disainisüsteemiga.
 
-https://tailwindui.com
+[VAU päis ja avaleht](./layouts/main_grid.html)
