@@ -237,9 +237,14 @@
 					<!-- Sisseloginud kasutaja menüü -->
 					<div x-data="{ open: false }" class="ml-3 relative">
 						<div>
-							<button @click="open = true" type="button" class="flex items-center bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-								<!-- <img class="inline-block h-12 w-12 rounded-full" src="../../images/erik.jpg" alt="EU"> -->
+							<!-- <button @click="open = true" type="button" class="flex items-center bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
 								<div class="flex w-12 h-12 flex-shrink-0 items-center justify-center bg-gray-800 rounded-full text-sm font-medium text-white">AV</div>
+							</button> -->
+							<button @click="open = true" type="button" class="flex items-center bg-gray-800 rounded-full
+								ring-4 ring-white ring-offset-2 ring-offset-gray-300
+								hover:ring-gray-100
+							">
+								<img class="inline-block h-12 w-12 rounded-full border-white" src="../../images/erik.jpg" alt="EU">
 							</button>
 						</div>
 						<div x-show="open" @click.outside="open = false" class="absolute z-10 -right-6 sm:right-0 mt-2 rounded shadow-lg bg-white border border-gray-200 w-80 sm:w-96">
@@ -361,9 +366,9 @@
 			<!-- Parempoolne kohanduv ala -->
 			<div class="flex-1">
 				<!-- Virtuaalne uurimissaal / Veel andmebaase / Uudised -->
-				<div class="grid xl:grid-cols-2 2xl:grid-cols-11 2xl:grid-flow-col gap-x-8 gap-y-12">
+				<div class="grid xl:grid-cols-11 2xl:grid-flow-col gap-x-8 gap-y-12">
 					<!-- Virtuaalne uurimissaal -->
-					<div class="xl:col-span-2 2xl:col-span-8">
+					<div class="xl:col-span-11 2xl:col-span-8">
 						<a href="#" class="float-right flex w-8 h-8 flex-shrink-0 items-center justify-center rounded-full text-gray-200 hover:text-gray-800 hover:bg-gray-50">
 							<span class="fi-list"></span>
 						</a>
@@ -372,8 +377,8 @@
 						</a>
 						<h2 class="font-heading font-bold text-xl text-gray-800">Virtuaalne uurimissaal</h2>
 						<ul role="list" class="lg:-mx-2 mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
-							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/50 hover:bg-gray-50">
-								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-green-300 group-hover:bg-green-400">
+							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/60 hover:bg-gray-100">
+								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-green-300 group-hover:bg-green-500">
 									<img class="h-8 w-auto" src="../../images/ais_logo.svg" alt="AIS">
 								</div>
 								<div class="flex-1 px-3 py-2 text-sm">
@@ -384,8 +389,8 @@
 									<p class="text-gray-500">Rahvusarhiivi infosüsteem</p>
 								</div>
 							</li>
-							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/50 hover:bg-gray-50">
-								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-red-300 group-hover:bg-red-400">
+							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/60 hover:bg-gray-100">
+								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-red-300 group-hover:bg-red-500">
 									<img class="h-10 w-auto" src="../../images/saaga_logo.svg" alt="Saaga">
 								</div>
 								<div class="flex-1 px-3 py-2 text-sm">
@@ -396,8 +401,8 @@
 									<p class="text-gray-500">Digiteeritud arhiiviallikad</p>
 								</div>
 							</li>
-							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/50 hover:bg-gray-50">
-								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-yellow-300 group-hover:bg-yellow-400">
+							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/60 hover:bg-gray-100">
+								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-yellow-300 group-hover:bg-yellow-500">
 									<img class="h-9 w-auto" src="../../images/mt_logo.svg" alt="Meediateek">
 								</div>
 								<div class="flex-1 px-3 py-2 text-sm">
@@ -408,8 +413,8 @@
 									<p class="text-gray-500">Fotod, filmid, helid</p>
 								</div>
 							</li>
-							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/50 hover:bg-gray-50">
-								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-blue-300 group-hover:bg-blue-400">
+							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/60 hover:bg-gray-100">
+								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-blue-300 group-hover:bg-blue-500">
 									<img class="h-7 w-auto" src="../../images/fotis_logo.svg" alt="Fotis">
 								</div>
 								<div class="flex-1 px-3 py-2 text-sm">
@@ -420,8 +425,8 @@
 									<p class="text-gray-500">Fotode infosüsteem</p>
 								</div>
 							</li>
-							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/50 hover:bg-gray-50">
-								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-yellow-300 group-hover:bg-yellow-400">
+							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/60 hover:bg-gray-100">
+								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-yellow-300 group-hover:bg-yellow-500">
 									<img class="h-11 w-auto" src="../../images/kaart_logo.svg" alt="Kaart">
 								</div>
 								<div class="flex-1 px-3 py-2 text-sm">
@@ -432,8 +437,8 @@
 									<p class="text-gray-500">Kaartide infosüsteem</p>
 								</div>
 							</li>
-							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/50 hover:bg-gray-50">
-								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-red-300 group-hover:bg-red-400">
+							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/60 hover:bg-gray-100">
+								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-red-300 group-hover:bg-red-500">
 									<img class="h-9 w-auto" src="../../images/nimeregister_logo.svg" alt="Nimeregister">
 								</div>
 								<div class="flex-1 px-3 py-2 text-sm">
@@ -444,8 +449,8 @@
 									<p class="text-gray-500">Personaalraamatud</p>
 								</div>
 							</li>
-							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/50 hover:bg-gray-50">
-								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-red-300 group-hover:bg-red-400">
+							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/60 hover:bg-gray-100">
+								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-red-300 group-hover:bg-red-500">
 									<img class="h-10 w-auto" src="../../images/vk_logo.svg" alt="Vallakohtud">
 								</div>
 								<div class="flex-1 px-3 py-2 text-sm">
@@ -456,8 +461,8 @@
 									<p class="text-gray-500">Ühisloomealgatus</p>
 								</div>
 							</li>
-							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/50 hover:bg-gray-50">
-								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-blue-300 group-hover:bg-blue-400">
+							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/60 hover:bg-gray-100">
+								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-blue-300 group-hover:bg-blue-500">
 									<img class="h-9 w-auto" src="../../images/vs_logo.svg" alt="Vabadussõda">
 								</div>
 								<div class="flex-1 px-3 py-2 text-sm">
@@ -468,8 +473,8 @@
 									<p class="text-gray-500">Ühisloomealgatus</p>
 								</div>
 							</li>
-							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/50 hover:bg-gray-50">
-								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-green-300 group-hover:bg-green-400">
+							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/60 hover:bg-gray-100">
+								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-green-300 group-hover:bg-green-500">
 									<img class="h-10 w-auto" src="../../images/transkribus_logo.svg" alt="Nimeregister">
 								</div>
 								<div class="flex-1 px-3 py-2 text-sm">
@@ -480,8 +485,8 @@
 									<p class="text-gray-500">Täistekstiotsing</p>
 								</div>
 							</li>
-							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/50 hover:bg-gray-50">
-								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-green-300 group-hover:bg-green-400">
+							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/60 hover:bg-gray-100">
+								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-green-300 group-hover:bg-green-500">
 									<img class="h-8 w-auto" src="../../images/folder.svg" alt="Tartu fondiloend">
 								</div>
 								<div class="flex-1 px-3 py-2 text-sm">
@@ -492,8 +497,8 @@
 									<p class="text-gray-500">fondiloend</p>
 								</div>
 							</li>
-							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/50 hover:bg-gray-50">
-								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-yellow-300 group-hover:bg-yellow-400">
+							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/60 hover:bg-gray-100">
+								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-yellow-300 group-hover:bg-yellow-500">
 									<img class="h-8 w-auto" src="../../images/folder.svg" alt="Tallinna fondiloend">
 								</div>
 								<div class="flex-1 px-3 py-2 text-sm">
@@ -504,8 +509,8 @@
 									<p class="text-gray-500">fondiloend</p>
 								</div>
 							</li>
-							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/50 hover:bg-gray-50">
-								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-blue-300 group-hover:bg-blue-400">
+							<li class="group relative col-span-1 flex items-center rounded-full bg-gray-50/60 hover:bg-gray-100">
+								<div class="flex w-16 h-16 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium text-white bg-blue-300 group-hover:bg-blue-500">
 									<img class="h-7 w-auto" src="../../images/ester_logo.svg" alt="Ester">
 								</div>
 								<div class="flex-1 px-3 py-2 text-sm">
@@ -519,181 +524,246 @@
 						</ul>
 					</div>
 					<!-- Veel andmebaase -->
-					<div class="2xl:col-span-8">
-						<h2 class="font-heading font-bold text-xl text-gray-800">Veel andmebaase</h2>
-						<ul role="list">
-							<li class="relative group py-5 border-b border-gray-900/10 hover:border-b-2 hover:border-gray-200">
-								<p class="text-base font-semibold leading-6">
-									<a href="#">
-										<span class="absolute inset-0" aria-hidden="true"></span>
-										Pitserid
-									</a>
-								</p>
-								<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
-									Andmebaas annab ülevaate Rahvusarhiivis leiduvatest pitserite kujutistest. Pitserite kogudest on suurim baltisaksa ajaloolase Robert von Tolli (1802-1876) poolt kogutud Kukruse mõisa arhiivi kuuluv osa fondist EAA.2069 "Kukruse mõisa ürikute ja pitserite kogu".
-								</p>
-								<div class="border-b-2 border-transparent group-hover:border-b"></div>
+					<div class="xl:col-span-7 2xl:col-span-8">
+						<h2 class="font-heading font-bold text-xl text-gray-800 mb-5">Veel andmebaase</h2>
+						<ul class="space-y-5" role="list">
+							<li class="relative group h-32 flex space-x-1">
+								<div class="hidden sm:flex sm:w-32 2xl:w-56 h-32 rounded bg-gray-50/60 group-hover:bg-gray-100 justify-center">
+									<img class="object-cover w-56 h-32 rounded opacity-60 group-hover:opacity-100" src="../../images/db/pitserid.png">
+								</div>
+								<div class="flex-1 p-4 rounded h-32 bg-gray-50/60 group-hover:bg-gray-100">
+									<p class="text-base font-semibold leading-6">
+										<a href="#p">
+											<span class="absolute inset-0" aria-hidden="true"></span>
+											Pitserid
+										</a>
+									</p>
+									<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
+										Andmebaas annab ülevaate Rahvusarhiivis leiduvatest pitserite kujutistest. Pitserite kogudest on suurim baltisaksa ajaloolase Robert von Tolli (1802-1876) poolt kogutud Kukruse mõisa arhiivi kuuluv osa fondist EAA.2069 "Kukruse mõisa ürikute ja pitserite kogu".
+									</p>
+								</div>
 							</li>
-							<li class="relative group py-5 border-b border-gray-900/10 hover:border-b-2 hover:border-gray-200">
-								<p class="text-base font-semibold leading-6">
-									<a href="#">
-										<span class="absolute inset-0" aria-hidden="true"></span>
-										Aadlivapid
-									</a>
-								</p>
-								<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
-									Andmebaas annab ülevaate Rahvusarhiivis leiduvatest aadlivappide kujutistest. Andmebaasist võib leida nii originaaldiplomitelt pärinevaid vappe kui ka hilisemaid, aadliseisuse ja vapi kandmise õiguse tõestuseks esitatud vapijooniseid, aga ka asjahuviliste kogudes sisalduvaid vapikujutisi jm.
-								</p>
-								<div class="border-b-2 border-transparent group-hover:border-b"></div>
+							<li class="relative group h-32 flex space-x-1">
+								<div class="hidden sm:flex sm:w-32 2xl:w-56 h-32 rounded bg-gray-50/60 group-hover:bg-gray-100 justify-center">
+									<img class="object-cover w-56 h-32 rounded opacity-60 group-hover:opacity-100" src="../../images/db/vapid.png">
+								</div>
+								<div class="flex-1 p-4 rounded h-32 bg-gray-50/60 group-hover:bg-gray-100">
+									<p class="text-base font-semibold leading-6">
+										<a href="#a">
+											<span class="absolute inset-0" aria-hidden="true"></span>
+											Aadlivapid
+										</a>
+									</p>
+									<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
+										Andmebaas annab ülevaate Rahvusarhiivis leiduvatest aadlivappide kujutistest. Andmebaasist võib leida nii originaaldiplomitelt pärinevaid vappe kui ka hilisemaid, aadliseisuse ja vapi kandmise õiguse tõestuseks esitatud vapijooniseid, aga ka asjahuviliste kogudes sisalduvaid vapikujutisi jm.
+									</p>
+								</div>
 							</li>
-							<li class="relative group py-5 border-b border-gray-900/10 hover:border-b-2 hover:border-gray-200">
-								<p class="text-base font-semibold leading-6">
-									<a href="#">
-										<span class="absolute inset-0" aria-hidden="true"></span>
-										Tartu projektid
-									</a>
-								</p>
-								<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
-									Andmebaasi aluseks on Tartu Linnavalitsuse poolt ajavahemikus 1871-1918 kinnitatud ehitiste projektide kollektsioon, mida säilitatakse Rahvusarhiivis Tartus arhiivifondis "Tartu Linnavalitsus" (fond EAA.2623, nimistu 1, säilikud 114-157). Andmebaas sisaldab andmeid nii projektide, projektidel kujutatud ehitiste kui ka ehitiste omanike kohta.
-								</p>
-								<div class="border-b-2 border-transparent group-hover:border-b"></div>
+							<li class="relative group h-32 flex space-x-1">
+								<div class="hidden sm:flex sm:w-32 2xl:w-56 h-32 rounded bg-gray-50/60 group-hover:bg-gray-100 justify-center">
+									<img class="object-cover w-56 h-32 rounded opacity-60 group-hover:opacity-100" src="../../images/db/projektid.png">
+								</div>
+								<div class="flex-1 p-4 rounded h-32 bg-gray-50/60 group-hover:bg-gray-100">
+									<p class="text-base font-semibold leading-6">
+										<a href="#">
+											<span class="absolute inset-0" aria-hidden="true"></span>
+											Tartu projektid
+										</a>
+									</p>
+									<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
+										Andmebaasi aluseks on Tartu Linnavalitsuse poolt ajavahemikus 1871-1918 kinnitatud ehitiste projektide kollektsioon, mida säilitatakse Rahvusarhiivis Tartus arhiivifondis "Tartu Linnavalitsus" (fond EAA.2623, nimistu 1, säilikud 114-157). Andmebaas sisaldab andmeid nii projektide, projektidel kujutatud ehitiste kui ka ehitiste omanike kohta.
+									</p>
+								</div>
 							</li>
-							<li class="relative group py-5 border-b border-gray-900/10 hover:border-b-2 hover:border-gray-200">
-								<p class="text-base font-semibold leading-6">
-									<a href="#">
-										<span class="absolute inset-0" aria-hidden="true"></span>
-										Pärgamendid
-									</a>
-								</p>
-								<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
-									Andmebaas hõlmab Rahvusarhiivis, Eesti Ajaloomuuseumis ja Tallinna Linnaarhiivis säilitatavaid pärgamentürikuid.
-								</p>
-								<div class="border-b-2 border-transparent group-hover:border-b"></div>
+							<li class="relative group h-32 flex space-x-1">
+								<div class="hidden sm:flex sm:w-32 2xl:w-56 h-32 rounded bg-gray-50/60 group-hover:bg-gray-100 justify-center">
+									<img class="object-cover w-56 h-32 rounded opacity-60 group-hover:opacity-100" src="../../images/db/pärgamendid.png">
+								</div>
+								<div class="flex-1 p-4 rounded h-32 bg-gray-50/60 group-hover:bg-gray-100">
+									<p class="text-base font-semibold leading-6">
+										<a href="#">
+											<span class="absolute inset-0" aria-hidden="true"></span>
+											Pärgamendid
+										</a>
+									</p>
+									<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
+										Andmebaas hõlmab Rahvusarhiivis, Eesti Ajaloomuuseumis ja Tallinna Linnaarhiivis säilitatavaid pärgamentürikuid.
+									</p>
+								</div>
 							</li>
-							<li class="relative group py-5 border-b border-gray-900/10 hover:border-b-2 hover:border-gray-200">
-								<p class="text-base font-semibold leading-6">
-									<a href="#">
-										<span class="absolute inset-0" aria-hidden="true"></span>
-										Kinnistute register
-									</a>
-								</p>
-								<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
-									Sisaldab hetkel Tallinna, Haapsalu ja Lihula linnade ning Eesti mõisakinnistute andmeid.
-								</p>
-								<div class="border-b-2 border-transparent group-hover:border-b"></div>
+							<li class="relative group h-32 flex space-x-1">
+								<div class="hidden sm:flex sm:w-32 2xl:w-56 h-32 rounded bg-gray-50/60 group-hover:bg-gray-100 justify-center">
+									<img class="object-cover w-56 h-32 rounded opacity-60 group-hover:opacity-100" src="../../images/db/kinnistud.png">
+								</div>
+								<div class="flex-1 flex-1 p-4 rounded h-32 bg-gray-50/60 group-hover:bg-gray-100">
+									<p class="text-base font-semibold leading-6">
+										<a href="#">
+											<span class="absolute inset-0" aria-hidden="true"></span>
+											Kinnistute register
+										</a>
+									</p>
+									<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
+										Sisaldab hetkel Tallinna, Haapsalu ja Lihula linnade ning Eesti mõisakinnistute andmeid.
+									</p>
+								</div>
 							</li>
-							<li class="relative group py-5 border-b border-gray-900/10 hover:border-b-2 hover:border-gray-200">
-								<p class="text-base font-semibold leading-6">
-									<a href="#">
-										<span class="absolute inset-0" aria-hidden="true"></span>
-										Eesti ala mõisate register
-									</a>
-								</p>
-								<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
-									Register on abiks kõigile arhiiviallikate ning vanema saksa- ja venekeelse kirjanduse kasutajaile, et orienteeruda mõisate võõrkeelsetes nimedes. Registri aluseks on V. Naaberi koostatud "Eesti ala mõisate nimestik".
-								</p>
-								<div class="border-b-2 border-transparent group-hover:border-b"></div>
+							<li class="relative group h-32 flex space-x-1">
+								<div class="hidden sm:flex sm:w-32 2xl:w-56 h-32 rounded bg-gray-50/60 group-hover:bg-gray-100 justify-center">
+									<img class="object-cover w-56 h-32 rounded opacity-60 group-hover:opacity-100" src="../../images/db/mõisad.png">
+								</div>
+								<div class="flex-1 p-4 rounded h-32 bg-gray-50/60 group-hover:bg-gray-100">
+									<p class="text-base font-semibold leading-6">
+										<a href="#">
+											<span class="absolute inset-0" aria-hidden="true"></span>
+											Eesti ala mõisate register
+										</a>
+									</p>
+									<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
+										Register on abiks kõigile arhiiviallikate ning vanema saksa- ja venekeelse kirjanduse kasutajaile, et orienteeruda mõisate võõrkeelsetes nimedes. Registri aluseks on V. Naaberi koostatud "Eesti ala mõisate nimestik".
+									</p>
+								</div>
 							</li>
-							<li class="relative group py-5 border-b border-gray-900/10 hover:border-b-2 hover:border-gray-200">
-								<p class="text-base font-semibold leading-6">
-									<a href="#">
-										<span class="absolute inset-0" aria-hidden="true"></span>
-										Tallinna Aadressbüroo fondi aadresslehed
-									</a>
-								</p>
-								<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
-									Tallinna Aadressbüroo arhiivi aadresslehed, mille koguhulk on ligikaudsel hinnangul 400 000–450 000 lehte, on Tallinna Linnarhiivi kõige täpsem ja terviklikum andmekogu Tallinna elanikest 20. sajandi kahekümnendail aastatel.
-								</p>
-								<div class="border-b-2 border-transparent group-hover:border-b"></div>
+							<li class="relative group h-32 flex space-x-1">
+								<div class="hidden sm:flex sm:w-32 2xl:w-56 h-32 rounded bg-gray-50/60 group-hover:bg-gray-100 justify-center">
+									<img class="object-cover w-56 h-32 rounded opacity-60 group-hover:opacity-100" src="../../images/db/aadresslehed.png">
+								</div>
+								<div class="flex-1 p-4 rounded h-32 bg-gray-50/60 group-hover:bg-gray-100">
+									<p class="text-base font-semibold leading-6">
+										<a href="#">
+											<span class="absolute inset-0" aria-hidden="true"></span>
+											Tallinna Aadressbüroo fondi aadresslehed
+										</a>
+									</p>
+									<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
+										Tallinna Aadressbüroo arhiivi aadresslehed, mille koguhulk on ligikaudsel hinnangul 400 000–450 000 lehte, on Tallinna Linnarhiivi kõige täpsem ja terviklikum andmekogu Tallinna elanikest 20. sajandi kahekümnendail aastatel.
+									</p>
+								</div>
 							</li>
-							<li class="relative group py-5 border-b border-gray-900/10 hover:border-b-2 hover:border-gray-200">
-								<p class="text-base font-semibold leading-6">
-									<a href="#">
-										<span class="absolute inset-0" aria-hidden="true"></span>
-										Adramaarevisjonide andmebaas
-									</a>
-								</p>
-								<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
-									Eestimaa adramaarevisjonide materjalid on väärtuslik ja üsna usaldusväärne eesti rahva asustus- ja majandusajaloo allikas.
-								</p>
-								<div class="border-b-2 border-transparent group-hover:border-b"></div>
+							<li class="relative group h-32 flex space-x-1">
+								<div class="hidden sm:flex sm:w-32 2xl:w-56 h-32 rounded bg-gray-50/60 group-hover:bg-gray-100 justify-center">
+									<img class="object-cover w-56 h-32 rounded opacity-60 group-hover:opacity-100" src="../../images/db/adramaad.png">
+								</div>
+								<div class="flex-1 p-4 rounded h-32 bg-gray-50/60 group-hover:bg-gray-100">
+									<p class="text-base font-semibold leading-6">
+										<a href="#">
+											<span class="absolute inset-0" aria-hidden="true"></span>
+											Adramaarevisjonide andmebaas
+										</a>
+									</p>
+									<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
+										Eestimaa adramaarevisjonide materjalid on väärtuslik ja üsna usaldusväärne eesti rahva asustus- ja majandusajaloo allikas.
+									</p>
+								</div>
 							</li>
-							<li class="relative group py-5 border-b border-gray-900/10 hover:border-b-2 hover:border-gray-200">
-								<p class="text-base font-semibold leading-6">
-									<a href="#">
-										<span class="absolute inset-0" aria-hidden="true"></span>
-										Päriseksostetud talude andmebaas
-									</a>
-								</p>
-								<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
-									Esialgu sisaldab andmebaas ajaloolise Pärnu maakonna talusid.
-								</p>
-								<div class="border-b-2 border-transparent group-hover:border-b"></div>
+							<li class="relative group h-32 flex space-x-1">
+								<div class="hidden sm:flex sm:w-32 2xl:w-56 h-32 rounded bg-gray-50/60 group-hover:bg-gray-100 justify-center">
+									<img class="object-cover w-56 h-32 rounded opacity-60 group-hover:opacity-100" src="../../images/db/talud.png">
+								</div>
+								<div class="flex-1 p-4 rounded h-32 bg-gray-50/60 group-hover:bg-gray-100">
+									<p class="text-base font-semibold leading-6">
+										<a href="#">
+											<span class="absolute inset-0" aria-hidden="true"></span>
+											Päriseksostetud talude andmebaas
+										</a>
+									</p>
+									<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
+										Esialgu sisaldab andmebaas ajaloolise Pärnu maakonna talusid.
+									</p>
+								</div>
 							</li>
-							<li class="relative group py-5 border-b border-gray-900/10 hover:border-b-2 hover:border-gray-200">
-								<p class="text-base font-semibold leading-6">
-									<a href="#">
-										<span class="absolute inset-0" aria-hidden="true"></span>
-										17. sajandi trükised
-									</a>
-								</p>
-								<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
-									Andmebaas "17. sajandi (kuni 1710) trükised" hõlmab valdavat osa Rahvusarhiivi paljudes erinevates fondides säilitatavaist trükistest nimetatud ajaperioodist.
-								</p>
-								<div class="border-b-2 border-transparent group-hover:border-b"></div>
+							<li class="relative group h-32 flex space-x-1">
+								<div class="hidden sm:flex sm:w-32 2xl:w-56 h-32 rounded bg-gray-50/60 group-hover:bg-gray-100 justify-center">
+									<img class="object-cover w-56 h-32 rounded opacity-60 group-hover:opacity-100" src="../../images/db/trükised.png">
+								</div>
+								<div class="flex-1 p-4 rounded h-32 bg-gray-50/60 group-hover:bg-gray-100">
+									<p class="text-base font-semibold leading-6">
+										<a href="#">
+											<span class="absolute inset-0" aria-hidden="true"></span>
+											17. sajandi trükised
+										</a>
+									</p>
+									<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
+										Andmebaas "17. sajandi (kuni 1710) trükised" hõlmab valdavat osa Rahvusarhiivi paljudes erinevates fondides säilitatavaist trükistest nimetatud ajaperioodist.
+									</p>
+								</div>
 							</li>
-							<li class="relative group py-5 border-b border-gray-900/10 hover:border-b-2 hover:border-gray-200">
-								<p class="text-base font-semibold leading-6">
-									<a href="#">
-										<span class="absolute inset-0" aria-hidden="true"></span>
-										Album Academicum Universitatis Tartuensis 1918–1944
-									</a>
-								</p>
-								<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
-									Andmed kõigi 1632. aastast kuni 1944. aastani Tartu Ülikooli immatrikuleeritud ligi 52 000 üliõpilase kohta.
-								</p>
-								<div class="border-b-2 border-transparent group-hover:border-b"></div>
+							<li class="relative group h-32 flex space-x-1">
+								<div class="hidden sm:flex sm:w-32 2xl:w-56 h-32 rounded bg-gray-50/60 group-hover:bg-gray-100 justify-center">
+									<img class="object-cover w-56 h-32 rounded opacity-60 group-hover:opacity-100" src="../../images/db/album.png">
+								</div>
+								<div class="flex-1 p-4 rounded h-32 bg-gray-50/60 group-hover:bg-gray-100">
+									<p class="text-base font-semibold leading-6">
+										<a href="#">
+											<span class="absolute inset-0" aria-hidden="true"></span>
+											Album Academicum Universitatis Tartuensis 1918–1944
+										</a>
+									</p>
+									<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
+										Andmed kõigi 1632. aastast kuni 1944. aastani Tartu Ülikooli immatrikuleeritud ligi 52 000 üliõpilase kohta.
+									</p>
+								</div>
 							</li>
-							<li class="relative group py-5 border-b border-gray-900/10 hover:border-b-2 hover:border-gray-200">
-								<p class="text-base font-semibold leading-6">
-									<a href="#">
-										<span class="absolute inset-0" aria-hidden="true"></span>
-										Eestimaa Vastastikuse Tulekindlustuse Seltsi kaudu kindlustatud kinnisvara register
-									</a>
-								</p>
-								<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
-									Andmebaas sisaldab Põhja-Eesti, st Eestimaa kubermangu mõisate nimesid, mis leiduvad kindlustuspoliisides aastatest 1874-1902. Andmed sisestati 1994. aastal. Andmebaas võimaldab leida otsitava objekti kindlustuspoliisi mõisa järgi.
-								</p>
-								<div class="border-b-2 border-transparent group-hover:border-b"></div>
+							<li class="relative group h-32 flex space-x-1">
+								<div class="hidden sm:flex sm:w-32 2xl:w-56 h-32 rounded bg-gray-50/60 group-hover:bg-gray-100 justify-center">
+									<!-- <img class="object-cover w-56 h-32 rounded opacity-60 group-hover:opacity-100" src=""> -->
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="self-center w-20 h-20 text-gray-200">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+									</svg>
+								</div>
+								<div class="flex-1 p-4 rounded h-32 bg-gray-50/60 group-hover:bg-gray-100">
+									<p class="text-base font-semibold leading-6">
+										<a href="#">
+											<span class="absolute inset-0" aria-hidden="true"></span>
+											Eestimaa Vastastikuse Tulekindlustuse Seltsi kaudu kindlustatud kinnisvara register
+										</a>
+									</p>
+									<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
+										Andmebaas sisaldab Põhja-Eesti, st Eestimaa kubermangu mõisate nimesid, mis leiduvad kindlustuspoliisides aastatest 1874-1902. Andmed sisestati 1994. aastal. Andmebaas võimaldab leida otsitava objekti kindlustuspoliisi mõisa järgi.
+									</p>
+								</div>
 							</li>
-							<li class="relative group py-5 border-b border-gray-900/10 hover:border-b-2 hover:border-gray-200">
-								<p class="text-base font-semibold leading-6">
-									<a href="#">
-										<span class="absolute inset-0" aria-hidden="true"></span>
-										Eestiainelised materjalid välisarhiivides
-									</a>
-								</p>
-								<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
-									Andmebaasi eesmärk on hõlbustada eesti ajaloo seisukohalt väärtuslike Eesti ja selle maa rahvaga seonduvate kogude käsutamist nii teadustöös kui ka perekonna- või kohaloolises uurimistöös. Andmebaas aitab muuta informatsioon välisarhiivide eestiaineliste materjalide kohta kättesaadavaks ilma, et arhivaali olemasolu kohta teabe saamiseks pruugiks Teil sõita piiritagusesse arhiivi.
-								</p>
-								<div class="border-b-2 border-transparent group-hover:border-b"></div>
+							<li class="relative group h-32 flex space-x-1">
+								<div class="hidden sm:flex sm:w-32 2xl:w-56 h-32 rounded group-hover:opacity-100 bg-gray-50/60 group-hover:bg-gray-100 justify-center">
+									<!-- <img class="object-cover w-56 h-32 rounded opacity-60 group-hover:opacity-100" src=""> -->
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="self-center w-20 h-20 text-gray-200">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+									</svg>
+								</div>
+								<div class="flex-1 p-4 rounded h-32 bg-gray-50/60 group-hover:bg-gray-100">
+									<p class="text-base font-semibold leading-6">
+										<a href="#">
+											<span class="absolute inset-0" aria-hidden="true"></span>
+											Eestiainelised materjalid välisarhiivides
+										</a>
+									</p>
+									<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
+										Andmebaasi eesmärk on hõlbustada eesti ajaloo seisukohalt väärtuslike Eesti ja selle maa rahvaga seonduvate kogude käsutamist nii teadustöös kui ka perekonna- või kohaloolises uurimistöös. Andmebaas aitab muuta informatsioon välisarhiivide eestiaineliste materjalide kohta kättesaadavaks ilma, et arhivaali olemasolu kohta teabe saamiseks pruugiks Teil sõita piiritagusesse arhiivi.
+									</p>
+								</div>
 							</li>
-							<li class="relative group py-5 border-b border-gray-900/10 hover:border-b-2 hover:border-gray-200">
-								<p class="text-base font-semibold leading-6">
-									<a href="#">
-										<span class="absolute inset-0" aria-hidden="true"></span>
-										Onomastika
-									</a>
-								</p>
-								<p class="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
-									Onomastika ehk teadus nimedest seletab nimede struktuuri, algtähendust, päritolu ja muutumist. See teadusharu omab tihedaid kontakte ka ajaloo ning genealoogiaga.
-								</p>
-								<div class="border-b-2 border-transparent group-hover:border-b"></div>
+							<li class="relative group h-32 flex space-x-1">
+								<div class="hidden sm:flex sm:w-32 2xl:w-56 h-32 rounded group-hover:opacity-100 bg-gray-50/60 group-hover:bg-gray-100 justify-center">
+									<!-- <img class="object-cover w-56 h-32 rounded opacity-60 group-hover:opacity-100" src=""> -->
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="self-center w-20 h-20 text-gray-200">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+									</svg>
+								</div>
+								<div class="flex-1 p-4 rounded h-32 bg-gray-50/60 group-hover:bg-gray-100">
+									<p class="text-base font-semibold leading-6">
+										<a href="#">
+											<span class="absolute inset-0" aria-hidden="true"></span>
+											Onomastika
+										</a>
+									</p>
+									<p class="mt-1 line-clamp-3 text-sm leading-6 text-gray-600">
+										Onomastika ehk teadus nimedest seletab nimede struktuuri, algtähendust, päritolu ja muutumist. See teadusharu omab tihedaid kontakte ka ajaloo ning genealoogiaga.
+									</p>
+								</div>
 							</li>
 						</ul>
 					</div>
 					<!-- Uudised -->
-					<div class="2xl:col-span-3 2xl:row-span-2">
+					<div class="xl:col-span-4 2xl:col-span-3 2xl:row-span-2">
 						<div class="space-y-8">
 							<!-- Viimased teated -->
 							<div>
@@ -775,12 +845,6 @@
 										<p class="my-2 text-base font-semibold leading-6 text-gray-700">
 											Friedrich Akel — silmaarst, diplomaat ja riigimees
 										</p>
-										<div class="mb-2 text-sm leading-6 text-gray-600 space-y-2 2xl:hidden">
-											718 lehekülge, kõvad kaaned. Tartu: Rahvusarhiiv, 2021<br />ISBN 978-9949-63-010-3
-											<p>
-												Müügil Tartus Nooruse 3 ning Tallinnas Madara 24 ja Maneeži 2 (galeriis).
-											</p>
-										</div>
 										<p class="text-base font-semibold leading-6 text-green-500">
 											25,00 €
 										</p>
@@ -793,7 +857,6 @@
 			</div>
 		</div>
 	</div>
-
 </div>
 </body>
 </html>
