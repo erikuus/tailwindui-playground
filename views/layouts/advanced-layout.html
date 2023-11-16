@@ -44,11 +44,11 @@
               <!-- Logo -->
               <img class="h-11 sm:h-12" src="../../images/logoipsum.svg" alt="Rakendus" />
               <!-- Desktop menüü -->
-              <nav class="hidden lg:flex lg:gap-x-4 md:gap-x-8 md:gap-x-12 font-medium">
+              <nav class="hidden lg:flex lg:gap-x-4 xl:gap-x-8 2xl:gap-x-12 font-medium">
                 <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">Menuipsum</a>
                 <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">Menuipsum</a>
               </nav>
-              <nav class="hidden lg:flex lg:gap-x-4 md:gap-x-8 md:gap-x-12 font-medium">
+              <nav class="hidden lg:flex lg:gap-x-4 xl:gap-x-8 2xl:gap-x-12 font-medium">
                 <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">Menuipsum</a>
                 <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">Menuipsum</a>
               </nav>
@@ -62,7 +62,7 @@
                 </button>
                 <!-- Mobiilse menüü avamise nupp -->
                 <div class="-mr-2 flex lg:hidden">
-                  <button @click="open = true; document.body.classList.add('overflow-y-hidden')" :class="open ? 'hidden' : 'block'" type="button" class="p-1.5 rounded-md text-gray-900 rounded hover:backdrop-filter hover:backdrop-brightness-105">
+                  <button @click="open = true; document.body.classList.add('overflow-y-hidden')" :class="open ? 'hidden' : 'block'" type="button" class="p-1.5 text-gray-900 rounded hover:backdrop-filter hover:backdrop-brightness-105">
                     <span class="sr-only">Ava menüü</span>
                     <svg class="h-5 w-5 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                       <path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
@@ -84,7 +84,7 @@
                   <img class="h-7 opacity-50 inline sm:hidden" src="../../images/ra_logo.svg" alt="Rahvusarhiiv" />
                 </div>
                 <!-- Mobiilse menüü sulgemise nupp -->
-                <button @click="open = false; document.body.classList.remove('overflow-y-hidden')" :class="open ? 'block' : 'hidden'" type="button" class="p-1.5 rounded-md text-gray-900 rounded hover:bg-gray-100">
+                <button @click="open = false; document.body.classList.remove('overflow-y-hidden')" :class="open ? 'block' : 'hidden'" type="button" class="p-1.5 text-gray-900 rounded hover:bg-gray-100">
                   <span class="sr-only">Sulge menüü</span>
                   <svg class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -106,8 +106,9 @@
           <!-- Sisu küljendus -->
           <div class="2xl:max-w-xxl mx-auto flex w-full max-w-7xl px-4 py-6 md:px-6 lg:px-8 xl:py-10">
             <!-- Sisu -->
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae porta elit. Aenean erat nibh, finibus eu tincidunt eu, pulvinar id magna. Proin aliquet dolor ut nibh accumsan aliquam. Morbi a mi velit. Aenean consectetur nisi in enim sagittis pellentesque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis est sit amet diam efficitur, sit amet commodo justo convallis. Etiam sodales turpis ac mollis tempor. Nullam sagittis purus sed nunc eleifend pretium. Vestibulum in ligula ac dui tincidunt viverra quis at metus. Donec ac mauris vestibulum mi pretium condimentum. Suspendisse vitae sodales nisl. Fusce urna tellus, blandit eget venenatis id, placerat vitae sapien. Aenean scelerisque sem sit amet aliquet tincidunt. Suspendisse lacinia in metus quis pulvinar.</div>
-          </div>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae porta elit. Aenean erat nibh, finibus eu tincidunt eu, pulvinar id magna. Proin aliquet dolor ut nibh accumsan aliquam. Morbi a mi velit. Aenean consectetur nisi in enim sagittis pellentesque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis est sit amet diam efficitur, sit amet commodo justo convallis. Etiam sodales turpis ac mollis tempor. Nullam sagittis purus sed nunc eleifend pretium. Vestibulum in ligula ac dui tincidunt viverra quis at metus. Donec ac mauris vestibulum mi pretium condimentum. Suspendisse vitae sodales nisl. Fusce urna tellus, blandit eget venenatis id, placerat vitae sapien. Aenean scelerisque sem sit amet aliquet tincidunt. Suspendisse lacinia in metus quis pulvinar.
+            </div>
         </div>
       </div>
     </div>
