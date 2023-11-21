@@ -150,16 +150,16 @@
                 </div>
                 <!-- Desktop menüü -->
                 <nav class="hidden lg:flex xl:gap-x-1 2xl:gap-x-2 font-medium">
-                  <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">Tellimused</a>
-                  <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">Arhiivipäringud</a>
+                  <a href="#" class="py-1.5 lg:px-2 xl:px-3 rounded hover:backdrop-filter hover:backdrop-brightness-105">Tellimused</a>
+                  <a href="#" class="py-1.5 lg:px-2 xl:px-3 rounded hover:backdrop-filter hover:backdrop-brightness-105">Arhiivipäringud</a>
                 </nav>
                 <nav class="hidden lg:flex xl:gap-x-1 2xl:gap-x-2 font-medium">
-                  <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">Veebipood</a>
-                  <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">Lingimärkmik</a>
+                  <a href="#" class="py-1.5 lg:px-2 xl:px-3 rounded hover:backdrop-filter hover:backdrop-brightness-105">Veebipood</a>
+                  <a href="#" class="py-1.5 lg:px-2 xl:px-3 rounded hover:backdrop-filter hover:backdrop-brightness-105">Lingimärkmik</a>
                 </nav>
                 <nav class="hidden lg:flex xl:gap-x-1 2xl:gap-x-2 font-medium">
-                  <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">Tagasiside</a>
-                  <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">KKK</a>
+                  <a href="#" class="py-1.5 lg:px-2 xl:px-3 rounded hover:backdrop-filter hover:backdrop-brightness-105">Tagasiside</a>
+                  <a href="#" class="py-1.5 lg:px-2 xl:px-3 rounded hover:backdrop-filter hover:backdrop-brightness-105">KKK</a>
                 </nav>
                 <!-- Sisseloginud kasutaja menüü -->
                 <div x-data="{ open: false }" class="relative ml-3">
@@ -732,13 +732,17 @@
                       <div class="space-y-12">
                         <!-- Viimased teated -->
                         <div class="relative">
-                          <a href="#" class="float-right top-1 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-gray-200 hover:bg-gray-50 hover:text-gray-800">
-                            <span class="fi-list"></span>
-                          </a>
-                          <a href="#" class="float-right flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-gray-200 hover:bg-gray-50 hover:text-gray-800">
-                            <span class="fi-plus"></span>
-                          </a>
-                          <h2 class="font-heading mb-6 text-lg font-bold text-gray-700 xl:mb-7 2xl:mt-20">Viimased teated</h2>
+                          <div class="flex items-center justify-between mb-6 xl:mb-7 2xl:mt-20">
+                            <h2 class="font-heading text-lg font-bold text-gray-700">Viimased teated</h2>
+                            <div class="flex flex-nowrap">
+                              <a href="#" class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-gray-200 hover:bg-gray-50 hover:text-gray-800">
+                                <span class="fi-plus"></span>
+                              </a>
+                              <a href="#" class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-gray-200 hover:bg-gray-50 hover:text-gray-800">
+                                <span class="fi-list"></span>
+                              </a>
+                            </div>
+                          </div>
                           <ul class="space-y-2 xl:-m-2">
                             <li class="group relative rounded p-2 hover:bg-green-50">
                               <span class="-ml-0.5 rounded-full bg-gray-50/60 px-2 py-1 text-xs font-semibold text-gray-800 group-hover:bg-green-100"> 18.10.2017 </span>
