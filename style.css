@@ -898,6 +898,10 @@ body {
   right: -0.625rem;
 }
 
+.top-1 {
+  top: 0.25rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -1139,6 +1143,18 @@ body {
 
 .ml-14 {
   margin-left: 3.5rem;
+}
+
+.-mt-2 {
+  margin-top: -0.5rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .block {
@@ -2606,6 +2622,11 @@ body {
     margin: -0.5rem;
   }
 
+  .xl\:-mx-2 {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+
   .xl\:-ml-80 {
     margin-left: -20rem;
   }
@@ -2620,6 +2641,10 @@ body {
 
   .xl\:ml-20 {
     margin-left: 5rem;
+  }
+
+  .xl\:mb-8 {
+    margin-bottom: 2rem;
   }
 
   .xl\:block {
