@@ -156,7 +156,7 @@
           <div class="flex grow flex-col rounded rounded-b bg-white shadow-md">
             <!-- Teadete ja asukohariba küljendus -->
             <div class="2xl:max-w-xxl mx-auto flex flex-col w-full max-w-7xl px-2 xl:pt-4">
-              <div id="messengerMessage1" class="messengerBox rounded p-4 bg-yellow-50 text-yellow-700 text-sm mt-2">
+              <!-- <div id="messengerMessage1" class="messengerBox rounded p-4 bg-yellow-50 text-yellow-700 text-sm mt-2">
                 <div class="flex items-start">
                   <div class="flex-1 space-y-2">
                     <p>See näitab, kuidas näeb välja teade. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ullamcorper nibh eros, nec iaculis tellus consequat sed. Nam nibh erat, faucibus a mollis a, blandit id erat. Fusce volutpat tortor non bibendum tincidunt. Nullam sed consectetur nibh. Integer vel est vitae elit pellentesque finibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc vel porta nibh, tincidunt dignissim odio. Nam massa erat, laoreet vitae leo id, gravida iaculis orci. Praesent tempor massa et ante commodo, eu tincidunt mauris consequat. Etiam nec molestie metus.</p>
@@ -164,7 +164,7 @@
                   </div>
                 </div>
               </div>
-              <!-- <div id="messengerMessage2" class="messengerBox rounded p-4 bg-yellow-50 text-yellow-700 text-sm mt-2">
+              <div id="messengerMessage2" class="messengerBox rounded p-4 bg-yellow-50 text-yellow-700 text-sm mt-2">
                 <div class="flex items-start">
                   <div class="flex-1 space-y-2">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ullamcorper nibh eros, nec iaculis tellus consequat sed. Nam nibh erat, faucibus a mollis a, blandit id erat. Fusce volutpat tortor non bibendum tincidunt. Nullam sed consectetur nibh. Integer vel est vitae elit pellentesque finibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc vel porta nibh, tincidunt dignissim odio. Nam massa erat, laoreet vitae leo id, gravida iaculis orci. Praesent tempor massa et ante commodo, eu tincidunt mauris consequat. Etiam nec molestie metus.</p>
@@ -226,8 +226,70 @@
                     <!-- Virtuaalne uurimissaal -->
                     <div class="xl:col-span-11 2xl:col-span-8">
                       <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:text-xl"><span class="hidden sm:inline">VAU – </span>Rahvusarhiivi virtuaalne uurimissaal</h2>
-                      <!-- image -->
-                      <img class="mb-10 w-full rounded" src="../../images/noora.jpg" />
+                      <!-- Karusel -->
+                      <!-- https://gist.github.com/sevalenciaca/de3ce331ff168b3b71176e715f4f83f2 -->
+                      <div class="flex flex-col justify-center items-center mb-16">
+                        <div class="relative" x-data="{activeSlide: 1, slides: [
+                          {'key': 1, 'href': '#1', 'src': '../../images/hd/noora_uurimissaal.jpg', 'text': 'Rahvusarhiivi peahoone Noora Tartus 1.'},
+                          {'key': 2, 'href': '#2', 'src': '../../images/hd/noora_fuajee.jpg', 'text': 'Rahvusarhiivi peahoone Noora Tartus 2.'},
+                          {'key': 3, 'href': '#3', 'src': '../../images/hd/noora_uurimissaal.jpg', 'text': null}
+                        ]}">
+                          <!-- Slaidid -->
+                          <template x-for="slide in slides" :key="slide.key">
+                            <div
+                              x-show="activeSlide === slide.key"
+                              class="w-full h-36 sm:h-72  xl:h-96 2xl:h-80 font-bold text-5xl flex items-center text-white"
+                            >
+                              <img class="w-full h-36 sm:h-72 xl:h-96 2xl:h-80 object-cover rounded" :src="slide.src" />
+                            </div>
+                          </template>
+                          <!-- Eelmine/Järgmine -->
+                          <div class="absolute inset-0 flex">
+                            <div class="flex items-center justify-start w-1/2">
+                              <button
+                                class="flex items-center justify-start justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 w-12 h-12 ml-2 sm:ml-6 z-50"
+                                x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1"
+                              >
+                                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path>
+                                </svg>
+                              </button>
+                            </div>
+                            <div class="flex items-center justify-end w-1/2">
+                              <button
+                                class="flex items-center justify-start justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 w-12 h-12 mr-2 sm:mr-6 z-50"
+                                x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1"
+                              >
+                                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
+                                </svg>
+                              </button>
+                            </div>
+                            <div
+                              class="hidden absolute bottom-0 sm:flex h-10 items-center px-4 bg-gray-300 bg-opacity-30 rounded-b w-full line-clamp-1 font-heading font-semibold text-white"
+                              x-text="slides.find(slide => slide.key === activeSlide).text">
+                            </div>
+                            <a target="_blank" :href="slides.find(slide => slide.key === activeSlide).href">
+                              <span class="absolute inset-0 " aria-hidden="true"></span>
+                            </a>
+                          </div>
+                          <!-- Buttons -->
+                          <div class="absolute w-full flex items-center justify-center px-4">
+                            <template x-for="slide in slides" :key="slide.key">
+                              <button
+                                class="flex-1 w-4 h-1 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-gray-600 hover:shadow-lg"
+                                :class="{
+                                  'bg-gray-200': activeSlide === slide.key,
+                                  'bg-gray-50': activeSlide !== slide.key
+                                }"
+                                x-on:click="activeSlide = slide.key"
+                              >
+                              </button>
+                            </template>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <img class="mb-10 w-full rounded" src="../../images/noora_uurimissaal.jpg" /> -->
                       <!-- explore -->
                       <h2 class="font-heading mb-7 text-lg font-bold text-gray-700">Rakendused</h2>
                       <ul role="list" class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:-mx-1 xl:grid-cols-3">
