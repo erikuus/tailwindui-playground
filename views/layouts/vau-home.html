@@ -231,8 +231,8 @@
                       <div class="flex flex-col justify-center items-center mb-16">
                         <div class="relative" x-data="{activeSlide: 1, slides: [
                           {'key': 1, 'href': '#1', 'src': '../../images/hd/noora_uurimissaal.jpg', 'text': 'Rahvusarhiivi peahoone Noora Tartus 1.'},
-                          {'key': 2, 'href': '#2', 'src': '../../images/hd/noora_fuajee.jpg', 'text': 'Rahvusarhiivi peahoone Noora Tartus 2.'},
-                          {'key': 3, 'href': '#3', 'src': '../../images/hd/noora_uurimissaal.jpg', 'text': null}
+                          {'key': 2, 'href': '#2', 'src': '../../images/hd/noora_fuajee.jpg', 'text': 'Rahvusarhiivi peahoone Noora Tartus 2. Rahvusarhiivi peahoone Noora Tartus 2. Rahvusarhiivi peahoone Noora Tartus 2.'},
+                          {'key': 3, 'href': '#3', 'src': '../../images/hd/noora_uurimissaal.jpg', 'text': ''}
                         ]}">
                           <!-- Slaidid -->
                           <template x-for="slide in slides" :key="slide.key">
@@ -265,9 +265,8 @@
                                 </svg>
                               </button>
                             </div>
-                            <div
-                              class="hidden absolute bottom-0 sm:flex h-10 items-center px-4 bg-gray-300 bg-opacity-30 rounded-b w-full line-clamp-1 font-heading font-semibold text-white"
-                              x-text="slides.find(slide => slide.key === activeSlide).text">
+                            <div class="absolute bottom-0 bg-gray-300 bg-opacity-40 rounded-b w-full p-2 sm:p-3" :class="slides.find(slide => slide.key === activeSlide).text ? 'block' : 'hidden'">
+                              <p class="font-heading text-sm sm:text-base font-semibold text-white line-clamp-1" x-text="slides.find(slide => slide.key === activeSlide).text" />
                             </div>
                             <a target="_blank" :href="slides.find(slide => slide.key === activeSlide).href">
                               <span class="absolute inset-0 " aria-hidden="true"></span>

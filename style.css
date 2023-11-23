@@ -2058,6 +2058,10 @@ body {
   line-height: 1.25rem;
 }
 
+.leading-8 {
+  line-height: 2rem;
+}
+
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(2 117 216 / var(--tw-text-opacity));
@@ -2553,6 +2557,10 @@ body {
     border-bottom-width: calc(0px * var(--tw-divide-y-reverse));
   }
 
+  .sm\:p-3 {
+    padding: 0.75rem;
+  }
+
   .sm\:py-0 {
     padding-top: 0px;
     padding-bottom: 0px;
@@ -2587,6 +2595,11 @@ body {
 
   .sm\:text-lg {
     font-size: 1.1875rem;
+    line-height: 120%;
+  }
+
+  .sm\:text-base {
+    font-size: 1rem;
     line-height: 120%;
   }
 
