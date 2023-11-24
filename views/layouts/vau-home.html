@@ -228,62 +228,53 @@
                       <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:text-xl"><span class="hidden sm:inline">VAU – </span>Rahvusarhiivi virtuaalne uurimissaal</h2>
                       <!-- Karusel -->
                       <!-- https://gist.github.com/sevalenciaca/de3ce331ff168b3b71176e715f4f83f2 -->
-                      <div class="flex flex-col justify-center items-center mb-16">
-                        <div class="relative" x-data="{activeSlide: 1, slides: [
-                          {'key': 1, 'href': '#1', 'src': '../../images/hd/noora_uurimissaal.jpg', 'text': 'Rahvusarhiivi peahoone Noora Tartus 1.'},
-                          {'key': 2, 'href': '#2', 'src': '../../images/hd/noora_fuajee.jpg', 'text': 'Rahvusarhiivi peahoone Noora Tartus 2. Rahvusarhiivi peahoone Noora Tartus 2. Rahvusarhiivi peahoone Noora Tartus 2.'},
-                          {'key': 3, 'href': '#3', 'src': '../../images/hd/noora_uurimissaal.jpg', 'text': ''}
-                        ]}">
+                      <div class="mb-16 flex items-center justify-center">
+                        <div
+                          class="relative h-36 w-full sm:h-72 xl:h-80"
+                          x-data="{activeSlide: 3, slides: [
+                            {'key': 1, 'href': '#1', 'src': '../../images/hd/noora_uurimissaal.jpg', 'text': null},
+                            {'key': 2, 'href': '#2', 'src': '../../images/hd/noora_fuajee.jpg', 'text': 'Noora – Rahvusarhiivi uus peahoone Tartus'},
+                            {'key': 3, 'href': '#3', 'src': '../../images/hd/young_girl_reading.png', 'text': 'Kuidas alustada suguvõsauurimisega'}
+                          ]}"
+                        >
                           <!-- Slaidid -->
                           <template x-for="slide in slides" :key="slide.key">
-                            <div
-                              x-show="activeSlide === slide.key"
-                              class="w-full h-36 sm:h-72  xl:h-96 2xl:h-80 font-bold text-5xl flex items-center text-white"
-                            >
-                              <img class="w-full h-36 sm:h-72 xl:h-96 2xl:h-80 object-cover rounded" :src="slide.src" />
-                            </div>
+                            <img x-show="activeSlide === slide.key" class="h-36 w-full rounded object-cover sm:h-72 xl:h-80" :src="slide.src" />
                           </template>
                           <!-- Eelmine/Järgmine -->
                           <div class="absolute inset-0 flex">
-                            <div class="flex items-center justify-start w-1/2">
-                              <button
-                                class="flex items-center justify-start justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 w-12 h-12 ml-2 sm:ml-6 z-50"
-                                x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1"
-                              >
-                                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <div class="flex w-1/2 items-center justify-start">
+                              <button class="z-50 ml-2 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 sm:ml-6" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
+                                <svg class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path>
                                 </svg>
                               </button>
                             </div>
-                            <div class="flex items-center justify-end w-1/2">
-                              <button
-                                class="flex items-center justify-start justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 w-12 h-12 mr-2 sm:mr-6 z-50"
-                                x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1"
-                              >
-                                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <div class="flex w-1/2 items-center justify-end">
+                              <button class="z-50 mr-2 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 sm:mr-6" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+                                <svg class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
                                 </svg>
                               </button>
                             </div>
-                            <div class="absolute bottom-0 bg-gray-300 bg-opacity-40 rounded-b w-full p-2 sm:p-3" :class="slides.find(slide => slide.key === activeSlide).text ? 'block' : 'hidden'">
-                              <p class="font-heading text-sm sm:text-base font-semibold text-white line-clamp-1" x-text="slides.find(slide => slide.key === activeSlide).text" />
+                            <div class="absolute bottom-0 w-full rounded-b bg-gray-300 bg-opacity-40 p-2 sm:p-3" :class="slides.find(slide => slide.key === activeSlide).text ? 'block' : 'hidden'">
+                              <p class="font-heading line-clamp-1 text-sm font-semibold text-white sm:text-base" x-text="slides.find(slide => slide.key === activeSlide).text" />
                             </div>
                             <a target="_blank" :href="slides.find(slide => slide.key === activeSlide).href">
-                              <span class="absolute inset-0 " aria-hidden="true"></span>
+                              <span class="absolute inset-0" aria-hidden="true"></span>
                             </a>
                           </div>
                           <!-- Buttons -->
-                          <div class="absolute w-full flex items-center justify-center px-4">
+                          <div class="absolute flex w-full items-center justify-center px-4">
                             <template x-for="slide in slides" :key="slide.key">
                               <button
-                                class="flex-1 w-4 h-1 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-gray-600 hover:shadow-lg"
+                                class="mx-2 mb-0 mt-4 h-1 w-4 flex-1 overflow-hidden rounded-full transition-colors duration-200 ease-out hover:bg-gray-600 hover:shadow-lg"
                                 :class="{
                                   'bg-gray-200': activeSlide === slide.key,
                                   'bg-gray-50': activeSlide !== slide.key
                                 }"
                                 x-on:click="activeSlide = slide.key"
-                              >
-                              </button>
+                              ></button>
                             </template>
                           </div>
                         </div>

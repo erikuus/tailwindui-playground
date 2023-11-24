@@ -1369,6 +1369,10 @@ body {
   width: 50%;
 }
 
+.w-96 {
+  width: 24rem;
+}
+
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -1771,6 +1775,16 @@ body {
   background-color: rgb(204 227 247 / var(--tw-bg-opacity));
 }
 
+.bg-green-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 247 238 / var(--tw-bg-opacity));
+}
+
+.bg-blue-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(230 241 251 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
 }
@@ -1809,9 +1823,19 @@ body {
   --tw-gradient-to: #9089FC;
 }
 
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.object-left-top {
+  -o-object-position: left top;
+     object-position: left top;
 }
 
 .p-4 {
