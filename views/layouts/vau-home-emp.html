@@ -171,7 +171,7 @@
                       <img class="inline-block h-12 w-12 rounded-full border-white" src="../../images/erik.jpg" alt="EU" />
                     </button>
                   </div>
-                  <div x-show="open" @click.outside="open = false" class="absolute -right-2.5 z-10 mt-2 w-80 rounded border border-gray-200 bg-white shadow-lg sm:right-0 sm:w-96">
+                  <div x-show="open" @click.outside="open = false" class="absolute -right-2.5 z-50 mt-2 w-80 rounded border border-gray-200 bg-white shadow-lg sm:right-0 sm:w-96">
                     <div class="divide-y divide-gray-50">
                       <div class="relative flex flex-col items-center px-2 pb-6 pt-12 sm:px-6">
                         <!-- Image -->
@@ -189,14 +189,14 @@
                         <h3 class="mt-4 text-lg font-medium">Erik Uus</h3>
                         <p class="mt-1 text-gray-600">erik.uus@ra.ee</p>
                       </div>
-                      <!-- <div class="mt-3 border-t border-gray-50">
+                      <div class="mt-3 border-t border-gray-50">
                         <a href="#1" class="flex items-center justify-center gap-x-2 py-4 text-center text-sm font-semibold hover:bg-green-50">
                           <svg class="h-5 w-5 text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
                             <path d="m791-55-91-91q-48 32-103.5 49T480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-61 17-116.5T146-700l-91-91 57-57 736 736-57 57ZM412-168q26-51 62-81.5t75-47.5L204-642q-21 36-32.5 76.5T160-480q0 45 11.5 86t34.5 76q41-20 85-31t89-11q32 0 61.5 5.5T500-340q-23 12-43.5 28T418-278q-12-2-20.5-2H380q-32 0-63.5 7T256-252q32 32 71.5 53.5T412-168Zm402-92-58-58q21-35 32.5-76t11.5-86q0-134-93-227t-227-93q-45 0-85.5 11.5T318-756l-58-58q48-32 103.5-49T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 61-17 116.5T814-260ZM520-554 374-700q62-2 105 41.5T520-554ZM380-420q-58 0-99-41t-41-99q0-33 14.5-60.5T292-668l196 196q-20 23-47.5 37.5T380-420Zm310 36L564-510q10-31 36-50.5t60-19.5q42 0 71 29t29 71q0 34-19.5 60T690-384ZM537-537ZM423-423Z" />
                           </svg>
                           Sisene Erik Uus rollis
                         </a>
-                      </div> -->
+                      </div>
                       <div>
                         <div class="flex divide-x divide-gray-50">
                           <div class="flex flex-1">
@@ -365,8 +365,75 @@
                         <span class="fi-plus"></span>
                       </a>
                       <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:text-xl"><span class="hidden sm:inline">VAU – </span>Rahvusarhiivi virtuaalne uurimissaal</h2>
-                      <!-- image -->
-                      <img class="mb-10 w-full rounded" src="../../images/hd/noora_uurimissaal.jpg" />
+                      <!-- Karusel -->
+                      <!-- https://gist.github.com/sevalenciaca/de3ce331ff168b3b71176e715f4f83f2 -->
+                      <div class="mb-16 flex items-center justify-center">
+                        <div
+                          class="relative h-36 w-full sm:h-72 xl:h-80"
+                          x-data="{activeSlide: 1, slides: [
+                            {
+                              'key': 1,
+                              'href': 'https://www.ra.ee/vau/index.php/et/page/article/index?menuId=44',
+                              'src': '../../images/hd/noora_uurimissaal.jpg',
+                              'text': null
+                            },
+                            {
+                              'key': 2,
+                              'href': 'https://www.youtube.com/watch?v=PSFEIi-UBQs',
+                              'src': '../../images/hd/young_girl_reading.png',
+                              'text': 'Kuidas alustada suguvõsauurimisega'
+                            },
+                            {
+                              'key': 3,
+                              'href': 'https://www.ra.ee/wp-content/uploads/2022/12/Rahvusarhiiv-2022-j6ulukaart-v04-EST.mp4?_=1',
+                              'src': '../../images/hd/kaart_2022.jpg',
+                              'text': 'Pühadetervitus 2022'
+                            }
+                          ]}"
+                        >
+                          <!-- Slaidid -->
+                          <template x-for="slide in slides" :key="slide.key">
+                            <img x-show="activeSlide === slide.key" class="h-36 w-full rounded object-cover sm:h-72 xl:h-80" :src="slide.src" />
+                          </template>
+                          <!-- Eelmine/Järgmine -->
+                          <div class="absolute inset-0 flex">
+                            <div class="flex w-1/2 items-center justify-start">
+                              <button class="z-40 ml-2 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 sm:ml-6" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
+                                <svg class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path>
+                                </svg>
+                              </button>
+                            </div>
+                            <div class="flex w-1/2 items-center justify-end">
+                              <button class="z-40 mr-2 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 sm:mr-6" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+                                <svg class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
+                                </svg>
+                              </button>
+                            </div>
+                            <div class="absolute bottom-0 w-full rounded-b bg-gray-300 bg-opacity-40 p-2 sm:p-3" :class="slides.find(slide => slide.key === activeSlide).text ? 'block' : 'hidden'">
+                              <p class="font-heading line-clamp-1 text-sm font-semibold text-white sm:text-base" x-text="slides.find(slide => slide.key === activeSlide).text" />
+                            </div>
+                            <a target="_blank" :href="slides.find(slide => slide.key === activeSlide).href">
+                              <span class="absolute inset-0" aria-hidden="true"></span>
+                            </a>
+                          </div>
+                          <!-- Buttons -->
+                          <div class="absolute flex w-full items-center justify-center px-4">
+                            <template x-for="slide in slides" :key="slide.key">
+                              <button
+                                class="mx-2 mb-0 mt-4 h-1 w-4 flex-1 overflow-hidden rounded-full transition-colors duration-200 ease-out hover:bg-gray-600 hover:shadow-lg"
+                                :class="{
+                                  'bg-gray-200': activeSlide === slide.key,
+                                  'bg-gray-50': activeSlide !== slide.key
+                                }"
+                                x-on:click="activeSlide = slide.key"
+                              ></button>
+                            </template>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <img class="mb-10 w-full rounded" src="../../images/noora_uurimissaal.jpg" /> -->
                       <!-- explore -->
                       <h2 class="font-heading mb-7 text-lg font-bold text-gray-700">Rakendused</h2>
                       <ul role="list" class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:-mx-1 xl:grid-cols-3">
@@ -676,10 +743,10 @@
                         </li>
                         <li class="group relative flex flex-col space-y-1 sm:flex-row sm:space-x-1 sm:space-y-0">
                           <div class="hidden h-32 justify-center rounded bg-gray-50/60 group-hover:bg-gray-100 group-hover:opacity-100 sm:flex sm:w-32 2xl:w-56">
-                            <!-- <img class="object-cover w-full sm:w-32 2xl:w-56 sm:h-32 rounded opacity-60 group-hover:opacity-100" src=""> -->
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-20 w-20 self-center text-gray-200">
+                            <img class="object-cover w-full sm:w-32 2xl:w-56 sm:h-32 rounded opacity-60 group-hover:opacity-100" src="../../images/db/tuletõrje.png">
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-20 w-20 self-center text-gray-200">
                               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
-                            </svg>
+                            </svg> -->
                           </div>
                           <div class="h-32 flex-1 rounded bg-gray-50/60 p-4 group-hover:bg-gray-100">
                             <p class="text-base font-semibold leading-6">
