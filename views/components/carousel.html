@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="../../style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
+</head>
+<body class="m-10 space-y-5">
+
+  <!-- https://gist.github.com/sevalenciaca/de3ce331ff168b3b71176e715f4f83f2 -->
+  <div class="flex items-center justify-center w-96">
+    <div
+      class="relative h-36 w-full sm:h-48"
+      x-data="{activeSlide: 1, slides: [
+        {
+          'key': 1,
+          'href': '#1',
+          'src': '../../images/db/pitserid.png',
+        },
+        {
+          'key': 2,
+          'href': '#2',
+          'src': '../../images/db/vapid.png',
+        },
+        {
+          'key': 3,
+          'href': '#3',
+          'src': '../../images/db/projektid.png',
+        },
+        {
+          'key': 4,
+          'href': '#',
+          'src': '../../images/db/pärgamendid.png',
+        },
+        {
+          'key': 5,
+          'href': '#',
+          'src': '../../images/db/kinnistud.png',
+        },
+        {
+          'key': 6,
+          'href': '#',
+          'src': '../../images/db/mõisad.png',
+        },
+        {
+          'key': 7,
+          'href': '#',
+          'src': '../../images/db/aadresslehed.png',
+        },
+        {
+          'key': 8,
+          'href': '#',
+          'src': '../../images/db/adramaad.png',
+        },
+        {
+          'key': 9,
+          'href': '#',
+          'src': '../../images/db/talud.png',
+        },
+        {
+          'key': 10,
+          'href': '#',
+          'src': '../../images/db/trükised.png',
+        },
+        {
+          'key': 11,
+          'href': '#',
+          'src': '../../images/db/album.png',
+        },
+        {
+          'key': 12,
+          'href': '#',
+          'src': '../../images/db/tuletõrje.png',
+        }
+      ]}"
+    >
+      <!-- Slaidid -->
+      <template x-for="slide in slides" :key="slide.key">
+
+        <img x-show="activeSlide === slide.key" class="h-36 w-full rounded object-cover sm:h-48" :src="slide.src" />
+      </template>
+      <!-- Eelmine/Järgmine -->
+      <div class="absolute inset-0 flex">
+        <div class="flex w-1/2 items-center justify-start">
+          <button class="z-50 ml-2 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 sm:ml-6" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
+            <svg class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="flex w-1/2 items-center justify-end">
+          <button class="z-50 mr-2 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 sm:mr-6" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+            <svg class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
+            </svg>
+          </button>
+        </div>
+        <a target="_blank" :href="slides.find(slide => slide.key === activeSlide).href">
+          <span class="absolute inset-0" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+<!--
+let pageNumbers = [];
+for (let page_number = page - limit; page_number <= page + limit; page_number++) {
+    if (page_number > 0 && page_number <= page_count) {
+        pageNumbers.push(page_number);
+    }
+} -->
+
+</body>
+</html>
