@@ -3,6 +3,8 @@
   <head>
     <title></title>
     <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../identity.css" />
+    <link rel="stylesheet" href="../../dokobit.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/foundation-icons@2.0.0/foundation-icons.min.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -132,7 +134,7 @@
         <div class="flex grow flex-col rounded rounded-b bg-white shadow-md">
           <!-- Teadete küljendus -->
           <div class="2xl:max-w-xxl mx-auto flex flex-col w-full max-w-7xl px-2 xl:pt-4 md:px-6 lg:px-8">
-            <div id="messengerMessage185" class="messengerBox rounded p-4 bg-gray-50 text-gray-700 text-sm mt-2">
+            <!-- <div id="messengerMessage185" class="messengerBox rounded p-4 bg-gray-50 text-gray-700 text-sm mt-2">
               <div class="flex items-start">
                 <div class="flex-1 space-y-2">
                   <p>
@@ -141,13 +143,13 @@
                   <p class="underline"><a class="go" target="_blank" href="#">Loe täpsemalt</a></p>
                 </div>
               </div>
-            </div>            
+            </div> -->
           </div>
           <!-- Sisu küljendus -->
           <div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 py-6 md:px-6 lg:px-8 xl:py-10">
             <!-- Sisu -->
             <div class="2xl:mx-42 sm:mx-36 lg:mx-12 xl:mx-36">
-              <div class="-mt-2 sm:mt-0 mb-10 xl:-mt-6 -mx-2">
+              <!-- <div class="-mt-2 sm:mt-0 mb-10 xl:-mt-6 -mx-2">
                 <div class="alertBox flex items-start justify-between rounded p-4 text-sm mb-2 bg-red-50 text-red-700">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fermentum ante vitae augue cursus vestibulum. Sed vel elementum lacus, sed varius mauris. Donec consequat eget velit quis hendrerit. Nullam ipsum ipsum, sollicitudin a hendrerit in, hendrerit ac turpis. Pellentesque fermentum ante eu dictum facilisis. Nullam ut venenatis ante. Ut a magna nec augue vestibulum congue non et justo. Donec laoreet lobortis sapien, ut mollis libero rhoncus eget. Suspendisse et tristique mi, ut cursus purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc magna mi, sollicitudin vitae lorem id, ornare mattis ipsum. Nullam cursus metus ut lacus elementum pharetra. Duis porttitor lorem sit amet luctus lacinia. Donec feugiat lorem quis urna imperdiet, sed consequat leo porttitor. Ut sagittis purus ut leo vulputate, vel sollicitudin augue lacinia. Morbi bibendum, metus vel dignissim ullamcorper, ante justo eleifend arcu, eu accumsan metus nibh ut neque.
                   <a class="close ml-4" href="">
@@ -156,7 +158,7 @@
                     </svg>
                   </a>
                 </div>
-              </div>
+              </div> -->
               <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:mt-6 sm:text-xl xl:mt-0">Sisene virtuaalsesse uurimissaali</h2>
               <div class="flex w-full flex-col gap-x-4 gap-y-6 lg:flex-row lg:gap-x-16 xl:gap-x-32 2xl:gap-x-40">
                 <div class="flex-1">
@@ -197,11 +199,11 @@
                   <div class="flex-grow-0 px-6">või</div>
                   <div class="flex-grow"><hr class="border border-gray-50" /></div>
                 </div>
-                <div class="flex-1">
-                  <!-- Sotsiaalmeedia -->
+                <div class="flex-1 space-y-10">
+
                   <ul>
                     <li>
-                      <a class="flex items-center justify-between border-b border-gray-200 px-6 py-3 hover:border-gray-300" href="#">
+                      <a class="flex items-center justify-between border-b border-gray-200 pl-6 pr-7 py-3 hover:border-gray-300 h-16" href="#">
                         <span class="auth-title">Google</span>
                         <svg class="h-10 w-10" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                           <path d="M33.5323 24.2266C33.5323 29.7539 29.7531 33.6875 24.1721 33.6875C18.8213 33.6875 14.5 29.3594 14.5 24C14.5 18.6406 18.8213 14.3125 24.1721 14.3125C26.7774 14.3125 28.9692 15.2695 30.6579 16.8477L28.0254 19.3828C24.5816 16.0547 18.1778 18.5547 18.1778 24C18.1778 27.3789 20.8727 30.1172 24.1721 30.1172C28.002 30.1172 29.4372 27.3672 29.6634 25.9414H24.1721V22.6094H33.3802C33.4699 23.1055 33.5323 23.582 33.5323 24.2266Z" />
@@ -209,30 +211,244 @@
                       </a>
                     </li>
                     <li>
-                      <a class="flex items-center justify-between border-b border-gray-200 px-6 py-3 hover:border-gray-300" href="#">
+                      <a class="flex items-center justify-between border-b border-gray-200 pl-6 pr-7 py-3 hover:border-gray-300 h-16" href="#">
                         <span class="auth-title">Facebook</span>
                         <svg class="h-10 w-10" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M36.001 24.075C36.001 17.406 30.628 12 24.001 12C17.371 12.0015 11.998 17.406 11.998 24.0765C11.998 30.102 16.387 35.097 22.123 36.003V27.5655H19.078V24.0765H22.126V21.414C22.126 18.3885 23.9185 16.7175 26.659 16.7175C27.973 16.7175 29.3455 16.953 29.3455 16.953V19.923H27.832C26.3425 19.923 25.8775 20.8545 25.8775 21.81V24.075H29.2045L28.6735 27.564H25.876V36.0015C31.612 35.0955 36.001 30.1005 36.001 24.075Z"></path>
+                          <path d="M36.001 24.075C36.001 17.406 30.628 12 24.001 12C17.371 12.0015 11.998 17.406 11.998 24.0765C11.998 30.102 16.387 35.097 22.123 36.003V27.5655H19.078V24.0765H22.126V21.414C22.126 18.3885 23.9185 16.7175 26.659 16.7175C27.973 16.7175 29.3455 16.953 29.3455 16.953V19.923H27.832C26.3425 19.923 25.8775 20.8545 25.8775 21.81V24.075H29.2045L28.6735 27.564H25.876V36.0015C31.612 35.0955 36.001 30.1005 36.001 24.075Z">
+                          </path>
                         </svg>
                       </a>
                     </li>
                     <li>
-                      <a class="flex items-center justify-between border-b border-gray-200 px-6 py-3 hover:border-gray-300" href="#">
+                      <a class="flex items-center justify-between border-b border-gray-200 pl-6 pr-7 py-3 hover:border-gray-300 h-16" href="#">
                         <span class="auth-title">Linkedin</span>
                         <svg class="m-2.5 h-5 w-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg>
                       </a>
                     </li>
-                    <li>
-                      <a class="flex items-center justify-between border-b border-gray-200 px-6 py-3 hover:border-gray-300" href="#">
-                        <span class="auth-title">Twitter</span>
-                        <svg class="h-10 w-10" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M19.539 34.501C28.596 34.501 33.5505 26.9965 33.5505 20.5C33.5505 20.29 33.5505 20.077 33.5415 19.867C34.5061 19.1688 35.3386 18.3043 36 17.314C35.099 17.7113 34.1441 17.9731 33.1665 18.091C34.1963 17.4755 34.9676 16.507 35.337 15.3655C34.3695 15.9387 33.3105 16.3411 32.2065 16.555C31.4643 15.7646 30.4821 15.2409 29.4121 15.0652C28.3421 14.8894 27.2441 15.0714 26.288 15.5829C25.3319 16.0945 24.5712 16.907 24.1237 17.8946C23.6761 18.8823 23.5668 19.9899 23.8125 21.046C21.8546 20.9479 19.9392 20.4392 18.1906 19.5532C16.4419 18.6671 14.899 17.4233 13.662 15.9025C13.034 16.9872 12.8424 18.2701 13.126 19.4909C13.4096 20.7117 14.1472 21.7788 15.189 22.4755C14.4083 22.449 13.6448 22.2394 12.96 21.8635V21.931C12.9613 23.0673 13.355 24.1682 14.0743 25.0477C14.7937 25.9272 15.7946 26.5314 16.908 26.758C16.4854 26.8745 16.0488 26.9325 15.6105 26.9305C15.3015 26.9315 14.9931 26.9028 14.6895 26.845C15.0042 27.8231 15.6169 28.6783 16.4419 29.2908C17.2668 29.9032 18.2627 30.2423 19.29 30.2605C17.5448 31.6312 15.3891 32.3746 13.17 32.371C12.779 32.3727 12.3882 32.3501 12 32.3035C14.2523 33.7394 16.8679 34.5019 19.539 34.501Z"></path>
-                        </svg>
-                      </a>
-                    </li>
                   </ul>
+
+                  <div id="Dokobit-identity-container">
+                    <div id="dokobit-identity">
+                      <div class="dokobit-main-logo"><a href=""></a></div>
+                      <div class="dokobit-main dokobit-main--methods d-block">
+                        <div class="dokobit-main__header">
+                          <h3>Valige sisselogimise vahend</h3>
+                        </div>
+                        <ul class="d-methods-list">
+                          <li class="d-methods-list__method" data-tab-show="mobile-tab">
+                            <label>
+                              <span>Mobiil-ID</span><svg
+                                class="d-methods-list__method__icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                              ><path d="M16 1H8C6.34 1 5 2.34 5 4v16c0 1.66 1.34 3 3 3h8c1.66 0 3-1.34 3-3V4c0-1.66-1.34-3-3-3zm-2 20h-4v-1h4v1zm3.25-3H6.75V4h10.5v14z"></path><path
+                                d="M0 0h24v24H0z"
+                                fill="none"
+                              ></path></svg>
+                            </label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="identity-arrow"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path><path
+                              fill="none"
+                              d="M0 0h24v24H0V0z"
+                            ></path></svg>
+                          </li>
+                          <li class="d-methods-list__method" data-tab-show="smartcard-tab">
+                            <label>
+                              <span>ID-kaart</span><svg
+                                class="d-methods-list__method__icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                              ><g fill-rule="evenodd"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M4 4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2H4zm16 14H4v-6h16v6zm0-10H4V6h16v2zm0 4h-9V8h9v4zM6 12H4V8h2v4z"></path></g></svg>
+                            </label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="identity-arrow"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path><path
+                              fill="none"
+                              d="M0 0h24v24H0V0z"
+                            ></path></svg>
+                          </li>
+                          <li class="d-methods-list__method" data-tab-show="smartid-tab">
+                            <label>
+                              <span>Smart-ID</span>
+                              <img class="d-methods-list__method__icon" src="https://id-sandbox.dokobit.com/assets/img/ic_smartid_24px.svg" />
+                            </label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="identity-arrow"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path><path
+                              fill="none"
+                              d="M0 0h24v24H0V0z"
+                            ></path></svg>
+                          </li>
+                        </ul>
+                      </div>
+                      <div id="mobile" class="dokobit-main dokobit-main--method" data-tab-content="mobile-tab">
+                        <div class="dokobit-main__back">
+                          <a class="dokobit-main__back--link" href="#methods">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                              <path d="M0 0h24v24H0z" fill="none"></path>
+                              <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                            </svg>
+                          </a>
+                          <h3>Logige sisse mobiil-IDga</h3>
+                          <svg class="d-methods-list__method__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                            <path d="M16 1H8C6.34 1 5 2.34 5 4v16c0 1.66 1.34 3 3 3h8c1.66 0 3-1.34 3-3V4c0-1.66-1.34-3-3-3zm-2 20h-4v-1h4v1zm3.25-3H6.75V4h10.5v14z">
+                            </path>
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                          </svg>
+                        </div>
+<form class="identity-form" name="mobile_login" action="/api/authentication/6dbf4d4cf3236f3aecd200581e36072324deb7ff86d90b07a065969eaef137ce/mobile" novalidate=""><div class="d-form-group "><div class="d-input-group "><ul class="select-document select-user-country "><li class="active"><span class="select-document__prefix">+372</span><span class="select-document__text">Eesti</span><img class="select-flag" src="https://id-sandbox.dokobit.com/assets/img/flags/ee.svg"></li><li class=""><span class="select-document__prefix">+354</span><span class="select-document__text">Island</span><img class="select-flag" src="https://id-sandbox.dokobit.com/assets/img/flags/is.svg"></li><li class=""><span class="select-document__prefix">+370</span><span class="select-document__text">Leedu</span><img class="select-flag" src="https://id-sandbox.dokobit.com/assets/img/flags/lt.svg"></li></ul><div class="selected-document "><div class="selected-document__box"><img class="flag" src="https://id-sandbox.dokobit.com/assets/img/flags/ee.svg"></div><span class="arrow-down"></span></div><input type="tel" id="phoneMobileid" name="phoneMobileid" required="" autocomplete="new-phone" inputmode="tel" value="+372"><label for="phoneMobileid" class="required">Telefoninumber</label></div></div><div class="d-form-group "><input type="text" id="codeMobileid" name="codeMobileid" required="" autocomplete="off" inputmode="numeric" value=""><label for="codeMobileid" class="required">Isikukood</label></div><div class="dokobit-main-links"><button class="dokobit-main-links__item is-reversed dokobit-main-btn--bubble-fx" type="submit" name="button">Logi sisse</button></div></form>
+                      </div>
+                      <div id="smartcard" class="dokobit-main dokobit-main--method" data-tab-content="smartcard-tab">
+                        <div class="dokobit-main__back">
+                          <a class="dokobit-main__back--link" href="#methods">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                              <path d="M0 0h24v24H0z" fill="none"></path>
+                              <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                            </svg>
+                          </a>
+                          <h3>Logi sisse ID-kaardiga</h3>
+                          <svg class="d-methods-list__method__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                            <g fill-rule="evenodd">
+                              <path d="M0 0h24v24H0V0z" fill="none"></path>
+                              <path d="M4 4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2H4zm16 14H4v-6h16v6zm0-10H4V6h16v2zm0 4h-9V8h9v4zM6 12H4V8h2v4z">
+                              </path>
+                            </g>
+                          </svg>
+                        </div>
+                        <div id="isign-applet"><ul class="sc-type-selection list-extra-spaced">
+                          <li class="list-extra-spaced__item">
+                            <span class="text-muted">Vali sertifikaadi väljastanud riik.</span>
+                            <!--<svg class="help-icon"><use xlink:href="#help_outline"></use></svg>-->
+                            <ul class="residency-radio"><li class="residency-radio__item">
+                              <label class="residency-radio__container">
+                                <input type="radio" name="residency-radio" data-residency="lt" class="residency-radio__item__input smartcard-type-select">
+                                <i class="residency-radio__item__flag residency-radio__item__flag--lt"></i>
+                                <span class="residency-radio__item__label">Leedu</span>
+                              </label>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="identity-arrow"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path><path fill="none" d="M0 0h24v24H0V0z"></path></svg>
+                              <span class="identity-arrow"></span></li><li class="residency-radio__item">
+                                <label class="residency-radio__container">
+                                  <input type="radio" name="residency-radio" data-residency="lv" class="residency-radio__item__input smartcard-type-select">
+                                  <i class="residency-radio__item__flag residency-radio__item__flag--lv"></i>
+                                  <span class="residency-radio__item__label">Läti</span>
+                                </label>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="identity-arrow"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path><path fill="none" d="M0 0h24v24H0V0z"></path></svg>
+                                <span class="identity-arrow"></span></li><li class="residency-radio__item">
+                                  <label class="residency-radio__container">
+                                    <input type="radio" name="residency-radio" data-residency="ee" class="residency-radio__item__input smartcard-type-select">
+                                    <i class="residency-radio__item__flag residency-radio__item__flag--ee"></i>
+                                    <span class="residency-radio__item__label">Eesti</span>
+                                  </label>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="identity-arrow"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path><path fill="none" d="M0 0h24v24H0V0z"></path></svg>
+                                  <span class="identity-arrow"></span></li><li class="residency-radio__item">
+                                    <label class="residency-radio__container">
+                                      <input type="radio" name="residency-radio" data-residency="fi" class="residency-radio__item__input smartcard-type-select">
+                                      <i class="residency-radio__item__flag residency-radio__item__flag--fi"></i>
+                                      <span class="residency-radio__item__label">Soome</span>
+                                    </label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="identity-arrow"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path><path fill="none" d="M0 0h24v24H0V0z"></path></svg>
+                                    <span class="identity-arrow"></span></li><li class="residency-radio__item">
+                                      <label class="residency-radio__container">
+                                        <input type="radio" name="residency-radio" data-residency="be" class="residency-radio__item__input smartcard-type-select">
+                                        <i class="residency-radio__item__flag residency-radio__item__flag--be"></i>
+                                        <span class="residency-radio__item__label">Belgia</span>
+                                      </label>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="identity-arrow"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path><path fill="none" d="M0 0h24v24H0V0z"></path></svg>
+                                      <span class="identity-arrow"></span></li><li class="residency-radio__item">
+                                        <label class="residency-radio__container">
+                                          <input type="radio" name="residency-radio" data-residency="is" class="residency-radio__item__input smartcard-type-select">
+                                          <i class="residency-radio__item__flag residency-radio__item__flag--is"></i>
+                                          <span class="residency-radio__item__label">Island</span>
+                                        </label>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="identity-arrow"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path><path fill="none" d="M0 0h24v24H0V0z"></path></svg>
+                                        <span class="identity-arrow"></span></li><li class="residency-radio__item">
+                                          <label class="residency-radio__container">
+                                            <input type="radio" name="residency-radio" data-residency="pl" class="residency-radio__item__input smartcard-type-select">
+                                            <i class="residency-radio__item__flag residency-radio__item__flag--pl"></i>
+                                            <span class="residency-radio__item__label">Poola</span>
+                                          </label>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="identity-arrow"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path><path fill="none" d="M0 0h24v24H0V0z"></path></svg>
+                                          <span class="identity-arrow"></span></li></ul>
+                                        </li>
+                                      </ul>
+                                    </div>
+                        <button type="button" id="sign-document" name="button" class="d-none">Logi sisse</button>
+                        <div class="sign-result"></div>
+                      </div>
+                      <div id="smartid" class="dokobit-main dokobit-main--method" data-tab-content="smartid-tab">
+                        <div class="dokobit-main__back">
+                          <a class="dokobit-main__back--link" href="#methods">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                              <path d="M0 0h24v24H0z" fill="none"></path>
+                              <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                            </svg>
+                          </a>
+                          <h3>Logige sisse Smart-IDga</h3>
+                          <img class="d-methods-list__method__icon" src="https://id-sandbox.dokobit.com/assets/img/ic_smartid_24px.svg" />
+                        </div>
+                        <form
+                          class="identity-form"
+                          name="smartid_login"
+                          action="/api/authentication/f7f7c083ff88810c66da81c660d420533c4be2447bd2f7e598bdbf0b2df110ae/smartid"
+                          novalidate=""
+                        >
+                          <div class="d-form-group d-block">
+                            <ul class="select-document select-user-country ">
+                              <li data-value="lt" class="">
+                                <span class="select-document__text">Leedu</span>
+                                <img class="select-flag" src="https://id-sandbox.dokobit.com/assets/img/flags/lt.svg" />
+                              </li>
+                              <li data-value="lv" class="">
+                                <span class="select-document__text">Läti</span>
+                                <img class="select-flag" src="https://id-sandbox.dokobit.com/assets/img/flags/lv.svg" />
+                              </li>
+                              <li data-value="ee" class="active">
+                                <span class="select-document__text">Eesti</span>
+                                <img class="select-flag" src="https://id-sandbox.dokobit.com/assets/img/flags/ee.svg" />
+                              </li>
+                            </ul>
+                            <div class="selected-document ">
+                              <div class="selected-document__box" data-selection="ee">
+                                <span class="selected-doc">Eesti</span>
+                                <img class="flag" src="https://id-sandbox.dokobit.com/assets/img/flags/ee.svg" />
+                              </div>
+                              <span class="arrow-down"></span>
+                            </div>
+                            <label class="select-label required" for="countrySmartid">Riik</label>
+                          </div>
+                          <div class="d-form-group ">
+                            <input type="text" id="codeSmartid" name="codeSmartid" required="" autocomplete="off" inputmode="numeric" value="" />
+                            <label for="codeSmartid" class="required">
+                              Isikukood
+                            </label>
+                          </div>
+                          <div class="dokobit-main-links">
+                            <button class="dokobit-main-links__item is-reversed dokobit-main-btn--bubble-fx" type="submit" name="button">
+                              Logi sisse
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                      <div id="identityConfirmation" class="dokobit-main dokobit-main--method dokobit-main--control-code d-none">
+                        <div id="dinamic-verification-title"></div>
+                        <div class="d-control-code">
+                          <span class="d-control-code__title">Teie kinnituskood on:</span>
+                          <div class="d-control-code__code" id="controlCode">...</div>
+                          <div class="spinner-container ">
+                            <div id="dokobit-spinner"></div>
+                            <div class="d-control-code__time"><span class="controlCodeCounter">180</span><span>s</span></div>
+                          </div>
+                        </div>
+                        <p class="d-control-code-description">
+                          Kui ülalpool kuvatav kood on sama, mida kuvatakse teie telefoni ekraanil, kinnitage enda isik sisestades PIN1 kood.
+                        </p>
+                        <div class="button-container">
+                          <button class="dokobit-main-btn dokobit-main-btn--inverse dokobit-main-btn--cancel dokobit-main-btn--bubble-fx">
+                            Katkesta
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

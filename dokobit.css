@@ -1,0 +1,95 @@
+#dokobit-identity {
+	padding: 0 !important;
+}
+#dokobit-identity,
+#dokobit-identity .dokobit-main--method {
+	margin: 0 0 !important;
+}
+#dokobit-identity .d-methods-list__method {
+	border-bottom: 1px solid #D3D8DF !important;
+	padding: 0 0 0 1.5rem !important;
+}
+#dokobit-identity .d-methods-list__method:hover {
+    background: none !important;
+    border-bottom: 1px solid #979FAB !important;
+}
+#dokobit-identity .dokobit-main-logo,
+#dokobit-identity .dokobit-main__header {
+	display: none !important;
+}
+#dokobit-identity .dokobit-main form button {
+	border-radius: 0.5rem !important;
+}
+#dokobit-identity .d-methods-list,
+#dokobit-identity .dokobit-main--method {
+	border: 0 !important;
+	border-radius: 0 !important;
+}
+#dokobit-identity .d-methods-list__method label {
+	height: 4rem !important;
+	min-height: 4rem !important;
+	border: 0 !important;
+}
+#dokobit-identity .d-methods-list__method label .d-methods-list__method__icon {
+    padding-right: 2.25rem !important;
+}
+#dokobit-identity .dokobit-main__back {
+    border-bottom: 1px solid #D3D8DF !important;
+    padding-right: 2.25rem !important;
+}
+#dokobit-identity .dokobit-main__back .d-methods-list__method__icon {
+    padding-right: 0 !important;
+}
+#dokobit-identity .identity-arrow {
+    right: 0.5rem !important;
+    fill: #D3D8DF !important;
+}
+#dokobit-identity .dokobit-main form .d-form-group {
+    margin-bottom: 2rem !important;
+}
+#dokobit-identity .dokobit-main__back h3,
+#dokobit-identity .dokobit-main form button
+{
+	font-family: roboto, verdana, tahoma, arial, sans-serif !important;
+	font-size: 1rem !important;
+}
+#isign-applet .text-muted,
+#dokobit-identity .dokobit-main form input,
+#dokobit-identity .dokobit-main form input::placeholder,
+#dokobit-identity .dokobit-main form .selected-document {
+	font-family: roboto, verdana, tahoma, arial, sans-serif !important;
+	font-size: 1rem !important;
+	font-weight: normal !important;
+}
+#isign-applet .residency-radio__item__label,
+#dokobit-identity .d-methods-list__method label {
+	font-family: roboto, verdana, tahoma, arial, sans-serif !important;
+	font-size: 1rem !important;
+	font-weight: normal !important;
+}
+#dokobit-identity .dokobit-main form .d-form-group input,
+#dokobit-identity .dokobit-main form .d-form-group .selected-document,
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group {
+    border-radius: 0.5rem !important;
+    border: 1px solid #D3D8DF !important;
+}
+#dokobit-identity #isign-applet .residency-radio__item {
+	padding: 0 !important;
+	border-bottom: 1px solid #D3D8DF !important;
+}
+
+#dokobit-identity #isign-applet .residency-radio__item .residency-radio__container {
+	border-top: 0 !important;
+}
+#dokobit-identity #isign-applet .residency-radio__item:hover {
+    background: none !important;
+    border-bottom: 1px solid #979FAB !important;
+}
+#dokobit-identity #isign-applet .residency-radio__item label {
+	padding-left: 1.25rem !important;
+}
+#dokobit-identity #isign-applet .residency-radio__item:last-of-type {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+

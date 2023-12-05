@@ -1,0 +1,2318 @@
+@font-face {
+    font-family: Roboto;
+    src: url(/assets/fonts/Roboto-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(/assets/fonts/Roboto-Italic.ttf) format("truetype");
+    font-weight: 400;
+    font-style: italic
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(/assets/fonts/Roboto-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(/assets/fonts/Roboto-BoldItalic.ttf) format("truetype");
+    font-weight: 700;
+    font-style: italic
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(/assets/fonts/Roboto-Thin.ttf) format("truetype");
+    font-weight: 200;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(/assets/fonts/Roboto-ThinItalic.ttf) format("truetype");
+    font-weight: 200;
+    font-style: italic
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(/assets/fonts/Roboto-Light.ttf) format("truetype");
+    font-weight: 100;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(/assets/fonts/Roboto-LightItalic.ttf) format("truetype");
+    font-weight: 100;
+    font-style: italic
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(/assets/fonts/Roboto-Medium.ttf) format("truetype");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(/assets/fonts/Roboto-MediumItalic.ttf) format("truetype");
+    font-weight: 500;
+    font-style: italic
+}
+
+h3 {
+    margin-bottom: 0
+}
+
+.event-clear {
+    pointer-events: none
+}
+
+.error-container {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh
+}
+
+.error-container h3 {
+    font-weight: 400;
+    margin: 0 0 25px;
+    font-size: 30px
+}
+
+.error-container h3,.error-container p {
+    color: #222;
+    opacity: .9;
+    font-family: Roboto,sans-serif
+}
+
+.error-container p {
+    font-size: 14px;
+    line-height: 1.71;
+    padding: 0;
+    margin: 0
+}
+
+#Dokobit-identity-container {
+    width: 100%
+}
+
+#dokobit-identity {
+    position: relative;
+    max-width: 470px;
+    margin: 0 auto;
+    padding: 8px;
+    font-family: Roboto,sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+#dokobit-identity .pb-0 {
+    padding-bottom: 0!important
+}
+
+#dokobit-identity button:focus {
+    outline: none
+}
+
+#dokobit-identity .dokobit-main-btn {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background: #ff8b00;
+    color: #fff;
+    min-height: 36px;
+    line-height: 36px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 16px;
+    cursor: pointer;
+    padding: 0 15px;
+    width: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    z-index: 20
+}
+
+#dokobit-identity .dokobit-main-btn:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: hsla(0,0%,100%,.5);
+    opacity: 0;
+    border-radius: 50%;
+    -webkit-transform: scale(1) translate(100%);
+    -ms-transform: scale(1) translate(100%);
+    transform: scale(1) translate(100%);
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%
+}
+
+#dokobit-identity .dokobit-main-btn:focus:not(:active):after {
+    -webkit-animation: wave 1s ease-out;
+    animation: wave 1s ease-out
+}
+
+#dokobit-identity .dokobit-main-btn:hover {
+    text-decoration: none!important;
+    background: #e67d00
+}
+
+#dokobit-identity .dokobit-main-btn--inverse {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background: #ff8b00;
+    color: #fff;
+    min-height: 50px;
+    line-height: 50px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 16px;
+    cursor: pointer;
+    padding: 0 15px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    z-index: 20;
+    background: rgba(0,0,0,0);
+    color: #ff8b00;
+    border: 1px solid rgba(0,0,0,.26)
+}
+
+#dokobit-identity .dokobit-main-btn--inverse:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255,139,0,.4);
+    opacity: 0;
+    border-radius: 50%;
+    -webkit-transform: scale(1) translate(100%);
+    -ms-transform: scale(1) translate(100%);
+    transform: scale(1) translate(100%);
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%
+}
+
+#dokobit-identity .dokobit-main-btn--inverse:focus:not(:active):after {
+    -webkit-animation: wave 1s ease-out;
+    animation: wave 1s ease-out
+}
+
+#dokobit-identity .dokobit-main-btn--inverse:hover {
+    background: #e67d00;
+    text-decoration: none!important;
+    background: rgba(0,0,0,0);
+    border-color: #ff8b00
+}
+
+#dokobit-identity .dokobit-main-btn--cancel {
+    color: #ff8b00;
+    -webkit-transition: .25s;
+    -o-transition: .25s;
+    transition: .25s;
+    padding: 0;
+    border-radius: 100px;
+    border: 1px solid rgba(0,0,0,.12)
+}
+
+@keyframes wave {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1
+    }
+
+    20% {
+        -webkit-transform: scale(25);
+        transform: scale(25);
+        opacity: 1
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: scale(100,35);
+        transform: scale(100,35)
+    }
+}
+
+@-webkit-keyframes wave {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1
+    }
+
+    20% {
+        -webkit-transform: scale(25);
+        transform: scale(25);
+        opacity: 1
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: scale(100,35);
+        transform: scale(100,35)
+    }
+}
+
+#dokobit-identity .not-valid {
+    -webkit-transition: 0;
+    -o-transition: 0;
+    transition: 0;
+    opacity: .4
+}
+
+#dokobit-identity #isign-applet .input-holder__alert__icon {
+    display: none
+}
+
+#dokobit-identity #isign-applet .input-holder__alert {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between
+}
+
+#dokobit-identity .identity-form__alert {
+    margin: 24px;
+    position: relative;
+    background: #f9f9f9;
+    border-radius: 6px;
+    padding: 16px
+}
+
+#dokobit-identity .identity-form__alert:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #f03928;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px
+}
+
+#dokobit-identity .identity-form__alert svg {
+    fill: #f03928;
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin: -2px 0 0
+}
+
+#dokobit-identity .identity-form__alert p {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    padding-left: 36px;
+    color: rgba(0,0,0,.87);
+    text-align: left;
+    margin: 0;
+    display: block
+}
+
+#dokobit-identity .identity-form__alert a {
+    color: #ff8b00
+}
+
+#dokobit-identity .identity-form__alert a:active,#dokobit-identity .identity-form__alert a:focus,#dokobit-identity .identity-form__alert a:hover {
+    color: #e67d00
+}
+
+#dokobit-identity .identity-form__alert__arrow {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    cursor: pointer;
+    float: right
+}
+
+#dokobit-identity .identity-form__alert__arrow:after,#dokobit-identity .identity-form__alert__arrow:before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background-color: #fff;
+    top: 8px
+}
+
+#dokobit-identity .identity-form__alert__warning:after {
+    background: #ff8b00
+}
+
+#dokobit-identity .identity-form__alert__warning svg {
+    fill: #ff8b00
+}
+
+#dokobit-identity input:-webkit-autofill,#dokobit-identity input:-webkit-autofill:focus textarea:-webkit-autofill,#dokobit-identity input:-webkit-autofill:hover,#dokobit-identity select:-webkit-autofill,#dokobit-identity select:-webkit-autofill:focus,#dokobit-identity select:-webkit-autofill:hover,#dokobit-identity textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: rgba(0,0,0,.87);
+    -webkit-box-shadow: 0 0 0 1000px #fff inset!important
+}
+
+#dokobit-identity .dokobit-main form {
+    padding: 10px 24px 0;
+    border: 0
+}
+
+#dokobit-identity .dokobit-main form .d-form-group {
+    position: relative;
+    margin-bottom: 32px
+}
+
+#dokobit-identity .dokobit-main form .d-form-group input {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    height: 56px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 0 0 16px;
+    border: 1px solid rgba(0,0,0,.26);
+    color: rgba(0,0,0,.87);
+    border-radius: 4px;
+    background: #fff
+}
+
+#dokobit-identity .dokobit-main form .d-form-group input:focus {
+    outline: none;
+    border-color: #ff8b00;
+    -webkit-box-shadow: 0 0 0 1px #ff8b00;
+    box-shadow: 0 0 0 1px #ff8b00
+}
+
+#dokobit-identity .dokobit-main form .d-form-group input:valid {
+    background: rgba(0,0,0,0)
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .selected-document {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    height: 56px;
+    font-size: 16px;
+    padding: 0 0 0 16px;
+    border: 1px solid rgba(0,0,0,.26);
+    color: rgba(0,0,0,.87);
+    border-radius: 4px;
+    background: #fff
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .selected-document:focus {
+    outline: none;
+    border-color: #ff8b00;
+    -webkit-box-shadow: 0 0 0 1px #ff8b00;
+    box-shadow: 0 0 0 1px #ff8b00
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .selected-document:valid {
+    background: rgba(0,0,0,0)
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    height: 56px;
+    font-size: 16px;
+    padding: 0 0 0 16px;
+    border: 1px solid rgba(0,0,0,.26);
+    color: rgba(0,0,0,.87);
+    border-radius: 4px;
+    background: #fff
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group:focus {
+    outline: none;
+    border-color: #ff8b00;
+    -webkit-box-shadow: 0 0 0 1px #ff8b00;
+    box-shadow: 0 0 0 1px #ff8b00
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group:valid {
+    background: rgba(0,0,0,0)
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .dokobit-alert {
+    position: absolute
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .dokobit-alert.dokobit-alert-error ul {
+    list-style-type: none;
+    padding-left: 16px;
+    margin: 4px 0 0
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .dokobit-alert.dokobit-alert-error ul li {
+    font-size: 12px;
+    color: #f03928;
+    text-align: left;
+    letter-spacing: .4px;
+    line-height: 16px;
+    font-weight: 400
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .dokobit-main form .d-form-group {
+        display:table;
+        width: 100%;
+        border-collapse: collapse
+    }
+}
+
+#dokobit-identity .dokobit-main form .d-form-group--inline {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+@media (max-width: 340px) {
+    #dokobit-identity .dokobit-main form .d-form-group--inline {
+        flex-direction:column
+    }
+}
+
+#dokobit-identity .dokobit-main form .d-form-group--inline__group {
+    position: relative;
+    width: 100%
+}
+
+#dokobit-identity .dokobit-main form .d-form-group--inline__prefix {
+    max-width: 100px;
+    min-width: 90px;
+    margin-right: 16px
+}
+
+@media (max-width: 340px) {
+    #dokobit-identity .dokobit-main form .d-form-group--inline__prefix {
+        max-width:100%;
+        margin-bottom: 24px
+    }
+}
+
+#dokobit-identity .dokobit-main form .d-form-group--inline__prefix .arrow-down {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 0
+}
+
+#dokobit-identity .dokobit-main form .d-form-group--inline__prefix .select-document .select-flag {
+    width: 24px;
+    height: auto;
+    display: block;
+    margin-bottom: 1px
+}
+
+#dokobit-identity .dokobit-main form .d-form-group label {
+    color: rgba(0,0,0,.6);
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    pointer-events: none;
+    line-height: 28px;
+    letter-spacing: .15px;
+    left: 16px;
+    top: 15px;
+    -o-transition: .2s ease all;
+    transition: all .2s ease;
+    -moz-transition: .2s ease all;
+    -webkit-transition: all .2s ease
+}
+
+#dokobit-identity .dokobit-main form .d-form-group input:valid~label,#dokobit-identity .dokobit-main form .d-form-group label.select-label {
+    left: 9px;
+    top: -9px;
+    font-size: 12px;
+    letter-spacing: .4px;
+    line-height: 16px;
+    background: #fff;
+    padding: 0 6px;
+    color: #ff8b00;
+    color: rgba(0,0,0,.6)
+}
+
+#dokobit-identity .dokobit-main form .d-form-group input:focus~label {
+    left: 9px;
+    top: -9px;
+    font-size: 12px;
+    letter-spacing: .4px;
+    line-height: 16px;
+    background: #fff;
+    padding: 0 6px;
+    color: #ff8b00
+}
+
+#dokobit-identity .dokobit-main form .d-form-group.has-error input {
+    border-color: #f03928!important
+}
+
+#dokobit-identity .dokobit-main form .d-form-group.has-error input:focus {
+    -webkit-box-shadow: 0 0 0 1px #f03928!important;
+    box-shadow: 0 0 0 1px #f03928!important
+}
+
+#dokobit-identity .dokobit-main form .d-form-group.has-error input:focus~label,#dokobit-identity .dokobit-main form .d-form-group.has-error input:valid~label,#dokobit-identity .dokobit-main form .d-form-group.has-error label {
+    color: #f03928!important
+}
+
+#dokobit-identity .dokobit-main form .d-form-group.has-error .d-input-group {
+    border-color: #f03928!important
+}
+
+#dokobit-identity .dokobit-main form .d-form-group.has-error .d-input-group input {
+    border-color: #fff
+}
+
+#dokobit-identity .dokobit-main form .d-form-group.has-error .d-input-group input:focus {
+    box-shadow: none!important
+}
+
+#dokobit-identity .dokobit-main form .d-form-group.has-error .d-input-group input:focus~label,#dokobit-identity .dokobit-main form .d-form-group.has-error .d-input-group input:valid~label {
+    color: #f03928!important
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .has-error input {
+    border-color: #f03928!important
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .has-error input:focus {
+    -webkit-box-shadow: 0 0 0 1px #f03928!important;
+    box-shadow: 0 0 0 1px #f03928!important
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .has-error input:focus~label,#dokobit-identity .dokobit-main form .d-form-group .has-error input:valid~label,#dokobit-identity .dokobit-main form .d-form-group .has-error label {
+    color: #f03928!important
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .dokobit-main form .d-form-group .selected-document__box {
+        display:table-row
+    }
+
+    #dokobit-identity .dokobit-main form .d-form-group .selected-document__box .selected-doc {
+        display: table-cell;
+        padding-left: 40px;
+        padding-top: 15px
+    }
+
+    #dokobit-identity .dokobit-main form .d-form-group .selected-document__box .flag {
+        position: absolute;
+        left: 12px;
+        top: 16px
+    }
+
+    #dokobit-identity .dokobit-main form .d-form-group .selected-document .arrow-down {
+        position: relative;
+        bottom: 15px
+    }
+
+    #dokobit-identity .dokobit-main form .d-form-group .selected-document+label {
+        left: 9px;
+        top: -9px;
+        font-size: 12px;
+        letter-spacing: .4px;
+        line-height: 16px;
+        background: #fff;
+        padding: 0 6px;
+        color: #ff8b00;
+        color: rgba(0,0,0,.6)
+    }
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 9px
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .dokobit-main form .d-form-group .d-input-group {
+        display:table-row;
+        border-radius: 4px 0 0 4px;
+        -moz-border-radius: 4px 0 0 4px
+    }
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group input::-ms-clear {
+    display: none;
+    height: 0;
+    width: 0
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group input {
+    border: none!important;
+    height: 54px;
+    margin-left: 8px
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .dokobit-main form .d-form-group .d-input-group input {
+        display:table-cell;
+        vertical-align: middle;
+        margin-left: 70px;
+        background: rgba(0,0,0,0)
+    }
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group input:focus {
+    border: 0!important;
+    box-shadow: none!important
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group label {
+    left: 9px;
+    top: -9px;
+    font-size: 12px;
+    letter-spacing: .4px;
+    line-height: 16px;
+    background: #fff;
+    padding: 0 6px;
+    color: #ff8b00;
+    color: rgba(0,0,0,.6)
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group.focus {
+    border-color: #ff8b00;
+    -webkit-box-shadow: 0 0 0 1px #ff8b00;
+    box-shadow: 0 0 0 1px #ff8b00
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group.focus label {
+    color: #ff8b00
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group .select-document {
+    left: 0
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group .selected-document {
+    width: auto;
+    min-width: 32px;
+    height: 34px;
+    padding: 11px 7px;
+    border: 0!important
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .dokobit-main form .d-form-group .d-input-group .selected-document {
+        display:table-cell;
+        vertical-align: top;
+        position: absolute;
+        top: 13px;
+        left: 5px
+    }
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group .selected-document:hover {
+    background: rgba(0,0,0,.04)
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .selected-document.disabled {
+    cursor: default
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .selected-document.disabled:hover {
+    background: none
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group .selected-document:after {
+    width: 1px;
+    height: 25px;
+    background: rgba(0,0,0,.26);
+    content: "";
+    right: -8px;
+    position: absolute;
+    top: 4px
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group .selected-document__box {
+    display: inline-block
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group .selected-document__box .flag {
+    width: 18px;
+    height: 12px;
+    margin: 0;
+    max-width: unset
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .dokobit-main form .d-form-group .d-input-group .selected-document__box .flag {
+        position:relative;
+        left: 0;
+        top: 0
+    }
+
+    #dokobit-identity .dokobit-main form .d-form-group .d-input-group .selected-document .arrow-down {
+        position: relative;
+        bottom: -4px
+    }
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group .selected-document .arrow-down {
+    margin-left: 8px;
+    margin-right: 8px
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group .selected-document .select-flag {
+    width: 24px;
+    height: auto;
+    display: block;
+    margin-bottom: 1px
+}
+
+#dokobit-identity .dokobit-main form .d-form-group .d-input-group .dokobit-alert {
+    left: 0;
+    bottom: -20px
+}
+
+#dokobit-identity .dokobit-main form .d-form-group.has-error .focus {
+    -webkit-box-shadow: 0 0 0 1px #f03928!important;
+    box-shadow: 0 0 0 1px #f03928!important
+}
+
+#dokobit-identity .dokobit-main form button {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background: #ff8b00;
+    color: #fff;
+    min-height: 50px;
+    line-height: 50px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 16px;
+    cursor: pointer;
+    padding: 0 15px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    z-index: 20;
+    border: none
+}
+
+#dokobit-identity .dokobit-main form button:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: hsla(0,0%,100%,.5);
+    opacity: 0;
+    border-radius: 50%;
+    -webkit-transform: scale(1) translate(100%);
+    -ms-transform: scale(1) translate(100%);
+    transform: scale(1) translate(100%);
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%
+}
+
+#dokobit-identity .dokobit-main form button:focus:not(:active):after {
+    -webkit-animation: wave 1s ease-out;
+    animation: wave 1s ease-out
+}
+
+#dokobit-identity .dokobit-main form button:hover {
+    text-decoration: none!important;
+    background: #e67d00
+}
+
+#dokobit-identity .dokobit-main {
+    width: 100%
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .dokobit-main {
+        border-collapse:collapse
+    }
+}
+
+#dokobit-identity .dokobit-main--method {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    font-weight: 500;
+    margin: 24px 0 0;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 8px;
+    background: #fff;
+    -webkit-transition: 0;
+    transition: 0;
+    text-align: center;
+    padding: 0 0 24px
+}
+
+#dokobit-identity .dokobit-main--method#smartcard {
+    padding: 0
+}
+
+#dokobit-identity .dokobit-main--control-code {
+    display: block
+}
+
+#dokobit-identity .dokobit-main__header {
+    margin: 30px 0 26px;
+    text-align: center
+}
+
+#dokobit-identity .dokobit-main__header h3 {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: .2px;
+    line-height: 26px;
+    color: rgba(0,0,0,.87);
+    margin: 0
+}
+
+#dokobit-identity .dokobit-main__back {
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    margin-bottom: 24px;
+    padding: 4px 24px 4px 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 40px
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .dokobit-main__back {
+        display:table-row
+    }
+
+    #dokobit-identity .dokobit-main__back .d-methods-list__method__icon {
+        position: relative;
+        right: 15px;
+        top: 2px
+    }
+}
+
+#dokobit-identity .dokobit-main__back--link {
+    background: rgba(0,0,0,0);
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    -webkit-transition: 0;
+    -o-transition: 0;
+    transition: 0
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .dokobit-main__back--link {
+        display:block;
+        position: relative;
+        top: 5px;
+        left: 10px;
+        width: 30px;
+        height: 30px
+    }
+}
+
+#dokobit-identity .dokobit-main__back--link svg {
+    fill: rgba(0,0,0,.4)
+}
+
+#dokobit-identity .dokobit-main__back--link:hover {
+    background: #f5f5f5
+}
+
+#dokobit-identity .dokobit-main__back h3 {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 16px;
+    color: #616161;
+    margin: 0;
+    flex: 1;
+    text-align: left;
+    padding: 0 0 0 8px
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .dokobit-main__back h3 {
+        display:table-cell;
+        vertical-align: middle;
+        width: 100%;
+        padding: 0 25px!important
+    }
+}
+
+#dokobit-identity .dokobit-main__back--link+h3 {
+    padding: 0
+}
+
+#dokobit-identity .dokobit-main-logo {
+    text-align: center
+}
+
+#dokobit-identity .dokobit-main-links a {
+    color: #ff8b00
+}
+
+#dokobit-identity .dokobit-main-links__item {
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: .04px;
+    -webkit-transition: 0;
+    -o-transition: 0;
+    transition: 0
+}
+
+#dokobit-identity .dokobit-main-links__item+.dokobit-main-links__item {
+    margin-top: 16px
+}
+
+#dokobit-identity .dokobit-main-links__item:hover {
+    text-decoration: underline
+}
+
+#dokobit-identity .dokobit-main-links--sc {
+    margin-top: 0
+}
+
+#dokobit-identity .button-container {
+    padding: 0 24px
+}
+
+#dokobit-identity .d-control-code {
+    padding: 6px 20px 8px;
+    text-align: center
+}
+
+#dokobit-identity .d-control-code__title {
+    font-size: 14px;
+    color: rgba(0,0,0,.87);
+    margin-bottom: 8px;
+    font-weight: 400;
+    line-height: 16px;
+    display: block
+}
+
+#dokobit-identity .d-control-code__code {
+    display: block;
+    font-size: 40px;
+    letter-spacing: .25px;
+    color: rgba(0,0,0,.87);
+    margin-bottom: 12px;
+    line-height: 47px
+}
+
+#dokobit-identity .d-control-code__time {
+    display: inline-block;
+    color: rgba(0,0,0,.6);
+    line-height: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .25px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 21px
+}
+
+#dokobit-identity .d-control-code-description {
+    max-width: 328px;
+    margin: 12px auto 24px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    color: rgba(0,0,0,.6);
+    font-weight: 400
+}
+
+#dokobit-identity .d-methods-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,.12);
+    -webkit-transition: 0;
+    transition: 0;
+    background: #fff
+}
+
+#dokobit-identity .d-methods-list__method {
+    box-sizing: border-box;
+    position: relative;
+    background: rgba(0,0,0,0);
+    width: 100%;
+    padding: 0 0 0 24px;
+    margin: 0;
+    border: 0;
+    cursor: pointer;
+    -webkit-transition: 0;
+    transition: 0
+}
+
+#dokobit-identity .d-methods-list__method:hover {
+    background: #f5f5f5
+}
+
+#dokobit-identity .d-methods-list__method label {
+    cursor: pointer;
+    font-weight: 500;
+    color: rgba(0,0,0,.87);
+    letter-spacing: .3px;
+    font-size: 14px;
+    line-height: 16px;
+    height: 56px;
+    min-height: 56px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0,0,0,.12)
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .d-methods-list__method label {
+        display:table-row
+    }
+}
+
+#dokobit-identity .d-methods-list__method label span {
+    flex-grow: 1;
+    text-align: left;
+    display: block
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .d-methods-list__method label span {
+        display:table-cell;
+        width: 100%;
+        vertical-align: middle
+    }
+}
+
+#dokobit-identity .d-methods-list__method label .d-methods-list__method__icon {
+    fill: #ff8b00;
+    padding-right: 45px;
+    box-sizing: content-box
+}
+
+#dokobit-identity .d-methods-list__method label .d-methods-list__method__icon--custom {
+    height: 30px;
+    padding-right: 45px;
+    box-sizing: content-box
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .d-methods-list__method label .d-methods-list__method__icon {
+        position:relative;
+        top: 15px
+    }
+}
+
+#dokobit-identity .d-methods-list__method__icon {
+    fill: #ff8b00
+}
+
+#dokobit-identity .d-methods-list__method__chip {
+    margin-right: 45px
+}
+
+#dokobit-identity .d-methods-list__method:first-child label {
+    border-top: 0
+}
+
+#dokobit-identity .selected-document {
+    position: relative;
+    cursor: pointer;
+    padding-left: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+#dokobit-identity .selected-document .flag {
+    width: auto;
+    height: 18px;
+    display: block;
+    max-width: 100%
+}
+
+#dokobit-identity .selected-document__box {
+    display: flex;
+    flex-direction: row-reverse
+}
+
+#dokobit-identity .selected-document__box img {
+    margin-right: 10px;
+    margin-top: 2px
+}
+
+#dokobit-identity .selected-document__box span {
+    line-height: 21px;
+    font-weight: 400
+}
+
+#dokobit-identity .select-document {
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    width: 100%;
+    min-width: 180px;
+    color: rgba(0,0,0,.87);
+    background: #fff;
+    -webkit-box-shadow: 0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12),0 5px 5px -3px rgba(0,0,0,.2);
+    box-shadow: 0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12),0 5px 5px -3px rgba(0,0,0,.2);
+    z-index: 5;
+    top: -30px;
+    border-radius: 4px;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-transform: translateY(-1em);
+    -ms-transform: translateY(-1em);
+    transform: translateY(-1em);
+    z-index: -1;
+    -webkit-transition: all .3s ease-in-out 0s,visibility 0s linear .3s,z-index 0s linear .01s;
+    -webkit-transition: all .3s ease-in-out 0s,visibility 0s linear .3s;
+    -o-transition: all .3s ease-in-out 0s,visibility 0s linear .3s;
+    transition: all .3s ease-in-out 0s,visibility 0s linear .3s
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .select-document {
+        border:1px solid rgba(0,0,0,.14)
+    }
+}
+
+#dokobit-identity .select-document--show {
+    visibility: visible;
+    opacity: 1;
+    z-index: 999;
+    -webkit-transform: translateY(1.5em);
+    -ms-transform: translateY(1.5em);
+    transform: translateY(1.5em);
+    -webkit-transition-delay: 0s,0s;
+    -o-transition-delay: 0s,0s;
+    transition-delay: 0s,0s
+}
+
+#dokobit-identity .select-document__prefix {
+    flex: 1;
+    text-align: right
+}
+
+#dokobit-identity .select-document li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 19px 16px;
+    -webkit-transition: 0;
+    -o-transition: 0;
+    transition: 0
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .select-document li {
+        border-bottom:1px solid rgba(0,0,0,.14);
+        padding: 25px 16px
+    }
+}
+
+#dokobit-identity .select-document li.active,#dokobit-identity .select-document li.active:hover {
+    background: rgba(0,0,0,.14)
+}
+
+#dokobit-identity .select-document li img {
+    width: 24px;
+    height: auto;
+    display: block;
+    margin-right: 10px
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .select-document li img {
+        position:absolute;
+        left: 16px
+    }
+}
+
+#dokobit-identity .select-document li span {
+    font-size: 14px;
+    color: rgba(0,0,0,.87);
+    font-weight: 400;
+    letter-spacing: .2px
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity .select-document li .select-document__text {
+        position:absolute;
+        left: 46px
+    }
+
+    #dokobit-identity .select-document li .select-document__prefix {
+        position: absolute;
+        right: 16px
+    }
+}
+
+#dokobit-identity .select-document li:hover {
+    background: rgba(0,0,0,.08)
+}
+
+#dokobit-identity .select-document li:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px
+}
+
+#dokobit-identity .select-document li:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px
+}
+
+#dokobit-identity .select-document li:last-of-type {
+    border-bottom: 0
+}
+
+#dokobit-identity .identity-arrow {
+    margin: auto;
+    position: absolute;
+    right: 16px;
+    top: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    fill: #979797
+}
+
+#dokobit-identity .arrow-down {
+    float: right;
+    width: 0;
+    height: 0;
+    margin-right: 20px;
+    border-left: 5px solid rgba(0,0,0,0);
+    border-right: 5px solid rgba(0,0,0,0);
+    border-top: 5px solid #979797
+}
+
+#dokobit-identity #isign-applet {
+    font-family: Roboto,sans-serif
+}
+
+#dokobit-identity #isign-applet .text-muted {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #616161
+}
+
+#dokobit-identity #isign-applet .input-holder__alert--error {
+    background: #f03928
+}
+
+#dokobit-identity #isign-applet .residency-radio {
+    position: relative;
+    max-width: 100%;
+    padding: 0;
+    margin: 24px 0 0;
+    border-top: 1px solid rgba(0,0,0,.12)
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity #isign-applet .residency-radio {
+        display:table;
+        width: 100%
+    }
+}
+
+#dokobit-identity #isign-applet .residency-radio--selected {
+    margin: -24px 0 0;
+    border-top: rgba(0,0,0,0)
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity #isign-applet .residency-radio--selected {
+        margin:0
+    }
+}
+
+#dokobit-identity #isign-applet .residency-radio__item {
+    display: block;
+    padding: 0 0 0 24px;
+    margin: 0;
+    height: 50px;
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    position: relative;
+    z-index: 1;
+    background: #fff
+}
+
+#dokobit-identity #isign-applet .residency-radio__item:hover {
+    background: #f5f5f5
+}
+
+#dokobit-identity #isign-applet .residency-radio__item .residency-radio__container {
+    border-top: 1px solid rgba(0,0,0,.12)
+}
+
+#dokobit-identity #isign-applet .residency-radio__item:first-of-type .residency-radio__container {
+    border-top: 0
+}
+
+#dokobit-identity #isign-applet .residency-radio__item:last-of-type {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px
+}
+
+#dokobit-identity #isign-applet .residency-radio__item__input {
+    display: none
+}
+
+#dokobit-identity #isign-applet .residency-radio__item__flag {
+    margin: 0 12px 0 0
+}
+
+@media screen and (min-width: 0\0) and (min-resolution:0.001dpcm) {
+    #dokobit-identity #isign-applet .residency-radio__item__flag,#dokobit-identity #isign-applet .residency-radio__item__label {
+        display:table-cell;
+        position: relative;
+        top: 20px
+    }
+
+    #dokobit-identity #isign-applet .residency-radio__item__label {
+        left: 15px
+    }
+}
+
+#dokobit-identity #isign-applet .residency-radio__item:hover {
+    -webkit-transition: 0;
+    transition: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: rgba(0,0,0,.12)
+}
+
+#dokobit-identity #isign-applet .residency-radio__item:hover .identity-arrow {
+    border-bottom-color: #ff8b00;
+    border-right-color: #ff8b00
+}
+
+#dokobit-identity #isign-applet .residency-radio__item--selected {
+    background: #fff
+}
+
+#dokobit-identity #isign-applet .residency-radio__item--selected .residency-radio__container {
+    border-top: 0
+}
+
+#dokobit-identity #isign-applet .residency-radio__container {
+    color: rgba(0,0,0,.87);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+#dokobit-identity #isign-applet .residency-radio--selected {
+    min-height: 50px;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+#dokobit-identity #isign-applet #isign-applet-content {
+    margin-bottom: 16px;
+    color: rgba(0,0,0,.87);
+    font-weight: 400;
+    padding: 0 0 0 24px;
+    text-align: left
+}
+
+#dokobit-identity #isign-applet #isign-applet-content .identity-form__alert {
+    margin: 0 24px 24px 0
+}
+
+#dokobit-identity #isign-applet .sc-type-selection+#isign-applet-content,#dokobit-identity #isign-applet .sc-type-selection+#isign-authentication+#isign-applet-content {
+    padding: 20px 0 0 24px;
+    border-top: 1px solid rgba(0,0,0,.12)
+}
+
+#dokobit-identity #isign-applet .list-extra-spaced__item {
+    padding-bottom: 0
+}
+
+#dokobit-identity .d-methods-list__method--content {
+    font-family: Roboto,sans-serif
+}
+
+#dokobit-identity .d-methods-list__method--content .list-extra-spaced {
+    padding-left: 0;
+    list-style: none;
+    margin: 0
+}
+
+#dokobit-identity .d-methods-list__method--content .text-muted {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #616161
+}
+
+#dokobit-identity .d-methods-list__method--content .input-holder__alert--error {
+    background: #f03928
+}
+
+#dokobit-identity .d-methods-list__method--content .method-options {
+    position: relative;
+    max-width: 100%;
+    padding: 0;
+    margin: 24px 0 0;
+    border-top: 1px solid rgba(0,0,0,.12);
+    list-style: none
+}
+
+#dokobit-identity .d-methods-list__method--content .method-options.selected {
+    margin: -24px 0 0;
+    border-top: rgba(0,0,0,0)
+}
+
+#dokobit-identity .d-methods-list__method--content .method-options .method-option {
+    display: block;
+    padding: 0 0 0 24px;
+    margin: 0;
+    height: 50px;
+    border: 0;
+    border-radius: 0;
+    position: relative;
+    z-index: 1;
+    background: #fff
+}
+
+#dokobit-identity .d-methods-list__method--content .method-options .method-option:hover {
+    background: #f5f5f5
+}
+
+#dokobit-identity .d-methods-list__method--content .method-options .method-option__container {
+    border-top: 1px solid rgba(0,0,0,.12);
+    cursor: pointer;
+    height: 100%;
+    color: rgba(0,0,0,.87);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+#dokobit-identity .d-methods-list__method--content .method-options .method-option:first-of-type .method-option__container {
+    border-top: 0
+}
+
+#dokobit-identity .d-methods-list__method--content .method-options .method-option:last-of-type {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px
+}
+
+#dokobit-identity .d-methods-list__method--content .method-options .method-option__label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: .3px;
+    color: #1d1d1d
+}
+
+#dokobit-identity .d-methods-list__method--content .method-options .method-option__icon {
+    margin: 0 12px 0 0
+}
+
+#dokobit-identity .d-methods-list__method--content .method-options .method-option:hover {
+    -webkit-transition: 0;
+    transition: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: rgba(0,0,0,.12)
+}
+
+#dokobit-identity .d-methods-list__method--content .method-options .method-option:hover .identity-arrow {
+    border-bottom-color: #ff8b00;
+    border-right-color: #ff8b00
+}
+
+#dokobit-identity .d-methods-list__method--content .method-options .method-option.selected {
+    background: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    border-radius: 0
+}
+
+#dokobit-identity .d-methods-list__method--content .method-options .method-option.selected .method-option__container {
+    border-top: 0
+}
+
+#dokobit-identity .d-methods-list__method--content .method-options.selected {
+    min-height: 50px;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+#dokobit-identity .d-methods-list__method--content #isign-applet-content {
+    margin-bottom: 16px;
+    color: rgba(0,0,0,.87);
+    font-weight: 400;
+    padding: 0 0 0 24px;
+    text-align: left
+}
+
+#dokobit-identity .d-methods-list__method--content #isign-applet-content .identity-form__alert {
+    margin: 0 24px 24px 0
+}
+
+#dokobit-identity .d-methods-list__method--content .sc-type-selection+#isign-applet-content,#dokobit-identity .d-methods-list__method--content .sc-type-selection+#isign-authentication+#isign-applet-content {
+    padding: 20px 0 0 24px;
+    border-top: 1px solid rgba(0,0,0,.12)
+}
+
+#dokobit-identity .d-methods-list__method--content .list-extra-spaced__item {
+    padding-bottom: 0
+}
+
+#dokobit-identity #bankid-se-verification-block.verification-timer-container {
+    padding: 24px 0
+}
+
+#dokobit-identity #bankid-se-verification-block.verification-timer-container .d-control-code-description {
+    margin: 0 auto 12px
+}
+
+#dokobit-identity #bankid-se-verification-block.verification-timer-container .button-container {
+    padding: 8px 24px 0
+}
+
+#dokobit-identity .spinner-container {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto
+}
+
+#dokobit-identity #dokobit-spinner {
+    margin-bottom: 19.5px;
+    border: 4px solid rgba(255,139,0,.26);
+    border-left-color: #ff8b00;
+    animation: loader-spin 1.2s linear infinite;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    box-sizing: content-box
+}
+
+#dokobit-identity .spinner-container.success {
+    border: 4px solid #17c13c;
+    border-radius: 100%;
+    width: 52px;
+    height: 52px
+}
+
+#dokobit-identity .spinner-container.success #dokobit-spinner {
+    animation: none;
+    border: 0;
+    display: none
+}
+
+#dokobit-identity .spinner-container.success .d-control-code__time {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%
+}
+
+#dokobit-identity .spinner-container.success .d-control-code__time:after {
+    animation-duration: .4s;
+    animation-timing-function: ease;
+    animation-name: checkmark;
+    transform: scaleX(-1) rotate(135deg);
+    opacity: 1;
+    height: 20px;
+    width: 10px;
+    transform-origin: left top;
+    border-right: 4px solid #17c13c;
+    border-top: 4px solid #17c13c;
+    content: "";
+    left: 13px;
+    top: 26px;
+    position: absolute
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes loader-spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes checkmark {
+    0% {
+        height: 0;
+        width: 0;
+        opacity: 1
+    }
+
+    20% {
+        height: 0;
+        width: 9.75px;
+        opacity: 1
+    }
+
+    40% {
+        height: 19.5px;
+        width: 9.75px;
+        opacity: 1
+    }
+
+    to {
+        height: 19.5px;
+        width: 9.75px;
+        opacity: 1
+    }
+}
+
+#dokobit-identity .error-container {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh
+}
+
+#dokobit-identity .error-container h3 {
+    font-weight: 400;
+    margin: 0 0 25px;
+    font-size: 30px;
+    color: #222;
+    opacity: .9;
+    font-family: Roboto,sans-serif
+}
+
+#dokobit-identity .error-container p {
+    font-size: 14px;
+    line-height: 1.71;
+    opacity: .9;
+    color: #222;
+    font-family: Roboto,sans-serif;
+    padding: 0;
+    margin: 0
+}
+
+#dokobit-identity .d-methods-list__method:before {
+    display: none!important
+}
+
+#dokobit-identity .d-methods-list__method__icon {
+    display: inline-block!important
+}
+
+.signing-wrapper.user-verification #Dokobit-identity-container #dokobit-identity .dokobit-main form .d-form-group input:focus {
+    border-color: #1387ff;
+    box-shadow: 0 0 0 1px #1387ff
+}
+
+.signing-wrapper.user-verification #Dokobit-identity-container #dokobit-identity .dokobit-main form .d-form-group input:focus~label {
+    color: #1387ff
+}
+
+.signing-wrapper.user-verification #Dokobit-identity-container #dokobit-identity .dokobit-main form .d-form-group .d-input-group.focus {
+    border-color: #1387ff;
+    -webkit-box-shadow: 0 0 0 1px #1387ff;
+    box-shadow: 0 0 0 1px #1387ff
+}
+
+.auto-form-wrapper #dokobit #dokobit-identity .dokobit-main form .d-form-group .selected-document,.auto-form-wrapper #dokobit #dokobit-identity .dokobit-main form .d-form-group input {
+    border: 1px solid #d5dcec
+}
+
+.auto-form-wrapper #dokobit #dokobit-identity .dokobit-main form .d-form-group .selected-document,.auto-form-wrapper #dokobit #dokobit-identity .dokobit-main form .d-form-group input:focus {
+    box-shadow: none!important
+}
+
+.auto-form-wrapper #dokobit #dokobit-identity .dokobit-main form .d-form-group input:focus~label {
+    font-weight: 400;
+    color: #000
+}
+
+.auto-form-wrapper #dokobit #dokobit-identity .dokobit-main form .d-form-group .d-input-group {
+    border: 1px solid #d5dcec!important
+}
+
+.auto-form-wrapper #dokobit #dokobit-identity .dokobit-main form .d-form-group .d-input-group.focus {
+    box-shadow: none!important
+}
+
+#dokobit-identity .powered-by {
+    position: relative;
+    margin-top: 12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-end
+}
+
+#dokobit-identity .powered-by__badge {
+    width: 145px;
+    height: 26px;
+    position: relative;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    border-radius: 100px;
+    font-size: 10px;
+    color: #818181;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 145px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: none
+}
+
+#dokobit-identity .powered-by__badge:hover {
+    text-decoration: underline
+}
+
+#dokobit-identity .powered-by__badge img {
+    height: 14px;
+    width: 54px;
+    margin-left: 5px
+}
+
+#dokobit-identity .d-none {
+    display: none
+}
+
+#dokobit-identity .d-block {
+    display: block
+}
+
+#dokobit-identity .info-message__container {
+    position: relative;
+    overflow: hidden;
+    background: #f9f9f9;
+    border-radius: 3px
+}
+
+#dokobit-identity .info-message__container:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: #ff8b00;
+    content: ""
+}
+
+#dokobit-identity .info-message__container--error:after {
+    background: #e32926
+}
+
+#dokobit-identity .info-message__container--warning:after {
+    background: #ff8b00
+}
+
+#dokobit-identity .info-message__icon----warning path {
+    fill: #ff8b00
+}
+
+#dokobit-identity .info-message__text a:hover {
+    color: #4d4d4d;
+    text-decoration: underline;
+    transition: color .2s
+}
+
+#dokobit-identity .info-message__hiddenContainer {
+    position: fixed;
+    top: -99999px;
+    left: -99999px;
+    z-index: -1000;
+    opacity: 0;
+    user-select: none
+}
+
+#dokobit-identity .rotate-none {
+    transform: rotate(0deg)
+}
+
+#dokobit-identity .rotate-up {
+    transform: rotate(90deg)
+}
+
+#dokobit-identity .offline-message {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 32px
+}
+
+#dokobit-identity .info-message {
+    width: auto;
+    position: relative;
+    overflow: hidden;
+    background: #f9f9f9;
+    border-radius: 3px
+}
+
+#dokobit-identity .info-message:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: #ff8b00;
+    content: ""
+}
+
+#dokobit-identity .info-message--error:after {
+    background: #e32926
+}
+
+#dokobit-identity .info-message--warning:after {
+    background: #ff8b00
+}
+
+#dokobit-identity .info-message__title {
+    margin: 0;
+    padding: 0;
+    color: #1a1a1a;
+    font-weight: 500;
+    font-family: Roboto,"sans-serif";
+    font-size: 15px;
+    line-height: 22px
+}
+
+#dokobit-identity .info-message__text {
+    margin: 0;
+    padding: 0;
+    color: #4d4d4d;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    font-family: Roboto,"sans-serif";
+    letter-spacing: .25px;
+    word-break: break-word
+}
+
+#dokobit-identity .info-message__text a {
+    color: #4d4d4d;
+    text-decoration: underline;
+    transition: color .2s
+}
+
+#dokobit-identity .info-message__text a:hover {
+    color: #ff8b00
+}
+
+#dokobit-identity .info-message__icon {
+    width: 20px;
+    height: 20px
+}
+
+#dokobit-identity .info-message__icon--error path {
+    fill: #e32926
+}
+
+#dokobit-identity .info-message__icon--warning path {
+    fill: #ff8b00
+}
+
+#dokobit-identity .chip {
+    position: relative;
+    height: auto;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    background: #fff3e0;
+    border-radius: 16px;
+    letter-spacing: 0
+}
+
+#dokobit-identity .chip svg {
+    margin-right: 8px
+}
+
+#dokobit-identity .flex {
+    display: flex
+}
+
+#dokobit-identity .flex.inline {
+    display: inline-flex
+}
+
+#dokobit-identity .flex.row {
+    flex-direction: row
+}
+
+#dokobit-identity .flex.column {
+    flex-direction: column
+}
+
+#dokobit-identity .flex.align-start {
+    align-items: flex-start
+}
+
+#dokobit-identity .flex.align-center {
+    align-items: center
+}
+
+#dokobit-identity .flex.align-end {
+    align-items: flex-end
+}
+
+#dokobit-identity .full-width {
+    width: 100%
+}
+
+#dokobit-identity .relative {
+    position: relative
+}
+
+#dokobit-identity .absolute {
+    position: absolute
+}
+
+#dokobit-identity .mb-0 {
+    margin-bottom: 0
+}
+
+#dokobit-identity .mb-4 {
+    margin-bottom: 4px
+}
+
+#dokobit-identity .mb-6 {
+    margin-bottom: 6px
+}
+
+#dokobit-identity .mb-8 {
+    margin-bottom: 8px
+}
+
+#dokobit-identity .mb-12 {
+    margin-bottom: 12px
+}
+
+#dokobit-identity .mb-16 {
+    margin-bottom: 16px
+}
+
+#dokobit-identity .mb-18 {
+    margin-bottom: 18px
+}
+
+#dokobit-identity .mt-0 {
+    margin-top: 0
+}
+
+#dokobit-identity .mt-4 {
+    margin-top: 4px
+}
+
+#dokobit-identity .mt-6 {
+    margin-top: 6px
+}
+
+#dokobit-identity .mt-8 {
+    margin-top: 8px
+}
+
+#dokobit-identity .mt-12 {
+    margin-top: 12px
+}
+
+#dokobit-identity .mt-16 {
+    margin-top: 16px
+}
+
+#dokobit-identity .mt-18 {
+    margin-top: 18px
+}
+
+#dokobit-identity .ml-0 {
+    margin-left: 0
+}
+
+#dokobit-identity .ml-4 {
+    margin-left: 4px
+}
+
+#dokobit-identity .ml-6 {
+    margin-left: 6px
+}
+
+#dokobit-identity .ml-8 {
+    margin-left: 8px
+}
+
+#dokobit-identity .ml-12 {
+    margin-left: 12px
+}
+
+#dokobit-identity .ml-16 {
+    margin-left: 16px
+}
+
+#dokobit-identity .ml-18 {
+    margin-left: 18px
+}
+
+#dokobit-identity .mr-0 {
+    margin-right: 0
+}
+
+#dokobit-identity .mr-4 {
+    margin-right: 4px
+}
+
+#dokobit-identity .mr-6 {
+    margin-right: 6px
+}
+
+#dokobit-identity .mr-8 {
+    margin-right: 8px
+}
+
+#dokobit-identity .mr-12 {
+    margin-right: 12px
+}
+
+#dokobit-identity .mr-16 {
+    margin-right: 16px
+}
+
+#dokobit-identity .mr-18 {
+    margin-right: 18px
+}
+
+#dokobit-identity .pb-0 {
+    padding-bottom: 0
+}
+
+#dokobit-identity .pb-4 {
+    padding-bottom: 4px
+}
+
+#dokobit-identity .pb-6 {
+    padding-bottom: 6px
+}
+
+#dokobit-identity .pb-8 {
+    padding-bottom: 8px
+}
+
+#dokobit-identity .pb-12 {
+    padding-bottom: 12px
+}
+
+#dokobit-identity .pb-16 {
+    padding-bottom: 16px
+}
+
+#dokobit-identity .pb-18 {
+    padding-bottom: 18px
+}
+
+#dokobit-identity .pt-0 {
+    padding-top: 0
+}
+
+#dokobit-identity .pt-4 {
+    padding-top: 4px
+}
+
+#dokobit-identity .pt-6 {
+    padding-top: 6px
+}
+
+#dokobit-identity .pt-8 {
+    padding-top: 8px
+}
+
+#dokobit-identity .pt-12 {
+    padding-top: 12px
+}
+
+#dokobit-identity .pt-16 {
+    padding-top: 16px
+}
+
+#dokobit-identity .pt-18 {
+    padding-top: 18px
+}
+
+#dokobit-identity .pl-0 {
+    padding-left: 0
+}
+
+#dokobit-identity .pl-4 {
+    padding-left: 4px
+}
+
+#dokobit-identity .pl-6 {
+    padding-left: 6px
+}
+
+#dokobit-identity .pl-8 {
+    padding-left: 8px
+}
+
+#dokobit-identity .pl-12 {
+    padding-left: 12px
+}
+
+#dokobit-identity .pl-16 {
+    padding-left: 16px
+}
+
+#dokobit-identity .pl-18 {
+    padding-left: 18px
+}
+
+#dokobit-identity .pr-0 {
+    padding-right: 0
+}
+
+#dokobit-identity .pr-4 {
+    padding-right: 4px
+}
+
+#dokobit-identity .pr-6 {
+    padding-right: 6px
+}
+
+#dokobit-identity .pr-8 {
+    padding-right: 8px
+}
+
+#dokobit-identity .pr-12 {
+    padding-right: 12px
+}
+
+#dokobit-identity .pr-16 {
+    padding-right: 16px
+}
+
+#dokobit-identity .pr-18 {
+    padding-right: 18px
+}
+
+#dokobit-identity .button-link-tag {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400
+}
