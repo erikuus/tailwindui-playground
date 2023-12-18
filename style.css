@@ -1580,11 +1580,6 @@ body {
   margin: 0.5rem;
 }
 
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
-
 .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -1605,6 +1600,11 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .mx-6 {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -1615,9 +1615,9 @@ body {
   margin-right: 0.5rem;
 }
 
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .-mx-8 {
@@ -1630,9 +1630,9 @@ body {
   margin-right: -1rem;
 }
 
-.my-12 {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 .ml-4 {
@@ -1771,6 +1771,14 @@ body {
   margin-right: -0.75rem;
 }
 
+.-mt-6 {
+  margin-top: -1.5rem;
+}
+
+.mr-4 {
+  margin-right: 1rem;
+}
+
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -1785,14 +1793,6 @@ body {
 
 .mb-0 {
   margin-bottom: 0px;
-}
-
-.-mt-6 {
-  margin-top: -1.5rem;
-}
-
-.mr-4 {
-  margin-right: 1rem;
 }
 
 .-mt-3 {
@@ -2200,6 +2200,12 @@ body {
   margin-bottom: calc(3rem * var(--tw-space-y-reverse));
 }
 
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2435,6 +2441,11 @@ body {
 .bg-green-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(233 247 238 / var(--tw-bg-opacity));
+}
+
+.bg-yellow-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 219 171 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-75 {
@@ -2817,6 +2828,11 @@ body {
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(244 67 54 / var(--tw-text-opacity));
+}
+
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(108 118 131 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -3647,16 +3663,16 @@ body {
     padding-left: 5rem;
   }
 
-  .xl\:pt-4 {
-    padding-top: 1rem;
-  }
-
   .xl\:pt-10 {
     padding-top: 2.5rem;
   }
 
   .xl\:pb-14 {
     padding-bottom: 3.5rem;
+  }
+
+  .xl\:pt-4 {
+    padding-top: 1rem;
   }
 }
 
