@@ -9,7 +9,7 @@
 <body>
 
   <!-- https://gist.github.com/sevalenciaca/de3ce331ff168b3b71176e715f4f83f2 -->
-  <div class="hidden md:block mt-2 lg:mt-0 lg:mb-2 w-full overflow-x-hidden">
+  <div class="hidden lg:block mt-2 lg:mt-0 lg:mb-2 w-full overflow-x-hidden">
     <div
       class="relative flex gap-x-2 opacity-75 hover:opacity-100 lg:mx-2"
       x-data="{
@@ -68,11 +68,6 @@
           // Find the index of the current item
           const currentIndex = list.findIndex(item => item.key === currentKey);
 
-          // Check if the current item exists in the list
-          if (currentIndex === -1) {
-              return null; // or some other appropriate response
-          }
-
           // Calculate the new start index
           let newIndex = currentIndex - 3;
           if (newIndex < 0) {
@@ -85,24 +80,32 @@
 
           return rotatedList.slice(sliceIndex, sliceIndex + 7);
         },
+        next() {
+          const newSlide = this.activeSlide + 3;
+          this.activeSlide = newSlide > this.slides.length ? newSlide % this.slides.length : newSlide;
+        },
+        prev() {
+          const newSlide = this.activeSlide - 3;
+          this.activeSlide = newSlide < 0 ? newSlide + this.slides.length : newSlide;
+        }
     }">
       <!-- Slaidid -->
       <template x-for="slide in surroundingSlides()" :key="slide.key">
         <div class="flex-initial">
-          <img class="rounded" :src="slide.src" />
+          <img class="h-24 lg:h-24 xl:h-36 2xl:h-48 object-cover rounded" :src="slide.src" />
         </div>
       </template>
       <!-- Eelmine/Järgmine -->
       <div class="absolute inset-0 flex">
         <div class="flex w-1/2 items-center justify-start">
-          <button class="z-50 ml-2 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 sm:ml-6" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
+          <button class="z-50 ml-2 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 sm:ml-6" x-on:click="prev()">
             <svg class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path>
             </svg>
           </button>
         </div>
         <div class="flex w-1/2 items-center justify-end">
-          <button class="z-50 mr-2 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 sm:mr-6" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+          <button class="z-50 mr-2 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 sm:mr-6" x-on:click="next()">
             <svg class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
             </svg>
