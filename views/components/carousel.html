@@ -9,76 +9,88 @@
 <body>
 
   <!-- https://gist.github.com/sevalenciaca/de3ce331ff168b3b71176e715f4f83f2 -->
-  <div class="flex items-center justify-center w-96">
+  <div class="hidden md:block mt-2 lg:mt-0 lg:mb-2 w-full overflow-x-hidden">
     <div
-      class="relative h-36 w-full sm:h-48"
-      x-data="{activeSlide: 1, slides: [
-        {
-          'key': 1,
-          'href': '#1',
-          'src': '../../images/db/pitserid.png',
-        },
-        {
-          'key': 2,
-          'href': '#2',
-          'src': '../../images/db/vapid.png',
-        },
-        {
-          'key': 3,
-          'href': '#3',
-          'src': '../../images/db/projektid.png',
-        },
-        {
-          'key': 4,
-          'href': '#',
-          'src': '../../images/db/pärgamendid.png',
-        },
-        {
-          'key': 5,
-          'href': '#',
-          'src': '../../images/db/kinnistud.png',
-        },
-        {
-          'key': 6,
-          'href': '#',
-          'src': '../../images/db/mõisad.png',
-        },
-        {
-          'key': 7,
-          'href': '#',
-          'src': '../../images/db/aadresslehed.png',
-        },
-        {
-          'key': 8,
-          'href': '#',
-          'src': '../../images/db/adramaad.png',
-        },
-        {
-          'key': 9,
-          'href': '#',
-          'src': '../../images/db/talud.png',
-        },
-        {
-          'key': 10,
-          'href': '#',
-          'src': '../../images/db/trükised.png',
-        },
-        {
-          'key': 11,
-          'href': '#',
-          'src': '../../images/db/album.png',
-        },
-        {
-          'key': 12,
-          'href': '#',
-          'src': '../../images/db/tuletõrje.png',
-        }
-      ]}"
-    >
-      <!-- Slaidid -->
-      <template x-for="slide in slides" :key="slide.key">
+      class="relative flex gap-x-2 opacity-75 hover:opacity-100 lg:mx-2"
+      x-data="{
+        activeSlide: 1,
+        slides: [
+          {
+            'key': 1,
+            'href': '#1',
+            'src': '../../images/db/pitserid.png',
+          },
+          {
+            'key': 2,
+            'href': '#2',
+            'src': '../../images/db/vapid.png',
+          },
+          {
+            'key': 3,
+            'href': '#3',
+            'src': '../../images/db/projektid.png',
+          },
+          {
+            'key': 4,
+            'href': '#',
+            'src': '../../images/db/projektid2.png',
+          },
+          {
+            'key': 5,
+            'href': '#',
+            'src': '../../images/db/kinnistud.png',
+          },
+          {
+            'key': 6,
+            'href': '#',
+            'src': '../../images/db/mõisad.png',
+          },
+          {
+            'key': 7,
+            'href': '#',
+            'src': '../../images/db/aadresslehed.png',
+          },
+          {
+            'key': 8,
+            'href': '#',
+            'src': '../../images/db/adramaad.png',
+          },
+          {
+            'key': 9,
+            'href': '#',
+            'src': '../../images/db/talud.png',
+          }
+        ],
+        surroundingSlides() {
+          const list = this.slides;
+          const currentKey = this.activeSlide;
 
-        <img x-show="activeSlide === slide.key" class="h-36 w-full rounded object-cover sm:h-48" :src="slide.src" />
+          // Find the index of the current item
+          const currentIndex = list.findIndex(item => item.key === currentKey);
+
+          // Check if the current item exists in the list
+          if (currentIndex === -1) {
+              return null; // or some other appropriate response
+          }
+
+          // Calculate the new start index
+          let newIndex = currentIndex - 3;
+          if (newIndex < 0) {
+              newIndex += list.length;
+          }
+
+          // Rotate and slice the array
+          let rotatedList = [...list.slice(newIndex), ...list.slice(0, newIndex)];
+          let sliceIndex = rotatedList.findIndex(item => item.key === currentKey) - 3;
+
+          return rotatedList.slice(sliceIndex, sliceIndex + 7);
+        },
+    }">
+      <!-- Slaidid -->
+      <template x-for="slide in surroundingSlides()" :key="slide.key">
+        <div class="flex-initial">
+          <img class="rounded" :src="slide.src" />
+        </div>
       </template>
       <!-- Eelmine/Järgmine -->
       <div class="absolute inset-0 flex">
@@ -96,21 +108,9 @@
             </svg>
           </button>
         </div>
-        <a target="_blank" :href="slides.find(slide => slide.key === activeSlide).href">
-          <span class="absolute inset-0" aria-hidden="true"></span>
-        </a>
       </div>
     </div>
   </div>
-
-
-<!--
-let pageNumbers = [];
-for (let page_number = page - limit; page_number <= page + limit; page_number++) {
-    if (page_number > 0 && page_number <= page_count) {
-        pageNumbers.push(page_number);
-    }
-} -->
 
 </body>
 </html>
