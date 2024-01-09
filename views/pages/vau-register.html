@@ -44,6 +44,36 @@
           </div>
         </div>
       </header>
+      <!-- Mobiilse menüü konteiner -->
+      <div x-show="open" class="lg:hidden" role="dialog" aria-modal="true">
+        <!-- Tumedam taust, mis katab mobiilse menüü avamisel sellest väljapoole jääva ala -->
+        <div class="fixed inset-0 bg-gray-600 bg-opacity-75 z-40"></div>
+        <!-- Mobiilne menüü -->
+        <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white sm:max-w-sm">
+          <!-- Mobiilse menüü päis -->
+          <div class="flex h-12 pl-4 pr-2 flex-wrap content-center items-center justify-between">
+            <div><!-- Mobiilse menüü RA logo -->
+              <img class="h-7 opacity-50 inline sm:hidden" src="../../images/ra_logo.svg" alt="Rahvusarhiiv" />
+            </div>
+            <!-- Mobiilse menüü sulgemise nupp -->
+            <button @click="open = false; document.body.classList.remove('overflow-y-hidden')" :class="open ? 'block' : 'hidden'" type="button" class="sm:mr-2 text-gray-900">
+              <span class="sr-only">Sulge menüü</span>
+              <svg class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <!-- Mobiilse menüü lingid -->
+          <nav class="mt-6 sm:mt-0 mb-12 px-3 space-y-1 text-gray-700 text-base font-semibold">
+            <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Tellimused</a>
+            <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Arhiivipäringud</a>
+            <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Veebipood</a>
+            <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Lingimärkmik</a>
+            <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Tagasiside</a>
+            <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">KKK</a>
+          </nav>
+        </div>
+      </div>      
       <!-- Teine värviline ala -->
       <div class="bg-theme-vau flex grow flex-col rounded">
         <!-- Lai alumine päis -->
@@ -82,35 +112,6 @@
               </div>
             </div>
           </div>
-          <!-- Mobiilse menüü konteiner -->
-          <div x-show="open" class="lg:hidden" role="dialog" aria-modal="true">
-            <!-- Tumedam taust, mis katab mobiilse menüü avamisel sellest väljapoole jääva ala -->
-            <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
-            <!-- Mobiilne menüü -->
-            <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white sm:max-w-sm">
-              <!-- Mobiilse menüü päis -->
-              <div class="flex h-12 flex-wrap content-center items-center justify-between pl-4 pr-2">
-                <div>
-                  <!-- Mobiilse menüü RA logo -->
-                  <img class="inline h-7 opacity-50 sm:hidden" src="../../images/ra_logo.svg" alt="Rahvusarhiiv" />
-                </div>
-                <!-- Mobiilse menüü sulgemise nupp -->
-                <button @click="open = false; document.body.classList.remove('overflow-y-hidden')" :class="open ? 'block' : 'hidden'" type="button" class="text-gray-900 sm:mr-2">
-                  <span class="sr-only">Sulge menüü</span>
-                  <svg class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-              <!-- Mobiilse menüü lingid -->
-              <nav class="space-y-1 px-3 text-base font-medium text-gray-700">
-                <a href="#" class="block rounded px-8 py-3 hover:bg-gray-100">Menuipsum</a>
-                <a href="#" class="block rounded px-8 py-3 hover:bg-gray-100">Menuipsum</a>
-                <a href="#" class="block rounded px-8 py-3 hover:bg-gray-100">Menuipsum</a>
-                <a href="#" class="block rounded px-8 py-3 hover:bg-gray-100">Menuipsum</a>
-              </nav>
-            </div>
-          </div>
         </header>
         <!-- Navigatsiooniriba -->
         <nav class="-mt-6 flex">
@@ -128,8 +129,13 @@
                   </a>
                 </button>
               </li>
-              <li class="whitespace-nowrap overflow-hidden text-ellipsis">
-                <span class="px-3 py-2 text-sm font-bold text-gray-900"> Registreeru</span>
+              <li>
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+              </li>
+              <li class="whitespace-nowrap">
+                <span class="px-3 py-2 text-sm text-gray-900">Registreeru</span>
               </li>
             </ul>
           </div>
