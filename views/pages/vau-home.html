@@ -44,6 +44,75 @@
             </div>
           </div>
         </header>
+        <!-- Mobiilse menüü konteiner -->
+        <div x-show="open" class="lg:hidden" role="dialog" aria-modal="true">
+          <!-- Tumedam taust, mis katab mobiilse menüü avamisel sellest väljapoole jääva ala -->
+          <div class="realtive fixed inset-0 z-10 bg-gray-600 bg-opacity-75"></div>
+          <!-- Mobiilne menüü -->
+          <div class="realtive fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white sm:max-w-sm">
+            <!-- Mobiilse menüü päis -->
+            <div class="flex h-12 pl-4 pr-2 flex-wrap content-center items-center justify-between">
+              <!-- Mobiilse menüü RA logo -->
+              <div>
+                <img class="h-7 opacity-50 inline sm:hidden" src="../../images/ra_logo.svg" alt="Rahvusarhiiv" />
+              </div>
+              <!-- Mobiilse menüü sulgemise nupp -->
+              <button @click="open = false; document.body.classList.remove('overflow-y-hidden')" :class="open ? 'block' : 'hidden'" type="button" class="sm:mr-2 text-gray-900">
+                <span class="sr-only">Sulge menüü</span>
+                <svg class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <!-- Mobiilse menüü lingid -->
+            <nav class="mt-6 sm:mt-0 mb-12 px-3 space-y-1 text-gray-700 text-base font-semibold">
+              <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Tellimused</a>
+              <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Arhiivipäringud</a>
+              <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Veebipood</a>
+              <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Lingimärkmik</a>
+              <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Tagasiside</a>
+              <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">KKK</a>
+            </nav>
+            <nav class="mx-6">
+              <section class="pb-6">
+                <h3 class="mb-2 border-b border-gray-500 px-4 py-2.5 text-sm font-bold uppercase text-gray-700">Uurimissaalid</h3>
+                <ul class="space-y-1">
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Tartu uurimissaal</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Tallinna uurimissaal</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Rakvere uurimissaal</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Valga uurimissaal</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Filmiarhiivi uurimissaal</a></li>
+                </ul>
+              </section>
+              <section class="py-6">
+                <h3 class="mb-2 border-b border-gray-500 px-4 py-2.5 text-sm font-bold uppercase text-gray-700">Teenused</h3>
+                <ul class="space-y-1">
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Arhiivip&auml;ringu esitamine</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">S&auml;ilikute tellimine</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Koopiate tellimine</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Kauglaenutus</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Arhiivi raamatukogud</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Ekskursioonid ja arhiivitunnid</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Filmide digiteerimine</a></li>
+                </ul>
+              </section>
+              <section class="py-6">
+                <h3 class="mb-2 border-b border-gray-500 px-4 py-2.5 text-sm font-bold uppercase text-gray-700">Arhiiviallikate kasutamine</h3>
+                <ul class="space-y-1">
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Suguv&otilde;sauurimine</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50"> Kohaajalugu</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Kinnistud ja hooned</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Kooliajalugu</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">&Otilde;ppet&ouml;&ouml;</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Arhiiviallikatele viitamine</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Lugemine ja t&otilde;lkimine</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Paleograafia</a></li>
+                  <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Uurijate andmebaasid</a></li>
+                </ul>
+              </section>
+            </nav>
+          </div>
+        </div>
         <!-- Teine värviline ala -->
         <div class="bg-theme-vau flex grow flex-col rounded">
           <!-- Lai alumine päis -->
@@ -80,75 +149,6 @@
                     Sisene
                   </button>
                 </div>
-              </div>
-            </div>
-            <!-- Mobiilse menüü konteiner -->
-            <div x-show="open" class="lg:hidden" role="dialog" aria-modal="true">
-              <!-- Tumedam taust, mis katab mobiilse menüü avamisel sellest väljapoole jääva ala -->
-              <div class="realtive fixed inset-0 z-10 bg-gray-600 bg-opacity-75"></div>
-              <!-- Mobiilne menüü -->
-              <div class="realtive fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white sm:max-w-sm">
-                <!-- Mobiilse menüü päis -->
-                <div class="flex h-12 pl-4 pr-2 flex-wrap content-center items-center justify-between">
-                  <!-- Mobiilse menüü RA logo -->
-                  <div>
-                    <img class="h-7 opacity-50 inline sm:hidden" src="../../images/ra_logo.svg" alt="Rahvusarhiiv" />
-                  </div>
-                  <!-- Mobiilse menüü sulgemise nupp -->
-                  <button @click="open = false; document.body.classList.remove('overflow-y-hidden')" :class="open ? 'block' : 'hidden'" type="button" class="sm:mr-2 text-gray-900">
-                    <span class="sr-only">Sulge menüü</span>
-                    <svg class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-                <!-- Mobiilse menüü lingid -->
-                <nav class="mt-6 sm:mt-0 mb-12 px-3 space-y-1 text-gray-700 text-base font-semibold">
-                  <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Tellimused</a>
-                  <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Arhiivipäringud</a>
-                  <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Veebipood</a>
-                  <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Lingimärkmik</a>
-                  <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Tagasiside</a>
-                  <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">KKK</a>
-                </nav>
-                <nav class="mx-6">
-                  <section class="pb-6">
-                    <h3 class="mb-2 border-b border-gray-500 px-4 py-2.5 text-sm font-bold uppercase text-gray-700">Uurimissaalid</h3>
-                    <ul class="space-y-1">
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Tartu uurimissaal</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Tallinna uurimissaal</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Rakvere uurimissaal</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Valga uurimissaal</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Filmiarhiivi uurimissaal</a></li>
-                    </ul>
-                  </section>
-                  <section class="py-6">
-                    <h3 class="mb-2 border-b border-gray-500 px-4 py-2.5 text-sm font-bold uppercase text-gray-700">Teenused</h3>
-                    <ul class="space-y-1">
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Arhiivip&auml;ringu esitamine</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">S&auml;ilikute tellimine</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Koopiate tellimine</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Kauglaenutus</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Arhiivi raamatukogud</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Ekskursioonid ja arhiivitunnid</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Filmide digiteerimine</a></li>
-                    </ul>
-                  </section>
-                  <section class="py-6">
-                    <h3 class="mb-2 border-b border-gray-500 px-4 py-2.5 text-sm font-bold uppercase text-gray-700">Arhiiviallikate kasutamine</h3>
-                    <ul class="space-y-1">
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Suguv&otilde;sauurimine</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50"> Kohaajalugu</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Kinnistud ja hooned</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Kooliajalugu</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">&Otilde;ppet&ouml;&ouml;</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Arhiiviallikatele viitamine</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Lugemine ja t&otilde;lkimine</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Paleograafia</a></li>
-                      <li><a href="#" class="block rounded px-4 py-2 hover:bg-green-50">Uurijate andmebaasid</a></li>
-                    </ul>
-                  </section>
-                </nav>
               </div>
             </div>
           </header>
