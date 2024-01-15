@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine.js Test</title>
+    <!-- Include Alpine.js from a CDN with the defer attribute -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
+</head>
+<body>
+    <!-- Simple Alpine.js test component -->
+    <div x-data="{ message: 'Alpine is working!' }">
+        <span x-text="message"></span>
+    </div>
+
+    <!-- Your custom Alpine.js directives and initialization should go here -->
+    <script>
+        // Wait for the DOM to be ready
+        document.addEventListener('DOMContentLoaded', () => {
+            window.Alpine.directive('intersect', (el, { expression }, { evaluateLater, effect }) => {
+                let evaluate =evaluateLater(expression)
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            evaluate(value => value)
+                        }
+                    })
+                }, {
+                    root: null,
+                    threshold: 0.5
+                })
+
+                observer.observe(el)
+
+                effect(() => {
+                    window.Alpine.cleanup(() => {
+                        observer.disconnect()
+                    })
+                })
+            })
+        });
+
+        // Initialize Alpine.js
+        window.Alpine && window.Alpine.start();
+    </script>
+</body>
+</html>
