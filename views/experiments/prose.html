@@ -4,7 +4,7 @@
     <title></title>
     <link rel="stylesheet" href="../../style.css?v=1" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.12.3/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
   </head>
   <body class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 pt-6 pb-10 xl:pt-10 xl:pb-14">
@@ -53,7 +53,7 @@
       </div>
       <!-- Parempoolne kohanduv ala -->
       <div x-data="{ open: false }">
-        <div class="flex gap-x-0 sm:gap-x-6 xl:gap-x-12" x-data="{ activeSection : null }">
+        <div class="flex gap-x-0 sm:gap-x-6 xl:gap-x-12" x-data="{ activeSection : 'section1' }">
           <!-- Sisu -->
           <div class="flex-1">
             <!-- Üldine pealkiri -->
@@ -63,7 +63,7 @@
             <!-- Sektsioonid -->
             <div class="prose max-w-none prose-h2:font-body prose-h2:text-lg prose-img:rounded prose-img:shadow md:prose-img:max-w-md lg:prose-img:max-w-lg xl:prose-img:max-w-xl 2xl:prose-img:max-w-2xl prose-td:align-top">
               <h2 id="article1" class="mr-8 sm:mr-0">Siit leiate näpunäiteid, kuidas ise arhiivis oma sugupuud uurida</h2>
-              <section id="section1" x-ref="section1" x-intersect="activeSection = 'section1'">
+              <section x-intersect.margin.-200px="activeSection = 'section1'">
                 <p>
                   <strong>Vaata videot:
                     <a href="https://youtu.be/PSFEIi-UBQs" target="_blank">Kuidas alustada sugupuu uurimisega?</a>
@@ -97,7 +97,7 @@
               </section>
 
               <h2 id="article2" class="mr-8 sm:mr-0">Millest alustada?</h2>
-              <section id="section2" x-ref="section2" x-intersect="activeSection = 'section2'">
+              <section x-intersect.margin.-200px="activeSection = 'section2'">
                 <p>
                   Siit leiate kõige põhilisemad näpunäited selle kohta, kuidas suguvõsauurimist alustada. Internetis leidub mitmesuguseid juhiseid iseseisva perekonnaloo uurimise kohta, nagu näiteks
                   <a href="http://www.isik.ee/algus.html" target="_blank">"Millest alustada suguvõsauurimist"</a> Eesti Isikuloo Keskuse kodulehel. Ka võiksite tutvuda erialase kirjandusega (A. Must. Perekonnaloo uurija käsiraamat. Tallinn 2015; A. Must. Eestlaste perekonnaloo allikad. Tartu 2000; V. Vitkin. Suguvõsa uurimine: praktiline käsiraamat. Tallinn 2001 jm).
@@ -110,7 +110,7 @@
               </section>
 
               <h2 id="article3" class="mr-8 sm:mr-0">Millises arhiivis leidub andmeid suguvõsa kohta?</h2>
-              <section id="section3" x-ref="section3" x-intersect="activeSection = 'section3'">
+              <section x-intersect.margin.-200px="activeSection = 'section3'">
                 <p>
                   Suur osa eestlaste perekonnaloo enam kasutatavaid allikaid on juba digiteeritud kujul kättesaadavad internetis
                   <strong>
@@ -152,7 +152,7 @@
               </section>
 
               <h2 id="article4">Kas saab tasu eest tellida oma sugupuu?</h2>
-              <section id="section4" x-ref="section4" x-intersect="activeSection = 'section4'">
+              <section x-intersect.margin.-200px="activeSection = 'section4'">
                 <p>
                   Kuna sugupuu koostamine eeldab suuremahulist uurimistööd, siis pole rahvusarhiivil võimalik sellist teenust pakkuda.
                   <a href="http://genealoogia.ee/" target="_blank">Eesti Genealoogia Seltsi</a> andmetel pakub suguvõsauurimise teenust
@@ -166,7 +166,7 @@
               </section>
 
               <h2 id="article5">Perekonnanimede panek</h2>
-              <section id="section5" x-ref="section5" x-intersect="activeSection = 'section5'">
+              <section x-intersect.margin.-200px="activeSection = 'section5'">
                 <p>
                   Meil kõigil on o m a nimi. See on kui visiitkaart, mis saadab meid läbi elu. Nimi on oletatavasti sama vana kui keel, kuna kõnelise suhtlemise teke võimaldas hõlpsasti võtta kasutusele nimi kui keelelise koodi, et soodustada sotsiaalset läbikäimist. Kirjasõna ja asjaajamise tekkimise järel on nimi olnud vältimatu isikute identifitseerimise vahend. Tänapäeval peetakse üsna iseenesestmõistetavaks, et inimese nimi koosneb eesnimest (–nimedest) ja perekonnanimest. Ent see pole alati nii olnud. Kuidas on kujunenud eestlase nimi? Millist teavet leidub nimede kohta arhiiviallikates?
                 </p>
@@ -216,7 +216,7 @@
               </section>
 
               <h2 id="article6">Nimede eestistamine</h2>
-              <section id="section6" x-ref="section6" x-intersect="activeSection = 'section6'">
+              <section x-intersect.margin.-200px="activeSection = 'section6'">
                 <p>
                   Eesti vabariigi ajal tõusis päevakorda nimede eestistamise küsimus, kuna paljud 19. sajandi teisel veerandil antud nimed olid võõrapärased. Esimesel aastakümnel vormistati nimemuutusi üsna kasinalt. 1934. aastal aktualiseerus eesti nimede probleem seoses eestlastele perekonnanimede andmise 100. juubeliaastapäevaga. Soodsama pinnase lõi ka 1934. aasta märtsipööre, mille järel hakati valitsuses kõiki rahvuslikult tähtsaid küsimusi ka riiklikult tähtsatena käsitama. 13. juunil 1934 riigivanema kinnistuse saanud "Nimekorralduse seadus" vabastas võõrkeelsete ees- ja perekonnanimede muutmise järgnevaks kaheks aastaks igasugustest maksudest. Uuendusena loodi siseministeeriumis perekonnanimede kaitseregister, kuhu võisid oma nime lasta kanda need, kes olid oma nime eestistanud pärast 17. detsembrit 1919. Kaitseregistrisse kantud nime võis edaspidi anda vaid nimeomaniku sugulastele.
                 </p>
@@ -237,7 +237,7 @@
               </section>
 
               <h2 id="article7">Venemaale väljarändamine</h2>
-              <section id="section7" x-ref="section7" x-intersect="activeSection = 'section7'">
+              <section x-intersect.margin.-200px="activeSection = 'section7'">
                 <p>
                   Perekonnaloo uurimine muutub keerulisemaks selle haru juures, mille liikmed 19. sajandi teisel poolel või 20. sajandi alguses kirikuraamatutest ja vallaelanike nimekirjadest kaovad, ja kelle kohta perepärimus ütleb, et nad on impeeriumi teistesse kubermangudesse elama asunud. Millal, kuhu, kes täpselt ja mis põhjustel välja rännati, on küsimused, millele vastust otsitakse. Siinsete juurte vastu tunnevad sageli huvi ka Venemaale rännanute järeltulijad, kes on 20. sajandi teisel poolel Eestisse naasnud. Sellisel juhul tahetakse teada, kes need esivanemad siin olid, kust ja millal on välja rännatud.&nbsp;
                 </p>
@@ -397,7 +397,7 @@
               </section>
 
               <h2 id="article8">Vanausulised</h2>
-              <section id="section8" x-ref="section8" x-intersect="activeSection = 'section8'">
+              <section x-intersect.margin.-200px="activeSection = 'section8'">
                 <table>
                   <tbody>
                     <tr>
@@ -1777,36 +1777,5 @@
         </div>
       </div>
     </div>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        window.Alpine.directive('intersect', (el, { expression }, { evaluateLater, effect }) => {
-          let evaluate = evaluateLater(expression)
-          const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                evaluate(value => value)
-              }
-            })
-          }, {
-                root: null,
-                rootMargin: '25% 0px 25% 0px', // Focus on the middle 50% of the viewport
-                threshold: 1.0 // The entire section must be within the viewport
-              })
-
-          observer.observe(el)
-
-          effect(() => {
-            window.Alpine.cleanup(() => {
-              observer.disconnect()
-            })
-          })
-        });
-
-        // Initialize Alpine.js
-        window.Alpine && window.Alpine.start();
-      </script>
-
-
   </body>
 </html>
