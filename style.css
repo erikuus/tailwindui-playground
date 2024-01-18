@@ -1896,6 +1896,14 @@ select {
   margin-right: 2rem;
 }
 
+.-mt-10 {
+  margin-top: -2.5rem;
+}
+
+.-mt-2 {
+  margin-top: -0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -2869,6 +2877,14 @@ select {
   padding-right: 1.25rem;
 }
 
+.pr-2\.5 {
+  padding-right: 0.625rem;
+}
+
+.pl-7 {
+  padding-left: 1.75rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -3699,6 +3715,14 @@ body {
 
   .sm\:pl-12 {
     padding-left: 3rem;
+  }
+
+  .sm\:pb-10 {
+    padding-bottom: 2.5rem;
+  }
+
+  .sm\:pt-6 {
+    padding-top: 1.5rem;
   }
 
   .sm\:text-xl {

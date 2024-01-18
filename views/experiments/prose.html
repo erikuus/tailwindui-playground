@@ -6,6 +6,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
+    <style>
+      .prose h2::before {
+          content: "";
+          display: block;
+          height: 40px;   /* Give height of your choice */
+          margin-top: -40px;  /* Give negative margin of the same size as height */
+          visibility: hidden;
+      }
+    </style>
   </head>
   <body class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 pt-6 pb-10 xl:pt-10 xl:pb-14">
     <div class="flex">
@@ -53,7 +62,21 @@
       </div>
       <!-- Parempoolne kohanduv ala -->
       <div x-data="{ open: false }">
-        <div class="flex gap-x-0 sm:gap-x-6 xl:gap-x-12" x-data="{ activeSection : 'section1' }">
+        <!-- Mobiilse sisukorra avamise nupp ülal -->
+        <div class="sticky top-0 sm:hidden py-1 mb-4 bg-white -mx-2">
+          <div class="flex justify-between items-center py-2 px-3 rounded bg-gray-50 -mx-1">
+            <p class="text-sm font-semibold">
+              SISUKORD
+            </p>
+            <button @click="open = true; document.body.classList.add('overflow-y-hidden')">
+              <svg class="h-4 w-4 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Paigutus -->
+        <div class="flex gap-x-0 sm:gap-x-6 xl:gap-x-12" x-data="{ activeSection : null, clickInitiatedScroll: false }">
           <!-- Sisu -->
           <div class="flex-1">
             <!-- Üldine pealkiri -->
@@ -62,8 +85,8 @@
             </h2>
             <!-- Sektsioonid -->
             <div class="prose max-w-none prose-h2:font-body prose-h2:text-lg prose-img:rounded prose-img:shadow md:prose-img:max-w-md lg:prose-img:max-w-lg xl:prose-img:max-w-xl 2xl:prose-img:max-w-2xl prose-td:align-top">
-              <h2 id="article1" class="mr-8 sm:mr-0">Siit leiate näpunäiteid, kuidas ise arhiivis oma sugupuud uurida</h2>
-              <section x-intersect.margin.-200px="activeSection = 'section1'">
+              <h2 id="article1">Siit leiate näpunäiteid, kuidas ise arhiivis oma sugupuud uurida</h2>
+              <section x-intersect.margin.-200px="if (!clickInitiatedScroll) activeSection = 'section1'">
                 <p>
                   <strong>Vaata videot:
                     <a href="https://youtu.be/PSFEIi-UBQs" target="_blank">Kuidas alustada sugupuu uurimisega?</a>
@@ -96,8 +119,8 @@
                 </p>
               </section>
 
-              <h2 id="article2" class="mr-8 sm:mr-0">Millest alustada?</h2>
-              <section x-intersect.margin.-200px="activeSection = 'section2'">
+              <h2 id="article2">Millest alustada?</h2>
+              <section x-intersect.margin.-200px="if (!clickInitiatedScroll) activeSection = 'section2'">
                 <p>
                   Siit leiate kõige põhilisemad näpunäited selle kohta, kuidas suguvõsauurimist alustada. Internetis leidub mitmesuguseid juhiseid iseseisva perekonnaloo uurimise kohta, nagu näiteks
                   <a href="http://www.isik.ee/algus.html" target="_blank">"Millest alustada suguvõsauurimist"</a> Eesti Isikuloo Keskuse kodulehel. Ka võiksite tutvuda erialase kirjandusega (A. Must. Perekonnaloo uurija käsiraamat. Tallinn 2015; A. Must. Eestlaste perekonnaloo allikad. Tartu 2000; V. Vitkin. Suguvõsa uurimine: praktiline käsiraamat. Tallinn 2001 jm).
@@ -109,8 +132,8 @@
                 </p>
               </section>
 
-              <h2 id="article3" class="mr-8 sm:mr-0">Millises arhiivis leidub andmeid suguvõsa kohta?</h2>
-              <section x-intersect.margin.-200px="activeSection = 'section3'">
+              <h2 id="article3">Millises arhiivis leidub andmeid suguvõsa kohta?</h2>
+              <section x-intersect.margin.-200px="if (!clickInitiatedScroll) activeSection = 'section3'">
                 <p>
                   Suur osa eestlaste perekonnaloo enam kasutatavaid allikaid on juba digiteeritud kujul kättesaadavad internetis
                   <strong>
@@ -152,7 +175,7 @@
               </section>
 
               <h2 id="article4">Kas saab tasu eest tellida oma sugupuu?</h2>
-              <section x-intersect.margin.-200px="activeSection = 'section4'">
+              <section x-intersect.margin.-200px="if (!clickInitiatedScroll) activeSection = 'section4'">
                 <p>
                   Kuna sugupuu koostamine eeldab suuremahulist uurimistööd, siis pole rahvusarhiivil võimalik sellist teenust pakkuda.
                   <a href="http://genealoogia.ee/" target="_blank">Eesti Genealoogia Seltsi</a> andmetel pakub suguvõsauurimise teenust
@@ -166,7 +189,7 @@
               </section>
 
               <h2 id="article5">Perekonnanimede panek</h2>
-              <section x-intersect.margin.-200px="activeSection = 'section5'">
+              <section x-intersect.margin.-200px="if (!clickInitiatedScroll) activeSection = 'section5'">
                 <p>
                   Meil kõigil on o m a nimi. See on kui visiitkaart, mis saadab meid läbi elu. Nimi on oletatavasti sama vana kui keel, kuna kõnelise suhtlemise teke võimaldas hõlpsasti võtta kasutusele nimi kui keelelise koodi, et soodustada sotsiaalset läbikäimist. Kirjasõna ja asjaajamise tekkimise järel on nimi olnud vältimatu isikute identifitseerimise vahend. Tänapäeval peetakse üsna iseenesestmõistetavaks, et inimese nimi koosneb eesnimest (–nimedest) ja perekonnanimest. Ent see pole alati nii olnud. Kuidas on kujunenud eestlase nimi? Millist teavet leidub nimede kohta arhiiviallikates?
                 </p>
@@ -216,7 +239,7 @@
               </section>
 
               <h2 id="article6">Nimede eestistamine</h2>
-              <section x-intersect.margin.-200px="activeSection = 'section6'">
+              <section x-intersect.margin.-200px="if (!clickInitiatedScroll) activeSection = 'section6'">
                 <p>
                   Eesti vabariigi ajal tõusis päevakorda nimede eestistamise küsimus, kuna paljud 19. sajandi teisel veerandil antud nimed olid võõrapärased. Esimesel aastakümnel vormistati nimemuutusi üsna kasinalt. 1934. aastal aktualiseerus eesti nimede probleem seoses eestlastele perekonnanimede andmise 100. juubeliaastapäevaga. Soodsama pinnase lõi ka 1934. aasta märtsipööre, mille järel hakati valitsuses kõiki rahvuslikult tähtsaid küsimusi ka riiklikult tähtsatena käsitama. 13. juunil 1934 riigivanema kinnistuse saanud "Nimekorralduse seadus" vabastas võõrkeelsete ees- ja perekonnanimede muutmise järgnevaks kaheks aastaks igasugustest maksudest. Uuendusena loodi siseministeeriumis perekonnanimede kaitseregister, kuhu võisid oma nime lasta kanda need, kes olid oma nime eestistanud pärast 17. detsembrit 1919. Kaitseregistrisse kantud nime võis edaspidi anda vaid nimeomaniku sugulastele.
                 </p>
@@ -237,7 +260,7 @@
               </section>
 
               <h2 id="article7">Venemaale väljarändamine</h2>
-              <section x-intersect.margin.-200px="activeSection = 'section7'">
+              <section x-intersect.margin.-200px="if (!clickInitiatedScroll) activeSection = 'section7'">
                 <p>
                   Perekonnaloo uurimine muutub keerulisemaks selle haru juures, mille liikmed 19. sajandi teisel poolel või 20. sajandi alguses kirikuraamatutest ja vallaelanike nimekirjadest kaovad, ja kelle kohta perepärimus ütleb, et nad on impeeriumi teistesse kubermangudesse elama asunud. Millal, kuhu, kes täpselt ja mis põhjustel välja rännati, on küsimused, millele vastust otsitakse. Siinsete juurte vastu tunnevad sageli huvi ka Venemaale rännanute järeltulijad, kes on 20. sajandi teisel poolel Eestisse naasnud. Sellisel juhul tahetakse teada, kes need esivanemad siin olid, kust ja millal on välja rännatud.&nbsp;
                 </p>
@@ -397,7 +420,7 @@
               </section>
 
               <h2 id="article8">Vanausulised</h2>
-              <section x-intersect.margin.-200px="activeSection = 'section8'">
+              <section x-intersect.margin.-200px="if (!clickInitiatedScroll) activeSection = 'section8'">
                 <table>
                   <tbody>
                     <tr>
@@ -1682,42 +1705,42 @@
               </section>
             </div>
           </div>
-          <!-- Sisukorra konteiner -->
+          <!-- Desktop sisukorra konteiner -->
           <div class="hidden xl:flex flex-shrink-0 w-72 mt-20">
             <div class="sticky top-10 h-screen overflow-y-auto">
               <p class="ml-4 border-b border-gray-400 pb-3 mb-4 text-sm font-semibold">
                 SISUKORD
               </p>
               <nav class="flex flex-col text-sm">
-                <a href="#article1" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section1' }" @click="activeSection = 'section1'">
+                <a href="#article1" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section1' }" @click="activeSection = 'section1'; clickInitiatedScroll: true">
                   Siit leiate näpunäiteid, kuidas ise arhiivis oma sugupuud uurida
                 </a>
-                <a href="#article2" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section2' }" @click="activeSection = 'section2'">
+                <a href="#article2" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section2' }" @click="activeSection = 'section2'; clickInitiatedScroll: true">
                   Millest alustada?
                 </a>
-                <a href="#article3" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section3' }" @click="activeSection = 'section2'">
+                <a href="#article3" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section3' }" @click="activeSection = 'section3'; clickInitiatedScroll: true">
                   Millises arhiivis leidub andmeid suguvõsa kohta?
                 </a>
-                <a href="#article4" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section4' }" @click="activeSection = 'section4'">
+                <a href="#article4" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section4' }" @click="activeSection = 'section4'; clickInitiatedScroll: true">
                   Kas saab tasu eest tellida oma sugupuu?
                 </a>
-                <a href="#article5" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section5' }" @click="activeSection = 'section5'">
+                <a href="#article5" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section5' }" @click="activeSection = 'section5'; clickInitiatedScroll: true">
                   Perekonnanimede panek
                 </a>
-                <a href="#article6" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section6' }" @click="activeSection = 'section6'">
+                <a href="#article6" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section6' }" @click="activeSection = 'section6'; clickInitiatedScroll: true">
                   Nimede eestistamine
                 </a>
-                <a href="#article7" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section7' }" @click="activeSection = 'section7'">
-                  Venemaale väljarändamine<
+                <a href="#article7" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section7' }" @click="activeSection = 'section7'; clickInitiatedScroll: true">
+                  Venemaale väljarändamine
                 </a>
-                <a href="#article8" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section8' }" @click="activeSection = 'section8'">
+                <a href="#article8" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section8' }" @click="activeSection = 'section8'; clickInitiatedScroll: true">
                   Vanausulised
                 </a>
               </nav>
             </div>
           </div>
-          <!-- Mobiilse sisukorra avamise nupp -->
-          <div class="-ml-10 sm:-ml-0 sm:flex flex-shrink-0 xl:hidden w-8">
+          <!-- Mobiilse sisukorra avamise nupp vasakul -->
+          <div class="hidden sm:flex flex-shrink-0 xl:hidden w-8">
             <div class="sticky top-6 h-screen overflow-y-auto">
               <button class="rounded bg-gray-50 p-2" @click="open = true; document.body.classList.add('overflow-y-hidden')">
                 <svg class="h-4 w-4 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1747,28 +1770,28 @@
               </div>
               <!-- Mobiilse sisukorra lingid -->
               <nav class="flex flex-col text-sm">
-                <a href="#article1" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section1' }" @click="open = false; document.body.classList.remove('overflow-y-hidden'); activeSection = 'section1'">
+                <a href="#article1" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section1' }" @click="open = false; document.body.classList.remove('overflow-y-hidden'); activeSection = 'section1'; clickInitiatedScroll: true">
                   Siit leiate näpunäiteid, kuidas ise arhiivis oma sugupuud uurida
                 </a>
-                <a href="#article2" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section2' }" @click="open = false; document.body.classList.remove('overflow-y-hidden'); activeSection = 'section2'">
+                <a href="#article2" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section2' }" @click="open = false; document.body.classList.remove('overflow-y-hidden'); activeSection = 'section2'; clickInitiatedScroll: true">
                   Millest alustada?
                 </a>
-                <a href="#article3" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section3' }" @click="open = false; document.body.classList.remove('overflow-y-hidden'); activeSection = 'section2'">
+                <a href="#article3" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section3' }" @click="open = false; document.body.classList.remove('overflow-y-hidden'); activeSection = 'section3'">
                   Millises arhiivis leidub andmeid suguvõsa kohta?
                 </a>
-                <a href="#article4" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section4' }" @click="open = false; document.body.classList.remove('overflow-y-hidden'); activeSection = 'section4'">
+                <a href="#article4" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section4' }" @click="open = false; document.body.classList.remove('overflow-y-hidden'); activeSection = 'section4'; clickInitiatedScroll: true">
                   Kas saab tasu eest tellida oma sugupuu?
                 </a>
                 <a href="#article5" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section5' }" @click="open = false; document.body.classList.remove('overflow-y-hidden'); activeSection = 'section5'">
                   Perekonnanimede panek
                 </a>
-                <a href="#article6" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section6' }" @click="open = false; document.body.classList.remove('overflow-y-hidden'); activeSection = 'section6'">
+                <a href="#article6" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section6' }" @click="open = false; document.body.classList.remove('overflow-y-hidden'); activeSection = 'section6'; clickInitiatedScroll: true">
                   Nimede eestistamine
                 </a>
-                <a href="#article7" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section7' }" @click="open = false; document.body.classList.remove('overflow-y-hidden'); activeSection = 'section7'">
+                <a href="#article7" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section7' }" @click="open = false; document.body.classList.remove('overflow-y-hidden'); activeSection = 'section7'; clickInitiatedScroll: true">
                   Venemaale väljarändamine
                 </a>
-                <a href="#article8" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section8' }" @click="open = false; document.body.classList.remove('overflow-y-hidden'); activeSection = 'section8'">
+                <a href="#article8" class="border-l-2 border-gray-100 pl-4 py-1.5 hover:font-medium" :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section8' }" @click="open = false; document.body.classList.remove('overflow-y-hidden'); activeSection = 'section8'; clickInitiatedScroll: true">
                   Vanausulised
                 </a>
               </nav>
