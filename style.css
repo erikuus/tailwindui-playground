@@ -1904,6 +1904,10 @@ select {
   margin-top: -0.5rem;
 }
 
+.-mt-2\.5 {
+  margin-top: -0.625rem;
+}
+
 .block {
   display: block;
 }
@@ -2769,6 +2773,11 @@ select {
   padding-bottom: 1.75rem;
 }
 
+.py-3\.5 {
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+}
+
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -3575,6 +3584,14 @@ body {
     margin-right: 0px;
   }
 
+  .sm\:mb-4 {
+    margin-bottom: 1rem;
+  }
+
+  .sm\:ml-4 {
+    margin-left: 1rem;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -3705,6 +3722,11 @@ body {
     padding-right: 1.5rem;
   }
 
+  .sm\:py-7 {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+
   .sm\:pt-3 {
     padding-top: 0.75rem;
   }
@@ -3723,6 +3745,10 @@ body {
 
   .sm\:pt-6 {
     padding-top: 1.5rem;
+  }
+
+  .sm\:pb-3 {
+    padding-bottom: 0.75rem;
   }
 
   .sm\:text-xl {
@@ -3805,6 +3831,10 @@ body {
 
   .md\:pr-7 {
     padding-right: 1.75rem;
+  }
+
+  .md\:pr-4 {
+    padding-right: 1rem;
   }
 
   .md\:prose-img\:max-w-md :is(:where(img):not(:where([class~="not-prose"] *))) {
@@ -3930,6 +3960,10 @@ body {
 
   .lg\:pr-9 {
     padding-right: 2.25rem;
+  }
+
+  .lg\:pr-4 {
+    padding-right: 1rem;
   }
 
   .lg\:font-semibold {
