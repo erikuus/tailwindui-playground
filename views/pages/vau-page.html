@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../../style.css?v=2" />
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/foundation-icons@2.0.0/foundation-icons.min.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
       .prose h2::before {
@@ -254,10 +255,17 @@
                   <!-- Sisu -->
                   <div class="flex-1">
                     <!-- Üldine pealkiri -->
-                    <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-xl font-bold text-gray-700">Suguvõsauurimine</h2>
+                    <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-xl font-bold text-gray-700 w-full">Suguvõsauurimine</h2>
                     <!-- Sektsioonid -->
-                    <div class="prose prose-h2:font-body prose-h2:text-lg prose-img:rounded prose-img:shadow md:prose-img:max-w-md lg:prose-img:max-w-lg xl:prose-img:max-w-xl 2xl:prose-img:max-w-2xl prose-td:align-top max-w-none">
-                      <h2 id="article1">Siit leiate näpunäiteid, kuidas ise arhiivis oma sugupuud uurida</h2>
+                    <div class="prose prose-h2:font-body prose-h2:text-lg prose-img:rounded hover:prose-img:cursor-pointer md:prose-img:max-w-md lg:prose-img:max-w-lg xl:prose-img:max-w-xl 2xl:prose-img:max-w-2xl prose-td:align-top max-w-none">
+                      <h2 id="article1">
+                        <span class="flex gap-x-1.5 items-center">
+                          <span>Siit leiate näpunäiteid, kuidas ise arhiivis oma sugupuud uurida</span> 
+                          <a title="Muuda artiklit" class="flex w-8 h-8 flex-shrink-0 items-center justify-center rounded-full text-base text-gray-200 hover:text-gray-800 hover:bg-gray-50" href="#">
+                            <span class="fi-pencil"></span>
+                          </a>
+                        </span>
+                      </h2>
                       <section x-intersect.margin.-200px="if (!clickInitiatedScroll) activeSection = 'section1'">
                         <p>
                           <strong
@@ -278,8 +286,14 @@
                           <a href="http://www.ra.ee/dgs/explorer.php" target="_blank">Saaga</a>. Selleks tuleks end vaid kasutajaks <a href="https://www.ra.ee/vau/index.php/et/account/create" target="_blank">registreerida</a> (tasuta). Kõik Eesti avalikes arhiivides säilitatavad dokumendid ehk arhivaalid on kirjeldatud (nende pealkirjad ja arhiiviviited ehk leidandmed on näha) arhiivi infosüsteemis <a href="http://ais.ra.ee/" target="_blank">AIS</a>. Arhivaalidega, mis veel digikujul kättesaadavad ei ole, olete teretulnud tutvuma meie <a href="http://www.ra.ee/vau/index.php/et/page/article/index?menuId=11" target="_blank">uurimissaalidesse</a> või neist <a href="http://www.ra.ee/vau/index.php/et/page/article/index?menuId=10#article74" target="_blank">koopiaid tellima</a>.
                         </p>
                       </section>
-
-                      <h2 id="article2">Millest alustada?</h2>
+                      <h2 id="article2">
+                        <span class="flex gap-x-1.5 items-center">
+                          <span>Millest alustada?</span>
+                          <a title="Muuda artiklit" class="flex w-8 h-8 flex-shrink-0 items-center justify-center rounded-full text-base text-gray-200 hover:text-gray-800 hover:bg-gray-50" href="#">
+                            <span class="fi-pencil"></span>
+                          </a>
+                        </span>
+                      </h2>
                       <section x-intersect.margin.-200px="if (!clickInitiatedScroll) activeSection = 'section2'">
                         <p>
                           Siit leiate kõige põhilisemad näpunäited selle kohta, kuidas suguvõsauurimist alustada. Internetis leidub mitmesuguseid juhiseid iseseisva perekonnaloo uurimise kohta, nagu näiteks
