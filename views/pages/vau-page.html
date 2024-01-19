@@ -238,7 +238,7 @@
                 </nav>
               </div>
               <!-- Parempoolne kohanduv ala -->
-              <div x-data="{ open: false }">
+              <div class="flex-grow" x-data="{ open: false }">
                 <!-- Mobiilse sisukorra avamise nupp ülal -->
                 <div class="-mt-3 sticky top-0 mb-4 bg-white pt-1 sm:hidden">
                   <div class="-mx-1 flex items-center justify-between rounded bg-gray-50 p-3">
@@ -253,14 +253,23 @@
                 <!-- Artikkel ja parempoolne menüü -->
                 <div class="flex gap-x-0 sm:gap-x-6 xl:gap-x-12" x-data="{ activeSection : null, clickInitiatedScroll: false }">
                   <!-- Sisu -->
-                  <div class="flex-1">
+                  <div class="flex-grow">
                     <!-- Üldine pealkiri -->
-                    <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-xl font-bold text-gray-700 w-full">Suguvõsauurimine</h2>
+                    <a href="#" class="float-right flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-gray-200 hover:bg-gray-50 hover:text-gray-800">
+                      <span class="fi-pencil"></span>
+                    </a>
+                    <a href="#" class="float-right flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-gray-200 hover:bg-gray-50 hover:text-gray-800">
+                      <span class="fi-list"></span>
+                    </a>
+                    <a href="#" class="float-right flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-gray-200 hover:bg-gray-50 hover:text-gray-800">
+                      <span class="fi-plus"></span>
+                    </a>
+                    <h1 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-xl font-bold text-gray-700 w-full">Suguvõsauurimine</h1>
                     <!-- Sektsioonid -->
                     <div class="prose prose-h2:font-body prose-h2:text-lg prose-img:rounded hover:prose-img:cursor-pointer md:prose-img:max-w-md lg:prose-img:max-w-lg xl:prose-img:max-w-xl 2xl:prose-img:max-w-2xl prose-td:align-top max-w-none">
                       <h2 id="article1">
                         <span class="flex gap-x-1.5 items-center">
-                          <span>Siit leiate näpunäiteid, kuidas ise arhiivis oma sugupuud uurida</span> 
+                          <span>Siit leiate näpunäiteid, kuidas ise arhiivis oma sugupuud uurida</span>
                           <a title="Muuda artiklit" class="flex w-8 h-8 flex-shrink-0 items-center justify-center rounded-full text-base text-gray-200 hover:text-gray-800 hover:bg-gray-50" href="#">
                             <span class="fi-pencil"></span>
                           </a>
