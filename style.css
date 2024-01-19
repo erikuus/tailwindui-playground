@@ -3543,8 +3543,17 @@ body {
   background-color: rgb(240 243 246 / var(--tw-bg-opacity));
 }
 
+.prose-td\:p-1 :is(:where(td):not(:where([class~="not-prose"] *))) {
+  padding: 0.25rem;
+}
+
 .prose-td\:align-top :is(:where(td):not(:where([class~="not-prose"] *))) {
   vertical-align: top;
+}
+
+.prose-td\:text-xs :is(:where(td):not(:where([class~="not-prose"] *))) {
+  font-size: 0.6875rem;
+  line-height: 120%;
 }
 
 .prose-img\:m-0 :is(:where(img):not(:where([class~="not-prose"] *))) {
@@ -3842,6 +3851,11 @@ body {
 
   .sm\:ring-gray-900\/10 {
     --tw-ring-color: rgb(36 42 48 / 0.1);
+  }
+
+  .sm\:prose-td\:text-sm :is(:where(td):not(:where([class~="not-prose"] *))) {
+    font-size: 0.8125rem;
+    line-height: 120%;
   }
 
   .sm\:prose-img\:max-w-sm :is(:where(img):not(:where([class~="not-prose"] *))) {
