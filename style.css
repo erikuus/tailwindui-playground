@@ -3563,6 +3563,14 @@ body {
   max-width: 36rem;
 }
 
+.prose-img\:max-w-sm :is(:where(img):not(:where([class~="not-prose"] *))) {
+  max-width: 24rem;
+}
+
+.prose-img\:max-w-xs :is(:where(img):not(:where([class~="not-prose"] *))) {
+  max-width: 20rem;
+}
+
 .prose-img\:cursor-pointer :is(:where(img):not(:where([class~="not-prose"] *))) {
   cursor: pointer;
 }
@@ -3835,6 +3843,10 @@ body {
   .sm\:ring-gray-900\/10 {
     --tw-ring-color: rgb(36 42 48 / 0.1);
   }
+
+  .sm\:prose-img\:max-w-sm :is(:where(img):not(:where([class~="not-prose"] *))) {
+    max-width: 24rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -3891,6 +3903,10 @@ body {
 
   .md\:pr-4 {
     padding-right: 1rem;
+  }
+
+  .md\:prose-img\:w-full :is(:where(img):not(:where([class~="not-prose"] *))) {
+    width: 100%;
   }
 
   .md\:prose-img\:max-w-md :is(:where(img):not(:where([class~="not-prose"] *))) {
