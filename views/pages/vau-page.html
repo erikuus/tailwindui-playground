@@ -59,7 +59,7 @@
         <!-- Tumedam taust, mis katab mobiilse menüü avamisel sellest väljapoole jääva ala -->
         <div class="realtive fixed inset-0 z-10 bg-gray-600 bg-opacity-75"></div>
         <!-- Mobiilne menüü -->
-        <div class="realtive fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white sm:max-w-sm">
+        <div @click.outside="open = false" class="realtive fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white sm:max-w-sm">
           <!-- Mobiilse menüü päis -->
           <div class="flex h-12 pl-4 pr-2 flex-wrap content-center items-center justify-between">
             <!-- Mobiilse menüü RA logo -->
