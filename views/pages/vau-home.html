@@ -47,9 +47,9 @@
         <!-- Mobiilse menüü konteiner -->
         <div x-show="open" class="lg:hidden" role="dialog" aria-modal="true">
           <!-- Tumedam taust, mis katab mobiilse menüü avamisel sellest väljapoole jääva ala -->
-          <div class="realtive fixed inset-0 z-10 bg-gray-600 bg-opacity-75"></div>
+          <div class="realtive fixed inset-0 z-40 bg-gray-600 bg-opacity-75"></div>
           <!-- Mobiilne menüü -->
-          <div @click.outside="open = false" class="realtive fixed inset-y-0 right-0 z-60 w-full overflow-y-auto bg-white sm:max-w-sm">
+          <div @click.outside="open = false" class="realtive fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white sm:max-w-sm">
             <!-- Mobiilse menüü päis -->
             <div class="flex h-12 pl-4 pr-2 flex-wrap content-center items-center justify-between">
               <!-- Mobiilse menüü RA logo -->
@@ -267,14 +267,14 @@
                           <!-- Eelmine/Järgmine -->
                           <div class="absolute inset-0 flex">
                             <div class="flex w-1/2 items-center justify-start">
-                              <button class="z-50 ml-2 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 sm:ml-6" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
+                              <button class="z-30 ml-2 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 sm:ml-6" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
                                 <svg class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path>
                                 </svg>
                               </button>
                             </div>
                             <div class="flex w-1/2 items-center justify-end">
-                              <button class="z-50 mr-2 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 sm:mr-6" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+                              <button class="z-30 mr-2 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-center text-white hover:bg-gray-700 sm:mr-6" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
                                 <svg class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
                                 </svg>

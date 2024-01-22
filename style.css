@@ -1551,6 +1551,10 @@ select {
   z-index: 40;
 }
 
+.z-30 {
+  z-index: 30;
+}
+
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
@@ -3315,14 +3319,14 @@ body {
     margin-right: 9rem;
   }
 
-  .sm\:mx-20 {
-    margin-left: 5rem;
-    margin-right: 5rem;
-  }
-
   .sm\:mx-16 {
     margin-left: 4rem;
     margin-right: 4rem;
+  }
+
+  .sm\:mx-20 {
+    margin-left: 5rem;
+    margin-right: 5rem;
   }
 
   .sm\:ml-6 {
@@ -3725,14 +3729,14 @@ body {
     margin-right: 9rem;
   }
 
-  .xl\:mx-80 {
-    margin-left: 20rem;
-    margin-right: 20rem;
-  }
-
   .xl\:mx-72 {
     margin-left: 18rem;
     margin-right: 18rem;
+  }
+
+  .xl\:mx-80 {
+    margin-left: 20rem;
+    margin-right: 20rem;
   }
 
   .xl\:-ml-80 {
@@ -3855,14 +3859,14 @@ body {
     grid-row: span 2 / span 2;
   }
 
-  .\32xl\:mx-96 {
-    margin-left: 24rem;
-    margin-right: 24rem;
-  }
-
   .\32xl\:mx-80 {
     margin-left: 20rem;
     margin-right: 20rem;
+  }
+
+  .\32xl\:mx-96 {
+    margin-left: 24rem;
+    margin-right: 24rem;
   }
 
   .\32xl\:mt-20 {
