@@ -8,6 +8,9 @@ body {
 }
 
 @layer base {
+  [x-cloak] {
+      display: none;
+  }  
   @font-face {
     font-family: 'Raleway';
     font-weight: 400;
@@ -67,3 +70,4 @@ body {
     @apply rounded !important;
   }
 }
+

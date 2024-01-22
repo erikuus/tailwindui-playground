@@ -136,7 +136,7 @@
           </div>
         </div>
         <!-- Mobiilne menüü, mis avaneb, kui klõpsata mobiilse menüü avamise nupul -->
-        <div x-show="open" class="lg:hidden" role="dialog" aria-modal="true">
+        <div x-show="open" x-cloak class="lg:hidden" role="dialog" aria-modal="true">
           <!-- Tumedam taust, mis katab mobiilse menüü avamisel sellest väljapoole jääva sisu -->
           <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
           <!-- Mobiilne menüü, mis sisaldab nii põhimenüüd kui ka tekstide menüüd -->
@@ -249,7 +249,7 @@
                     <img class="inline-block h-12 w-12 rounded-full border-white" src="../../images/erik.jpg" alt="EU" />
                   </button>
                 </div>
-                <div x-show="open" @click.outside="open = false" class="absolute -right-6 z-10 mt-2 w-80 rounded border border-gray-200 bg-white shadow-lg sm:right-0 sm:w-96">
+                <div x-show="open" x-cloak @click.outside="open = false" class="absolute -right-6 z-10 mt-2 w-80 rounded border border-gray-200 bg-white shadow-lg sm:right-0 sm:w-96">
                   <div class="divide-y divide-gray-50">
                     <div class="relative flex flex-col items-center px-2 pb-6 pt-12 sm:px-6">
                       <!-- Image -->
@@ -305,7 +305,7 @@
                     <path d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM11.5 15.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z" />
                   </svg>
                 </button>
-                <div x-show="open" @click.outside="open = false" class="absolute right-0 z-50 mt-0.5 w-32 origin-top-right rounded-sm bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="more-menu-button" tabindex="-1">
+                <div x-show="open" x-cloak @click.outside="open = false" class="absolute right-0 z-50 mt-0.5 w-32 origin-top-right rounded-sm bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="more-menu-button" tabindex="-1">
                   <a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900 hover:bg-gray-50" role="menuitem" tabindex="-1" id="more-menu-item-1">Tagasiside</a>
                   <a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900 hover:bg-gray-50" role="menuitem" tabindex="-1" id="more-menu-item-1">KKK</a>
                 </div>

@@ -575,6 +575,10 @@ select {
   outline: 1px auto -webkit-focus-ring-color;
 }
 
+[x-cloak] {
+  display: none;
+}
+
 @font-face {
   font-family: 'Raleway';
 
@@ -3923,3 +3927,4 @@ body {
     max-width: 42rem;
   }
 }
+
