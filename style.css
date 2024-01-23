@@ -4020,6 +4020,10 @@ body {
     width: 18rem;
   }
 
+  .xl\:w-32 {
+    width: 8rem;
+  }
+
   .xl\:flex-initial {
     flex: 0 1 auto;
   }
