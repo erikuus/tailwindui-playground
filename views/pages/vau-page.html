@@ -232,7 +232,7 @@
               <div class="flex-grow" x-data="{ open: false }">
                 <!-- Mobiilse sisukorra avamise nupp ülal -->
                 <div class="-mt-3 sticky top-0 mb-4 bg-white pt-1 sm:hidden">
-                  <button @click="open = true; document.body.classList.add('overflow-y-hidden')" class="w-full flex items-center justify-between rounded bg-gray-50 p-3">
+                  <button @click="open = true; document.body.classList.add('overflow-y-hidden')" class="w-full flex items-center justify-between rounded bg-gray-50 p-2.5">
                     <span class="text-sm font-semibold">SISUKORD</span>
                     <svg class="h-4 w-4 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                       <path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
@@ -1741,14 +1741,11 @@
       </footer>
     </div>
     <script>
-      function scrollToElement(id, offset = 50) {
+      function scrollToElement(id, offset = 40) {
           const element = document.getElementById(id);
           if (element) {
               const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
               const offsetPosition = elementPosition - offset;
-
-              console.log(`Element Position: ${elementPosition}, Offset Position: ${offsetPosition}`);
-
               window.scrollTo({
                   top: offsetPosition,
                   behavior: 'smooth'
