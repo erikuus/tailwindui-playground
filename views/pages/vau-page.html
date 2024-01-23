@@ -7,15 +7,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/foundation-icons@2.0.0/foundation-icons.min.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-      .prose h2::before {
-          content: "";
-          display: block;
-          height: 50px;
-          margin-top: -50px;
-          visibility: hidden;
-      }
-    </style>
   </head>
   <body class="flex min-h-screen flex-col bg-gray-50">
     <!-- Esimene valge ala -->
@@ -1545,7 +1536,7 @@
                     </div>
                   </div>
                   <!-- Desktop sisukorra konteiner -->
-                  <div class="mt-20 hidden w-72 flex-shrink-0 xl:flex">
+                  <div class="mt-20 hidden flex-shrink-0 lg:flex lg:w-60 xl:w-72">
                     <div class="sticky top-10 h-screen overflow-y-auto">
                       <p class="mb-4 ml-4 border-b border-gray-400 pb-3 text-sm font-semibold">SISUKORD</p>
                       <nav class="flex flex-col text-sm">
@@ -1585,7 +1576,7 @@
                     </div>
                   </div>
                   <!-- Mobiilse sisukorra avamise nupp vasakul -->
-                  <div class="hidden w-8 flex-shrink-0 sm:flex xl:hidden">
+                  <div class="hidden w-8 flex-shrink-0 sm:flex lg:hidden">
                     <div class="sticky top-6 h-screen overflow-y-auto">
                       <button class="rounded bg-gray-50 p-2" @click="open = true; document.body.classList.add('overflow-y-hidden')">
                         <svg class="h-4 w-4 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1750,12 +1741,20 @@
       </footer>
     </div>
     <script>
-        function scrollToElement(id) {
-            const element = document.getElementById(id);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
+      function scrollToElement(id, offset = 50) {
+          const element = document.getElementById(id);
+          if (element) {
+              const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+              const offsetPosition = elementPosition - offset;
+
+              console.log(`Element Position: ${elementPosition}, Offset Position: ${offsetPosition}`);
+
+              window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+              });
+          }
+      }
     </script>
   </body>
 </html>
