@@ -2,44 +2,12 @@
 <html>
   <head>
     <title></title>
-    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../style.css?v=1" />
     <link rel="stylesheet" href="../../identity.css" />
     <link rel="stylesheet" href="../../dokobit.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/foundation-icons@2.0.0/foundation-icons.min.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-      ul.yiiPager
-      {
-        display:flex;
-        column-gap: 0.5rem;
-      }
-      ul.yiiPager li
-      {
-        display: flex;
-      }
-      ul.yiiPager a:link,
-      ul.yiiPager a:visited,
-      ul.yiiPager .page a
-      {
-        color: #3E4651;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-      }
-      ul.yiiPager li:not(.hidden) a:hover
-      {
-        background: #E9F7EE;
-      }
-      ul.yiiPager .selected a
-      {
-        background: #E9F7EE;
-        font-weight: bold;
-      }
-      ul.yiiPager .hidden a
-      {
-        color: #E8EBF0;
-      }
-    </style>
   </head>
   <body class="flex min-h-screen flex-col bg-gray-50">
     <!-- Esimene valge ala -->
@@ -164,7 +132,7 @@
                 </svg>
               </li>
               <li class="whitespace-nowrap">
-                <span class="px-3 py-2 text-sm text-gray-900">Sisene</span>
+                <span class="px-3 py-2 text-sm text-gray-900">Teated</span>
               </li>
             </ul>
           </div>
@@ -176,21 +144,21 @@
             <!-- Sisu -->
             <div class="sm:mx-16 lg:mx-44 xl:mx-72 2xl:mx-80">
               <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:mt-6 sm:text-xl xl:mt-0">Teated</h2>
-              <div class="flex flex-col gap-y-10">
-                <div class="flex flex-grow items-center justify-between">
-                  <div class="flex items-center gap-x-3">
-                    <label class="block text-base text-gray-800" for="filter">Filtreeri:</label>
-                    <select name="filter" id="filter" class="block w-40 rounded border border-gray-200 px-4 py-2 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-green-300 sm:text-base sm:leading-6">
-                      <option value="">- Kõik aastad -</option>
-                      <option value="2010">2010</option>
-                      <option value="2011">2011</option>
-                      <option value="2012">2012</option>
-                    </select>
-                  </div>
-                  <span class="text-sm text-gray-800">
-                    1 - 20 / 174
-                  </span>
+              <div class="flex flex-grow items-center justify-between mb-10">
+                <div class="flex items-center gap-x-3">
+                  <label class="block text-base text-gray-800" for="filter">Filtreeri:</label>
+                  <select name="filter" id="filter" class="block w-40 rounded border border-gray-200 px-4 py-2 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-green-300 sm:text-base sm:leading-6">
+                    <option value="">- Kõik aastad -</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                  </select>
                 </div>
+                <span class="text-sm text-gray-800">
+                  1 - 20 / 174
+                </span>
+              </div>
+              <div class="flex flex-col gap-y-10">
                 <div class="relative group">
                   <h2 id="article1" class="mb-2 text-lg font-bold text-gray-700">
                     <span class="flex gap-x-1.5 items-center">
@@ -249,38 +217,38 @@
                   </p>
                 </div>
               </div>
-              <div class="flex mt-14">
-                <ul id="yw1" class="yiiPager">
-                  <li class="first hidden"><a href="/vautest/index.php/et/news/article/index">
+              <div class="mt-14">
+                <nav class="flex gap-x-1.5 text-gray-700 justify-center">
+                  <a class="py-1.5 px-2 2xl:py-2 2xl:px-3 text-gray-100" href="/vautest/index.php/et/news/article/index">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                       <polygon points="17.59,18 19,16.59 14.42,12 19,7.41 17.59,6 11.59,12"></polygon><polygon points="11,18 12.41,16.59 7.83,12 12.41,7.41 11,6 5,12"></polygon>
                     </svg>
-                  </a></li>
-                  <li class="previous hidden"><a href="/vautest/index.php/et/news/article/index">
+                  </a>
+                  <a class="py-1.5 px-2 2xl:py-2 2xl:px-3 text-gray-100" href="/vautest/index.php/et/news/article/index">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                       <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path>
                     </svg>
-                  </a></li>
-                  <li class="page"><a href="/vautest/index.php/et/news/article/index">1</a></li>
-                  <li class="page"><a href="/vautest/index.php/et/news/article/index?page=2">2</a></li>
-                  <li class="page"><a href="/vautest/index.php/et/news/article/index?page=3">3</a></li>
-                  <li class="page"><a href="/vautest/index.php/et/news/article/index?page=4">4</a></li>
-                  <li class="page"><a href="/vautest/index.php/et/news/article/index?page=5">5</a></li>
-                  <li class="page"><a href="/vautest/index.php/et/news/article/index?page=6">6</a></li>
-                  <li class="page"><a href="/vautest/index.php/et/news/article/index?page=7">7</a></li>
-                  <li class="page"><a href="/vautest/index.php/et/news/article/index?page=8">8</a></li>
-                  <li class="page selected"><a href="/vautest/index.php/et/news/article/index?page=9">9</a></li>
-                  <li class="next"><a href="/vautest/index.php/et/news/article/index?page=2">
+                  </a>
+                  <a class="hidden md:block py-1.5 px-3 2xl:py-2 2xl:px-4 rounded hover:bg-green-50" href="/vautest/index.php/et/news/article/index">1</a>
+                  <a class="hidden md:block py-1.5 px-3 2xl:py-2 2xl:px-4 rounded hover:bg-green-50" href="/vautest/index.php/et/news/article/index?page=2">2</a>
+                  <a class="hidden md:block py-1.5 px-3 2xl:py-2 2xl:px-4 rounded hover:bg-green-50" href="/vautest/index.php/et/news/article/index?page=3">3</a>
+                  <a class="hidden md:block py-1.5 px-3 2xl:py-2 2xl:px-4 rounded hover:bg-green-50" href="/vautest/index.php/et/news/article/index?page=4">4</a>
+                  <a class="hidden md:block py-1.5 px-3 2xl:py-2 2xl:px-4 rounded hover:bg-green-50" href="/vautest/index.php/et/news/article/index?page=5">5</a>
+                  <a class="hidden md:block py-1.5 px-3 2xl:py-2 2xl:px-4 rounded hover:bg-green-50" href="/vautest/index.php/et/news/article/index?page=6">6</a>
+                  <a class="hidden md:block py-1.5 px-3 2xl:py-2 2xl:px-4 rounded hover:bg-green-50" href="/vautest/index.php/et/news/article/index?page=7">7</a>
+                  <a class="hidden md:block py-1.5 px-3 2xl:py-2 2xl:px-4 rounded hover:bg-green-50" href="/vautest/index.php/et/news/article/index?page=8">8</a>
+                  <a class="hidden md:block py-1.5 px-3 selected  2xl:py-2 2xl:px-4 rounded bg-green-50 font-bold" href="/vautest/index.php/et/news/article/index?page=9">9</a>
+                  <a class="py-1.5 px-2 2xl:py-2 2xl:px-2 rounded hover:bg-green-50" href="/vautest/index.php/et/news/article/index?page=2">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                       <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
                     </svg>
-                  </a></li>
-                  <li class="last"><a href="/vautest/index.php/et/news/article/index?page=9">
+                  </a>
+                  <a class="py-1.5 px-2 2xl:py-2 2xl:px-3 rounded hover:bg-green-50" href="/vautest/index.php/et/news/article/index?page=9">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                       <polygon points="6.41,6 5,7.41 9.58,12 5,16.59 6.41,18 12.41,12"></polygon><polygon points="13,6 11.59,7.41 16.17,12 11.59,16.59 13,18 19,12"></polygon>
                     </svg>
-                  </a></li>
-                </ul>
+                  </a>
+                </nav>
               </div>
             </div>
           </div>
