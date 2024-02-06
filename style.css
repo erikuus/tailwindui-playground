@@ -2551,6 +2551,31 @@ select {
   background-color: rgb(248 219 171 / var(--tw-bg-opacity));
 }
 
+.bg-yellow-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 237 213 / var(--tw-bg-opacity));
+}
+
+.bg-green-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(196 236 209 / var(--tw-bg-opacity));
+}
+
+.bg-blue-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 227 247 / var(--tw-bg-opacity));
+}
+
+.bg-red-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 217 215 / var(--tw-bg-opacity));
+}
+
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 235 240 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
 }
@@ -2579,6 +2604,10 @@ select {
 
 .to-\[\#9089FC\] {
   --tw-gradient-to: #9089FC;
+}
+
+.fill-current {
+  fill: currentColor;
 }
 
 .object-cover {
@@ -2959,6 +2988,11 @@ select {
   color: rgb(244 67 54 / var(--tw-text-opacity));
 }
 
+.text-green-100 {
+  --tw-text-opacity: 1;
+  color: rgb(196 236 209 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -3318,6 +3352,36 @@ body {
   background-color: rgb(196 236 209 / var(--tw-bg-opacity));
 }
 
+.group:hover .group-hover\:bg-yellow-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 219 171 / var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-blue-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(154 200 239 / var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-red-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 180 175 / var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-green-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(165 215 182 / var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(151 159 171 / var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(211 216 223 / var(--tw-bg-opacity));
+}
+
 .group:hover .group-hover\:opacity-70 {
   opacity: 0.7;
 }
@@ -3590,6 +3654,11 @@ body {
   .md\:-mx-4 {
     margin-left: -1rem;
     margin-right: -1rem;
+  }
+
+  .md\:-mx-2 {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
   }
 
   .md\:block {
