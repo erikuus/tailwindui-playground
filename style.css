@@ -3992,6 +3992,21 @@ body {
          column-gap: 8rem;
   }
 
+  .xl\:gap-x-28 {
+    -moz-column-gap: 7rem;
+         column-gap: 7rem;
+  }
+
+  .xl\:gap-x-24 {
+    -moz-column-gap: 6rem;
+         column-gap: 6rem;
+  }
+
+  .xl\:gap-x-20 {
+    -moz-column-gap: 5rem;
+         column-gap: 5rem;
+  }
+
   .xl\:py-10 {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
@@ -4087,6 +4102,16 @@ body {
   .\32xl\:gap-x-40 {
     -moz-column-gap: 10rem;
          column-gap: 10rem;
+  }
+
+  .\32xl\:gap-x-36 {
+    -moz-column-gap: 9rem;
+         column-gap: 9rem;
+  }
+
+  .\32xl\:gap-x-32 {
+    -moz-column-gap: 8rem;
+         column-gap: 8rem;
   }
 
   .\32xl\:py-2 {

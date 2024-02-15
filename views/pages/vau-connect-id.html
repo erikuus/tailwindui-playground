@@ -186,7 +186,9 @@
                 </svg>
               </li>
               <li class="whitespace-nowrap">
-                <span class="px-3 py-2 text-sm text-gray-900">Ühenda ID-kaart, Smart-ID ja Mobiil-ID</span>
+                <span class="px-3 py-2 text-sm text-gray-900">
+                  Ühenda ID-kaart, Smart- ja Mobiil-ID
+                </span>
               </li>
             </ul>
           </div>
@@ -208,56 +210,64 @@
                 </div>
               </div> -->
               <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:mt-6 sm:text-xl xl:mt-0">
-                Digital ID Connected
-                <!-- Digitaalne ID on kontoga ühendatud -->
+                <!-- Ühenda ID-kaart, Smart-ID ja Mobiil-ID -->
+                Connect ID card, Smart-ID and Mobile-ID
               </h2>
-              <div class="flex w-full flex-col gap-x-4 gap-y-6 lg:flex-row lg:gap-x-16 xl:gap-x-32 2xl:gap-x-40">
+              <div class="flex w-full flex-col gap-x-4 gap-y-6 lg:flex-row lg:gap-x-16 xl:gap-x-20 2xl:gap-x-32">
                 <div class="flex-1">
                   <!-- Juhised -->
-                  <div class="prose">
-                    <!-- <p>Sinu ID-kaart, Smart-ID ja Mobiil-ID on kontoga ühendatud.</p>
+                  <div class="prose max-w-none">
+                    <!-- <p>Ühenda oma ID-kaart, Smart-ID ja Mobiil-ID oma kontoga, et</p>
                     <ul>
-                        <li>ID-kaart – ühendatud</li>
-                        <li>Smart-ID – ühendatud</li>
-                        <li>Mobiil-ID – ühendatud</li>
+                      <li><strong>tugevdada turvalisust:</strong> digitaalne ID pakub täiendavat kaitsekihti turvaliste autentimismeetoditega;</li>
+                      <li><strong>lihtsusta sisselogimist:</strong> digitaalse ID-ga saad juurdepääsu oma kontole, ilma et peaksid meelde jätma salasõnu;</li>
+                      <li><strong>kasutada sujuvalt teenuseid:</strong> digitaalse ID-ga saad juurdepääsu piirangutega arhiiviallikatele, kui sulle on juurdepääsuluba antud.</li>
                     </ul>
-                    <p>Kasuta turvaliseks sisselogimiseks oma digitaalset ID-d.</p>
-                    <p>Kui soovid ühenduse katkestada, saad seda teha siin:</p> -->
-                    <p>Your ID card, Smart-ID, and Mobile-ID are now successfully linked to your account.</p>
+                    <p>Ühendamiseks</p>
                     <ul>
-                      <li><span class="icon-checkmark">ID card – Connected</span></li>
-                      <li><span class="icon-checkmark">Smart-ID – Connected</span></li>
-                      <li><span class="icon-checkmark">Mobile-ID – Connected</span></li>
+                      <li>vali autentimismeetod,</li>
+                      <li>järgi ekraanil kuvatavaid juhiseid.</li>
                     </ul>
-                    <p>Use your digital ID to log in quickly and securely. If you need to unlink, you can do so here:</p>
-                    <button type="button" class="inline-flex cursor-pointer items-center rounded bg-red-700 py-2 pl-3 pr-4 text-center text-sm font-medium text-white hover:bg-red-600">
-                      <svg class="mr-1.5 h-4 w-4 text-white" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
-                      </svg>
-                      Unlink Digital ID
-                      <!-- Katkesta ühendus -->
-                    </button>
+                    <p>Kui oled ühenduse loonud, võid edaspidi sisselogimiseks kasutada oma digitaalset ID-d.</p> -->
+
+                    <p>Link your ID card, Smart-ID and Mobile-ID to your account to:</p>
+                    <ul>
+                      <li><strong>Enhance Security:</strong> Digital IDs provide an extra layer of protection for your account with secure authentication methods.</li>
+                      <li><strong>Simplify Login:</strong> Save time with fast, one-click access to your account without needing to remember passwords.</li>
+                      <li><strong>Streamline Services:</strong> Enjoy seamless integration with services that require verified personal identification.</li>
+                    </ul>
+                    <p>To Connect:</p>
+                    <ul>
+                      <li>Choose your authentication method.</li>
+                      <li>Follow the prompts to authorize the connection.</li>
+                    </ul>
+                    <p>Once linked, you can use your digital ID for all future logins.</p>
                   </div>
                 </div>
                 <div class="flex-1 space-y-10">
                   <ul>
-                    <li class="flex items-center justify-between border-b border-gray-200 pl-6 pr-8 py-3 h-16">
-                      <span>Mobiil-ID</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-green-500">
-                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
-                      </svg>
+                    <li>
+                      <a class="flex items-center justify-between border-b border-gray-200 pl-6 pr-7 py-3 hover:border-gray-300 h-16" href="#">
+                        <span>Mobiil-ID</span>
+                        <img class="d-methods-list__method__icon" src="https://id.dokobit.com/assets/img/ic_mobile_24px.svg">
+                      </a>
                     </li>
-                    <li class="flex items-center justify-between border-b border-gray-200 pl-6 pr-8 py-3 h-16">
-                      <span>Smart-ID</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-green-500">
-                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
-                      </svg>
+                    <li>
+                      <a class="flex items-center justify-between border-b border-gray-200 pl-6 pr-7 py-3 hover:border-gray-300 h-16" href="#">
+                        <span>Smart-ID</span>
+                        <img class="d-methods-list__method__icon" src="https://id.dokobit.com/assets/img/ic_smartid_24px.svg">
+                      </a>
                     </li>
-                    <li class="flex items-center justify-between border-b border-gray-200 pl-6 pr-8 py-3 h-16">
-                      <span>ID-kaart</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-green-500">
-                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
-                      </svg>
+                    <li>
+                      <a class="flex items-center justify-between border-b border-gray-200 pl-6 pr-7 py-3 hover:border-gray-300 h-16" href="#">
+                        <span>ID-kaart</span>
+                        <svg class="d-methods-list__method__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                          <g fill-rule="evenodd">
+                            <path d="M0 0h24v24H0V0z" fill="none"></path>
+                            <path d="M4 4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2H4zm16 14H4v-6h16v6zm0-10H4V6h16v2zm0 4h-9V8h9v4zM6 12H4V8h2v4z"></path>
+                          </g>
+                        </svg>
+                      </a>
                     </li>
                   </ul>
                 </div>
