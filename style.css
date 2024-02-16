@@ -3427,6 +3427,58 @@ body {
   color: rgb(78 88 99 / var(--tw-text-opacity));
 }
 
+.prose-table\:rounded :is(:where(table):not(:where([class~="not-prose"] *))) {
+  border-radius: 0.5rem;
+}
+
+.prose-thead\:rounded-t :is(:where(thead):not(:where([class~="not-prose"] *))) {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.prose-thead\:bg-gray-50 :is(:where(thead):not(:where([class~="not-prose"] *))) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 243 246 / var(--tw-bg-opacity));
+}
+
+.prose-th\:rounded-t :is(:where(th):not(:where([class~="not-prose"] *))) {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.prose-th\:bg-gray-50 :is(:where(th):not(:where([class~="not-prose"] *))) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 243 246 / var(--tw-bg-opacity));
+}
+
+.prose-th\:bg-gray-50\/60 :is(:where(th):not(:where([class~="not-prose"] *))) {
+  background-color: rgb(240 243 246 / 0.6);
+}
+
+.prose-th\:p-2 :is(:where(th):not(:where([class~="not-prose"] *))) {
+  padding: 0.5rem;
+}
+
+.prose-th\:p-4 :is(:where(th):not(:where([class~="not-prose"] *))) {
+  padding: 1rem;
+}
+
+.prose-th\:p-3 :is(:where(th):not(:where([class~="not-prose"] *))) {
+  padding: 0.75rem;
+}
+
+.prose-td\:p-2 :is(:where(td):not(:where([class~="not-prose"] *))) {
+  padding: 0.5rem;
+}
+
+.prose-td\:p-4 :is(:where(td):not(:where([class~="not-prose"] *))) {
+  padding: 1rem;
+}
+
+.prose-td\:p-3 :is(:where(td):not(:where([class~="not-prose"] *))) {
+  padding: 0.75rem;
+}
+
 .prose-td\:align-top :is(:where(td):not(:where([class~="not-prose"] *))) {
   vertical-align: top;
 }
