@@ -2098,6 +2098,10 @@ select {
   flex-grow: 1;
 }
 
+.table-fixed {
+  table-layout: fixed;
+}
+
 .origin-top-right {
   transform-origin: top right;
 }
@@ -3431,6 +3435,10 @@ body {
   border-radius: 0.5rem;
 }
 
+.prose-table\:bg-gray-50\/60 :is(:where(table):not(:where([class~="not-prose"] *))) {
+  background-color: rgb(240 243 246 / 0.6);
+}
+
 .prose-thead\:rounded-t :is(:where(thead):not(:where([class~="not-prose"] *))) {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -3455,6 +3463,11 @@ body {
   background-color: rgb(240 243 246 / 0.6);
 }
 
+.prose-th\:bg-gray-200 :is(:where(th):not(:where([class~="not-prose"] *))) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(211 216 223 / var(--tw-bg-opacity));
+}
+
 .prose-th\:p-2 :is(:where(th):not(:where([class~="not-prose"] *))) {
   padding: 0.5rem;
 }
@@ -3465,6 +3478,22 @@ body {
 
 .prose-th\:p-3 :is(:where(th):not(:where([class~="not-prose"] *))) {
   padding: 0.75rem;
+}
+
+.prose-td\:bg-gray-50\/60 :is(:where(td):not(:where([class~="not-prose"] *))) {
+  background-color: rgb(240 243 246 / 0.6);
+}
+
+.prose-td\:bg-gray-50\/80 :is(:where(td):not(:where([class~="not-prose"] *))) {
+  background-color: rgb(240 243 246 / 0.8);
+}
+
+.prose-td\:bg-gray-50\/90 :is(:where(td):not(:where([class~="not-prose"] *))) {
+  background-color: rgb(240 243 246 / 0.9);
+}
+
+.prose-td\:bg-gray-50\/50 :is(:where(td):not(:where([class~="not-prose"] *))) {
+  background-color: rgb(240 243 246 / 0.5);
 }
 
 .prose-td\:p-2 :is(:where(td):not(:where([class~="not-prose"] *))) {
