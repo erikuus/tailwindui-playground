@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="../../style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
+</head>
+<body>
+  <div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 pt-6 pb-10 xl:pt-10 xl:pb-14">
+    <form x-data="{ selected: 'image1' }">
+      <div class="flex w-full flex-col gap-x-4 gap-y-6 lg:flex-row lg:gap-x-16 xl:gap-x-20 2xl:gap-x-32">
+          <div class="flex-1 items-center mb-4">
+            <input type="radio" id="image1" name="image" value="image1" x-model="selected" class="hidden">
+            <label for="image1" class="block cursor-pointer">
+              <img src="../../images/theme_classic.jpeg" alt="Image 1" :class="{
+                'opacity-100': (selected === 'image1'),
+                'border-green-300': (selected === 'image1'),
+                'border-gray-300 hover:opacity-100 hover:border-green-300': !(selected === 'image1'),
+                'rounded w-full mb-2 opacity-50 border-4': true }">
+              <span class="pl-1 text-gray-700">Vana kujundus</span>
+            </label>
+          </div>
+          <div class="flex-1 items-center">
+            <input type="radio" id="image2" name="image" value="image2" x-model="selected" class="hidden">
+            <label for="image2" class="block cursor-pointer">
+              <img src="../../images/theme_joyful.jpeg" alt="Image 2" :class="{
+                'opacity-100': (selected === 'image2'),
+                'border-green-300': (selected === 'image2'),
+                'border-gray-300 hover:opacity-100 hover:border-green-300': !(selected === 'image2'),
+                'rounded w-full mb-2 opacity-50 border-4': true }">
+              <span class="pl-1 text-gray-700">Uus kujundus</span>
+            </label>
+          </div>
+      </div>
+      <div class="flex flex-col gap-x-2 gap-y-2 lg:flex-row mt-12">
+        <input class="
+          inline-flex justify-center w-full sm:w-auto
+          focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer rounded bg-gray-900 py-3 px-4 text-center text-base font-medium text-white hover:bg-gray-700
+        " type="submit" name="yt0" value="Salvesta" />
+        <a class="
+          inline-flex justify-center w-full sm:w-auto
+          focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white py-3 px-4 text-center text-base font-medium text-gray-900 hover:bg-gray-100" href="/vau/index-dev.php/et/account/view">Loobu</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
