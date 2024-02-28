@@ -1658,6 +1658,11 @@ select {
   margin-bottom: 3rem;
 }
 
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 .ml-4 {
   margin-left: 1rem;
 }
@@ -1856,6 +1861,14 @@ select {
 
 .-mt-2 {
   margin-top: -0.5rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .block {
