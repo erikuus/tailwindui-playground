@@ -77,7 +77,7 @@
       <!-- Teine värviline ala -->
       <div class="bg-theme-vau flex grow flex-col rounded">
         <!-- Lai alumine päis -->
-        <header class="relative flex h-32 flex-wrap content-center z-0">
+        <header class="relative flex h-32 flex-wrap content-center">
           <!-- Laia alumise päise küljendus -->
           <div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
             <!-- Laia ülemise päise jaotus -->
@@ -101,14 +101,64 @@
                 <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">Tagasiside</a>
                 <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">KKK</a>
               </nav>
-              <div class="flex items-center gap-x-2">
-                <!-- Sisenemise nupp -->
-                <button type="button" class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded bg-gray-900 py-2 pl-3 pr-4 text-center text-sm font-medium text-white hover:bg-gray-700">
-                  <svg class="mr-1.5 h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 0C4.48 0 0 4.48 0 10C0 15.42 4.48 20 10 20C15.42 20 20 15.42 20 10C20 4.48 15.42 0 10 0ZM5.07 16.28C5.5 15.38 8.12 14.5 10 14.5C11.88 14.5 14.51 15.38 14.93 16.28C13.57 17.36 11.86 18 10 18C8.14 18 6.43 17.36 5.07 16.28ZM16.36 14.83C14.93 13.09 11.46 12.5 10 12.5C8.54 12.5 5.07 13.09 3.64 14.83C2.62 13.49 2 11.82 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 11.82 17.38 13.49 16.36 14.83ZM10 4C8.06 4 6.5 5.56 6.5 7.5C6.5 9.36 8.06 11 10 11C11.94 11 13.5 9.36 13.5 7.5C13.5 5.56 11.94 4 10 4ZM10 9C9.17 9 8.5 8.33 8.5 7.5C8.5 6.67 9.17 6 10 6C10.83 6 11.5 6.67 11.5 7.5C11.5 8.33 10.83 9 10 9Z" />
-                  </svg>
-                  Sisene
-                </button>
+              <!-- Sisseloginud kasutaja menüü -->
+              <div x-data="{ open: false }" class="relative ml-3">
+                <div>
+                  <!-- <button @click="open = true" type="button" class="flex items-center bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                    <div class="flex w-12 h-12 flex-shrink-0 items-center justify-center bg-gray-800 rounded-full text-sm font-medium text-white">AV</div>
+                  </button> -->
+                  <button @click="open = true" type="button" class="flex items-center rounded-full bg-gray-800 ring-2 ring-white ring-offset-2 ring-offset-gray-300 hover:ring-gray-100">
+                    <img class="inline-block h-12 w-12 object-cover rounded-full border-white" src="../../images/erik.jpg" alt="EU" />
+                  </button>
+                </div>
+                <div x-show="open" x-cloak @click.outside="open = false" class="absolute -right-2.5 z-50 mt-2 w-80 rounded border border-gray-200 bg-white shadow-lg sm:right-0 sm:w-96">
+                  <div class="divide-y divide-gray-50">
+                    <div class="relative flex flex-col items-center px-2 pb-6 pt-12 sm:px-6">
+                      <!-- Image -->
+                      <div class="absolute inset-0 -z-10 overflow-hidden rounded-t h-20 bg-gray-50"></div>
+                      <!-- Profiilipilt -->
+                      <img class="inline-block h-20 w-20 object-cover rounded-full ring-4 ring-white" src="../../images/eu.jpg" alt="EU">
+                      <!-- Profiiliikoon -->
+                      <!-- <svg class="h-20 w-20 text-gray-300 rounded-full bg-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
+                        <path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/>
+                      </svg> -->
+                      <!-- Sisselogimine võõra kontoga -->
+                      <!-- <svg class="h-16 w-16 text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
+                        <path d="M412-168q45-91 120-121.5T660-320q23 0 45 4t43 10q24-38 38-82t14-92q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 45 11.5 86t34.5 76q41-20 85-31t89-11q32 0 61.5 5.5T500-340q-23 12-43.5 28T418-278q-12-2-20.5-2H380q-32 0-63.5 7T256-252q32 32 71.5 53.5T412-168Zm68 88q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80ZM380-420q-58 0-99-41t-41-99q0-58 41-99t99-41q58 0 99 41t41 99q0 58-41 99t-99 41Zm0-80q25 0 42.5-17.5T440-560q0-25-17.5-42.5T380-620q-25 0-42.5 17.5T320-560q0 25 17.5 42.5T380-500Zm280 120q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM480-480Z" />
+                      </svg> -->
+                      <h3 class="mt-4 text-lg font-medium">Erik Uus</h3>
+                      <p class="mt-1 text-gray-600">erik.uus@ra.ee</p>
+                    </div>
+                    <div class="mt-3 border-t border-gray-50">
+                      <a href="#1" class="flex items-center justify-center gap-x-2 py-4 text-center text-sm font-semibold hover:bg-green-50">
+                        <svg class="h-5 w-5 text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
+                          <path d="m791-55-91-91q-48 32-103.5 49T480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-61 17-116.5T146-700l-91-91 57-57 736 736-57 57ZM412-168q26-51 62-81.5t75-47.5L204-642q-21 36-32.5 76.5T160-480q0 45 11.5 86t34.5 76q41-20 85-31t89-11q32 0 61.5 5.5T500-340q-23 12-43.5 28T418-278q-12-2-20.5-2H380q-32 0-63.5 7T256-252q32 32 71.5 53.5T412-168Zm402-92-58-58q21-35 32.5-76t11.5-86q0-134-93-227t-227-93q-45 0-85.5 11.5T318-756l-58-58q48-32 103.5-49T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 61-17 116.5T814-260ZM520-554 374-700q62-2 105 41.5T520-554ZM380-420q-58 0-99-41t-41-99q0-33 14.5-60.5T292-668l196 196q-20 23-47.5 37.5T380-420Zm310 36L564-510q10-31 36-50.5t60-19.5q42 0 71 29t29 71q0 34-19.5 60T690-384ZM537-537ZM423-423Z" />
+                        </svg>
+                        Sisene Erik Uus rollis
+                      </a>
+                    </div>
+                    <div>
+                      <div class="flex divide-x divide-gray-50">
+                        <div class="flex flex-1">
+                          <a href="#2" class="flex flex-1 items-center justify-center gap-x-2 rounded-bl py-4 text-center font-semibold hover:bg-green-50">
+                            <svg class="h-6 w-6 text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
+                              <path d="M480-400q33 0 56.5-23.5T560-480q0-33-23.5-56.5T480-560q-33 0-56.5 23.5T400-480q0 33 23.5 56.5T480-400ZM320-240h320v-23q0-24-13-44t-36-30q-26-11-53.5-17t-57.5-6q-30 0-57.5 6T369-337q-23 10-36 30t-13 44v23ZM720-80H240q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80Zm0-80v-446L526-800H240v640h480Zm-480 0v-640 640Z" />
+                            </svg>
+                            Minu konto
+                          </a>
+                        </div>
+                        <div class="flex flex-1">
+                          <a href="#3" class="flex flex-1 items-center justify-center gap-x-2 rounded-br py-4 text-center font-semibold hover:bg-green-50">
+                            <svg class="h-6 w-6 text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
+                              <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+                            </svg>
+                            Välju
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -211,7 +261,7 @@
                   <input id="UserOrderProfile_delivery_type_code_2" value="3" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
                   <label for="UserOrderProfile_delivery_type_code_2" class="text-base leading-6 text-gray-800">Interneti (ftp-serveri) kaudu</label>
                 </div>
-                <div class="text-lg font-medium pt-4">
+                <div class="text-lg font-medium pt-6 border-t border-gray-50">
                   Tellimuse eest tasumise viis
                   <span class="required">*</span>
                 </div>
@@ -241,47 +291,32 @@
                           <label for="UserOrderProfile_invoice_institution" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutus <span class="required">*</span></label>
                           <input size="40" id="UserOrderProfile_invoice_institution" name="UserOrderProfile[invoice_institution]" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
                         </div>
-                        <div class="UserOrderProfile_invoice_country_id selected_1" style="display: block;">
-                          <div class="simple">
-                            <label for="UserOrderProfile_invoice_institution_nr" class="required">Asutuse registrikood <span class="required">*</span></label>
-                            <input size="40" name="UserOrderProfile[invoice_institution_nr]" id="UserOrderProfile_invoice_institution_nr" type="text" maxlength="32">
-                          </div>
+                        <div>
+                          <label for="UserOrderProfile_invoice_institution_nr" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse registrikood <span class="required">*</span></label>
+                          <input size="40" name="UserOrderProfile[invoice_institution_nr]" id="UserOrderProfile_invoice_institution_nr" type="text" maxlength="32" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
                         </div>
-                        <div class="simple">
-                          <label for="UserOrderProfile_invoice_institution_type" class="required">Asutuse tüüp <span class="required">*</span></label>
-                          <select style="width:300px" name="UserOrderProfile[invoice_institution_type]" id="UserOrderProfile_invoice_institution_type" disabled="">
-                            <option value=""></option>
-                            <option value="1">Government Agency</option>
-                            <option value="2">Local Government Agency</option>
-                            <option value="3">International Organisation</option>
-                            <option value="4">Credit or Financial Institution</option>
-                            <option value="5">Other</option>
-                          </select>                 </div>
+                        <div>
+                          <label for="UserOrderProfile_invoice_email" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse e-post <span class="required">*</span></label>
+                          <input size="40" name="UserOrderProfile[invoice_email]" id="UserOrderProfile_invoice_email" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
                         </div>
-                        <div class="simple">
-                          <label for="UserOrderProfile_invoice_email" class="required">Asutuse e-post <span class="required">*</span></label>
-                          <input size="40" name="UserOrderProfile[invoice_email]" id="UserOrderProfile_invoice_email" type="text" maxlength="128">
-                        </div>
-                        <div class="action">
-                        </div>
-                        <div class="action">
+                        <div class="pt-4">
                           Asutuse juriidiline aadress:
                         </div>
-                        <div class="simple">
-                          <label for="UserOrderProfile_invoice_street" class="required">Tänav/maja <span class="required">*</span></label>
-                          <input size="40" name="UserOrderProfile[invoice_street]" id="UserOrderProfile_invoice_street" type="text" maxlength="256">
+                        <div>
+                          <label for="UserOrderProfile_invoice_street" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Tänav/maja <span class="required">*</span></label>
+                          <input size="40" name="UserOrderProfile[invoice_street]" id="UserOrderProfile_invoice_street" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
                         </div>
-                        <div class="simple">
-                          <label for="UserOrderProfile_invoice_city" class="required">Linn/vald <span class="required">*</span></label>
-                          <input size="40" name="UserOrderProfile[invoice_city]" id="UserOrderProfile_invoice_city" type="text" maxlength="128">
+                        <div>
+                          <label for="UserOrderProfile_invoice_city" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Linn/vald <span class="required">*</span></label>
+                          <input size="40" name="UserOrderProfile[invoice_city]" id="UserOrderProfile_invoice_city" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
                         </div>
-                        <div class="simple">
-                          <label for="UserOrderProfile_invoice_county" class="required">Maakond <span class="required">*</span></label>
-                          <input size="40" name="UserOrderProfile[invoice_county]" id="UserOrderProfile_invoice_county" type="text" maxlength="64">
+                        <div>
+                          <label for="UserOrderProfile_invoice_county" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Maakond <span class="required">*</span></label>
+                          <input size="40" name="UserOrderProfile[invoice_county]" id="UserOrderProfile_invoice_county" type="text" maxlength="64" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
                         </div>
-                        <div class="simple">
-                          <label for="UserOrderProfile_invoice_index" class="required">Postiindeks <span class="required">*</span></label>
-                          <input size="16" name="UserOrderProfile[invoice_index]" id="UserOrderProfile_invoice_index" type="text" maxlength="16">
+                        <div>
+                          <label for="UserOrderProfile_invoice_index"  class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Postiindeks <span class="required">*</span></label>
+                          <input size="16" name="UserOrderProfile[invoice_index]" id="UserOrderProfile_invoice_index" type="text" maxlength="16" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
                         </div>
                       </div>
                     </div>
@@ -291,7 +326,7 @@
                   <input id="UserOrderProfile_billing_type_code_2" value="3" type="radio" name="UserOrderProfile[billing_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
                   <label for="UserOrderProfile_billing_type_code_2" class="text-base leading-6 text-gray-800">Maksan krediitkaardi või pangalingiga (Swedbank, SEB, Luminor, LHV)</label>
                 </div>
-                <div class="flex flex-col gap-y-4">
+                <div class="flex flex-col gap-y-4 pt-6">
                   <input class="focus-visible::ring-2 focus-visible::ring-green-300 w-full cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Registreeru" />
                   <a class="w-full focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white py-3 pl-3 pr-4 text-center text-base font-medium text-gray-900 hover:bg-gray-100" href="/vau/index-dev.php/et/account/view">Loobu</a>
                 </div>
