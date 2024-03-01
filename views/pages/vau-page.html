@@ -1565,36 +1565,36 @@
                     <div class="sticky top-10 h-screen overflow-y-auto">
                       <p class="mb-4 ml-4 border-b border-gray-400 pb-3 text-sm font-semibold">SISUKORD</p>
                       <nav class="flex flex-col text-sm">
-                        <a href="#article1" class="border-l-2 border-gray-100 py-1.5 pl-4 hover:font-medium"
-                          :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section1' }"
+                        <a href="#article1" class="border-l-2 py-1.5 pl-4 hover:font-medium"
+                          :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section1', 'border-gray-100': activeSection != 'section1'}"
                           @click.prevent="activeSection = 'section1'; clickInitiatedScroll = true; scrollToElement('article1'); setTimeout(() => clickInitiatedScroll = false, 500)">
                         Siit leiate näpunäiteid, kuidas ise arhiivis oma sugupuud uurida </a>
-                        <a href="#article2" class="border-l-2 border-gray-100 py-1.5 pl-4 hover:font-medium"
-                          :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section2' }"
+                        <a href="#article2" class="border-l-2 py-1.5 pl-4 hover:font-medium"
+                          :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section2', 'border-gray-100': activeSection != 'section2' }"
                           @click.prevent="activeSection = 'section2'; clickInitiatedScroll = true; scrollToElement('article2'); setTimeout(() => clickInitiatedScroll = false, 500)">
                         Millest alustada? </a>
-                        <a href="#article3" class="border-l-2 border-gray-100 py-1.5 pl-4 hover:font-medium"
-                          :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section3' }"
+                        <a href="#article3" class="border-l-2 py-1.5 pl-4 hover:font-medium"
+                          :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section3', 'border-gray-100': activeSection != 'section3' }"
                           @click.prevent="activeSection = 'section3'; clickInitiatedScroll = true; scrollToElement('article3'); setTimeout(() => clickInitiatedScroll = false, 500)">
                         Millises arhiivis leidub andmeid suguvõsa kohta? </a>
-                        <a href="#article4" class="border-l-2 border-gray-100 py-1.5 pl-4 hover:font-medium"
-                          :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section4' }"
+                        <a href="#article4" class="border-l-2 py-1.5 pl-4 hover:font-medium"
+                          :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section4', 'border-gray-100': activeSection != 'section4' }"
                           @click.prevent="activeSection = 'section4'; clickInitiatedScroll = true; scrollToElement('article4'); setTimeout(() => clickInitiatedScroll = false, 500)">
                         Kas saab tasu eest tellida oma sugupuu? </a>
-                        <a href="#article5" class="border-l-2 border-gray-100 py-1.5 pl-4 hover:font-medium"
-                          :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section5' }"
+                        <a href="#article5" class="border-l-2 py-1.5 pl-4 hover:font-medium"
+                          :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section5', 'border-gray-100': activeSection != 'section5' }"
                           @click.prevent="activeSection = 'section5'; clickInitiatedScroll = true; scrollToElement('article5'); setTimeout(() => clickInitiatedScroll = false, 500)">
                         Perekonnanimede panek </a>
-                        <a href="#article6" class="border-l-2 border-gray-100 py-1.5 pl-4 hover:font-medium"
-                          :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section6' }"
+                        <a href="#article6" class="border-l-2 py-1.5 pl-4 hover:font-medium"
+                          :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section6', 'border-gray-100': activeSection != 'section6' }"
                           @click.prevent="activeSection = 'section6'; clickInitiatedScroll = true; scrollToElement('article6'); setTimeout(() => clickInitiatedScroll = false, 500)">
                         Nimede eestistamine </a>
-                        <a href="#article7" class="border-l-2 border-gray-100 py-1.5 pl-4 hover:font-medium"
-                          :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section7' }"
+                        <a href="#article7" class="border-l-2 y-1.5 pl-4 hover:font-medium"
+                          :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section7', 'border-gray-100': activeSection != 'section7' }"
                           @click.prevent="activeSection = 'section7'; clickInitiatedScroll = true; scrollToElement('article7'); setTimeout(() => clickInitiatedScroll = false, 500)">
                         Venemaale väljarändamine </a>
-                        <a href="#article8" class="border-l-2 border-gray-100 py-1.5 pl-4 hover:font-medium"
-                          :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section8' }"
+                        <a href="#article8" class="border-l-2 py-1.5 pl-4 hover:font-medium"
+                          :class="{ 'border-green-300 font-bold hover:font-bold': activeSection === 'section8', 'border-gray-100': activeSection != 'section8' }"
                           @click.prevent="activeSection = 'section8'; clickInitiatedScroll = true; scrollToElement('article8'); setTimeout(() => clickInitiatedScroll = false, 500)">
                         Vanausulised </a>
                       </nav>
