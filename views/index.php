@@ -30,14 +30,6 @@
 				</a>
 			<?php endforeach; ?>
 		</div>
-		<div class="flex-1 bg-gray-light-100 p-4">
-			<h1>Experiments</h1>
-			<?php foreach(array_diff(scandir('./experiments'), array('..', '.')) as $file): ?>
-				<a target="_blank" class="block my-1 text-blue-500" href="./experiments/<?php echo $file ?>">
-					<?php echo $file ?>
-				</a>
-			<?php endforeach; ?>
-		</div>
 	</div>
 </body>
 </html>

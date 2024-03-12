@@ -69,5 +69,10 @@ body {
   .fancybox-image {
     @apply rounded !important;
   }
+  .ui-autocomplete {
+    @apply text-base !important;
+  }
+  .ui-menu-item {
+    @apply px-2 py-1 odd:bg-gray-50/60;
+  }
 }
-
