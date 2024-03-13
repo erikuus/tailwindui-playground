@@ -10,7 +10,7 @@ body {
 @layer base {
   [x-cloak] {
       display: none;
-  }  
+  }
   @font-face {
     font-family: 'Raleway';
     font-weight: 400;
@@ -74,5 +74,32 @@ body {
   }
   .ui-menu-item {
     @apply px-2 py-1 odd:bg-gray-50/60;
+  }
+  .ui-datepicker {
+    @apply font-body text-base border border-gray-200 rounded !important;
+  }
+  .ui-datepicker-header {
+    @apply bg-gray-100 border-b border-gray-300 !important;
+  }
+  .ui-datepicker-prev, .ui-datepicker-next {
+    @apply text-gray-600 !important;
+  }
+  .ui-datepicker-title {
+    @apply text-gray-600 !important;
+  }
+  .ui-datepicker-calendar {
+    @apply bg-white !important;
+  }
+  .ui-state-default {
+    @apply text-base text-gray-600 rounded-sm !important;
+  }
+  .ui-state-hover {
+    @apply bg-green-50 !important;
+  }
+  .ui-datepicker-today .ui-state-default, .ui-datepicker-current-day .ui-state-default {
+    @apply bg-gray-50 border border-gray-300 !important;
+  }
+  .ui-datepicker-unselectable .ui-state-default {
+    @apply text-gray-300 !important;
   }
 }
