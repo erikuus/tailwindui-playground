@@ -90,16 +90,7 @@ body {
   .ui-datepicker-calendar {
     @apply bg-white !important;
   }
-  .ui-state-default {
-    @apply text-base text-gray-600 rounded-sm !important;
-  }
-  .ui-state-hover {
-    @apply bg-green-50 !important;
-  }
-  .ui-datepicker-today .ui-state-default, .ui-datepicker-current-day .ui-state-default {
-    @apply bg-gray-50 border border-gray-300 !important;
-  }
-  .ui-datepicker-unselectable .ui-state-default {
-    @apply text-gray-300 !important;
+  .ui-datepicker .ui-state-default {
+    @apply text-base rounded-sm !important;
   }
 }

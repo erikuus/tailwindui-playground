@@ -1475,30 +1475,10 @@ select {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
 }
 
-.ui-state-default {
+.ui-datepicker .ui-state-default {
   border-radius: 0.25rem !important;
   font-size: 1rem !important;
   line-height: 120% !important;
-  --tw-text-opacity: 1 !important;
-  color: rgb(95 104 116 / var(--tw-text-opacity)) !important;
-}
-
-.ui-state-hover {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(233 247 238 / var(--tw-bg-opacity)) !important;
-}
-
-.ui-datepicker-today .ui-state-default,  .ui-datepicker-current-day .ui-state-default {
-  border-width: 1px !important;
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(151 159 171 / var(--tw-border-opacity)) !important;
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(240 243 246 / var(--tw-bg-opacity)) !important;
-}
-
-.ui-datepicker-unselectable .ui-state-default {
-  --tw-text-opacity: 1 !important;
-  color: rgb(151 159 171 / var(--tw-text-opacity)) !important;
 }
 
 .sr-only {
@@ -3544,6 +3524,10 @@ body {
   color: rgb(78 88 99 / var(--tw-text-opacity));
 }
 
+.prose-table\:w-full :is(:where(table):not(:where([class~="not-prose"] *))) {
+  width: 100%;
+}
+
 .prose-table\:rounded :is(:where(table):not(:where([class~="not-prose"] *))) {
   border-radius: 0.5rem;
 }
@@ -3813,6 +3797,14 @@ body {
     display: block;
   }
 
+  .md\:table-cell {
+    display: table-cell;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
   .md\:w-32 {
     width: 8rem;
   }
@@ -3893,6 +3885,31 @@ body {
   .lg\:-mx-6 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
+  }
+
+  .lg\:mx-52 {
+    margin-left: 13rem;
+    margin-right: 13rem;
+  }
+
+  .lg\:-mx-56 {
+    margin-left: -14rem;
+    margin-right: -14rem;
+  }
+
+  .lg\:mx-56 {
+    margin-left: 14rem;
+    margin-right: 14rem;
+  }
+
+  .lg\:mx-48 {
+    margin-left: 12rem;
+    margin-right: 12rem;
+  }
+
+  .lg\:mx-32 {
+    margin-left: 8rem;
+    margin-right: 8rem;
   }
 
   .lg\:mt-0 {
@@ -4041,6 +4058,11 @@ body {
     margin-right: 9rem;
   }
 
+  .xl\:mx-64 {
+    margin-left: 16rem;
+    margin-right: 16rem;
+  }
+
   .xl\:-ml-80 {
     margin-left: -20rem;
   }
@@ -4182,6 +4204,11 @@ body {
   .\32xl\:mx-80 {
     margin-left: 20rem;
     margin-right: 20rem;
+  }
+
+  .\32xl\:mx-72 {
+    margin-left: 18rem;
+    margin-right: 18rem;
   }
 
   .\32xl\:mt-20 {

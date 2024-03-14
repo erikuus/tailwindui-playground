@@ -186,16 +186,6 @@
               </li>
               <li class="whitespace-nowrap overflow-hidden text-ellipsis">
                 <button class="px-2 py-1.5 text-sm text-gray-900 font-bold rounded hover:bg-green-50">
-                  <a class="" href="#">Minu konto</a>
-                </button>
-              </li>
-              <li>
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                </svg>
-              </li>
-              <li class="whitespace-nowrap overflow-hidden text-ellipsis">
-                <button class="px-2 py-1.5 text-sm text-gray-900 font-bold rounded hover:bg-green-50">
                   <a class="" href="#">Vaata asutust</a>
                 </button>
               </li>
@@ -203,9 +193,9 @@
                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
                 </svg>
-              </li>              
+              </li>
               <li class="whitespace-nowrap">
-                <span class="px-3 py-2 text-sm text-gray-900">Muuda asutust</span>
+                <span class="px-3 py-2 text-sm text-gray-900">Teenuste arvestus nr AKA2021-00051</span>
               </li>
             </ul>
           </div>
@@ -215,29 +205,61 @@
           <!-- Sisu küljendus -->
           <div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 pt-6 pb-10 xl:pt-10 xl:pb-14">
             <!-- Sisu -->
-            <div class="sm:mx-20 lg:mx-36 xl:mx-80 2xl:mx-96">
-              <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:mt-6 sm:text-xl xl:mt-0">
-                AS Postimees Grupp
-              </h2>
-              <form class="space-y-6" id="user-order-profile-form" action="/vau/index-dev.php/et/userOrderProfile/update?id=1776" method="post">
-                <p class="text-sm text-gray-700">Tärniga <span class="required">*</span> märgitud väljad on kohustuslikud</p>
-                <div>
-                  <label for="Company_email" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">E-post <span class="required">*</span></label>
-                  <input name="Company[email]" id="Company_email" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                </div>
-                <div>
-                  <label for="Company_invoice_email" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Arve e-post <span class="required">*</span></label>
-                  <input name="Company[invoice_email]" id="Company_invoice_email" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                </div>
-                <div>
-                  <label for="Company_info" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Info</label>
-                  <textarea name="Company[info]" id="Company_info" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6"></textarea>
-                </div>
-                <div class="flex flex-col gap-y-4 pt-6">
-                  <input class="focus-visible::ring-2 focus-visible::ring-green-300 w-full cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Salvesta" />
-                  <a class="w-full focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white py-3 pl-3 pr-4 text-center text-base font-medium text-gray-900 hover:bg-gray-100" href="/vau/index-dev.php/et/account/view">Loobu</a>
-                </div>
-              </form>
+            <div class="sm:mx-16 lg:mx-32 xl:mx-64 2xl:mx-72">
+              <h1 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:mt-6 sm:text-xl xl:mt-0">
+                Teenuste arvestus nr AKA2021-00051
+              </h1>
+              <div class="prose prose-h2:font-body prose-h2:text-lg prose-h2:font-bold prose-h2:text-gray-700 max-w-none prose-table:rounded prose-table:bg-gray-50/60 prose-th:p-3 prose-td:p-3">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Tellimus/Päring</th>
+                      <th class="hidden md:table-cell">Teenus</th>
+                      <th class="hidden md:table-cell text-right">Hind</th>
+                      <th class="hidden md:table-cell text-right">Kogus</th>
+                      <th class="hidden md:table-cell text-right">Kokku</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        LVMA.889.1.21816; Koopia; nr 714598
+                        <div class="block md:hidden">
+                          &lt;A2 tarbekoopia (tekstidokumentidest jms) / kaader
+                        </div>
+                        <dl class="flex gap-x-1 md:hidden">
+                          <dt>Hind:</dt>
+                          <dd>0,40</dd>
+                        </dl>
+                        <dl class="flex gap-x-1 md:hidden">
+                          <dt>Kogus:</dt>
+                          <dd>8</dd>
+                        </dl>
+                      </td>
+                      <td class="hidden md:table-cell">&lt;A2 tarbekoopia (tekstidokumentidest jms) / kaader</td>
+                      <td class="hidden md:table-cell text-right">0,40&nbsp;€</td>
+                      <td class="hidden md:table-cell text-right">8</td>
+                      <td class="hidden md:table-cell text-right">3,20&nbsp;€</td>
+                    </tr>
+                    <tr>
+                      <th colspan="8" class="text-right">
+                      Tasuda: 3,20&nbsp;€
+                    </th>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="detail-view" id="yw0">
+                  <tbody>
+                    <tr class="odd"><th>Asutus</th><td>Aktsiaselts KEK Invest</td></tr>
+                    <tr class="even"><th>Koostaja</th><td>Kaia Ivask</td></tr>
+                    <tr class="odd"><th>Koostatud</th><td>31.05.2021 16:03</td></tr>
+                    <tr class="even"><th>ERPLY arve nr</th><td>9030580</td></tr>
+                    <tr class="odd"><th>ERPLY tellimuse loomisaeg</th><td>31.05.2021 16:03</td></tr>
+                    <tr class="even"><th>ERPLY laekumine</th><td>Jah</td></tr>
+                    <tr class="odd"><th>ERPLY laekumise aeg</th><td>14.06.2021 03:30</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
