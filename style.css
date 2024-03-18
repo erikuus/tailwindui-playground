@@ -3953,6 +3953,11 @@ body {
     margin-right: -1.5rem;
   }
 
+  .lg\:mx-28 {
+    margin-left: 7rem;
+    margin-right: 7rem;
+  }
+
   .lg\:mt-0 {
     margin-top: 0px;
   }
@@ -3975,6 +3980,10 @@ body {
 
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:table-cell {
+    display: table-cell;
   }
 
   .lg\:hidden {
@@ -4104,6 +4113,16 @@ body {
     margin-right: 9rem;
   }
 
+  .xl\:mx-52 {
+    margin-left: 13rem;
+    margin-right: 13rem;
+  }
+
+  .xl\:mx-48 {
+    margin-left: 12rem;
+    margin-right: 12rem;
+  }
+
   .xl\:mt-0 {
     margin-top: 0px;
   }
@@ -4193,6 +4212,10 @@ body {
          column-gap: 3rem;
   }
 
+  .xl\:whitespace-nowrap {
+    white-space: nowrap;
+  }
+
   .xl\:py-10 {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
@@ -4250,6 +4273,11 @@ body {
   .\32xl\:mx-80 {
     margin-left: 20rem;
     margin-right: 20rem;
+  }
+
+  .\32xl\:mx-64 {
+    margin-left: 16rem;
+    margin-right: 16rem;
   }
 
   .\32xl\:mt-20 {

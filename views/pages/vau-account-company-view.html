@@ -2,7 +2,7 @@
 <html>
   <head>
     <title></title>
-    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../style.css?v=2" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/foundation-icons@2.0.0/foundation-icons.min.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -205,7 +205,7 @@
           <!-- Sisu küljendus -->
           <div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 pt-6 pb-10 xl:pt-10 xl:pb-14">
             <!-- Sisu -->
-            <div class="sm:mx-16 lg:mx-32 xl:mx-64 2xl:mx-72">
+            <div class="sm:mx-16 lg:mx-28 xl:mx-48 2xl:mx-64">
               <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:mt-6 sm:text-xl xl:mt-0">
                 Aktsiaselts KEK Invest
               </h2>
@@ -242,26 +242,52 @@
                   <thead>
                     <tr>
                       <th>Tellimus/Päring</th>
-                      <th>Teenus</th>
-                      <th style="text-align: right">Hind</th>
-                      <th style="text-align: right">Kogus</th>
-                      <th style="text-align: right">Kokku</th>
+                      <th class="hidden md:table-cell">Teenus</th>
+                      <th class="hidden md:table-cell text-right">Hind</th>
+                      <th class="hidden md:table-cell text-right">Kogus</th>
+                      <th class="text-right">Kokku</th>
                     </tr>
                   </thead>
                   <tbody>
-                        <tr>
-                      <td style="white-space: nowrap">Uus; Vastuskiri; 11.11.2022 12:57</td>
-                      <td>Uurimistöö ja isikliku teabevajaduse eesmärgil esitatud päringule vastamine</td>
-                      <td style="text-align: right">15,00&nbsp;€</td>
-                      <td style="text-align: right">1</td>
-                      <td style="text-align: right">15,00&nbsp;€</td>
+                    <tr>
+                      <td>
+                        <span class="xl:whitespace-nowrap">Uus; Vastuskiri; 11.11.2022 12:57</span>
+                        <div class="block md:hidden">
+                          Uurimistöö ja isikliku teabevajaduse eesmärgil esitatud päringule vastamine
+                        </div>
+                        <dl class="flex gap-x-1 md:hidden">
+                          <dt>Hind:</dt>
+                          <dd>15,00&nbsp;€</dd>
+                        </dl>
+                        <dl class="flex gap-x-1 md:hidden">
+                          <dt>Kogus:</dt>
+                          <dd>8</dd>
+                        </dl>
+                      </td>
+                      <td class="hidden md:table-cell">Uurimistöö ja isikliku teabevajaduse eesmärgil esitatud päringule vastamine</td>
+                      <td class="hidden md:table-cell text-right">15,00&nbsp;€</td>
+                      <td class="hidden md:table-cell text-right">1</td>
+                      <td class="text-right">15,00&nbsp;€</td>
                     </tr>
-                        <tr>
-                      <td style="white-space: nowrap">Uus; Vastuskiri; 11.11.2022 12:57</td>
-                      <td>Litsents foto kasutamiseks reklaamtrükises</td>
-                      <td style="text-align: right">32,00&nbsp;€</td>
-                      <td style="text-align: right">1</td>
-                      <td style="text-align: right">32,00&nbsp;€</td>
+                    <tr>
+                      <td>
+                        <span class="xl:whitespace-nowrap">Uus; Vastuskiri; 11.11.2022 12:57</span>
+                        <div class="block md:hidden">
+                          Litsents foto kasutamiseks reklaamtrükises
+                        </div>
+                        <dl class="flex gap-x-1 md:hidden">
+                          <dt>Hind:</dt>
+                          <dd>32,00&nbsp;€</dd>
+                        </dl>
+                        <dl class="flex gap-x-1 md:hidden">
+                          <dt>Kogus:</dt>
+                          <dd>1</dd>
+                        </dl>
+                      </td>
+                      <td class="hidden md:table-cell">Litsents foto kasutamiseks reklaamtrükises</td>
+                      <td class="hidden md:table-cell text-right">32,00&nbsp;€</td>
+                      <td class="hidden md:table-cell text-right">1</td>
+                      <td class="text-right">32,00&nbsp;€</td>
                     </tr>
                   </tbody>
                 </table>
@@ -273,29 +299,36 @@
                   <table>
                     <thead>
                       <tr>
-                        <th><a href="#">Teenuste arvestus nr</a></th>
-                        <th><a href="#">Koostaja</a></th>
-                        <th><a class="desc" href="#">Koostatud</a></th>
+                        <th>
+                          <a href="#">Teenuste arvestus nr</a>
+                        </th>
+                        <th class="hidden lg:table-cell"><a href="#">Koostaja</a></th>
+                        <th class="hidden md:table-cell"><a class="desc" href="#">Koostatud</a></th>
                         <th class="text-right" id="company-invoice-grid_c4"><a href="#">Kokku</a></th>
-                        <th class="w-48"><a href="#">ERPLY arve nr</a></th>
+                        <th class="hidden md:table-cell w-48"><a href="#">ERPLY arve nr</a></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td><a href="#">AKA2021-00115</a></td>
-                        <td>Kaia Ivask</td>
-                        <td>29.10.2021</td>
+                        <td>
+                          <a href="#">AKA2021-00115</a>
+                        </td>
+                        <td class="hidden lg:table-cell">Kaia Ivask</td>
+                        <td class="hidden md:table-cell">29.10.2021</td>
                         <td class="text-right">3,60&nbsp;€</td>
-                        <td class="nowrap">
+                        <td class="hidden md:table-cell nowrap">
                           9034402
                           <span class="ml-2 py-1 rounded-sm bg-yellow-300 text-center text-sm inline-block w-24">laekumata</span>
                         </td>
                       </tr>
                       <tr>
-                        <td><a href="#">AKA2021-00051</a></td>
-                        <td>Kaia Ivask</td><td>31.05.2021</td>
+                        <td>
+                          <a href="#">AKA2021-00051</a>
+                        </td>
+                        <td class="hidden lg:table-cell">Helina Tennasilm</td>
+                        <td class="hidden md:table-cell">31.05.2021</td>
                         <td class="text-right">3,20&nbsp;€</td>
-                        <td class="nowrap">
+                        <td class="hidden md:table-cell nowrap">
                           9030580
                           <span class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</span>
                         </td>
