@@ -1662,6 +1662,10 @@ select {
   margin: 0.625rem;
 }
 
+.m-0 {
+  margin: 0px;
+}
+
 .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -1720,6 +1724,11 @@ select {
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+}
+
+.my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .ml-4 {
@@ -2707,6 +2716,14 @@ select {
   --tw-bg-opacity: 0.4;
 }
 
+.bg-opacity-90 {
+  --tw-bg-opacity: 0.9;
+}
+
+.bg-opacity-5 {
+  --tw-bg-opacity: 0.05;
+}
+
 .bg-theme-vau {
   background-image: linear-gradient(95.19deg, #CCEAD6 0.8%, #ECDDF4 158.87%);
 }
@@ -3599,6 +3616,10 @@ body {
   vertical-align: top;
 }
 
+.prose-td\:align-middle :is(:where(td):not(:where([class~="not-prose"] *))) {
+  vertical-align: middle;
+}
+
 .prose-td\:text-xs :is(:where(td):not(:where([class~="not-prose"] *))) {
   font-size: 0.6875rem;
   line-height: 120%;
@@ -3994,6 +4015,14 @@ body {
     width: 15rem;
   }
 
+  .lg\:w-56 {
+    width: 14rem;
+  }
+
+  .lg\:w-auto {
+    width: auto;
+  }
+
   .lg\:flex-1 {
     flex: 1 1 0%;
   }
@@ -4019,6 +4048,10 @@ body {
   .lg\:gap-x-12 {
     -moz-column-gap: 3rem;
          column-gap: 3rem;
+  }
+
+  .lg\:whitespace-nowrap {
+    white-space: nowrap;
   }
 
   .lg\:rounded {
