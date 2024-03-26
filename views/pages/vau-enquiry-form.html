@@ -341,10 +341,19 @@
                       </div>
                       <div class="flex-1 space-y-2">
                         Kui Sa ei esinda asutust, palun jäta see osa lihtsalt tühjaks!
+                        <a href="#preferences" class="text-blue-600 hover:text-blue-500 focus:active:text-blue-700">Jätan tühjaks</a>
                       </div>
                     </div>
                   </div>
                   <section class="space-y-6 rounded p-6 bg-gray-50/60">
+                    <div>
+                      <label class="mb-2 block text-base font-semibold leading-6 text-gray-800 required" for="s2id_autogen1">Astuse tüüp</label>
+                      <select id="User_country_id" name="User[country_id]" class="w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-green-300 sm:text-base sm:leading-6">
+                        <option value=""></option>
+                        <option value="1" selected="selected">Asutus</option>
+                        <option value="126">Notar</option>
+                      </select>
+                    </div>
                     <div>
                       <label for="UserOrderProfile_invoice_institution" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse nimi</label>
                       <input size="40" id="UserOrderProfile_invoice_institution" name="UserOrderProfile[invoice_institution]" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
@@ -377,7 +386,7 @@
                       <input size="16" name="UserOrderProfile[invoice_index]" id="UserOrderProfile_invoice_index" type="text" maxlength="16" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
                     </div>
                   </section>
-                  <div class="text-lg font-medium pt-6 border-t border-gray-50">
+                  <div id="preferences" class="text-lg font-medium pt-6 border-t border-gray-50">
                     Päringu esitaja eelistused
                   </div>
                   <section class="space-y-6 xl:mx-6">
