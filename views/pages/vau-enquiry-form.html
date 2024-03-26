@@ -155,60 +155,64 @@
           <!-- Sisu küljendus -->
           <div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 pt-6 pb-10 xl:pt-10 xl:pb-14">
             <div class="flex items-start w-full flex-col gap-x-4 gap-y-6 xl:flex-row xl:gap-x-10 2xl:gap-x-12">
-              <div class="flex-1 w-full p-6 rounded bg-yellow-50/60 xl:flex-auto xl:w-72 2xl:w-80">
-                <h2 class="mt-1 mb-4 border-b border-gray-500 pb-1 font-bold text-gray-700">
-                  LISAINFO
-                </h2>
-                <div x-data="{ expanded: false }" class="prose max-w-none prose-p:text-gray-700 prose-strong:text-gray-700 prose-ul:text-gray-700">
-                  <div :class="expanded ? 'max-h-full' : 'max-h-32 xl:max-h-full'" class="relative overflow-hidden transition-max-height">
-                    <p>
-                      <strong>Arhiiv ei paku suuremahulist uurimustööd ega koosta talu või hoone ajaloo uurimusi,</strong> kuid juhatab allikate juurde, mida uurija iseseisvalt kasutada saab.
-                    </p>
-                    <p>
-                      Selle vormi kaudu saab esitada rahvusarhiivile päringu hoonete ja kinnistute omandiõiguse kohta, samuti tööstusettevõtete, laevaosakute ja väärtpaberite omamise kohta kuni 1940. aastani. Päringutele vastamisel on peamiselt aluseks kinnistusamet, talundilehed, laenutoimikud; kaubandus-tööstuskoja äriregister, majandusministeerium, siseministeerium, veeteede amet jm (kõik kuni 1940), hooneregistritoimikud (nõukogude periood kuni 2003), EVP keskregister (kuni 2007).
-                    </p>
-                    <p>
-                      Palun esitage võimalikult täpsed andmed objekti kohta:
-                    </p>
-                    <ul>
-                      <li>asukoht</li>
-                      <li>omanik</li>
-                      <li>endine kinnistunumber</li>
-                    </ul>
-                    <p>
-                      Hooneregistritoimikud sisaldavad asendiskeeme, hoonete plaane ja jooniseid, kinnistusametites hoonete plaane ei ole. Rohkem teavet leiab virtuaalse uurimissaali VAU rubriigist
-                      <a target="_blank" href="http://www.ra.ee/vau/index.php/page/article/index?menuId=4">"Kinnistud ja hooned"</a>.
-                    </p>
-                    <p>
-                      <strong>Kui soovite dokumentidest lihtkoopiaid (tõendamata koopiad), palume vormistada tavaline </strong><a href="http://www.ra.ee/vau/index.php/et/page/article/index?menuId=10#article118" target="_blank" style="font-weight: bold;">koopiatellimus</a><strong>.</strong>
-                    </p>
-                    <p>
-                      <strong>Riigilõivuga 15 eurot on maksustatud arhiiviteatis</strong> (riigilõivuseaduse § 346). Riigilõivu makseteade saadetakse päringu esitajale kohe pärast päringu läbivaatamist. Päring võetakse töösse siis, kui riigilõiv on tasutud, ning sellele vastatakse 30 päeva jooksul.
-                    </p>
-                    <p>
-                      <strong>Huvipäringu lahendamise teenustasu on 15 eurot,</strong>&nbsp; makseteade saadetakse päringu esitajale&nbsp; pärast töö valmimist. Päringule vastatakse 30 päeva jooksul.
-                    </p>
-                    <!-- Gradient overlay -->
-                    <div :class="expanded ? 'hidden' : 'block xl:hidden'" class="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-yellow-50/60 to-transparent"></div>
-                  </div>
-                  <button @click="expanded = !expanded" class="mt-6 flex items-center gap-x-2 rounded py-3 pl-3 pr-4 text-center text-base font-medium text-yellow-700 bg-yellow-100 hover:bg-yellow-100/60 xl:hidden">
-                    <template x-if="expanded">
-                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"></path>
-                      </svg>
-                    </template>
-                    <template x-if="!expanded">
+              <!-- Lisainfo -->
+              <div class="flex-1 w-full p-6 rounded bg-yellow-50/60 xl:flex-auto xl:w-72 2xl:w-80 xl:sticky xl:top-10">
+                <div class="">
+                  <h2 class="mt-1 mb-4 border-b border-gray-500 pb-1 font-bold text-gray-700">
+                    LISAINFO
+                  </h2>
+                  <div x-data="{ expanded: false }" class="prose max-w-none prose-p:text-gray-700 prose-strong:text-gray-700 prose-ul:text-gray-700">
+                    <div :class="expanded ? 'max-h-full' : 'max-h-32 xl:max-h-full'" class="relative overflow-hidden transition-max-height">
+                      <p>
+                        <strong>Arhiiv ei paku suuremahulist uurimustööd ega koosta talu või hoone ajaloo uurimusi,</strong> kuid juhatab allikate juurde, mida uurija iseseisvalt kasutada saab.
+                      </p>
+                      <p>
+                        Selle vormi kaudu saab esitada rahvusarhiivile päringu hoonete ja kinnistute omandiõiguse kohta, samuti tööstusettevõtete, laevaosakute ja väärtpaberite omamise kohta kuni 1940. aastani. Päringutele vastamisel on peamiselt aluseks kinnistusamet, talundilehed, laenutoimikud; kaubandus-tööstuskoja äriregister, majandusministeerium, siseministeerium, veeteede amet jm (kõik kuni 1940), hooneregistritoimikud (nõukogude periood kuni 2003), EVP keskregister (kuni 2007).
+                      </p>
+                      <p>
+                        Palun esitage võimalikult täpsed andmed objekti kohta:
+                      </p>
+                      <ul>
+                        <li>asukoht</li>
+                        <li>omanik</li>
+                        <li>endine kinnistunumber</li>
+                      </ul>
+                      <p>
+                        Hooneregistritoimikud sisaldavad asendiskeeme, hoonete plaane ja jooniseid, kinnistusametites hoonete plaane ei ole. Rohkem teavet leiab virtuaalse uurimissaali VAU rubriigist
+                        <a target="_blank" href="http://www.ra.ee/vau/index.php/page/article/index?menuId=4">"Kinnistud ja hooned"</a>.
+                      </p>
+                      <p>
+                        <strong>Kui soovite dokumentidest lihtkoopiaid (tõendamata koopiad), palume vormistada tavaline </strong><a href="http://www.ra.ee/vau/index.php/et/page/article/index?menuId=10#article118" target="_blank" style="font-weight: bold;">koopiatellimus</a><strong>.</strong>
+                      </p>
+                      <p>
+                        <strong>Riigilõivuga 15 eurot on maksustatud arhiiviteatis</strong> (riigilõivuseaduse § 346). Riigilõivu makseteade saadetakse päringu esitajale kohe pärast päringu läbivaatamist. Päring võetakse töösse siis, kui riigilõiv on tasutud, ning sellele vastatakse 30 päeva jooksul.
+                      </p>
+                      <p>
+                        <strong>Huvipäringu lahendamise teenustasu on 15 eurot,</strong>&nbsp; makseteade saadetakse päringu esitajale&nbsp; pärast töö valmimist. Päringule vastatakse 30 päeva jooksul.
+                      </p>
                       <!-- Gradient overlay -->
-                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
-                      </svg>
-                    </template>
-                    <span x-text="expanded ? 'Näita vähem' : 'Näita rohkem'"></span>
-                  </button>
+                      <div :class="expanded ? 'hidden' : 'block xl:hidden'" class="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-yellow-50/60 to-transparent"></div>
+                    </div>
+                    <button @click="expanded = !expanded" class="mt-6 flex items-center gap-x-2 rounded py-3 pl-3 pr-4 text-center text-base font-medium text-yellow-700 bg-yellow-100 hover:bg-yellow-100/60 xl:hidden">
+                      <template x-if="expanded">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"></path>
+                        </svg>
+                      </template>
+                      <template x-if="!expanded">
+                        <!-- Gradient overlay -->
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+                        </svg>
+                      </template>
+                      <span x-text="expanded ? 'Näita vähem' : 'Näita rohkem'"></span>
+                    </button>
+                  </div>
                 </div>
               </div>
+              <!-- Vorm -->
               <div class="flex-1 w-full pt-5 lg:flex-auto md:px-14 lg:px-32 xl:px-0 xl:w-96">
-                <h2 class="font-heading mb-10 border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:text-xl">
+                <h2 class="font-heading mb-6 md:mb-10 border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:text-xl">
                   Hooned ja kinnistud
                 </h2>
                 <!-- Päringu esitamise progress -->
@@ -232,7 +236,7 @@
                     <span class="w-48 text-center font-bold text-sm text-gray-200 mt-3">PÄRING ON ESITATUD</span>
                   </div>
                 </div>
-                <ul role="list" class="block md:hidden mb-8">
+                <ul role="list" class="block md:hidden mb-6">
                   <li class="relative flex gap-x-2">
                     <div class="absolute mt-2 left-0 top-0 flex w-6 justify-center -bottom-6">
                       <div class="w-px bg-gray-200"></div>
@@ -295,7 +299,7 @@
                   <div class="text-lg font-medium">
                     Päringu esitaja andmed
                   </div>
-                  <section class="xl:ml-4">
+                  <section class="space-y-6 xl:mx-6">
                     <div>
                       <label class="required mb-2 block text-base font-semibold leading-6 text-gray-800" for="User_lastname">Perekonnanimi <span class="required">*</span></label>
                       <input class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" name="User[lastname]" id="User_lastname" type="text" maxlength="64" />
@@ -340,7 +344,105 @@
                       </div>
                     </div>
                   </div>
-
+                  <section class="space-y-6 rounded p-6 bg-gray-50/60">
+                    <div>
+                      <label for="UserOrderProfile_invoice_institution" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse nimi</label>
+                      <input size="40" id="UserOrderProfile_invoice_institution" name="UserOrderProfile[invoice_institution]" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                    </div>
+                    <div>
+                      <label for="UserOrderProfile_invoice_institution_nr" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse registrikood</label>
+                      <input size="40" name="UserOrderProfile[invoice_institution_nr]" id="UserOrderProfile_invoice_institution_nr" type="text" maxlength="32" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                    </div>
+                    <div>
+                      <label for="UserOrderProfile_invoice_email" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse e-post (e-arve jaoks)</label>
+                      <input size="40" name="UserOrderProfile[invoice_email]" id="UserOrderProfile_invoice_email" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                    </div>
+                    <div class="pt-4">
+                      Asutuse juriidiline aadress:
+                    </div>
+                    <div>
+                      <label for="UserOrderProfile_invoice_street" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Tänav/maja</label>
+                      <input size="40" name="UserOrderProfile[invoice_street]" id="UserOrderProfile_invoice_street" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                    </div>
+                    <div>
+                      <label for="UserOrderProfile_invoice_city" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Linn/vald</label>
+                      <input size="40" name="UserOrderProfile[invoice_city]" id="UserOrderProfile_invoice_city" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                    </div>
+                    <div>
+                      <label for="UserOrderProfile_invoice_county" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Maakond</label>
+                      <input size="40" name="UserOrderProfile[invoice_county]" id="UserOrderProfile_invoice_county" type="text" maxlength="64" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                    </div>
+                    <div>
+                      <label for="UserOrderProfile_invoice_index" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Postiindeks</label>
+                      <input size="16" name="UserOrderProfile[invoice_index]" id="UserOrderProfile_invoice_index" type="text" maxlength="16" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                    </div>
+                  </section>
+                  <div class="text-lg font-medium pt-6 border-t border-gray-50">
+                    Päringu esitaja eelistused
+                  </div>
+                  <section class="space-y-6 xl:mx-6">
+                    <p class="pt-1 font-semibold leading-6 text-gray-800">
+                      Kasutuseesmärk
+                    </p>
+                    <div>
+                      <input id="UserOrderProfile_purpose_0" value="1" type="radio" name="UserOrderProfile[purpose]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3" checked="checked">
+                      <label for="UserOrderProfile_purpose_0" class=" text-base leading-6 text-gray-800">Isiklik huvi</label>
+                    </div>
+                    <div>
+                      <input id="UserOrderProfile_purpose_1" value="2" type="radio" name="UserOrderProfile[purpose]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
+                      <label for="UserOrderProfile_purpose_1" class="text-base leading-6 text-gray-800">Õiguste ja tehingute tõendamine või ametialane toiming</label>
+                    </div>
+                    <p class="pt-1 font-semibold leading-6 text-gray-800">
+                      Kättesaamise viis ja koht
+                    </p>
+                    <div class="dynamic-container">
+                      <input id="UserOrderProfile_delivery_type_code_0" value="1" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
+                      <label for="UserOrderProfile_delivery_type_code_0" class=" text-base leading-6 text-gray-800">E-postiga</label>
+                    </div>
+                    <div class="dynamic-container">
+                      <input id="UserOrderProfile_delivery_type_code_1" value="2" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3" checked="checked">
+                      <label for="UserOrderProfile_delivery_type_code_1" class=" text-base leading-6 text-gray-800">Postiga</label>
+                      <div class="ml-8 mt-4 mb-8 space-y-4">
+                        <div>
+                          <label for="UserOrderProfile_deliver_street" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Aadress (tänav, maja/talu; linn/vald; maakond) <span class="required">*</span></label>
+                          <input size="40" name="UserOrderProfile[deliver_street]" id="UserOrderProfile_deliver_street" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <input id="UserOrderProfile_delivery_type_code_2" value="3" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
+                      <label for="UserOrderProfile_delivery_type_code_2" class="text-base leading-6 text-gray-800">Tulen ise järele</label>
+                    </div>
+                  </section>
+                  <div class="text-lg font-medium pt-6 border-t border-gray-50">
+                    Päringu sisu
+                  </div>
+                  <section class="space-y-6 pb-6 xl:mx-6">
+                    <div>
+                      <label for="EnquiryProperty_subject_name" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Varasemate omanike nimed <span class="required">*</span></label>
+                      <input name="EnquiryProperty[subject_name]" id="EnquiryProperty_subject_name" type="text" maxlength="512" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" />
+                    </div>
+                    <div>
+                      <label for="EnquiryProperty_content_property_city" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Linn / vald / maakond <span class="required">*</span></label>
+                      <input name="EnquiryProperty[content_property_city]" id="EnquiryProperty_content_property_city" type="text" maxlength="512" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" />
+                    </div>
+                    <div>
+                      <label for="EnquiryProperty_content_place" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Mõis / küla / tänav <span class="required">*</span></label>
+                      <input name="EnquiryProperty[content_place]" id="EnquiryProperty_content_place" type="text" maxlength="512" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" />
+                    </div>
+                    <div>
+                      <label for="EnquiryProperty_content_property_house" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Maja nr / talu nimetus ja nr / kinnistu nr <span class="required">*</span></label>
+                      <input name="EnquiryProperty[content_property_house]" id="EnquiryProperty_content_property_house" type="text" maxlength="512" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" />
+                    </div>
+                    <div>
+                      <label for="EnquiryProperty_content_property"  class="mb-2 block text-base font-semibold leading-6 text-gray-800">Katastritunnus / ehitisregistri kood <span class="required">*</span></label>
+                      <input name="EnquiryProperty[content_property]" id="EnquiryProperty_content_property" type="text" maxlength="512" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" />
+                    </div>
+                    <div>
+                      <label for="EnquiryProperty_content2" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Missugust infot ja/või mille jaoks arhiivist otsite? <span class="required">*</span></label>
+                      <textarea rows="6" name="EnquiryProperty[content2]" id="EnquiryProperty_content2" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6"></textarea>
+                    </div>
+                  </section>
                   <div class="rounded bg-gray-50">
                     <p class="border-b border-gray-200 px-4 py-3">Palun kirjutage turvakood allolevasse kasti.</p>
                     <img class=" w-full md:w-96 p-4 md:p-0 md:m-4" src="../../images/captcha.png" alt="" />
