@@ -157,57 +157,54 @@
             <div class="flex items-start w-full flex-col gap-x-4 gap-y-6 xl:flex-row xl:gap-x-10 2xl:gap-x-12">
               <!-- Lisainfo -->
               <div class="flex-1 w-full p-6 rounded bg-yellow-50/60 xl:flex-auto xl:w-72 2xl:w-80 xl:sticky xl:top-10">
-                <div class="">
-                  <h2 class="mt-1 mb-4 border-b border-gray-500 pb-1 font-bold text-gray-700">
-                    LISAINFO
-                  </h2>
-                  <div x-data="{ expanded: false }" class="prose max-w-none prose-p:text-gray-700 prose-strong:text-gray-700 prose-ul:text-gray-700">
-                    <div :class="expanded ? 'max-h-full' : 'max-h-32 xl:max-h-full'" class="relative overflow-hidden transition-max-height">
-                      <p>
-                        <strong>Arhiiv ei paku suuremahulist uurimustööd ega koosta talu või hoone ajaloo uurimusi,</strong> kuid juhatab allikate juurde, mida uurija iseseisvalt kasutada saab.
-                      </p>
-                      <p>
-                        Selle vormi kaudu saab esitada rahvusarhiivile päringu hoonete ja kinnistute omandiõiguse kohta, samuti tööstusettevõtete, laevaosakute ja väärtpaberite omamise kohta kuni 1940. aastani. Päringutele vastamisel on peamiselt aluseks kinnistusamet, talundilehed, laenutoimikud; kaubandus-tööstuskoja äriregister, majandusministeerium, siseministeerium, veeteede amet jm (kõik kuni 1940), hooneregistritoimikud (nõukogude periood kuni 2003), EVP keskregister (kuni 2007).
-                      </p>
-                      <p>
-                        Palun esitage võimalikult täpsed andmed objekti kohta:
-                      </p>
-                      <ul>
-                        <li>asukoht</li>
-                        <li>omanik</li>
-                        <li>endine kinnistunumber</li>
-                      </ul>
-                      <p>
-                        Hooneregistritoimikud sisaldavad asendiskeeme, hoonete plaane ja jooniseid, kinnistusametites hoonete plaane ei ole. Rohkem teavet leiab virtuaalse uurimissaali VAU rubriigist
-                        <a target="_blank" href="http://www.ra.ee/vau/index.php/page/article/index?menuId=4">"Kinnistud ja hooned"</a>.
-                      </p>
-                      <p>
-                        <strong>Kui soovite dokumentidest lihtkoopiaid (tõendamata koopiad), palume vormistada tavaline </strong><a href="http://www.ra.ee/vau/index.php/et/page/article/index?menuId=10#article118" target="_blank" style="font-weight: bold;">koopiatellimus</a><strong>.</strong>
-                      </p>
-                      <p>
-                        <strong>Riigilõivuga 15 eurot on maksustatud arhiiviteatis</strong> (riigilõivuseaduse § 346). Riigilõivu makseteade saadetakse päringu esitajale kohe pärast päringu läbivaatamist. Päring võetakse töösse siis, kui riigilõiv on tasutud, ning sellele vastatakse 30 päeva jooksul.
-                      </p>
-                      <p>
-                        <strong>Huvipäringu lahendamise teenustasu on 15 eurot,</strong>&nbsp; makseteade saadetakse päringu esitajale&nbsp; pärast töö valmimist. Päringule vastatakse 30 päeva jooksul.
-                      </p>
-                      <!-- Gradient overlay -->
-                      <div :class="expanded ? 'hidden' : 'block xl:hidden'" class="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-yellow-50/60 to-transparent"></div>
-                    </div>
-                    <button @click="expanded = !expanded" class="mt-6 flex items-center gap-x-2 rounded py-3 pl-3 pr-4 text-center text-base font-medium text-yellow-700 bg-yellow-100 hover:bg-yellow-100/60 xl:hidden">
-                      <template x-if="expanded">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"></path>
-                        </svg>
-                      </template>
-                      <template x-if="!expanded">
-                        <!-- Gradient overlay -->
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
-                        </svg>
-                      </template>
-                      <span x-text="expanded ? 'Näita vähem' : 'Näita rohkem'"></span>
-                    </button>
+                <h2 class="mt-1 mb-4 border-b border-gray-500 pb-1 font-bold text-gray-700">
+                  LISAINFO
+                </h2>
+                <div x-data="{ expanded: false }" class="prose max-w-none prose-p:text-gray-700 prose-strong:text-gray-700 prose-ul:text-gray-700">
+                  <div :class="expanded ? 'max-h-full' : 'max-h-32 xl:max-h-full'" class="relative overflow-hidden transition-max-height">
+                    <p>
+                      <strong>Arhiiv ei paku suuremahulist uurimustööd ega koosta talu või hoone ajaloo uurimusi,</strong> kuid juhatab allikate juurde, mida uurija iseseisvalt kasutada saab.
+                    </p>
+                    <p>
+                      Selle vormi kaudu saab esitada rahvusarhiivile päringu hoonete ja kinnistute omandiõiguse kohta, samuti tööstusettevõtete, laevaosakute ja väärtpaberite omamise kohta kuni 1940. aastani. Päringutele vastamisel on peamiselt aluseks kinnistusamet, talundilehed, laenutoimikud; kaubandus-tööstuskoja äriregister, majandusministeerium, siseministeerium, veeteede amet jm (kõik kuni 1940), hooneregistritoimikud (nõukogude periood kuni 2003), EVP keskregister (kuni 2007).
+                    </p>
+                    <p>
+                      Palun esitage võimalikult täpsed andmed objekti kohta:
+                    </p>
+                    <ul>
+                      <li>asukoht</li>
+                      <li>omanik</li>
+                      <li>endine kinnistunumber</li>
+                    </ul>
+                    <p>
+                      Hooneregistritoimikud sisaldavad asendiskeeme, hoonete plaane ja jooniseid, kinnistusametites hoonete plaane ei ole. Rohkem teavet leiab virtuaalse uurimissaali VAU rubriigist
+                      <a target="_blank" href="http://www.ra.ee/vau/index.php/page/article/index?menuId=4">"Kinnistud ja hooned"</a>.
+                    </p>
+                    <p>
+                      <strong>Kui soovite dokumentidest lihtkoopiaid (tõendamata koopiad), palume vormistada tavaline </strong><a href="http://www.ra.ee/vau/index.php/et/page/article/index?menuId=10#article118" target="_blank" style="font-weight: bold;">koopiatellimus</a><strong>.</strong>
+                    </p>
+                    <p>
+                      <strong>Riigilõivuga 15 eurot on maksustatud arhiiviteatis</strong> (riigilõivuseaduse § 346). Riigilõivu makseteade saadetakse päringu esitajale kohe pärast päringu läbivaatamist. Päring võetakse töösse siis, kui riigilõiv on tasutud, ning sellele vastatakse 30 päeva jooksul.
+                    </p>
+                    <p>
+                      <strong>Huvipäringu lahendamise teenustasu on 15 eurot,</strong>&nbsp; makseteade saadetakse päringu esitajale&nbsp; pärast töö valmimist. Päringule vastatakse 30 päeva jooksul.
+                    </p>
+                    <!-- Gradient overlay -->
+                    <div :class="expanded ? 'hidden' : 'block xl:hidden'" class="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-yellow-50/60 to-transparent"></div>
                   </div>
+                  <button @click="expanded = !expanded" class="mt-6 flex items-center gap-x-2 rounded py-3 pl-3 pr-4 text-center text-base font-medium text-yellow-700 bg-yellow-100 hover:bg-yellow-100/60 xl:hidden">
+                    <template x-if="expanded">
+                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"></path>
+                      </svg>
+                    </template>
+                    <template x-if="!expanded">
+                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+                      </svg>
+                    </template>
+                    <span x-text="expanded ? 'Näita vähem' : 'Näita rohkem'"></span>
+                  </button>
                 </div>
               </div>
               <!-- Vorm -->
@@ -471,7 +468,7 @@
                   <p>Järgmisel sammul saate lisada faile ja esitada päringu.</p>
                   <div <div class="flex items-start w-full flex-col gap-x-4 gap-y-4 xl:flex-row">
                     <input class="focus-visible::ring-2 focus-visible::ring-green-300 w-full cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Edasi" />
-                    <a class="w-full focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white py-3 pl-3 pr-4 text-center text-base font-medium text-gray-900 hover:bg-gray-100" href="/vau/index-dev.php/et/account/view">Loobu</a>
+                    <a class="w-full focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white py-3 pl-3 pr-4 text-center text-base font-medium text-gray-900 hover:bg-gray-100" href="">Loobu</a>
                   </div>
                 </form>
               </div>
