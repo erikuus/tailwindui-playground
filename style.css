@@ -2497,6 +2497,10 @@ select {
   overflow-y: hidden;
 }
 
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+
 .text-ellipsis {
   text-overflow: ellipsis;
 }
@@ -3707,6 +3711,10 @@ body {
   background-color: rgb(240 243 246 / 0.6);
 }
 
+.prose-th\:hidden :is(:where(th):not(:where([class~="not-prose"] *))) {
+  display: none;
+}
+
 .prose-th\:w-96 :is(:where(th):not(:where([class~="not-prose"] *))) {
   width: 24rem;
 }
@@ -4068,6 +4076,10 @@ body {
 
   .md\:pr-7 {
     padding-right: 1.75rem;
+  }
+
+  .prose-th\:md\:table-cell :is(:where(th):not(:where([class~="not-prose"] *))) {
+    display: table-cell;
   }
 
   .md\:prose-img\:w-full :is(:where(img):not(:where([class~="not-prose"] *))) {

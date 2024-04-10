@@ -290,12 +290,12 @@
                 <div class="
                   prose prose-h2:font-body prose-h2:text-lg prose-h2:font-bold prose-h2:text-gray-700 max-w-none
                   prose-table:rounded prose-table:bg-gray-50/60 prose-th:p-3 prose-th:align-top prose-th:w-36 prose-td:p-3
+                  prose-th:hidden prose-th:md:table-cell"
                 ">
                   <h2>Päringu esitaja andmed ja eelistused</h2>
                   <div id="user-data">
                     <table class="rounded-full">
                       <tbody>
-                        <tr class="odd"><th>Kasutajanimi</th><td>erik</td></tr>
                         <tr class="even"><th>Eesnimi</th><td>Erik</td></tr>
                         <tr class="odd"><th>Perekonnanimi</th><td>Uus</td></tr>
                         <tr class="even"><th>Sünnikuupäev</th><td>30.07.1973</td></tr>
@@ -313,6 +313,9 @@
                         <tr class="odd">
                           <th>Missugust infot ja/või mille jaoks otsite?</th>
                           <td>
+                            <div class="block md:hidden font-bold">
+                              Missugust infot ja/või mille jaoks otsite?
+                            </div>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur interdum nibh at purus iaculis, at gravida ante gravida. Fusce condimentum et dui eget placerat. Duis sollicitudin diam ligula. Maecenas finibus tortor eget orci posuere cursus. Cras in ullamcorper odio, a porttitor lectus. Maecenas porttitor massa a velit eleifend tristique. Fusce aliquam ex interdum odio hendrerit malesuada. Donec vulputate nunc ante, non gravida nisi condimentum ac. Donec vulputate porttitor est, vitae euismod turpis rhoncus vitae. Sed ultricies orci eget vestibulum tristique. Donec lacinia nunc egestas odio pharetra fringilla. Curabitur non magna in augue congue faucibus. In ac tristique velit, a rutrum est. Aliquam at dictum nulla, in lobortis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                           </td>
                         </tr>
@@ -321,7 +324,7 @@
                   </div>
                   <h2>Vajadusel / võimalusel lisa täiendavaid dokumente</h2>
                   <div class="not-prose rounded bg-gray-50 mt-6">
-                    <div class="p-6 space-y-3">
+                    <div class="p-6">
                       <div class="flex flex-col gap-y-4 rounded border border-dashed border-gray-200 py-4">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" viewBox="0 0 24 24" stroke-width="1.5" fill="currentColor" class="h-10 w-10 text-gray-200 mx-auto">
                             <path d="M440-200h80v-167l64 64 56-57-160-160-160 160 57 56 63-63v167ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/>
@@ -334,9 +337,26 @@
                         </p>
                       </div>
                     </div>
+                    <ul class="px-6 pb-6 space-y-2">
+                      <li class="flex items-center justify-between px-3 py-2 bg-white rounded">
+                        <span class="overflow-x-hidden overflow-ellipsis">volitus_see_ja_see_et_vaadata_mis_saab_pikkaga.asice (4MB)</span>
+                        <a href="#" class="rounded-full p-1 hover:bg-gray-50">
+                          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="flex items-center justify-between px-3 py-2 bg-white rounded">
+                        <span>selgitus.pdf (500KB)</span>
+                        <a href="#" class="rounded-full p-1 hover:bg-gray-50">
+                          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-
                 <form class="mt-10 mb-6 space-y-6" id="user-form" action="" method="post">
                   <div>
                     <input id="digitized" name="digitized" type="checkbox" class="h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300">
