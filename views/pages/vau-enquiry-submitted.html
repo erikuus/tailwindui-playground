@@ -154,7 +154,7 @@
         <div class="flex grow flex-col rounded rounded-b bg-white shadow-md">
           <!-- Sisu küljendus -->
           <div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 pt-6 pb-10 xl:pt-10 xl:pb-14">
-            <div class="flex items-start w-full flex-col-reverse gap-x-4 gap-y-6 xl:flex-row xl:gap-x-10 2xl:gap-x-12">
+            <div class="flex items-start w-full flex-col-reverse gap-x-4 gap-y-0 sm:gap-y-6 xl:flex-row xl:gap-x-10 2xl:gap-x-12">
               <!-- Lisainfo -->
               <div class="flex-1 w-full p-6 rounded bg-yellow-50/60 -mb-6 sm:-mb-4 xl:mb-0 xl:flex-auto xl:w-72 2xl:w-80 xl:sticky xl:top-10">
                 <h2 class="mt-1 mb-4 border-b border-gray-500 pb-1 font-bold text-gray-700">
@@ -199,7 +199,7 @@
                   </button>
                 </div>
               </div>
-              <!-- Vorm -->
+              <!-- Sisu -->
               <div class="flex-1 w-full pt-5 lg:flex-auto md:px-14 lg:px-32 xl:px-0 xl:w-96">
                 <h2 class="font-heading mb-6 md:mb-10 border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:text-xl">
                   Hooned ja kinnistud
@@ -215,14 +215,14 @@
                       2
                     </div>
                     <div class="flex-auto border-t-2 border-green-500"></div>
-                    <div class="w-10 h-10 flex items-center justify-center rounded-full text-gray-200 border-2 border-gray-200">
+                    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-green-500 text-white">
                       3
                     </div>
                   </div>
                   <div class="flex justify-between mx-1">
                     <span class="w-48 text-center font-bold text-sm text-green-500 mt-3">TÄIDA VORM</span>
                     <span class="w-48 text-center font-bold text-sm text-green-500 mt-3">ESITA PÄRING</span>
-                    <span class="w-48 text-center font-bold text-sm text-gray-200 mt-3">PÄRING ON ESITATUD</span>
+                    <span class="w-48 text-center font-bold text-sm text-green-500 mt-3">PÄRING ON ESITATUD</span>
                   </div>
                 </div>
                 <ul role="list" class="block md:hidden mb-6">
@@ -261,126 +261,36 @@
                       <div class="w-px bg-gray-200"></div>
                     </div>
                     <div class="relative flex mt-2 h-6 w-6 flex-none items-center justify-center bg-white">
-                      <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-200"></div>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-green-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                      </svg>
                     </div>
                     <div class="flex-auto leading-5">
-                      <div class="block mt-3 ml-0.5 rounded-md text-gray-200 font-bold text-sm">
+                      <div class="block mt-3 ml-0.5 rounded-md text-green-500 font-bold text-sm">
                         PÄRING ON ESITATUD
                       </div>
                     </div>
                   </li>
                 </ul>
-                <div class="mb-12 rounded p-3 bg-yellow-100 text-yellow-800">
-                  <div class="flex">
-                    <div class="flex-shrink-0 self-start mr-3 rounded-full bg-yellow-200 p-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="w-5 h-5">
-                        <path d="m40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm302-40q17 0 28.5-11.5T520-280q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280q0 17 11.5 28.5T480-240Zm-40-120h80v-200h-80v200Zm40-100Z"></path>
-                      </svg>
-                    </div>
-                    <div class="flex-1 text-sm">
-                      <p class="mt-2 font-medium">Päring ei ole veel esitatud!</p>
-                      <ul class="my-3 ml-6 list-disc space-y-2">
-                        <li>Vaata andmed üle.</li>
-                        <li>Vajadusel / võimalusel lisa täiendavaid dokumente.</li>
-                        <li>Esita päring.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="
-                  prose prose-h2:font-body prose-h2:text-lg prose-h2:font-bold prose-h2:text-gray-700 max-w-none
-                  prose-table:rounded prose-table:bg-gray-50/60 prose-th:p-3 prose-th:align-top prose-th:w-36 prose-td:p-3
-                  prose-th:hidden prose-th:md:table-cell"
-                ">
-                  <h2>Päringu esitaja andmed ja eelistused</h2>
-                  <div id="user-data">
-                    <table class="rounded-full">
-                      <tbody>
-                        <tr class="even"><th>Eesnimi</th><td>Erik</td></tr>
-                        <tr class="odd"><th>Perekonnanimi</th><td>Uus</td></tr>
-                        <tr class="even"><th>Sünnikuupäev</th><td>30.07.1973</td></tr>
-                        <tr class="odd"><th>Riik</th><td>Eesti Vabariik</td></tr>
-                        <tr class="even"><th>E-post</th><td>erik.uus@ra.ee</td></tr>
-                        <tr class="odd"><th>Telefon</th><td>+37253225389</td></tr>
-                        <tr class="even"><th>Isikukood</th><td>3730730271_</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <h2>Päringu sisu</h2>
-                  <div id="enquiry-data">
-                    <table class="rounded-full">
-                      <tbody>
-                        <tr class="odd">
-                          <th>Missugust infot ja/või mille jaoks otsite?</th>
-                          <td>
-                            <div class="block md:hidden font-bold">
-                              Missugust infot ja/või mille jaoks otsite?
-                            </div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur interdum nibh at purus iaculis, at gravida ante gravida. Fusce condimentum et dui eget placerat. Duis sollicitudin diam ligula. Maecenas finibus tortor eget orci posuere cursus. Cras in ullamcorper odio, a porttitor lectus. Maecenas porttitor massa a velit eleifend tristique. Fusce aliquam ex interdum odio hendrerit malesuada. Donec vulputate nunc ante, non gravida nisi condimentum ac. Donec vulputate porttitor est, vitae euismod turpis rhoncus vitae. Sed ultricies orci eget vestibulum tristique. Donec lacinia nunc egestas odio pharetra fringilla. Curabitur non magna in augue congue faucibus. In ac tristique velit, a rutrum est. Aliquam at dictum nulla, in lobortis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <h2>Lisa failid</h2>
-                  <div class="not-prose rounded bg-gray-50 mt-6">
-                    <p class="border-b border-gray-200 px-6 py-3 text-sm leading-6 text-gray-600 font-semibold">
-                      Vajadusel / võimalusel lisa täiendavaid dokumente.
-                    </p>
-                    <div class="p-6">
-                      <div class="flex flex-col gap-y-4 rounded border border-dashed border-gray-200 py-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" viewBox="0 0 24 24" stroke-width="1.5" fill="currentColor" class="h-10 w-10 text-gray-200 mx-auto">
-                            <path d="M440-200h80v-167l64 64 56-57-160-160-160 160 57 56 63-63v167ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/>
-                          </svg>
-                        <p class="text-sm leading-6 text-gray-600 font-semibold mx-auto">
-                          <span class="underline cursor-pointer">Vali</span> või lohista
+                <!-- Kinnitus -->
+                <div class="mt-4 mb-12 rounded pt-6 pb-10 pl-6 pr-10 bg-green-50 text-green-500">
+                  <div class="flex flex-col gap-y-4 md:flex-row md:gap-x-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12">
+                      <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"></path>
+                    </svg>
+                    <div class="flex-1 sm:mt-3">
+                      <div class="prose prose-h2:font-body prose-h2:text-lg prose-h2:font-bold prose-h2:text-green-700 prose-p:text-green-700 prose-strong:text-green-700 max-w-none">
+                        <h2>Päring on esitatud</h2>
+                        <p>
+                          <strong>Arhiiviteatis on maksustatud riigilõivuga 15 eurot</strong> (riigilõivuseaduse § 346). Riigilõivu makseteade saadetakse päringu esitajale pärast päringu läbivaatamist. Päring võetakse töösse pärast riigilõivu laekumist ja sellele vastatakse 30 päeva jooksul.
                         </p>
-                        <p class="text-xs leading-5 text-gar-600 mx-auto">
-                          Maksimaalne lubatud suurus 10 MB
+                        <p>
+                          <strong>Huvipäringu lahendamise teenustasu on 15 eurot.</strong> Makseteade saadetakse päringu esitajale&nbsp; pärast töö valmimist. Päringule vastatakse 30 päeva jooksul.
                         </p>
                       </div>
                     </div>
-                    <ul class="px-6 pb-6 space-y-2">
-                      <li class="flex items-center justify-between px-3 py-2 bg-white rounded">
-                        <span class="overflow-x-hidden overflow-ellipsis">volitus_see_ja_see_et_vaadata_mis_saab_pikkaga.asice (4MB)</span>
-                        <a href="#" class="rounded-full p-1 hover:bg-gray-50">
-                          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
-                          </svg>
-                        </a>
-                      </li>
-                      <li class="flex items-center justify-between px-3 py-2 bg-white rounded">
-                        <span>selgitus.pdf (500KB)</span>
-                        <a href="#" class="rounded-full p-1 hover:bg-gray-50">
-                          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
-                          </svg>
-                        </a>
-                      </li>
-                    </ul>
                   </div>
                 </div>
-                <form class="mt-10 mb-6 space-y-6" id="user-form" action="" method="post">
-                  <div>
-                    <input id="digitized" name="digitized" type="checkbox" class="h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300">
-                    <label for="digitized" class="ml-3 text-base leading-6 text-gray-800">Saada mulle koopia sellest päringust</label>
-                  </div>
-                  <div class="flex items-start w-full flex-col gap-x-4 gap-y-4 xl:flex-row">
-                    <a class="w-full flex items-center focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white p-3 justify-center text-base font-medium text-gray-900 hover:bg-gray-100" href="">
-                      <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
-                        <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/>
-                      </svg>
-                      Tagasi vormi juurde
-                    </a>
-                    <a class="w-full flex items-center focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white p-3 justify-center text-base font-medium text-gray-900 hover:bg-gray-100" href="">
-                      <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
-                      </svg>
-                      Loobu
-                    </a>
-                    <input class="focus-visible::ring-2 focus-visible::ring-green-300 w-full cursor-pointer rounded bg-gray-900 p-3 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Esita päring" />
-                  </div>
-                </form>
               </div>
             </div>
           </div>

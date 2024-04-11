@@ -154,9 +154,9 @@
         <div class="flex grow flex-col rounded rounded-b bg-white shadow-md">
           <!-- Sisu küljendus -->
           <div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 pt-6 pb-10 xl:pt-10 xl:pb-14">
-            <div class="flex items-start w-full flex-col-reverse gap-x-4 gap-y-6 xl:flex-row xl:gap-x-10 2xl:gap-x-12">
+            <div class="flex items-start w-full flex-col gap-x-4 gap-y-6 xl:flex-row xl:gap-x-10 2xl:gap-x-12">
               <!-- Lisainfo -->
-              <div class="flex-1 w-full p-6 rounded bg-yellow-50/60 -mb-6 sm:-mb-4 xl:mb-0 xl:flex-auto xl:w-72 2xl:w-80 xl:sticky xl:top-10">
+              <div class="flex-1 w-full p-6 rounded bg-yellow-50/60 xl:flex-auto xl:w-72 2xl:w-80 xl:sticky xl:top-10">
                 <h2 class="mt-1 mb-4 border-b border-gray-500 pb-1 font-bold text-gray-700">
                   LISAINFO
                 </h2>
@@ -204,126 +204,199 @@
                 <h2 class="font-heading mb-6 md:mb-10 border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:text-xl">
                   Hooned ja kinnistud
                 </h2>
-                <!-- Päringu esitamise progress -->
-                <div class="hidden md:block mb-12 md:mx-6">
-                  <div class="flex items-center justify-between mx-20">
-                    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-green-500 text-white">
-                      1
-                    </div>
-                    <div class="flex-auto border-t-2 border-green-500"></div>
-                    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-green-500 text-white">
-                      2
-                    </div>
-                    <div class="flex-auto border-t-2 border-green-500"></div>
-                    <div class="w-10 h-10 flex items-center justify-center rounded-full text-gray-200 border-2 border-gray-200">
-                      3
-                    </div>
-                  </div>
-                  <div class="flex justify-between mx-1">
-                    <span class="w-48 text-center font-bold text-sm text-green-500 mt-3">TÄIDA VORM</span>
-                    <span class="w-48 text-center font-bold text-sm text-green-500 mt-3">ESITA PÄRING</span>
-                    <span class="w-48 text-center font-bold text-sm text-gray-200 mt-3">PÄRING ON ESITATUD</span>
-                  </div>
-                </div>
-                <ul role="list" class="block md:hidden mb-6">
-                  <li class="relative flex gap-x-2">
-                    <div class="absolute mt-2 left-0 top-0 flex w-6 justify-center -bottom-6">
-                      <div class="w-px bg-gray-200"></div>
-                    </div>
-                    <div class="relative flex mt-2 h-6 w-6 flex-none items-center justify-center bg-white">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-green-500">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                      </svg>
-                    </div>
-                    <div class="flex-auto leading-5">
-                      <div class="block mt-3 ml-0.5 rounded-md text-green-500 font-bold text-sm">
-                        TÄIDA VORM
-                      </div>
-                    </div>
-                  </li>
-                  <li class="relative flex gap-x-2">
-                    <div class="absolute mt-2 left-0 top-0 flex w-6 justify-center -bottom-6">
-                      <div class="w-px bg-gray-200"></div>
-                    </div>
-                    <div class="relative flex mt-2 h-6 w-6 flex-none items-center justify-center bg-white">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-green-500">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                      </svg>
-                    </div>
-                    <div class="flex-auto leading-5">
-                      <div class="block mt-3 ml-0.5 rounded-md text-green-500 font-bold text-sm">
-                        ESITA PÄRING
-                      </div>
-                    </div>
-                  </li>
-                  <li class="relative flex gap-x-2">
-                    <div class="absolute mt-2 left-0 top-0 flex w-6 justify-center h-6">
-                      <div class="w-px bg-gray-200"></div>
-                    </div>
-                    <div class="relative flex mt-2 h-6 w-6 flex-none items-center justify-center bg-white">
-                      <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-200"></div>
-                    </div>
-                    <div class="flex-auto leading-5">
-                      <div class="block mt-3 ml-0.5 rounded-md text-gray-200 font-bold text-sm">
-                        PÄRING ON ESITATUD
-                      </div>
-                    </div>
-                  </li>
-                </ul>
                 <div class="mb-12 rounded p-3 bg-yellow-100 text-yellow-800">
-                  <div class="flex">
-                    <div class="flex-shrink-0 self-start mr-3 rounded-full bg-yellow-200 p-2">
+                  <div class="flex items-center">
+                    <div class="flex-shrink-0 mr-2 rounded-full bg-yellow-200 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="w-5 h-5">
                         <path d="m40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm302-40q17 0 28.5-11.5T520-280q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280q0 17 11.5 28.5T480-240Zm-40-120h80v-200h-80v200Zm40-100Z"></path>
                       </svg>
                     </div>
-                    <div class="flex-1 text-sm">
-                      <p class="mt-2 font-medium">Päring ei ole veel esitatud!</p>
-                      <ul class="my-3 ml-6 list-disc space-y-2">
-                        <li>Vaata andmed üle.</li>
-                        <li>Vajadusel / võimalusel lisa täiendavaid dokumente.</li>
-                        <li>Esita päring.</li>
-                      </ul>
+                    <div class="flex-1">
+                      Palun täpsustage oma päringut vastavalt juhistele, mis saadeti teile e-kirjaga.
                     </div>
                   </div>
                 </div>
-                <div class="
-                  prose prose-h2:font-body prose-h2:text-lg prose-h2:font-bold prose-h2:text-gray-700 max-w-none
-                  prose-table:rounded prose-table:bg-gray-50/60 prose-th:p-3 prose-th:align-top prose-th:w-36 prose-td:p-3
-                  prose-th:hidden prose-th:md:table-cell"
-                ">
-                  <h2>Päringu esitaja andmed ja eelistused</h2>
-                  <div id="user-data">
-                    <table class="rounded-full">
-                      <tbody>
-                        <tr class="even"><th>Eesnimi</th><td>Erik</td></tr>
-                        <tr class="odd"><th>Perekonnanimi</th><td>Uus</td></tr>
-                        <tr class="even"><th>Sünnikuupäev</th><td>30.07.1973</td></tr>
-                        <tr class="odd"><th>Riik</th><td>Eesti Vabariik</td></tr>
-                        <tr class="even"><th>E-post</th><td>erik.uus@ra.ee</td></tr>
-                        <tr class="odd"><th>Telefon</th><td>+37253225389</td></tr>
-                        <tr class="even"><th>Isikukood</th><td>3730730271_</td></tr>
-                      </tbody>
-                    </table>
+                <form class="space-y-6" id="user-form" action="" method="post">
+                  <p class="text-sm text-gray-700">Tärniga <span class="required">*</span> märgitud väljad on kohustuslikud</p>
+                  <!-- <div class="-mx-4 my-4 rounded bg-red-50 p-4 text-sm text-red-700">
+                    <p class="mb-4 font-medium">Palun paranda järgmised vead:</p>
+                    <ul class="ml-6 list-disc space-y-2">
+                      <li>Kasutajanimi ei tohi olla tühi.</li>
+                      <li>Salasõna ei tohi olla tühi.</li>
+                      <li>Korda salasõna ei tohi olla tühi.</li>
+                      <li>Eesnimi ei tohi olla tühi.</li>
+                      <li>Perekonnanimi ei tohi olla tühi.</li>
+                      <li>Riik ei tohi olla tühi.</li>
+                      <li>Arhiivikasutuse eesmärk ei tohi olla tühi.</li>
+                      <li>E-post ei tohi olla tühi.</li>
+                      <li>Sünnikuupäev ei tohi olla tühi.</li>
+                      <li>Sisestatud turvakood ei ole õige.</li>
+                    </ul>
+                  </div> -->
+                  <div class="text-lg font-medium">
+                    Päringu esitaja andmed
                   </div>
-                  <h2>Päringu sisu</h2>
-                  <div id="enquiry-data">
-                    <table class="rounded-full">
-                      <tbody>
-                        <tr class="odd">
-                          <th>Missugust infot ja/või mille jaoks otsite?</th>
-                          <td>
-                            <div class="block md:hidden font-bold">
-                              Missugust infot ja/või mille jaoks otsite?
-                            </div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur interdum nibh at purus iaculis, at gravida ante gravida. Fusce condimentum et dui eget placerat. Duis sollicitudin diam ligula. Maecenas finibus tortor eget orci posuere cursus. Cras in ullamcorper odio, a porttitor lectus. Maecenas porttitor massa a velit eleifend tristique. Fusce aliquam ex interdum odio hendrerit malesuada. Donec vulputate nunc ante, non gravida nisi condimentum ac. Donec vulputate porttitor est, vitae euismod turpis rhoncus vitae. Sed ultricies orci eget vestibulum tristique. Donec lacinia nunc egestas odio pharetra fringilla. Curabitur non magna in augue congue faucibus. In ac tristique velit, a rutrum est. Aliquam at dictum nulla, in lobortis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <section class="space-y-6 xl:mx-6">
+                    <div>
+                      <label class="required mb-2 block text-base font-semibold leading-6 text-gray-800" for="User_lastname">Perekonnanimi <span class="required">*</span></label>
+                      <input class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" name="User[lastname]" id="User_lastname" type="text" maxlength="64" />
+                    </div>
+                    <div>
+                      <label class="required mb-2 block text-base font-semibold leading-6 text-gray-800" for="User_firstname">Eesnimi <span class="required">*</span></label>
+                      <input class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" name="User[firstname]" id="User_firstname" type="text" maxlength="64" />
+                    </div>
+                    <div>
+                      <label class="mb-2 block text-base font-semibold leading-6 text-gray-800" for="User_birthday">Sünnikuupäev</label>
+                      <input class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" name="User[phone]" id="User_birthday" type="text" maxlength="64" />
+                    </div>
+                    <div>
+                      <label class="mb-2 block text-base font-semibold leading-6 text-gray-800" for="User_phone">Telefon</label>
+                      <input class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" name="User[phone]" id="User_phone" type="text" maxlength="64" />
+                    </div>
+                    <div>
+                      <label class="required mb-2 block text-base font-semibold leading-6 text-gray-800" for="User_email">E-post <span class="required">*</span></label>
+                      <input class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" name="User[email]" id="User_email" type="text" maxlength="128" />
+                    </div>
+                    <div>
+                      <label class="mb-2 block text-base font-semibold leading-6 text-gray-800 required" for="s2id_autogen1">Riik <span class="required">*</span></label>
+                      <select id="User_country_id" name="User[country_id]" class="w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-green-300 sm:text-base sm:leading-6">
+                        <option value=""></option>
+                        <option value="1" selected="selected">Eesti Vabariik</option>
+                        <option value="126">Afganistani Islamivabariik</option>
+                      </select>
+                    </div>
+                  </section>
+                  <div class="text-lg font-medium pt-6 border-t border-gray-50">
+                    Esindatav asutus
                   </div>
-                  <h2>Lisa failid</h2>
-                  <div class="not-prose rounded bg-gray-50 mt-6">
+                  <div class="rounded p-3 bg-yellow-100 text-yellow-800">
+                    <div class="flex items-center">
+                      <div class="flex-shrink-0 mr-2 rounded-full bg-yellow-200 p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="w-5 h-5">
+                          <path d="m40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm302-40q17 0 28.5-11.5T520-280q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280q0 17 11.5 28.5T480-240Zm-40-120h80v-200h-80v200Zm40-100Z"/>
+                        </svg>
+                      </div>
+                      <div class="flex-1 space-y-2">
+                        Kui Sa ei esinda asutust, palun jäta see osa lihtsalt tühjaks!
+                        <a href="#preferences" class="text-blue-600 hover:text-blue-500 focus:active:text-blue-700">Jätan tühjaks</a>
+                      </div>
+                    </div>
+                  </div>
+                  <section class="space-y-6 rounded p-6 bg-gray-50/60">
+                    <div>
+                      <label class="mb-2 block text-base font-semibold leading-6 text-gray-800 required" for="s2id_autogen1">Astuse tüüp</label>
+                      <select id="User_country_id" name="User[country_id]" class="w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-green-300 sm:text-base sm:leading-6">
+                        <option value=""></option>
+                        <option value="1" selected="selected">Asutus</option>
+                        <option value="126">Notar</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="UserOrderProfile_invoice_institution" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse nimi</label>
+                      <input size="40" id="UserOrderProfile_invoice_institution" name="UserOrderProfile[invoice_institution]" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                    </div>
+                    <div>
+                      <label for="UserOrderProfile_invoice_institution_nr" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse registrikood</label>
+                      <input size="40" name="UserOrderProfile[invoice_institution_nr]" id="UserOrderProfile_invoice_institution_nr" type="text" maxlength="32" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                    </div>
+                    <div>
+                      <label for="UserOrderProfile_invoice_email" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse e-post (e-arve jaoks)</label>
+                      <input size="40" name="UserOrderProfile[invoice_email]" id="UserOrderProfile_invoice_email" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                    </div>
+                    <div class="pt-4">
+                      Asutuse juriidiline aadress:
+                    </div>
+                    <div>
+                      <label for="UserOrderProfile_invoice_street" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Tänav/maja</label>
+                      <input size="40" name="UserOrderProfile[invoice_street]" id="UserOrderProfile_invoice_street" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                    </div>
+                    <div>
+                      <label for="UserOrderProfile_invoice_city" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Linn/vald</label>
+                      <input size="40" name="UserOrderProfile[invoice_city]" id="UserOrderProfile_invoice_city" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                    </div>
+                    <div>
+                      <label for="UserOrderProfile_invoice_county" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Maakond</label>
+                      <input size="40" name="UserOrderProfile[invoice_county]" id="UserOrderProfile_invoice_county" type="text" maxlength="64" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                    </div>
+                    <div>
+                      <label for="UserOrderProfile_invoice_index" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Postiindeks</label>
+                      <input size="16" name="UserOrderProfile[invoice_index]" id="UserOrderProfile_invoice_index" type="text" maxlength="16" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                    </div>
+                  </section>
+                  <div id="preferences" class="text-lg font-medium pt-6 border-t border-gray-50">
+                    Päringu esitaja eelistused
+                  </div>
+                  <section class="space-y-6 xl:mx-6">
+                    <p class="pt-1 font-semibold leading-6 text-gray-800">
+                      Kasutuseesmärk
+                    </p>
+                    <div>
+                      <input id="UserOrderProfile_purpose_0" value="1" type="radio" name="UserOrderProfile[purpose]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3 -mt-0.5" checked="checked">
+                      <label for="UserOrderProfile_purpose_0" class=" text-base leading-6 text-gray-800">Isiklik huvi</label>
+                    </div>
+                    <div>
+                      <input id="UserOrderProfile_purpose_1" value="2" type="radio" name="UserOrderProfile[purpose]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3 -mt-0.5">
+                      <label for="UserOrderProfile_purpose_1" class="text-base leading-6 text-gray-800">Õiguste ja tehingute tõendamine või ametialane toiming</label>
+                    </div>
+                    <p class="pt-1 font-semibold leading-6 text-gray-800">
+                      Kättesaamise viis ja koht
+                    </p>
+                    <div class="dynamic-container">
+                      <input id="UserOrderProfile_delivery_type_code_0" value="1" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3 -mt-0.5">
+                      <label for="UserOrderProfile_delivery_type_code_0" class=" text-base leading-6 text-gray-800">E-postiga</label>
+                    </div>
+                    <div class="dynamic-container">
+                      <input id="UserOrderProfile_delivery_type_code_1" value="2" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3 -mt-0.5" checked="checked">
+                      <label for="UserOrderProfile_delivery_type_code_1" class=" text-base leading-6 text-gray-800">Postiga</label>
+                      <div class="ml-8 mt-4 mb-8 space-y-4">
+                        <div>
+                          <label for="UserOrderProfile_deliver_street" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Aadress (tänav, maja/talu; linn/vald; maakond) <span class="required">*</span></label>
+                          <input size="40" name="UserOrderProfile[deliver_street]" id="UserOrderProfile_deliver_street" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <input id="UserOrderProfile_delivery_type_code_2" value="3" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3 -mt-0.5">
+                      <label for="UserOrderProfile_delivery_type_code_2" class="text-base leading-6 text-gray-800">Tulen ise järele</label>
+                    </div>
+                  </section>
+                  <div class="text-lg font-medium pt-6 border-t border-gray-50">
+                    Päringu sisu
+                  </div>
+                  <section class="space-y-6 pb-6 xl:mx-6">
+                    <div>
+                      <label for="EnquiryProperty_subject_name" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Varasemate omanike nimed <span class="required">*</span></label>
+                      <input name="EnquiryProperty[subject_name]" id="EnquiryProperty_subject_name" type="text" maxlength="512" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" />
+                    </div>
+                    <div>
+                      <label for="EnquiryProperty_content_property_city" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Linn / vald / maakond <span class="required">*</span></label>
+                      <input name="EnquiryProperty[content_property_city]" id="EnquiryProperty_content_property_city" type="text" maxlength="512" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" />
+                    </div>
+                    <div>
+                      <label for="EnquiryProperty_content_place" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Mõis / küla / tänav <span class="required">*</span></label>
+                      <input name="EnquiryProperty[content_place]" id="EnquiryProperty_content_place" type="text" maxlength="512" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" />
+                    </div>
+                    <div>
+                      <label for="EnquiryProperty_content_property_house" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Maja nr / talu nimetus ja nr / kinnistu nr <span class="required">*</span></label>
+                      <input name="EnquiryProperty[content_property_house]" id="EnquiryProperty_content_property_house" type="text" maxlength="512" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" />
+                    </div>
+                    <div>
+                      <label for="EnquiryProperty_content_property"  class="mb-2 block text-base font-semibold leading-6 text-gray-800">Katastritunnus / ehitisregistri kood <span class="required">*</span></label>
+                      <input name="EnquiryProperty[content_property]" id="EnquiryProperty_content_property" type="text" maxlength="512" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" />
+                    </div>
+                    <div>
+                      <input id="digitized" name="digitized" type="checkbox" class="h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300">
+                      <label for="digitized" class="ml-3 text-base leading-6 text-gray-800">On vaja ...</label>
+                    </div>
+                    <div>
+                      <label for="EnquiryProperty_content2" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Missugust infot ja/või mille jaoks arhiivist otsite? <span class="required">*</span></label>
+                      <textarea rows="6" name="EnquiryProperty[content2]" id="EnquiryProperty_content2" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6"></textarea>
+                    </div>
+                  </section>
+                  <div class="text-lg font-medium pt-6 border-t border-gray-50">
+                    Lisa failid
+                  </div>
+                  <div class="rounded bg-gray-50">
                     <p class="border-b border-gray-200 px-6 py-3 text-sm leading-6 text-gray-600 font-semibold">
                       Vajadusel / võimalusel lisa täiendavaid dokumente.
                     </p>
@@ -359,28 +432,13 @@
                       </li>
                     </ul>
                   </div>
-                </div>
-                <form class="mt-10 mb-6 space-y-6" id="user-form" action="" method="post">
-                  <div>
-                    <input id="digitized" name="digitized" type="checkbox" class="h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300">
-                    <label for="digitized" class="ml-3 text-base leading-6 text-gray-800">Saada mulle koopia sellest päringust</label>
-                  </div>
-                  <div class="flex items-start w-full flex-col gap-x-4 gap-y-4 xl:flex-row">
-                    <a class="w-full flex items-center focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white p-3 justify-center text-base font-medium text-gray-900 hover:bg-gray-100" href="">
-                      <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
-                        <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/>
-                      </svg>
-                      Tagasi vormi juurde
-                    </a>
-                    <a class="w-full flex items-center focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white p-3 justify-center text-base font-medium text-gray-900 hover:bg-gray-100" href="">
-                      <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
-                      </svg>
-                      Loobu
-                    </a>
-                    <input class="focus-visible::ring-2 focus-visible::ring-green-300 w-full cursor-pointer rounded bg-gray-900 p-3 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Esita päring" />
-                  </div>
                 </form>
+                <div class="pt-12 space-y-6">
+                  <div class="flex items-start w-full flex-col gap-x-4 gap-y-4 xl:flex-row">
+                    <a class="w-full focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white py-3 pl-3 pr-4 text-center text-base font-medium text-gray-900 hover:bg-gray-100" href="">Loobu</a>
+                    <input class="focus-visible::ring-2 focus-visible::ring-green-300 w-full cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Salvesta">
+                  </div>
+                </div>
               </div>
             </div>
           </div>
