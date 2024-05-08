@@ -4227,6 +4227,10 @@ body {
     width: 14rem;
   }
 
+  .md\:w-24 {
+    width: 6rem;
+  }
+
   .md\:max-w-none {
     max-width: none;
   }
