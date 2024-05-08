@@ -3800,8 +3800,50 @@ body {
   padding: 0.75rem;
 }
 
+.prose-th\:py-3 :is(:where(th):not(:where([class~="not-prose"] *))) {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.prose-th\:px-3 :is(:where(th):not(:where([class~="not-prose"] *))) {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .prose-th\:align-top :is(:where(th):not(:where([class~="not-prose"] *))) {
   vertical-align: top;
+}
+
+.first\:prose-th\:p-8 :is(:where(th):not(:where([class~="not-prose"] *))):first-child {
+  padding: 2rem;
+}
+
+.first\:prose-th\:pb-3 :is(:where(th):not(:where([class~="not-prose"] *))):first-child {
+  padding-bottom: 0.75rem;
+}
+
+.first\:prose-th\:pb-2 :is(:where(th):not(:where([class~="not-prose"] *))):first-child {
+  padding-bottom: 0.5rem;
+}
+
+.first\:prose-th\:pb-1 :is(:where(th):not(:where([class~="not-prose"] *))):first-child {
+  padding-bottom: 0.25rem;
+}
+
+.last\:prose-th\:p-24 :is(:where(th):not(:where([class~="not-prose"] *))):last-child {
+  padding: 6rem;
+}
+
+.last\:prose-th\:pt-3 :is(:where(th):not(:where([class~="not-prose"] *))):last-child {
+  padding-top: 0.75rem;
+}
+
+.last\:prose-th\:pt-2 :is(:where(th):not(:where([class~="not-prose"] *))):last-child {
+  padding-top: 0.5rem;
+}
+
+.last\:prose-th\:pt-1 :is(:where(th):not(:where([class~="not-prose"] *))):last-child {
+  padding-top: 0.25rem;
 }
 
 .prose-td\:p-3 :is(:where(td):not(:where([class~="not-prose"] *))) {
