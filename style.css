@@ -2547,6 +2547,11 @@ select {
   border-top-right-radius: 0.5rem;
 }
 
+.rounded-r {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
 .rounded-bl {
   border-bottom-left-radius: 0.5rem;
 }
@@ -4261,6 +4266,10 @@ body {
          column-gap: 1rem;
   }
 
+  .md\:rounded-none {
+    border-radius: 0px;
+  }
+
   .md\:p-0 {
     padding: 0px;
   }
@@ -4281,6 +4290,16 @@ body {
 
   .prose-th\:md\:table-cell :is(:where(th):not(:where([class~="not-prose"] *))) {
     display: table-cell;
+  }
+
+  .first\:prose-td\:md\:rounded-r :is(:where(td):not(:where([class~="not-prose"] *))):first-child {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+
+  .md\:first\:prose-td\:rounded-r :is(:where(td):not(:where([class~="not-prose"] *))):first-child {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
   }
 
   .md\:prose-img\:w-full :is(:where(img):not(:where([class~="not-prose"] *))) {
