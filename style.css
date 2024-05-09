@@ -3788,6 +3788,10 @@ body {
   color: rgb(32 93 54 / var(--tw-text-opacity));
 }
 
+.prose-a\:no-underline :is(:where(a):not(:where([class~="not-prose"] *))) {
+  text-decoration-line: none;
+}
+
 .prose-strong\:text-gray-700 :is(:where(strong):not(:where([class~="not-prose"] *))) {
   --tw-text-opacity: 1;
   color: rgb(78 88 99 / var(--tw-text-opacity));
