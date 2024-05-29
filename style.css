@@ -1740,6 +1740,11 @@ select {
   margin-bottom: 2.5rem;
 }
 
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -2455,6 +2460,12 @@ select {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .divide-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -3846,6 +3857,10 @@ body {
   width: 9rem;
 }
 
+.prose-th\:w-1\/3 :is(:where(th):not(:where([class~="not-prose"] *))) {
+  width: 33.333333%;
+}
+
 .prose-th\:bg-white :is(:where(th):not(:where([class~="not-prose"] *))) {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -3910,6 +3925,14 @@ body {
 
   .print\:hidden {
     display: none;
+  }
+
+  .print\:rounded-none {
+    border-radius: 0px;
+  }
+
+  .print\:p-0 {
+    padding: 0px;
   }
 }
 
@@ -4065,6 +4088,12 @@ body {
     --tw-space-y-reverse: 0;
     margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+
+  .sm\:space-x-2 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .sm\:divide-x-2 > :not([hidden]) ~ :not([hidden]) {
