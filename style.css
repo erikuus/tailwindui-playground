@@ -2468,6 +2468,12 @@ select {
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-y-0 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0px * var(--tw-space-y-reverse));
+}
+
 .divide-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(2px * calc(1 - var(--tw-divide-y-reverse)));
@@ -3123,6 +3129,18 @@ select {
 
 .pt-3 {
   padding-top: 0.75rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
+.pb-0\.5 {
+  padding-bottom: 0.125rem;
+}
+
+.pb-0 {
+  padding-bottom: 0px;
 }
 
 .text-center {
@@ -3804,8 +3822,80 @@ body {
   color: rgb(32 93 54 / var(--tw-text-opacity));
 }
 
+.prose-a\:ml-2 :is(:where(a):not(:where([class~="not-prose"] *))) {
+  margin-left: 0.5rem;
+}
+
+.prose-a\:cursor-pointer :is(:where(a):not(:where([class~="not-prose"] *))) {
+  cursor: pointer;
+}
+
+.prose-a\:rounded :is(:where(a):not(:where([class~="not-prose"] *))) {
+  border-radius: 0.5rem;
+}
+
+.prose-a\:border :is(:where(a):not(:where([class~="not-prose"] *))) {
+  border-width: 1px;
+}
+
+.prose-a\:border-solid :is(:where(a):not(:where([class~="not-prose"] *))) {
+  border-style: solid;
+}
+
+.prose-a\:border-gray-200 :is(:where(a):not(:where([class~="not-prose"] *))) {
+  --tw-border-opacity: 1;
+  border-color: rgb(211 216 223 / var(--tw-border-opacity));
+}
+
+.prose-a\:bg-gray-900 :is(:where(a):not(:where([class~="not-prose"] *))) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(36 42 48 / var(--tw-bg-opacity));
+}
+
+.prose-a\:py-2 :is(:where(a):not(:where([class~="not-prose"] *))) {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.prose-a\:py-3 :is(:where(a):not(:where([class~="not-prose"] *))) {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.prose-a\:px-4 :is(:where(a):not(:where([class~="not-prose"] *))) {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.prose-a\:pl-2 :is(:where(a):not(:where([class~="not-prose"] *))) {
+  padding-left: 0.5rem;
+}
+
+.prose-a\:pr-3 :is(:where(a):not(:where([class~="not-prose"] *))) {
+  padding-right: 0.75rem;
+}
+
+.prose-a\:text-sm :is(:where(a):not(:where([class~="not-prose"] *))) {
+  font-size: 0.8125rem;
+  line-height: 120%;
+}
+
+.prose-a\:font-medium :is(:where(a):not(:where([class~="not-prose"] *))) {
+  font-weight: 500;
+}
+
+.prose-a\:text-white :is(:where(a):not(:where([class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .prose-a\:no-underline :is(:where(a):not(:where([class~="not-prose"] *))) {
   text-decoration-line: none;
+}
+
+.prose-a\:hover\:bg-gray-700:hover :is(:where(a):not(:where([class~="not-prose"] *))) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(78 88 99 / var(--tw-bg-opacity));
 }
 
 .prose-strong\:text-gray-700 :is(:where(strong):not(:where([class~="not-prose"] *))) {
