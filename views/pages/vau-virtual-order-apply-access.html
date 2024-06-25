@@ -212,7 +212,7 @@
                   </div>
                 </div>
               </div>
-              <div class="mb-6 flex items-start w-full flex-col gap-x-4 gap-y-4 xl:flex-row">
+              <div class="flex items-start w-full flex-col gap-x-4 gap-y-4 md:flex-row">
                 <a class="w-full flex items-center focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white p-3 justify-center text-base font-medium text-gray-900 hover:bg-gray-100" href="">
                   <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
                     <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"></path>
@@ -220,25 +220,23 @@
                   Tagasi
                 </a>
                 <a class="w-full flex items-center focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white p-3 justify-center text-base font-medium text-gray-900 hover:bg-gray-100" href="">
-                  <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859M12 3v8.25m0 0-3-3m3 3 3-3" />
-                  </svg>
-                  Salvesta hilisemaks
+                  Salvesta hilisemaks ...
                 </a>
                 <input class="focus-visible::ring-2 focus-visible::ring-green-300 w-full cursor-pointer rounded bg-gray-900 p-3 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Taotle juurdepääsu">
               </div>
-              <h2 class="mb-6 text-lg font-bold text-gray-700">
+              <h2 class="my-6 text-lg font-bold text-gray-700">
                 Taotlemiseks salvestatud
               </h2>
               <div class="
                 rounded shadow-sm p-2
                 prose max-w-none
                 prose-thead:border-none prose-tbody:border-none
-                odd:prose-tr:bg-gray-50 prose-tr:border-none
+                odd:prose-tr:bg-gray-50 prose-tr:border-none hover:prose-tr:bg-green-50
                 prose-th:bg-white prose-th:px-3 first:prose-th:pb-2 last:prose-th:pt-2
                 first:prose-td:rounded-l last:prose-td:rounded-r prose-td:p-3 prose-td:align-top
               ">
-                <table class="items">
+                <div class="grid-view -my-7">
+                <table>
                     <thead>
                         <tr>
                             <th id="order-list_c0">Leidandmed</th>
@@ -286,6 +284,7 @@
                         </tr>
                     </tbody>
                 </table>
+                </div>
               </div>
             </div>
           </div>
