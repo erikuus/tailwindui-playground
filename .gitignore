@@ -5,7 +5,5 @@
 # npm files
 node_modules
 .prettierrc
-package-lock.json
 package.json
 package-lock.json
-*.json
