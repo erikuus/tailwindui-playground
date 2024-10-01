@@ -219,7 +219,8 @@
                 </a>
               </div>
               <div class="
-                prose prose-h2:font-body prose-h2:text-lg prose-h2:font-bold prose-h2:text-gray-700 max-w-none
+                mb-12
+                prose max-w-none
                 prose-table:rounded prose-table:bg-gray-50/60 prose-th:p-3 prose-td:p-3 prose-td:align-top
               ">
                 <table class="detail-view" id="yw1">
@@ -249,10 +250,22 @@
                     </table>
                   </div>
                 </div>
-                <h3>Koondarve ootel teenused</h3>
-                <div class="flex flex-col gap-x-2 lg:flex-row not-prose">
-                  <a class="cursor-pointer rounded bg-gray-900 py-3 px-4 text-center text-base font-medium text-white hover:bg-gray-700" href="">Moodusta koondarve</a>
-                </div>
+              </div>
+              <h3 class="mt-6 text-lg font-bold text-gray-700">
+                Koondarve ootel teenused
+              </h3>
+              <div class="my-6 flex flex-col gap-x-2 lg:flex-row not-prose">
+                <a class="cursor-pointer rounded bg-gray-900 py-3 px-4 text-center text-base font-medium text-white hover:bg-gray-700" href="">Moodusta koondarve</a>
+              </div>
+              <div class="
+                mb-12
+                rounded shadow-sm p-2
+                prose max-w-none
+                prose-thead:border-none prose-tbody:border-none
+                odd:prose-tr:bg-gray-50 prose-tr:border-none
+                prose-th:bg-white prose-th:px-3 first:prose-th:pb-2 last:prose-th:pt-2
+                first:prose-td:rounded-l last:prose-td:rounded-r prose-td:p-3
+              ">
                 <table>
                   <thead>
                     <tr>
@@ -306,104 +319,122 @@
                     </tr>
                   </tbody>
                 </table>
-                <h3>
-                  Koondarved
-                </h3>
-                <div class="-mt-7 !important">
-                  <div class="float-right mr-1">1 - 4 / 4</div>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>
-                          <a href="#">Teenuste arvestus nr</a>
-                        </th>
-                        <th class="hidden lg:table-cell"><a href="#">Koostaja</a></th>
-                        <th class="hidden md:table-cell"><a class="desc" href="#">Koostatud</a></th>
-                        <th class="text-right" id="company-invoice-grid_c4"><a href="#">Kokku</a></th>
-                        <th class="hidden md:table-cell w-48"><a href="#">ERPLY arve nr</a></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <a href="#">AKA2021-00115</a>
-                        </td>
-                        <td class="hidden lg:table-cell">Kaia Ivask</td>
-                        <td class="hidden md:table-cell">29.10.2021</td>
-                        <td class="text-right">3,60&nbsp;€</td>
-                        <td class="hidden md:table-cell nowrap">
-                          9034402
-                          <span class="ml-2 py-1 rounded-sm bg-yellow-300 text-center text-sm inline-block w-24">laekumata</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <a href="#">AKA2021-00051</a>
-                        </td>
-                        <td class="hidden lg:table-cell">Helina Tennasilm</td>
-                        <td class="hidden md:table-cell">31.05.2021</td>
-                        <td class="text-right">3,20&nbsp;€</td>
-                        <td class="hidden md:table-cell nowrap">
-                          9030580
-                          <span class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <h3>
-                  Kasutajad
-                </h3>
-                <form id="add-user-company-form" action="#" method="post" class="flex flex-col gap-x-2 gap-y-2 lg:flex-row">
-                  <input placeholder="Kasutajanimi" name="AddUserCompany[username]" id="AddUserCompany_username" type="text" maxlength="64" class="block lg:w-56 rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                  <input class="focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Lisa kasutaja">
-                </form>
-                <div id="user-companies-grid" class="grid-view">
-                  <table class="items">
-                    <thead>
-                      <tr>
-                        <th><a class="asc" href="#">Nimi</a></th>
-                        <th><a href="#">Kasutajanimi</a></th>
-                        <th>Halduri õigused</th>
-                        <th>&nbsp;</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class="hover:bg-green-50">
-                        <td>Erik Uus</td>
-                        <td>erik</td>
-                        <td class="flag-column not-prose">
-                          <a class="flag-link flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100 " href="#">
-                            <img class="w-6 h-6" src="../../images/check_box.svg" alt="">
-                          </a>
-                        </td>
-                        <td>
-                          <a class="float-right flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" title="Kustuta" href="#">
-                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
-                            </svg>
-                          </a>
-                        </td>
-                      </tr>
-                       <tr class="hover:bg-green-50">
-                        <td>Marina Toomel</td>
-                        <td>MARINA1953</td>
-                        <td class="flag-column not-prose">
-                          <a class="flag-link flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="#" >
-                            <img class="w-6 h-6" src="../../images/check_box_outline_blank.svg" alt="">
-                          </a>
-                        </td>
-                        <td>
-                          <a class="float-right flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" title="Kustuta" href="#">
-                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
-                            </svg>
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+              </div>
+              <h3 class="my-6 text-lg font-bold text-gray-700">
+                Koondarved
+              </h3>
+              <div class="
+                mb-12
+                rounded shadow-sm p-2
+                prose max-w-none
+                prose-thead:border-none prose-tbody:border-none
+                odd:prose-tr:bg-gray-50 prose-tr:border-none
+                prose-th:bg-white prose-th:px-3 first:prose-th:pb-2 last:prose-th:pt-2
+                first:prose-td:rounded-l last:prose-td:rounded-r prose-td:p-3
+              ">
+                <div class="float-right mr-1">1 - 4 / 4</div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>
+                        <a href="#">Teenuste arvestus nr</a>
+                      </th>
+                      <th class="hidden lg:table-cell"><a href="#">Koostaja</a></th>
+                      <th class="hidden md:table-cell"><a class="desc" href="#">Koostatud</a></th>
+                      <th class="text-right" id="company-invoice-grid_c4"><a href="#">Kokku</a></th>
+                      <th class="hidden md:table-cell w-48"><a href="#">ERPLY arve nr</a></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <a href="#">AKA2021-00115</a>
+                      </td>
+                      <td class="hidden lg:table-cell">Kaia Ivask</td>
+                      <td class="hidden md:table-cell">29.10.2021</td>
+                      <td class="text-right">3,60&nbsp;€</td>
+                      <td class="hidden md:table-cell nowrap">
+                        9034402
+                        <span class="ml-2 py-1 rounded-sm bg-yellow-300 text-center text-sm inline-block w-24">laekumata</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <a href="#">AKA2021-00051</a>
+                      </td>
+                      <td class="hidden lg:table-cell">Helina Tennasilm</td>
+                      <td class="hidden md:table-cell">31.05.2021</td>
+                      <td class="text-right">3,20&nbsp;€</td>
+                      <td class="hidden md:table-cell nowrap">
+                        9030580
+                        <span class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <h3 class="mt-6 text-lg font-bold text-gray-700">
+                Kasutajad
+              </h3>
+              <form id="add-user-company-form" action="#" method="post" class="my-6 flex flex-col gap-x-2 gap-y-2 lg:flex-row">
+                <input placeholder="Kasutajanimi" name="AddUserCompany[username]" id="AddUserCompany_username" type="text" maxlength="64" class="block lg:w-56 rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                <input class="focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Lisa kasutaja">
+              </form>
+              <div id="user-companies-grid" class="
+                grid-view
+                mb-12
+                rounded shadow-sm p-2
+                prose max-w-none
+                prose-thead:border-none prose-tbody:border-none
+                odd:prose-tr:bg-gray-50 prose-tr:border-none
+                prose-th:bg-white prose-th:px-3 first:prose-th:pb-2 last:prose-th:pt-2
+                first:prose-td:rounded-l last:prose-td:rounded-r prose-td:p-3 prose-td:align-top
+
+              ">
+                <table class="items">
+                  <thead>
+                    <tr>
+                      <th><a class="asc" href="#">Nimi</a></th>
+                      <th><a href="#">Kasutajanimi</a></th>
+                      <th>Halduri õigused</th>
+                      <th>&nbsp;</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="hover:bg-green-50">
+                      <td>Erik Uus</td>
+                      <td>erik</td>
+                      <td class="flag-column not-prose">
+                        <a class="flag-link flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100 " href="#">
+                          <img class="w-6 h-6" src="../../images/check_box.svg" alt="">
+                        </a>
+                      </td>
+                      <td>
+                        <a class="float-right flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" title="Kustuta" href="#">
+                          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
+                          </svg>
+                        </a>
+                      </td>
+                    </tr>
+                     <tr class="hover:bg-green-50">
+                      <td>Marina Toomel</td>
+                      <td>MARINA1953</td>
+                      <td class="flag-column not-prose">
+                        <a class="flag-link flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="#" >
+                          <img class="w-6 h-6" src="../../images/check_box_outline_blank.svg" alt="">
+                        </a>
+                      </td>
+                      <td>
+                        <a class="float-right flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" title="Kustuta" href="#">
+                          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
+                          </svg>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
