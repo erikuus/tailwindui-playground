@@ -2160,6 +2160,10 @@ select {
   margin-top: -3rem;
 }
 
+.-mb-5 {
+  margin-bottom: -1.25rem;
+}
+
 .block {
   display: block;
 }
@@ -3673,6 +3677,40 @@ body {
   font-family: Roboto, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+.empty\:-my-10:empty {
+  margin-top: -2.5rem;
+  margin-bottom: -2.5rem;
+}
+
+.empty\:-my-5:empty {
+  margin-top: -1.25rem;
+  margin-bottom: -1.25rem;
+}
+
+.empty\:-mt-7:empty {
+  margin-top: -1.75rem;
+}
+
+.empty\:-mt-10:empty {
+  margin-top: -2.5rem;
+}
+
+.empty\:-mt-6:empty {
+  margin-top: -1.5rem;
+}
+
+.empty\:-mt-5:empty {
+  margin-top: -1.25rem;
+}
+
+.empty\:-mb-5:empty {
+  margin-bottom: -1.25rem;
+}
+
+.empty\:hidden:empty {
+  display: none;
+}
+
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(151 159 171 / var(--tw-border-opacity));
@@ -4066,6 +4104,10 @@ body {
 .prose-li\:text-sm :is(:where(li):not(:where([class~="not-prose"] *))) {
   font-size: 0.8125rem;
   line-height: 120%;
+}
+
+.prose-table\:m-0 :is(:where(table):not(:where([class~="not-prose"] *))) {
+  margin: 0px;
 }
 
 .prose-table\:rounded :is(:where(table):not(:where([class~="not-prose"] *))) {

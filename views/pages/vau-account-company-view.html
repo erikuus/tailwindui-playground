@@ -221,7 +221,7 @@
               <div class="
                 mb-12
                 prose max-w-none
-                prose-table:rounded prose-table:bg-gray-50/60 prose-th:p-3 prose-td:p-3 prose-td:align-top
+                prose-table:rounded prose-table:bg-gray-50/60 prose-th:w-1/3 prose-th:p-3 prose-td:p-3 prose-td:align-top
               ">
                 <table class="detail-view" id="yw1">
                   <tbody>
@@ -324,54 +324,257 @@
                 Koondarved
               </h3>
               <div class="
-                mb-12
                 rounded shadow-sm p-2
                 prose max-w-none
-                prose-thead:border-none prose-tbody:border-none
-                odd:prose-tr:bg-gray-50 prose-tr:border-none
+                prose-table:m-0 prose-thead:border-none prose-tbody:border-none
+                odd:prose-tr:bg-gray-50 prose-tr:border-none  hover:prose-tr:bg-green-50
                 prose-th:bg-white prose-th:px-3 first:prose-th:pb-2 last:prose-th:pt-2
-                first:prose-td:rounded-l last:prose-td:rounded-r prose-td:p-3
+                first:prose-td:rounded-l last:prose-td:rounded-r prose-td:p-3 prose-td:align-top
               ">
-                <div class="float-right mr-1">1 - 4 / 4</div>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>
-                        <a href="#">Teenuste arvestus nr</a>
-                      </th>
-                      <th class="hidden lg:table-cell"><a href="#">Koostaja</a></th>
-                      <th class="hidden md:table-cell"><a class="desc" href="#">Koostatud</a></th>
-                      <th class="text-right" id="company-invoice-grid_c4"><a href="#">Kokku</a></th>
-                      <th class="hidden md:table-cell w-48"><a href="#">ERPLY arve nr</a></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <a href="#">AKA2021-00115</a>
-                      </td>
-                      <td class="hidden lg:table-cell">Kaia Ivask</td>
-                      <td class="hidden md:table-cell">29.10.2021</td>
-                      <td class="text-right">3,60&nbsp;€</td>
-                      <td class="hidden md:table-cell nowrap">
-                        9034402
-                        <span class="ml-2 py-1 rounded-sm bg-yellow-300 text-center text-sm inline-block w-24">laekumata</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <a href="#">AKA2021-00051</a>
-                      </td>
-                      <td class="hidden lg:table-cell">Helina Tennasilm</td>
-                      <td class="hidden md:table-cell">31.05.2021</td>
-                      <td class="text-right">3,20&nbsp;€</td>
-                      <td class="hidden md:table-cell nowrap">
-                        9030580
-                        <span class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="grid-view" id="company-invoice-grid">
+                  <div class="summary text-right mr-1">1 - 20 / 24</div>
+                  <table class="items">
+                      <thead>
+                          <tr>
+                              <th id="company-invoice-grid_c0"><a href="/vau/index-dev.php/et/company/view?id=10&amp;_xr=eNpLtDK0qs60MrBOtDKCMIqtDI2slBKTk%252FNL80r0yzJTy5WAYhZWSjmJeemliempIC5QRWqJknVtLQB8RRQN&amp;CompanyInvoice_sort=invoice_nr">Teenuste arvestus nr</a></th>
+                              <th class="hidden lg:table-cell" id="company-invoice-grid_c1"><a href="/vau/index-dev.php/et/company/view?id=10&amp;_xr=eNpLtDK0qs60MrBOtDKCMIqtDI2slBKTk%252FNL80r0yzJTy5WAYhZWSjmJeemliempIC5QRWqJknVtLQB8RRQN&amp;CompanyInvoice_sort=user_id">Koostaja</a></th>
+                              <th class="hidden md:table-cell" id="company-invoice-grid_c2"><a class="desc" href="/vau/index-dev.php/et/company/view?id=10&amp;_xr=eNpLtDK0qs60MrBOtDKCMIqtDI2slBKTk%252FNL80r0yzJTy5WAYhZWSjmJeemliempIC5QRWqJknVtLQB8RRQN&amp;CompanyInvoice_sort=created">Koostatud</a></th>
+                              <th class="text-right" id="company-invoice-grid_c4"><a href="/vau/index-dev.php/et/company/view?id=10&amp;_xr=eNpLtDK0qs60MrBOtDKCMIqtDI2slBKTk%252FNL80r0yzJTy5WAYhZWSjmJeemliempIC5QRWqJknVtLQB8RRQN&amp;CompanyInvoice_sort=total">Kokku</a></th>
+                              <th class="hidden md:table-cell whitespace-nowrap w-48" id="company-invoice-grid_c5"><a href="/vau/index-dev.php/et/company/view?id=10&amp;_xr=eNpLtDK0qs60MrBOtDKCMIqtDI2slBKTk%252FNL80r0yzJTy5WAYhZWSjmJeemliempIC5QRWqJknVtLQB8RRQN&amp;CompanyInvoice_sort=erply_doc_nr">ERPLY arve nr</a></th>
+                              <th id="company-invoice-grid_c6"></th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr class="odd">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=842&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2023-00145</a></td>
+                              <td class="hidden lg:table-cell">Helina Tennasilm</td>
+                              <td class="hidden md:table-cell">29.12.2023</td>
+                              <td class="text-right">21,00&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9056074 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=842&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="even">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=828&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2023-00131</a></td>
+                              <td class="hidden lg:table-cell">Helina Tennasilm</td>
+                              <td class="hidden md:table-cell">30.11.2023</td>
+                              <td class="text-right">105,50&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9055440 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=828&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="odd">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=814&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2023-00117</a></td>
+                              <td class="hidden lg:table-cell">Kaia Ivask</td>
+                              <td class="hidden md:table-cell">31.10.2023</td>
+                              <td class="text-right">44,00&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9054669 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=814&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="even">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=800&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2023-00103</a></td>
+                              <td class="hidden lg:table-cell">Kaia Ivask</td>
+                              <td class="hidden md:table-cell">29.09.2023</td>
+                              <td class="text-right">14,00&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9053792 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=800&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="odd">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=786&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2023-00089</a></td>
+                              <td class="hidden lg:table-cell">Helina Tennasilm</td>
+                              <td class="hidden md:table-cell">01.09.2023</td>
+                              <td class="text-right">39,50&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9053005 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=786&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="even">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=772&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2023-00075</a></td>
+                              <td class="hidden lg:table-cell">Helina Tennasilm</td>
+                              <td class="hidden md:table-cell">01.08.2023</td>
+                              <td class="text-right">105,00&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9052199 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=772&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="odd">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=762&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2023-00065</a></td>
+                              <td class="hidden lg:table-cell">Kaia Ivask</td>
+                              <td class="hidden md:table-cell">30.06.2023</td>
+                              <td class="text-right">76,00&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9051576 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=762&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="even">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=750&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2023-00053</a></td>
+                              <td class="hidden lg:table-cell">Kaia Ivask</td>
+                              <td class="hidden md:table-cell">31.05.2023</td>
+                              <td class="text-right">100,50&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9050829 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=750&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="odd">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=739&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2023-00042</a></td>
+                              <td class="hidden lg:table-cell">Helina Tennasilm</td>
+                              <td class="hidden md:table-cell">28.04.2023</td>
+                              <td class="text-right">15,00&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9049955 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=739&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="even">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=724&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2023-00027</a></td>
+                              <td class="hidden lg:table-cell">Kaia Ivask</td>
+                              <td class="hidden md:table-cell">31.03.2023</td>
+                              <td class="text-right">49,00&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9049059 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=724&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="odd">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=711&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2023-00014</a></td>
+                              <td class="hidden lg:table-cell">Kaia Ivask</td>
+                              <td class="hidden md:table-cell">28.02.2023</td>
+                              <td class="text-right">23,50&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9047822 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=711&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="even">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=698&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2023-00001</a></td>
+                              <td class="hidden lg:table-cell">Kaia Ivask</td>
+                              <td class="hidden md:table-cell">31.01.2023</td>
+                              <td class="text-right">20,00&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9047026 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=698&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="odd">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=687&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2022-00150</a></td>
+                              <td class="hidden lg:table-cell">Helina Tennasilm</td>
+                              <td class="hidden md:table-cell">30.12.2022</td>
+                              <td class="text-right">22,50&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9045994 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=687&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="even">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=672&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2022-00135</a></td>
+                              <td class="hidden lg:table-cell">Kaia Ivask</td>
+                              <td class="hidden md:table-cell">30.11.2022</td>
+                              <td class="text-right">126,00&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9045383 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=672&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="odd">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=659&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2022-00122</a></td>
+                              <td class="hidden lg:table-cell">Helina Tennasilm</td>
+                              <td class="hidden md:table-cell">31.10.2022</td>
+                              <td class="text-right">23,00&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9044478 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=659&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="even">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=648&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2022-00111</a></td>
+                              <td class="hidden lg:table-cell">Kaia Ivask</td>
+                              <td class="hidden md:table-cell">30.09.2022</td>
+                              <td class="text-right">221,50&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9043707 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=648&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="odd">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=638&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2022-00101</a></td>
+                              <td class="hidden lg:table-cell">Helina Tennasilm</td>
+                              <td class="hidden md:table-cell">01.09.2022</td>
+                              <td class="text-right">48,30&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9042911 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=638&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="even">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=628&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2022-00091</a></td>
+                              <td class="hidden lg:table-cell">Kaia Ivask</td>
+                              <td class="hidden md:table-cell">29.07.2022</td>
+                              <td class="text-right">2,50&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9042155 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=628&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="odd">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=615&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2022-00078</a></td>
+                              <td class="hidden lg:table-cell">Kaia Ivask</td>
+                              <td class="hidden md:table-cell">30.06.2022</td>
+                              <td class="text-right">223,50&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9041489 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=615&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                          <tr class="even">
+                              <td><a href="/vau/index-dev.php/et/companyInvoice/view?id=600&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">AKA2022-00063</a></td>
+                              <td class="hidden lg:table-cell">Helina Tennasilm</td>
+                              <td class="hidden md:table-cell">31.05.2022</td>
+                              <td class="text-right">60,50&nbsp;€</td>
+                              <td class="hidden md:table-cell whitespace-nowrap">9040771 <small class="ml-2 py-1 rounded-sm bg-green-300 text-center text-sm inline-block w-24">laekunud</small></td>
+                              <td class="flag-column"><a class="erplyDocSync flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/companyInvoice/toggleBoolean?pk=600&amp;name=erply_doc_sync_blocked&amp;value=1"><span title="ERPLY-ga sünkroonimine töötab! Klõpsa, et see peatada."><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M160-160v-80h110l-16-14q-52-46-73-105t-21-119q0-111 66.5-197.5T400-790v84q-72 26-116 88.5T240-478q0 45 17 87.5t53 78.5l10 10v-98h80v240H160Zm400-10v-84q72-26 116-88.5T720-482q0-45-17-87.5T650-648l-10-10v98h-80v-240h240v80H690l16 14q49 49 71.5 106.5T800-482q0 111-66.5 197.5T560-170Z"></path>
+                                          </svg></span></a></td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  <div class="pager empty:-mb-5">
+                        <nav class="flex justify-center gap-x-1.5 text-gray-700 not-prose" id="yw3"><a class="py-1.5 px-2 2xl:py-2 2xl:px-3 rounded hover:bg-green-50 text-gray-200 hover:bg-gray-50" href="/vau/index-dev.php/et/company/view?id=10&amp;_xr=eNpLtDK0qs60MrBOtDKCMIqtDI2slBKTk%252FNL80r0yzJTy5WAYhZWSjmJeemliempIC5QRWqJknVtLQB8RRQN">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="17.59,18 19,16.59 14.42,12 19,7.41 17.59,6 11.59,12"></polygon>
+                                <polygon points="11,18 12.41,16.59 7.83,12 12.41,7.41 11,6 5,12"></polygon>
+                            </svg>
+                        </a>
+                        <a class="py-1.5 px-2 2xl:py-2 2xl:px-3 rounded hover:bg-green-50 text-gray-200 hover:bg-gray-50" href="/vau/index-dev.php/et/company/view?id=10&amp;_xr=eNpLtDK0qs60MrBOtDKCMIqtDI2slBKTk%252FNL80r0yzJTy5WAYhZWSjmJeemliempIC5QRWqJknVtLQB8RRQN">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path>
+                            </svg>
+                        </a>
+                        <a class="hidden md:block py-1.5 px-3 2xl:py-2 2xl:px-4 rounded hover:bg-green-50 bg-green-50 font-bold" href="/vau/index-dev.php/et/company/view?id=10&amp;_xr=eNpLtDK0qs60MrBOtDKCMIqtDI2slBKTk%252FNL80r0yzJTy5WAYhZWSjmJeemliempIC5QRWqJknVtLQB8RRQN">1</a>
+                        <a class="hidden md:block py-1.5 px-3 2xl:py-2 2xl:px-4 rounded hover:bg-green-50" href="/vau/index-dev.php/et/company/view?id=10&amp;_xr=eNpLtDK0qs60MrBOtDKCMIqtDI2slBKTk%252FNL80r0yzJTy5WAYhZWSjmJeemliempIC5QRWqJknVtLQB8RRQN&amp;CompanyInvoice_page=2">2</a>
+                        <a class="py-1.5 px-2 2xl:py-2 2xl:px-3 rounded hover:bg-green-50" href="/vau/index-dev.php/et/company/view?id=10&amp;_xr=eNpLtDK0qs60MrBOtDKCMIqtDI2slBKTk%252FNL80r0yzJTy5WAYhZWSjmJeemliempIC5QRWqJknVtLQB8RRQN&amp;CompanyInvoice_page=2">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
+                            </svg>
+                        </a>
+                        <a class="py-1.5 px-2 2xl:py-2 2xl:px-3 rounded hover:bg-green-50" href="/vau/index-dev.php/et/company/view?id=10&amp;_xr=eNpLtDK0qs60MrBOtDKCMIqtDI2slBKTk%252FNL80r0yzJTy5WAYhZWSjmJeemliempIC5QRWqJknVtLQB8RRQN&amp;CompanyInvoice_page=2">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="6.41,6 5,7.41 9.58,12 5,16.59 6.41,18 12.41,12"></polygon>
+                                <polygon points="13,6 11.59,7.41 16.17,12 11.59,16.59 13,18 19,12"></polygon>
+                            </svg>
+                        </a></nav>
+                  </div>
+                  <div class="keys" style="display:none" title="/vau/index-dev.php/et/company/view?id=10&amp;_xr=eNpLtDK0qs60MrBOtDKCMIqtDI2slBKTk%252FNL80r0yzJTy5WAYhZWSjmJeemliempIC5QRWqJknVtLQB8RRQN"><span>842</span><span>828</span><span>814</span><span>800</span><span>786</span><span>772</span><span>762</span><span>750</span><span>739</span><span>724</span><span>711</span><span>698</span><span>687</span><span>672</span><span>659</span><span>648</span><span>638</span><span>628</span><span>615</span><span>600</span></div>
+              </div>
               </div>
               <h3 class="mt-6 text-lg font-bold text-gray-700">
                 Kasutajad
@@ -380,62 +583,90 @@
                 <input placeholder="Kasutajanimi" name="AddUserCompany[username]" id="AddUserCompany_username" type="text" maxlength="64" class="block lg:w-56 rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
                 <input class="focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Lisa kasutaja">
               </form>
-              <div id="user-companies-grid" class="
-                grid-view
-                mb-12
+              <div class="
                 rounded shadow-sm p-2
                 prose max-w-none
-                prose-thead:border-none prose-tbody:border-none
-                odd:prose-tr:bg-gray-50 prose-tr:border-none
+                prose-table:m-0 prose-thead:border-none prose-tbody:border-none
+                odd:prose-tr:bg-gray-50 prose-tr:border-none  hover:prose-tr:bg-green-50
                 prose-th:bg-white prose-th:px-3 first:prose-th:pb-2 last:prose-th:pt-2
                 first:prose-td:rounded-l last:prose-td:rounded-r prose-td:p-3 prose-td:align-top
-
               ">
-                <table class="items">
-                  <thead>
-                    <tr>
-                      <th><a class="asc" href="#">Nimi</a></th>
-                      <th><a href="#">Kasutajanimi</a></th>
-                      <th>Halduri õigused</th>
-                      <th>&nbsp;</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="hover:bg-green-50">
-                      <td>Erik Uus</td>
-                      <td>erik</td>
-                      <td class="flag-column not-prose">
-                        <a class="flag-link flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100 " href="#">
-                          <img class="w-6 h-6" src="../../images/check_box.svg" alt="">
-                        </a>
-                      </td>
-                      <td>
-                        <a class="float-right flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" title="Kustuta" href="#">
-                          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
-                          </svg>
-                        </a>
-                      </td>
-                    </tr>
-                     <tr class="hover:bg-green-50">
-                      <td>Marina Toomel</td>
-                      <td>MARINA1953</td>
-                      <td class="flag-column not-prose">
-                        <a class="flag-link flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="#" >
-                          <img class="w-6 h-6" src="../../images/check_box_outline_blank.svg" alt="">
-                        </a>
-                      </td>
-                      <td>
-                        <a class="float-right flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" title="Kustuta" href="#">
-                          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
-                          </svg>
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                  <div id="user-companies-grid" class="grid-view">
+                      <div class="summary text-right mr-1"></div>
+                      <table class="items">
+                          <thead>
+                              <tr>
+                                  <th class="hidden md:table-cell" id="user-companies-grid_c0"><a class="asc" href="/vau/index-dev.php/et/company/view?id=10&amp;_xr=eNpLtDK0qs60MrBOtDKCMIqtDI2slBKTk%252FNL80r0yzJTy5WAYhZWSjmJeemliempIC5QRWqJknVtLQB8RRQN&amp;UserCompany_sort=user.fullname.desc">Nimi</a></th>
+                                  <th id="user-companies-grid_c1"><a href="/vau/index-dev.php/et/company/view?id=10&amp;_xr=eNpLtDK0qs60MrBOtDKCMIqtDI2slBKTk%252FNL80r0yzJTy5WAYhZWSjmJeemliempIC5QRWqJknVtLQB8RRQN&amp;UserCompany_sort=user.username">Kasutajanimi</a></th>
+                                  <th id="user-companies-grid_c2">Halduri õigused</th>
+                                  <th class="button-column" id="user-companies-grid_c4">&nbsp;</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr class="odd">
+                                  <td class="hidden md:table-cell"><a class="normal" href="/vau/index-dev.php/et/client/view?id=178077&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">Ago Raudsepp</a> </td>
+                                  <td>36802230304@ee</td>
+                                  <td class="flag-column"><a class="isAdmin flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/userCompany/toggleBoolean?pk=183&amp;name=is_admin&amp;value=0"><svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="m424-312 282-282-56-56-226 226-114-114-56 56 170 170ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path>
+                                          </svg></a></td>
+                                  <td class="button-column"><a class="delete float-right flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" title="Kustuta" href="/vau/index-dev.php/et/userCompany/delete?id=183"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
+                                          </svg></a></td>
+                              </tr>
+                              <tr class="even">
+                                  <td class="hidden md:table-cell"><a class="normal" href="/vau/index-dev.php/et/client/view?id=155420&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">Eero Vabamägi</a> </td>
+                                  <td>eero-vabamaegi</td>
+                                  <td class="flag-column"><a class="isAdmin flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/userCompany/toggleBoolean?pk=218&amp;name=is_admin&amp;value=1"><svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Z"></path>
+                                          </svg></a></td>
+                                  <td class="button-column"><a class="delete float-right flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" title="Kustuta" href="/vau/index-dev.php/et/userCompany/delete?id=218"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
+                                          </svg></a></td>
+                              </tr>
+                              <tr class="odd">
+                                  <td class="hidden md:table-cell"><a class="normal" href="/vau/index-dev.php/et/client/view?id=107091&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">Erik Prozes</a> </td>
+                                  <td>erik-prozes</td>
+                                  <td class="flag-column"><a class="isAdmin flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/userCompany/toggleBoolean?pk=193&amp;name=is_admin&amp;value=1"><svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Z"></path>
+                                          </svg></a></td>
+                                  <td class="button-column"><a class="delete float-right flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" title="Kustuta" href="/vau/index-dev.php/et/userCompany/delete?id=193"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
+                                          </svg></a></td>
+                              </tr>
+                              <tr class="even">
+                                  <td class="hidden md:table-cell"><a class="normal" href="/vau/index-dev.php/et/client/view?id=3&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">Erik Uus</a> </td>
+                                  <td>erik</td>
+                                  <td class="flag-column"><a class="isAdmin flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/userCompany/toggleBoolean?pk=220&amp;name=is_admin&amp;value=0"><svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="m424-312 282-282-56-56-226 226-114-114-56 56 170 170ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path>
+                                          </svg></a></td>
+                                  <td class="button-column"><a class="delete float-right flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" title="Kustuta" href="/vau/index-dev.php/et/userCompany/delete?id=220"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
+                                          </svg></a></td>
+                              </tr>
+                              <tr class="odd">
+                                  <td class="hidden md:table-cell"><a class="normal" href="/vau/index-dev.php/et/client/view?id=175129&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">Raimu Hanson</a> </td>
+                                  <td>35703252721@ee</td>
+                                  <td class="flag-column"><a class="isAdmin flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/userCompany/toggleBoolean?pk=185&amp;name=is_admin&amp;value=1"><svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                              <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Z"></path>
+                                          </svg></a></td>
+                                  <td class="button-column"><a class="delete float-right flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" title="Kustuta" href="/vau/index-dev.php/et/userCompany/delete?id=185"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
+                                          </svg></a></td>
+                              </tr>
+                              <tr class="even">
+                                  <td class="hidden md:table-cell"><a class="normal" href="/vau/index-dev.php/et/client/view?id=184427&amp;_xr=eNp9js0KgkAYRd9loHWjpci4SiPwNzRJahODDTbp%252BDtWFr57Y1S0ane%252Byz2XDyMZPSiCOv5AiyQZAZwkZVfw6YWSKxCZhkCOi7TDKRlP0SAc6ANFkjDnv2ZSsgoX%252FdcUET2%252BQYIjzBA43JrXqip2%252FMrlSwfWrQq9xlgLNj2r5ktLbnPDibKJvPJdDTawv9tRr8SL3Wkfb87MJoTllLDKMpUgjGs7K7bcDQwtDAP%252Fz8%252FDE8CyS%252BM%253D">Tairo Lutter</a> </td>
+                    <td>tairo.lutter@postimees.ee</td>
+                    <td class="flag-column"><a class="isAdmin flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" href="/vau/index-dev.php/et/userCompany/toggleBoolean?pk=184&amp;name=is_admin&amp;value=1"><svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Z"></path>
+                            </svg></a></td>
+                    <td class="button-column"><a class="delete float-right flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" title="Kustuta" href="/vau/index-dev.php/et/userCompany/delete?id=184"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
+                            </svg></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
             </div>
           </div>
         </div>
