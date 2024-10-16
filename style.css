@@ -2232,6 +2232,10 @@ select {
   width: 7rem;
 }
 
+.w-64 {
+  width: 16rem;
+}
+
 .max-w-none {
   max-width: none;
 }
@@ -2422,6 +2426,10 @@ select {
 .gap-x-3 {
   -moz-column-gap: 0.75rem;
        column-gap: 0.75rem;
+}
+
+.gap-y-1 {
+  row-gap: 0.25rem;
 }
 
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
@@ -3423,6 +3431,12 @@ select {
 .shadow-sm {
   --tw-shadow: 0px 10px 80px rgba(0, 0, 0, 0.02275), 0px 5.0625px 34.875px rgba(0, 0, 0, 0.035), 0px 2px 13px rgba(0, 0, 0, 0.04725), 0px 0.4375px 4.625px rgba(0, 0, 0, 0.07);
   --tw-shadow-colored: 0px 10px 80px var(--tw-shadow-color), 0px 5.0625px 34.875px var(--tw-shadow-color), 0px 2px 13px var(--tw-shadow-color), 0px 0.4375px 4.625px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow {
+  --tw-shadow: 0px 43px 80px rgba(0, 0, 0, 0.02275), 0px 21.7687px 34.875px rgba(0, 0, 0, 0.035), 0px 8.6px 13px rgba(0, 0, 0, 0.04725), 0px 1.88125px 4.625px rgba(0, 0, 0, 0.07);
+  --tw-shadow-colored: 0px 43px 80px var(--tw-shadow-color), 0px 21.7687px 34.875px var(--tw-shadow-color), 0px 8.6px 13px var(--tw-shadow-color), 0px 1.88125px 4.625px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -4449,6 +4463,14 @@ body {
     width: 14rem;
   }
 
+  .md\:w-52 {
+    width: 13rem;
+  }
+
+  .md\:w-36 {
+    width: 9rem;
+  }
+
   .md\:max-w-none {
     max-width: none;
   }
@@ -4481,6 +4503,11 @@ body {
 
   .md\:rounded-none {
     border-radius: 0px;
+  }
+
+  .md\:rounded-r-none {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
 
   .md\:p-0 {
@@ -4603,6 +4630,38 @@ body {
 
   .lg\:w-60 {
     width: 15rem;
+  }
+
+  .lg\:w-24 {
+    width: 6rem;
+  }
+
+  .lg\:w-48 {
+    width: 12rem;
+  }
+
+  .lg\:w-20 {
+    width: 5rem;
+  }
+
+  .lg\:w-64 {
+    width: 16rem;
+  }
+
+  .lg\:w-16 {
+    width: 4rem;
+  }
+
+  .lg\:w-44 {
+    width: 11rem;
+  }
+
+  .lg\:w-96 {
+    width: 24rem;
+  }
+
+  .lg\:w-36 {
+    width: 9rem;
   }
 
   .lg\:flex-1 {
@@ -4812,6 +4871,10 @@ body {
     display: flex;
   }
 
+  .xl\:table-cell {
+    display: table-cell;
+  }
+
   .xl\:hidden {
     display: none;
   }
@@ -4978,6 +5041,14 @@ body {
 
   .\32xl\:mt-20 {
     margin-top: 5rem;
+  }
+
+  .\32xl\:table-cell {
+    display: table-cell;
+  }
+
+  .\32xl\:hidden {
+    display: none;
   }
 
   .\32xl\:h-48 {
