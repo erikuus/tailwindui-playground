@@ -1586,6 +1586,14 @@ select {
   top: 1.5rem;
 }
 
+.-bottom-5 {
+  bottom: -1.25rem;
+}
+
+.-bottom-1 {
+  bottom: -0.25rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -1974,6 +1982,18 @@ select {
 
 .mb-0 {
   margin-bottom: 0px;
+}
+
+.-mb-2 {
+  margin-bottom: -0.5rem;
+}
+
+.-mb-4 {
+  margin-bottom: -1rem;
+}
+
+.-mt-5 {
+  margin-top: -1.25rem;
 }
 
 .block {
@@ -2430,6 +2450,10 @@ select {
 
 .gap-y-1 {
   row-gap: 0.25rem;
+}
+
+.gap-y-3 {
+  row-gap: 0.75rem;
 }
 
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
