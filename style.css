@@ -3269,6 +3269,14 @@ select {
   line-height: 1;
 }
 
+.leading-relaxed {
+  line-height: 1.625;
+}
+
+.leading-loose {
+  line-height: 2;
+}
+
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(2 117 216 / var(--tw-text-opacity));
