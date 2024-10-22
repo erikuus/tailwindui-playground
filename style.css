@@ -4626,6 +4626,11 @@ body {
          column-gap: 3rem;
   }
 
+  .lg\:gap-x-10 {
+    -moz-column-gap: 2.5rem;
+         column-gap: 2.5rem;
+  }
+
   .lg\:whitespace-nowrap {
     white-space: nowrap;
   }
@@ -4888,6 +4893,11 @@ body {
          column-gap: 3rem;
   }
 
+  .xl\:gap-x-16 {
+    -moz-column-gap: 4rem;
+         column-gap: 4rem;
+  }
+
   .xl\:whitespace-nowrap {
     white-space: nowrap;
   }
@@ -5016,6 +5026,11 @@ body {
   .\32xl\:gap-x-40 {
     -moz-column-gap: 10rem;
          column-gap: 10rem;
+  }
+
+  .\32xl\:gap-x-28 {
+    -moz-column-gap: 7rem;
+         column-gap: 7rem;
   }
 
   .\32xl\:py-2 {
