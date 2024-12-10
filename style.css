@@ -2688,6 +2688,11 @@ select {
   border-color: rgb(240 243 246 / var(--tw-border-opacity));
 }
 
+.border-green-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(48 131 77 / var(--tw-border-opacity));
+}
+
 .border-green-500 {
   --tw-border-opacity: 1;
   border-color: rgb(63 168 100 / var(--tw-border-opacity));
@@ -2706,11 +2711,6 @@ select {
 .border-gray-400 {
   --tw-border-opacity: 1;
   border-color: rgb(121 132 146 / var(--tw-border-opacity));
-}
-
-.border-green-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(48 131 77 / var(--tw-border-opacity));
 }
 
 .bg-gray-50\/60 {
@@ -2806,9 +2806,9 @@ select {
   background-color: rgb(248 219 171 / var(--tw-bg-opacity));
 }
 
-.bg-green-500 {
+.bg-green-600 {
   --tw-bg-opacity: 1;
-  background-color: rgb(63 168 100 / var(--tw-bg-opacity));
+  background-color: rgb(48 131 77 / var(--tw-bg-opacity));
 }
 
 .bg-gray-200 {
@@ -2819,6 +2819,11 @@ select {
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(232 235 240 / var(--tw-bg-opacity));
+}
+
+.bg-green-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(63 168 100 / var(--tw-bg-opacity));
 }
 
 .bg-green-50 {
@@ -2853,11 +2858,6 @@ select {
 .bg-green-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(97 183 126 / var(--tw-bg-opacity));
-}
-
-.bg-green-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(48 131 77 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-75 {
@@ -3352,14 +3352,19 @@ select {
   color: rgb(95 66 18 / var(--tw-text-opacity));
 }
 
-.text-gray-100 {
-  --tw-text-opacity: 1;
-  color: rgb(232 235 240 / var(--tw-text-opacity));
-}
-
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(108 118 131 / var(--tw-text-opacity));
+}
+
+.text-green-600 {
+  --tw-text-opacity: 1;
+  color: rgb(48 131 77 / var(--tw-text-opacity));
+}
+
+.text-gray-100 {
+  --tw-text-opacity: 1;
+  color: rgb(232 235 240 / var(--tw-text-opacity));
 }
 
 .text-red-800 {
@@ -3380,16 +3385,6 @@ select {
 .text-green-700 {
   --tw-text-opacity: 1;
   color: rgb(32 93 54 / var(--tw-text-opacity));
-}
-
-.text-green-600 {
-  --tw-text-opacity: 1;
-  color: rgb(48 131 77 / var(--tw-text-opacity));
-}
-
-.text-gray-400 {
-  --tw-text-opacity: 1;
-  color: rgb(121 132 146 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -4115,6 +4110,10 @@ body {
 @media (min-width: 640px) {
   .sm\:right-0 {
     right: 0px;
+  }
+
+  .sm\:float-right {
+    float: right;
   }
 
   .sm\:mx-16 {
