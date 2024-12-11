@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../jquery-ui.css" />
+    <link rel="stylesheet" href="../../labels.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/foundation-icons@2.0.0/foundation-icons.min.css" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body class="flex min-h-screen flex-col bg-gray-50">
+    <!-- Esimene valge ala -->
+    <div x-data="{ open: false }" class="flex grow flex-col rounded-b bg-white shadow-md lg:m-2 lg:rounded">
+      <!-- Kitsas ülemine päis -->
+      <header class="flex h-12 flex-wrap content-center">
+        <!-- Kitsa ülemise päise küljendus -->
+        <div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
+          <!-- Kitsa ülemise päise jaotus -->
+          <div class="flex items-center justify-between">
+            <div>
+              <a target="_blank" href="https://www.ra.ee/">
+                <span class="sr-only">Rahvusarhiiv</span>
+                <!-- Desktop menüü RA logo -->
+                <img class="h-7 opacity-70" src="../../images/ra_logo.svg" alt="Rahvusarhiiv" />
+              </a>
+            </div>
+            <div class="flex items-center">
+              <!-- Keelevalik -->
+              <a href="#" class="inline-flex flex-nowrap items-center text-center text-sm font-medium">
+                English
+                <svg class="ml-1 h-4 w-4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.42 6.47 22 11.99 22C17.42 22 22 17.42 22 12C22 6.48 17.42 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.36C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.42 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.36C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.42 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.36 13.34 16.5 12.68 16.5 12C16.5 11.32 16.36 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z"></path>
+                </svg>
+              </a>
+              <!-- Mobiilse menüü avamise nupp -->
+              <div class="-mr-1.5 ml-4 lg:hidden">
+                <button @click="open = true; document.body.classList.add('overflow-y-hidden')" :class="open ? 'hidden' : 'block'" type="button" class="text-gray-900">
+                  <span class="sr-only">Ava menüü</span>
+                  <svg class="h-5 w-5 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Mobiilse menüü konteiner -->
+      <div x-show="open" x-cloak class="lg:hidden" role="dialog" aria-modal="true">
+        <!-- Tumedam taust, mis katab mobiilse menüü avamisel sellest väljapoole jääva ala -->
+        <div class="fixed inset-0 bg-gray-600 bg-opacity-75 z-40"></div>
+        <!-- Mobiilne menüü -->
+        <div @click.outside="open = false" class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white sm:max-w-sm">
+          <!-- Mobiilse menüü päis -->
+          <div class="flex h-12 pl-4 pr-2 flex-wrap content-center items-center justify-between">
+            <div><!-- Mobiilse menüü RA logo -->
+              <img class="h-7 opacity-50 inline sm:hidden" src="../../images/ra_logo.svg" alt="Rahvusarhiiv" />
+            </div>
+            <!-- Mobiilse menüü sulgemise nupp -->
+            <button @click="open = false; document.body.classList.remove('overflow-y-hidden')" :class="open ? 'block' : 'hidden'" type="button" class="sm:mr-2 text-gray-900">
+              <span class="sr-only">Sulge menüü</span>
+              <svg class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <!-- Mobiilse menüü lingid -->
+          <nav class="mt-6 sm:mt-0 mb-12 px-3 space-y-1 text-gray-700 text-base font-semibold">
+            <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Tellimused</a>
+            <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Arhiivipäringud</a>
+            <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Veebipood</a>
+            <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Lingimärkmik</a>
+            <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">Tagasiside</a>
+            <a href="#" class="hover:bg-gray-100 block px-8 py-3 rounded">KKK</a>
+          </nav>
+        </div>
+      </div>
+      <!-- Teine värviline ala -->
+      <div class="bg-theme-vau flex grow flex-col rounded">
+        <!-- Lai alumine päis -->
+        <header class="relative flex h-32 flex-wrap content-center">
+          <!-- Laia alumise päise küljendus -->
+          <div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
+            <!-- Laia ülemise päise jaotus -->
+            <div class="flex items-center justify-between">
+              <!-- Logo -->
+              <div class="flex items-center xl:-ml-2">
+                <img class="h-16 mb-6 filter drop-shadow-md -mr-3" src="../../images/vau_logo.png" alt="Virtuaalne uurimissaal" />
+                <!-- <img class="w-16 mr-2" src="../../images/vau-logo-small.png" alt="Virtuaalne uurimissaal" /> -->
+                <h1 class="font-heading text-3xl font-bold">VAU</h1>
+              </div>
+              <!-- Desktop menüü -->
+              <nav class="hidden lg:flex xl:gap-x-1 2xl:gap-x-2 font-medium">
+                <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">Tellimused</a>
+                <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">Arhiivipäringud</a>
+              </nav>
+              <nav class="hidden lg:flex xl:gap-x-1 2xl:gap-x-2 font-medium">
+                <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">Lingimärkmik</a>
+                <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">Veebipood</a>
+              </nav>
+              <nav class="hidden lg:flex xl:gap-x-1 2xl:gap-x-2 font-medium">
+                <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">Tagasiside</a>
+                <a href="#" class="py-1.5 px-4 rounded hover:backdrop-filter hover:backdrop-brightness-105">KKK</a>
+              </nav>
+              <!-- Sisseloginud kasutaja menüü -->
+              <div x-data="{ open: false }" class="relative ml-3">
+                <div>
+                  <!-- <button @click="open = true" type="button" class="flex items-center bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                    <div class="flex w-12 h-12 flex-shrink-0 items-center justify-center bg-gray-800 rounded-full text-sm font-medium text-white">AV</div>
+                  </button> -->
+                  <button @click="open = true" type="button" class="flex items-center rounded-full bg-gray-800 ring-2 ring-white ring-offset-2 ring-offset-gray-300 hover:ring-gray-100">
+                    <img class="inline-block h-12 w-12 object-cover rounded-full border-white" src="../../images/erik.jpg" alt="EU" />
+                  </button>
+                </div>
+                <div x-show="open" x-cloak @click.outside="open = false" class="absolute -right-2.5 z-50 mt-2 w-80 rounded border border-gray-200 bg-white shadow-lg sm:right-0 sm:w-96">
+                  <div class="divide-y divide-gray-50">
+                    <div class="relative flex flex-col items-center px-2 pb-6 pt-12 sm:px-6">
+                      <!-- Image -->
+                      <div class="absolute inset-0 -z-10 overflow-hidden rounded-t h-20 bg-gray-50"></div>
+                      <!-- Profiilipilt -->
+                      <img class="inline-block h-20 w-20 object-cover rounded-full ring-4 ring-white" src="../../images/eu.jpg" alt="EU">
+                      <!-- Profiiliikoon -->
+                      <!-- <svg class="h-20 w-20 text-gray-300 rounded-full bg-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
+                        <path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/>
+                      </svg> -->
+                      <!-- Sisselogimine võõra kontoga -->
+                      <!-- <svg class="h-16 w-16 text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
+                        <path d="M412-168q45-91 120-121.5T660-320q23 0 45 4t43 10q24-38 38-82t14-92q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 45 11.5 86t34.5 76q41-20 85-31t89-11q32 0 61.5 5.5T500-340q-23 12-43.5 28T418-278q-12-2-20.5-2H380q-32 0-63.5 7T256-252q32 32 71.5 53.5T412-168Zm68 88q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80ZM380-420q-58 0-99-41t-41-99q0-58 41-99t99-41q58 0 99 41t41 99q0 58-41 99t-99 41Zm0-80q25 0 42.5-17.5T440-560q0-25-17.5-42.5T380-620q-25 0-42.5 17.5T320-560q0 25 17.5 42.5T380-500Zm280 120q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM480-480Z" />
+                      </svg> -->
+                      <h3 class="mt-4 text-lg font-medium">Erik Uus</h3>
+                      <p class="mt-1 text-gray-600">erik.uus@ra.ee</p>
+                    </div>
+                    <div class="mt-3 border-t border-gray-50">
+                      <a href="#1" class="flex items-center justify-center gap-x-2 py-4 text-center text-sm font-semibold hover:bg-green-50">
+                        <svg class="h-5 w-5 text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
+                          <path d="m791-55-91-91q-48 32-103.5 49T480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-61 17-116.5T146-700l-91-91 57-57 736 736-57 57ZM412-168q26-51 62-81.5t75-47.5L204-642q-21 36-32.5 76.5T160-480q0 45 11.5 86t34.5 76q41-20 85-31t89-11q32 0 61.5 5.5T500-340q-23 12-43.5 28T418-278q-12-2-20.5-2H380q-32 0-63.5 7T256-252q32 32 71.5 53.5T412-168Zm402-92-58-58q21-35 32.5-76t11.5-86q0-134-93-227t-227-93q-45 0-85.5 11.5T318-756l-58-58q48-32 103.5-49T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 61-17 116.5T814-260ZM520-554 374-700q62-2 105 41.5T520-554ZM380-420q-58 0-99-41t-41-99q0-33 14.5-60.5T292-668l196 196q-20 23-47.5 37.5T380-420Zm310 36L564-510q10-31 36-50.5t60-19.5q42 0 71 29t29 71q0 34-19.5 60T690-384ZM537-537ZM423-423Z" />
+                        </svg>
+                        Sisene Erik Uus rollis
+                      </a>
+                    </div>
+                    <div>
+                      <div class="flex divide-x divide-gray-50">
+                        <div class="flex flex-1">
+                          <a href="#2" class="flex flex-1 items-center justify-center gap-x-2 rounded-bl py-4 text-center font-semibold hover:bg-green-50">
+                            <svg class="h-6 w-6 text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
+                              <path d="M480-400q33 0 56.5-23.5T560-480q0-33-23.5-56.5T480-560q-33 0-56.5 23.5T400-480q0 33 23.5 56.5T480-400ZM320-240h320v-23q0-24-13-44t-36-30q-26-11-53.5-17t-57.5-6q-30 0-57.5 6T369-337q-23 10-36 30t-13 44v23ZM720-80H240q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80Zm0-80v-446L526-800H240v640h480Zm-480 0v-640 640Z" />
+                            </svg>
+                            Minu konto
+                          </a>
+                        </div>
+                        <div class="flex flex-1">
+                          <a href="#3" class="flex flex-1 items-center justify-center gap-x-2 rounded-br py-4 text-center font-semibold hover:bg-green-50">
+                            <svg class="h-6 w-6 text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
+                              <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+                            </svg>
+                            Välju
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- Kolmas valge ala -->
+        <div class="flex grow flex-col rounded rounded-b bg-white shadow-md">
+          <!-- Sisu küljendus -->
+          <div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 pt-6 pb-10 xl:pt-10 xl:pb-14">
+            <!-- Sisu -->
+            <div class="sm:mx-20 lg:mx-36 xl:mx-80 2xl:mx-96">
+              <a href="#" class="hidden sm:inline sm:float-right font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700">
+                Esita küsimus
+              </a>
+              <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:mt-6 sm:text-xl xl:mt-0">
+                Korduma kippuvad küsimused
+              </h2>
+              <div class="mt-8 mb-4 text-lg font-bold text-gray-800" id="subject-1">Rahvusarhiiv</div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                  <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq4">
+                    Milliseid dokumente hoitakse Rahvusarhiivi Tartu ja milliseid Tallinna majas?
+                  </a>
+                </div>
+                <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                  <p><strong>Tartu osakond</strong> hoiab üldjuhul dokumente, mis on tekkinud 13. sajandi keskpaigast kuni aastani 1917. Eesti Vabariigi (1918–1940) aegsetest dokumentidest on kinnistusametite fondid (talude kinnistutoimikud, maade plaanid jms) ja mõne teise asutuse (nt Tartu ülikool, osaliselt AÕK kirikud, kindlustusseltsid ja -kassad, ettevõtted, huvialaühingud) ja isikute fondid. Samuti on siin hoiul endises Viljandi, Pärnu, Tartu, Kuressaare ja Haapsalu maa-arhiivis ning parteiarhiivis hoiul olnud nõukogudeaegsed dokumendid.<strong><br></strong></p>
+                  <p><strong>Tallinna osakonnas</strong> säilitatakse uuema aja (alates 20. sajandist) arhivaale: püsiväärtusega dokumente, mis on tekkinud Eesti Vabariigi territooriumil alates Eesti omariikluse tekkest tegutsenud riigivõimu- ja valitsemisorganite, omavalitsusasutuste, ettevõtete, organisatsioonide ja teiste juriidiliste isikute tegevuses, välja arvatud pärast 1944. a tekkinud kohalike asutuste dokumente, Eestiga seotud asutuste ja organisatsioonide dokumente ning kodanike isikufonde.</p>
+                </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                  <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq6">Milliseid dokumente võib leida Valga ja Rakvere osakonnast?</a>
+                  </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Rakvere ja Valga osakond kogub ja säilitab oma tegevuspiirkonnas alates 1944. aastast tegutsenud ja tegutsevate ameti- ja valitsusasutuste ning valitsusasutuste hallatavate riigiasutuste, avalikke ülesandeid teostavate eraõiguslike juriidiliste ja füüsiliste isikute, samuti kohaliku omavalitsuse organite ja asutuste tegevuse tulemusena loodud või saadud arhivaale. <br> </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq2">Otsisin AISist oma perekonnanime järgi ning leidsin leidandmete lahtrist erinevaid lühendeid. Mida need tähendavad ja millisesse arhiivi ma pöörduma pean?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Igal säilik on seotud ühe hoidla (maja) ja uurimissaaliga.&nbsp;Seoses uue peahoone Noora avamisega ning kogude ulatusliku ümberkolimisega ei kajasta varem eri arhiive tähistanud lühendid EAA, ERA, ERAF, LAMA, SAMA jne enam säiliku füüsilist asukohta ega sisalda muud olulist infot. Tegemist on vaid osaga arhiivi leidandmetest (nt EAA.854, ERA.31, ERAF.1). Näiteks säilitatakse enamikku ERAF-liitega arhiive alates 2017. aastast Tartus, ERA-liitega säilikuid hoitakse nii Tallinnas kui Tartus jne. Infot säiliku asukoha kohta leiate arhiivi infosüsteemist&nbsp;<a href="https://ais.ra.ee/" target="_blank">AIS</a>.</p>
+                      <p>Üksuste aadressid ja kontaktandmed leiate <a target="_blank" href="https://www.ra.ee/vau/index.php/et">VAUst</a> </p>
+                  </div>
+              </div>
+              <div class="mt-8 mb-4 text-lg font-bold text-gray-800" id="subject-5">Uurimissaalid</div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq24">Mis kellaaegadel on uurimissaalid avatud ja kas ma saan uurimissaali külastada ka laupäeviti?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Rahvusarhiivi uurimissaalide lahtiolekuajad leiate <a target="_blank" href="https://www.ra.ee/vau/index.php/et">siit</a>.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq26">Kas uurimissaali külastamine on tasuline?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Ei ole. Arhiivi uurimissaali külastamine, arhivaalide tellimine ja uurimine on tasuta. Tasulised on koopiateenused.<br> </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq74">Kas uurija võib tutvuda kõikide arhiivimaterjalidega?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Rahvusarhiiv (nagu kõik avalikud arhiivid) võimaldab juurdepääsu arhiivis säilitatavatele dokumentidele ehk arhivaalidele. Juurdepääs avalikule teabele on igaühe õigus. Sellest tehakse erandeid ainult kahel juhul: selleks, et kaitsta olulisi avalikke huve, ning selleks, et kaitsta isikuid nende eraelu üksikasjade avalikuks saamise eest. Sel põhjusel on osa avalikest arhivaalidest piiratud juurdepääsuga (<a href="https://www.riigiteataja.ee/akt/121032011001?leiaKehtiv" target="_blank">arhiiviseadus § 42</a>). Rahvusarhiivi põhimõtted juurdepääsupiiranguga arhivaalide kasutamise kohta on kirjas vastavas eeskirjas. Piiranguga arhivaalide kasutamise üle otsustamiseks küsib arhiiv põhjendust ja selleks tuleb täita vastav taotlus VAUs. <br></p>
+                      <p>Uurimissaali ei väljastata originaalarhivaale, kui need on digiteeritud ja nähtavad Saagas.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq90">Miks säilikuid ei saa koju laenutada?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p><a href="https://www.riigiteataja.ee/akt/121032011001?leiaKehtiv" target="_blank">Arhiiviseadus</a> keelab arhivaalide laenutamise väljapoole avalikku arhiivi. Iga dokument on unikaalne ja kordumatu. Kuna iga dokumenti on originaalina ainult üks eksemplar, siis on nende pikaajalise säilimise tagamiseks kehtestatud karmid nõuded.</p>
+                      <p>Virtuaalse&nbsp;uurimissaali kodulehelt leiate rubriigi "Teenused" alt täpsema info&nbsp;<a href="https://www.ra.ee/vau/index.php/et/page/article/index?menuId=11" target="_blank">säilikute uurimissaali tellimise</a> kohta.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq28">Mis asi on säilik?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Säilik ehk säilitusühik on kas üksikarhivaal või arhivaalide kogum, mida säilitatakse tema väärtuse tõttu ühiskonnale, riigile, omanikule või teisele isikule. Säilikud võivad erineda nii tüübilt kui vormilt. Näiteks võib säilik olla isikutoimik, kiri, nimekiri, protokolli-või arveraamat. Säilik võib olla ka kaardirull, joonis, maakaart, foto, fotoalbum või pitsat. Säilik võib koosneda paarist lehest või olla mitmesajaleheline, mõnesentimeetrine või paari meetri pikkune, paarkümmend grammi kaaluv või kümnekilone.</p>
+                      <p>AISis on säiliku tunnuseks leidandmed, näiteks EAA.2100.1.234.</p>
+                  </div>
+              </div>
+              <div class="mt-8 mb-4 text-lg font-bold text-gray-800" id="subject-4">Genealoogia</div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq164">Kuidas on võimalik tutvuda digiteeritud ja Saagas olevate, kuid juurdepääsupiirangut omavate säilikutega?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Selleks tuleb täita&nbsp;juurdepääsutaotlus, et põhjendada oma juurdepääsuvajadus ja uurimistöö eesmärk, ning see digitaalselt allkirjastada.&nbsp;Kui taotlus rahuldatakse, saate juurdepääsu säilikule kuni üheks aastaks.Eelduseks on, et olete Saagasse sisse loginud ID-kaardi, Smart-ID või Mobiil-ID-ga.&nbsp;</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq36">Tean, et minu vanaema sündis 27. märtsil 1892. aastal, aga meetrikas on kuupäevana kirjas 15. märts.</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      1918. aasta veebruarikuuni kehtis Eesti alal vana ehk Juliuse kalender. 1918. aastal järgnes 31. jaanuarile uue ehk Gregoriuse kalendri järgi 14. veebruar. Daatumite uude kalendrisse ümberarvestamisel tuleb kirikuraamatus esinevale 19. sajandi kuupäevale liita 12 päeva ja 20. sajandi alguse (alates 1. märtsist 1900) kuupäevale 13 päeva. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq40">Kuidas ma tean, millise koguduse kirikuraamatutest oma esivanemaid otsida?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Õige koguduse kätteleidmiseks on tarvis teada, kus otsitavad isikud elasid. Kui on teada vaid küla, saab Eesti Keele Instituudi <a target="_blank" href="http://www.eki.ee/knab/knab.htm">kohanimeandmebaasi</a> abil leida kihelkonna, mille piiresse küla kuulus. Kui teada on koduvald, leiab valla kihelkondliku kuuluvuse <a target="_blank" href="http://www.ra.ee/apps/andmed/index.php/site/vald">Eesti ala valdade registri</a> abil. Kui puuduvad igasugused andmed esivanemate elukoha kohta, võib abiks olla 19. sajandi algul pandud <a target="_blank" href="http://www.ra.ee/apps/onomastika/index.php/et/nimepanek/nimepanekPtl">perekonnanimede andmebaasis</a> või luteri koguduste <a href="http://www.ra.ee/dgs/addon/nimreg/" target="_blank">personaalraamatute nimeregister</a>. Kuna igas kihelkonnas oli tavaliselt üks kirik, siis saabki hakata vaatama vastava kihelkonna personaalraamatuid ja meetrikaid. Mõnes suuremas kihelkonnas tegutses ka abikogudus, kus peeti eraldi kirikuraamatuid, ka need asuvad põhikoguduse fondis. Nii tuleks nt Kõpu abikoguduse meetrikaraamatuid otsida Viljandi Pauluse koguduse fondist ja Alatskivi abikoguduse omi Kodavere koguduse fondist. <br></p>
+                      <p>1840. aastatest tuleb seoses ulatusliku usuvahetusliikumisega arvestada võimalusega, et esivanemad võisid astuda õigeusku. Sellisel juhul tuleb sünni-, surma- ja abielukandeid otsida vastava piirkonna õigeusu koguduse meetrikatest. Personaalraamatuid õigeusukogudustes üldjuhul ei peetud.<br></p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq84">Kas arhiivis asuvad valmis sugupuud perekondade kaupa?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Ei, sugupuu tuleb igal huvilisel endal koostada. Suguvõsauurimine eeldab suuremahulist uurimistööd erinevate allikatega ning põhjaliku perepuu koostamiseks kulub kuid, isegi aastaid. Virtuaalse uurimissaali kodulehelt leiate rubriigi "Arhiiviallikate kasutamine" alt teksti <a target="_blank" href="http://www.ra.ee/vau/index.php/et/page/article/index?menuId=2">"Suguvõsauurimine"</a><a href="http://www.ra.ee/vau/index.php?page=ArchiveMainPage&amp;ArticleCode=GENEAL&amp;SideCategory=GENEAL&amp;LinkId=TargetListPortlet_405" target="_blank"></a>, kus juhatatakse algajale suguvõsauurijale kätte teeots oma juurte põhjalikumaks tundmaõppimiseks.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq20">Kuidas saab suhelda teiste suguvõsauurijatega ja neilt ka nõu küsida?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Suguvõsauurijaid ühendab <a href="http://www.genealoogia.ee" target="_blank">Eesti Genealoogia Selts</a>. <a href="http://www.isik.ee" target="_blank">Eesti Isikuloo Keskus</a> on loonud eestikeelse tasuta <a href="http://www.isik.ee/foorum" target="_blank">foorumi</a> suguvõsauurijatele. See on koht perekonnaajaloo teemal küsimiseks ja vastamiseks. Postitada võib teateid uuritavatest nimedest, otsimiskuulutusi, aga ka nõu küsida uurimise käigus tekkinud probleemide lahendamiseks. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq162">Kuidas leida üles personaalraamat, millele RTO-s koostatud personaalraamatute tähestik viitab?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Tähestikud viitavad registreerimisnumbrile, mida omasid personaalraamatud siseministeeriumi rahvastikutoimingute osakonnas (RTO-s). Kui raamatud 2009. aasta suvel Rahvusarhiivile üle anti, said need leidandmed, mille järgi on nad leitavad nii Saagas kui ka AIS-is. Vana viite leidmiseks tuleb vaadata säiliku kirjet AIS-ist. Näiteks, sisestades leidandmete reale EAA.1259.1.336 ja klikates säiliku pealkirjal, avaneb kirje, kus on märkusena kirjas RTO 79.1.2090.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq38">18. sajandi keskpaiga surmameetrikas on minu esivanema surmapõhjuseks märgitud «köhho töpe». Mida see tänapäeva mõistes tähendab?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Suure tõenäosusega mõeldi 18. sajandi allikates «köhho töpe» (sks k <em>Ruhr</em>) all düsenteeriat. Soovitame kasutada seesuguste küsimuste puhul meie arhivaaride koostatud&nbsp;<a href="https://www.ra.ee/dgs/guide.php?tid=1&amp;iid=&amp;tbn=1&amp;lev=yes&amp;lst=&amp;gid=17&amp;hash=348f3b17d3be69cb450cf77af35a3e44" target="_blank">abimaterjale Saagas</a> (teiste seas ka juhend&nbsp;<a href="https://www.ra.ee/dgs/var/fileupl/surmad.pdf" target="_blank">«Surmapõhjused»</a>). Samuti võib küsida nõu Eesti Isikuloo Keskuse <a href="http://www.isik.ee/foorum" target="_blank">perekonnaajaloo foorumis</a>, kus teised genealoogiahuvilised on meelsasti nõus oma teadmisi jagama.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq80">Kui ma ei oska saksa keelt ega tunne gooti kirja, kas ma siis ei saagi oma suguvõsa uurida?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>See ei ole võimatu, kui on piisavalt tahtmist ja püsivust. Gooti kirja dešifreerimisel&nbsp;on abiks õppevahend «Valik käsikirjalisi tekste 14.–19. sajandist» (Tartu 1996). Suguvõsauurimise allikatest on põhjaliku ülevaate kirjutanud Tartu ülikooli arhiivinduse professor Aadu Must «Eestlaste perekonnaloo allikad» (Tartu 2000). Samuti saab lugemisharjutusi teha Rahvusarhiivi <a href="https://www.ra.ee/apps/paleograafia/" target="_blank" style="background-color: initial;">paleograafia õppekeskkonnas</a>.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq82">Kui tean esivanemate nime ja kogudust, kus nad ristiti ja laulatati, aga täpseid kuupäevi mitte, siis millistest kirikuraamatutest on mul kõige lihtsam alustada?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Sellisel juhul on parem alustada personaalraamatust, kust leiate täpsed sünni- ja surmadaatumid. Nende järgi on juba lihtsam vastavad kanded meetrikatest üles otsida. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq42">Minu isa sündis 15. augustil 1932. aastal Tartus. Millisest kirikuraamatust leiaksin tema sünnisissekande?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>1. juulil 1926 jõustunud 1925. aasta perekonnaseadus lahutas perekonnaseisu dokumentatsiooni pidamise kirikust ning tegi selle ülesandeks perekonnaseisuametitele. Nii tulebki Teid huvitava isiku sünnikannet otsida vastava&nbsp;perekonnaseisuameti aktide hulgast. Enamasti asuvad need maavalitsuse arhiivis, antud juhul Tartu maavalitsuses, ERA.5130. Aktide teised eksemplarid on Siseministeeriumi perekonnaarhiivi dokumentide kollektsioonis, ERA.5201. Kuna aktiraamatud on köidetud aastate kaupa ning need sisaldavad paljude inimeste sünniandmeid, siis ei saa neid laenutada uurimissaali. Kui soovite lihtkoopiat, siis soovitame esitada koopiatellimuse ning kirjutada märkuste lahtrisse, kelle aktist Te koopiat soovite. Kui Teil on vaja akti õiguste tõendamiseks, siis tuleb esitada arhiivipäring.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq54">EELK Türi koguduse sünnimeetrikas on minu vanaisa sünnikohana märgitud «Tecknal». Kas tegemist on küla või mõisaga ja kus see tänapäeval asub?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p><em>Tecknal</em> oli Lokuta mõisa saksakeelne nimi. Praegu asub seal Lokuta küla. Kohanimede tänapäevaste vastete leidmisel on heaks abivahendiks Eesti Keele Instituudi <a href="http://www.eki.ee/knab/knab.htm" target="_blank">kohanimeandmebaas</a>, mis sisaldab lisaks tänapäevastele kohanimedele ka enamikku ajaloolistest kohanimedest (sh vene ja saksa keeles).&nbsp;Tänase külanime järgi on&nbsp;<a href="https://geoportaal.maaamet.ee/est/Kaardirakendused/Ajaloolised-kaardid/Ajalooliste-kaartide-rakenduse-kirjeldus-p157.html" target="_blank">Maa-ameti geoportaali ajalooliste kaartide rakenduse</a>&nbsp;abil võimalik leida, millise mõisa ja kihelkonna alla praegune küla on 19. sajandil kuulunud.</p>
+                  </div>
+              </div>
+              <div class="mt-8 mb-4 text-lg font-bold text-gray-800" id="subject-9">Teatised</div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq122">Mis on arhiiviteatis ja milleks seda vaja on?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Arhiiviteabe vahendamine toimub vastavalt <a href="https://www.riigiteataja.ee/akt/121032011001?leiaKehtiv" target="_blank">arhiiviseadusele</a> ja <a href="https://www.riigiteataja.ee/akt/129122011229?leiaKehtiv" target="_blank">arhiivieeskirjale</a>.<div class="page-article-body">
+                          <p>Arhiiviteatis koostatakse arhiivimaterjalides sisalduvate andmete põhjal mingi sündmuse, teema või isiku kohta. Arhiiviteatise ülesanne on isiku või asutuse õiguste või tehingute tuvastamine ja tõendamine arhivaalis sisalduva teabe põhjal. Päringu arhiiviteatise saamiseks saab esitada <a target="_blank" href="http://www.ra.ee/vau/index.php/et/page/article/index?menuId=9">VAU</a>s, arhiiviteatis väljastatakse vastavalt päringu esitaja soovile kas paberil või digitaalselt.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq178">Mis on vastuskiri?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Arhiiv koostab vastuseid ka huvipäringutele. Vastuskirja teenustasu on&nbsp;15 eurot.<br></p>
+                      <p>Päringu saab esitada <a target="_blank" href="http://www.ra.ee/vau/index.php/et/page/article/index?menuId=9">VAU</a> päringuvormi kaudu või arhiivis kohapeal. <br></p>NB! Arhiiv ei lahenda päringut, kui selles esitatud lähteandmed on puudulikud või sellele vastamine nõuab suuremahulist uurimistööd (nt sugupuu koostamine).
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq130">Kuidas arhiiviteatist või vastuskirja taotleda?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Päringut saab esitada ükskõik missuguses Rahvusarhiivi arhiivis kohapeal või läbi VAU. Selleks tuleb täita <a target="_blank" href="http://www.ra.ee/vau/index.php/et/page/article/index?menuId=9http://"><strong>VAU elektrooniline arhiivipäringuvorm</strong></a>.<br></p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq132">Kuidas täita päringuvormi VAUs?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Päringuvormide kohustuslikud väljad (tärniga tähistatud) on vaja kindlasti täita, sest vastasel juhul ei saa päringut edastada. Mida rohkem algandmeid on arhivaari käsutuses, seda tõenäolisem on saada arhiivist ammendav vastus. Kõik lisaandmed, mida teema kohta teate, võib kirja panna kommentaaride lahtrisse. Dokumendikoopiaid jms on võimalik lisada failina päringu juurde. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq160">Kas on võimalik saada digitaalselt allkirjastatud arhiiviteatist?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Jah, on küll võimalik. See on kõige mugavam moodus teatise kättesaamiseks, ühtlasi hoiame niiviisi kokku paberit ja säästame loodust. <br>
+                      <div class="page-article-body">
+                          <p>Päringuvormi täitmisel tuleb märkida, et soovite teatist elektrooniliselt. Kui riigilõiv on laekunud, koostatakse arhiiviteatis ning saadetakse see digitaalselt allkirjastatuna&nbsp;Teie e-posti aadressile.&nbsp; <br></p>
+                          <p>NB! Kindlasti kontrollige, kas Teie arvutis on tarkvara, mis võimaldab digitaalselt allkirjastatud dokumenti avada.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq126">Kas arhiiviteatise eest on vaja maksta?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Kui Te vajate arhiiviteatist<strong> õiguste või tehingute tõendamiseks</strong> ametiasutuses, tuleb selle eest tasuda riigilõiv 15 eurot (riigilõivuseaduse § 346).</p>
+                      <p>Kui Te soovite arhiivist teavet <strong>isiklikust huvist </strong>lähtuvalt, siis koostab arhiiv vastuskirja, mille eest tuleb maksta teenustasu&nbsp;15 eurot (alus:&nbsp;haridus- ja teadusministri 22.12.2011 määrus nr 71&nbsp;„Arhivaalide kasutamisega seotud tasuliste teenuste loetelu ja määrad“).&nbsp;</p>
+                      <p><strong>Vastuskirjale lisatud koopiate</strong> eest tuleb tasuda&nbsp;vastavalt haridus- ja teadusministri kinnitatud <a target="_blank" href="https://www.ra.ee/vau/upload/editor/day_200102/202001020929049335.pdf">kulunormidele</a>.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq128">Kuidas arhiiviteatise või vastuskirja eest tasuda?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Arhiiviteatise või vastuskirja eest tasumiseks saadetakse päringu esitajale makseteade. Kõige mugavam on kasutada makseteatel olevat pangalinki, sest siis on makseks vajalikud väljad eeltäidetud ning makse laekumine kajastub automaatselt Rahvusarhiivi päringusüsteemis. Pangaülekandega tasudes tuleb summa kanda makseteates märgitud rahandusministeeriumi pangakontole. Maksekäsundil tuleb näidata viitenumber ja selgitus (makseteate number, päringu esitamise kuupäev ja päringu esitaja nimi). Kõik nimetatud andmed on kirjas ka makseteatel. <br></p>
+                      <p>Soovi korral võib teenuse eest tasuda ka sularahas või pangakaardiga mistahes Rahvusarhiivi üksuses kohapeal.<br></p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq134">Kuidas arhiiviteatise või vastuskirja kätte saab?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <div class="page-article-body">
+                          <p>Arhiiviteatis või vastuskiri väljastatakse vastavalt kättesaamisviisile, mille päringu esitaja on valinud arhiivipäringut täites:</p>
+                          <ul>
+                              <li>e-postiga,</li>
+                              <li>postiga, <br></li>
+                              <li>kohapeal mistahes Rahvusarhiivi üksuses.<br></li>
+                          </ul>
+                          <p>Kui arhiiviteatis (või sellele lisatud koopia) sisaldab delikaatseid isikuandmeid, väljastatakse see ainult vahetult avaldajale või tema poolt määratud isikule, kes peab esitama isikut tõendava dokumendi, või postitatakse viisil, mis välistab teabe sattumise kõrvaliste isikute kätte.</p>
+                          <p>Arhiiviteatis / vastuskiri väljastatakse alles pärast riigilõivu / teenustasu tasumist.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="mt-8 mb-4 text-lg font-bold text-gray-800" id="subject-6">Koopiate valmistamine</div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq62">Kas ma pean ise meelde jätma, millistest säilikutest ma koopiad tellisin või lööb arhiiv paberkoopiatele templid?</a> </div>
+                  <div class="faq-answer" style="display: none;">
+                      <p>Arhiiv lööb arhiiviviitega templi koopiapaki esimesele ja viimasele lehele. Kui koopiad on tellitud erinevatest säilikutest, siis tembeldatakse esimene ja viimane leht iga säiliku puhul eraldi. Kui soovite aga templeid kõikidele koopialehtedele, siis tuleb maksta tembeldustasu 0,10 € iga templi eest. Täpse ülevaate enda esitatud koopiatellimustest saab oma konto alt VAUst, kuhu salvestatakse kõik esitatud tellimused.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq94">Kas kserokoopiaid on võimalik tellida kõikidest arhivaalidest?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Paberkoopiaid ei valmistata säilikutest, mis on: <br></p>
+                      <ul>
+                          <li>pärgamentköites või pärgamendil;</li>
+                          <li> hapra paberiga ja füüsiliselt lagunenud; <br></li>
+                          <li>vahapitseriga, nööritud või pitseeritud; <br></li>
+                          <li>kokkuvolditud plaanid, joonistused või kaardid juhul, kui see neid kahjustab.</li>
+                      </ul>
+                      <p>Paberkoopiaid ei tehta ka digiteeritud säilikutest, nende kujutisi on võimalik välja trükkida.<br></p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq64">Miks on arhiivis koopiate valmistamise tähtaeg nii pikk? Ma tahaksin koopiad kohe kätte saada.</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Reeglina on paberkoopiate valmistamise tähtaeg 1 nädal ning digitaalsete koopiate valmistamise tähtaeg 2 nädalat. See on tingitud arhiivitöö iseärasustest. Kuna tellimusi on palju ning koopiate valmistamisel tuleb järgida kvaliteedinõudeid, siis ei ole võimalik koopiaid kohe kätte saada. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq66">Kas ma pean koopiatele ise arhiivi järele tulema?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Ei pea, arhiiv väljastab paberkoopiaid ka posti teel. Sel juhul peate tasuma lisaks koopiate maksumusele ka postikulud. Digikoopiad on võimalik alla laadida ftp-serveri vahendusel. Kõik vastavad valikud saab teha koopiatellimuse esitamisel VAUs.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq60">Kas ma saan koopiate eest arhiivis tasuda ka kaardimaksega?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Jah, koopiateenuse eest on võimalik <span style="font-size: 13.3333px;">kohapeal&nbsp;</span>tasuda nii sularahas kui kaardiga. Koopiatasu maksmiseks on ka muud võimalused: pangalink, krediitkaart ja pangaülekanne. Selleks tuleb VAUs koopiatellimust kinnitades valida sobiv makseviis.<br> </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq68">Kas ma saan digikoopiaid enda meilile tellida?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Digitaalseid koopiaid on võimalik alla laadida arhiivi ftp-serveri vahendusel. Selleks tuleb VAUs koopiatellimust kinnitades valida kättesaamise viisina interneti (ftp-serveri) kaudu ja kontrollida, et sisestatud oleks õige meiliaadress.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq70">Kas koopiaid saab tellida ainult arhiiviviite alusel ilma arhivaali nägemata?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Jah, saab küll. Siiski on soovitav tellitud säilikud oma silmaga üle vaadata. Säilikud võivad sisaldada ka uurija jaoks vähemolulisi dokumente, millest koopiate valmistamine ei ole alati otstarbekas ja vajalik. Arusaamatuste vältimiseks soovitamegi uurijal endal kopeeritav materjal välja selekteerida. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq96">Miks on arhiivis koopiahinnad nii kõrged? Ma tean ühte palju soodsamat paljunduskohta, miks ma ei võiks säilikuga seal ära käia?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Seda keelab <a href="https://www.riigiteataja.ee/akt/121032011001?leiaKehtiv" target="_blank">arhiiviseadus</a>. Peamine põhjus on arhivaalide kaitse. Igakordsel kopeerimisel kahjustab arhivaali valgus, soojus, murdmine jms, mis omakorda tekitab muutusi paberi ja tindi koostises. Seetõttu peab arhivaali kopeerimine toimuma teadlikult ja oskuslikult. Iga koopiatellimuse puhul tehakse esmalt kindlaks, kas arhivaali seisund võimaldab kopeerimist või ei. Vastavatest nõuetest saab lähemalt lugeda uurimissaali eeskirjast. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq100">Kas ma võiksin ise oma skänneriga uurimissaalis arhivaale skaneerida?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Ei, see ei ole lubatud. Igakordne kopeerimine kahjustab säilikut. Arhiivis teevad seda tööd spetsialistid ning nii on säilikute füüsiline ja optiline kahjustamine väiksem. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq22">Kas arhiivis on digitaalsete koopiate tegemise võimalus?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Jah, digitaalseid koopiaid valmistatakse Tallinna ja Tartu uurimissaalis. Skaneerida saab maksimaalselt A0-formaadilisi säilikuid. Suurematest arhivaalidest on võimalik tellida digifotosid. Rohkem teavet saab VAU rubriigist <a href="http://www.ra.ee/vau/index.php/et/page/article/index?menuId=10" target="_blank">koopiate tellimine</a>.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq98">Kas oma fotoaparaadiga võib uurimissaalis säilikutest pilti teha?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Jah, võib küll. Tartu ja Tallinna uurimissaalides on oma fotoaparaadi või telefoniga pildistamisel võimalik kasutada statiivi. Isepildistamisel ei ole lubatud kasutada välku. <br> </div>
+              </div>
+              <div class="mt-8 mb-4 text-lg font-bold text-gray-800" id="subject-7">Kauglaenutus</div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq106">Mis on kauglaenutus?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Kauglaenutus on Rahvusarhiivi Tartu ja Tallinna (v.a filmiarhiiv) uurimissaalide vaheline arhivaalide laenutamine tähtajaliseks kasutamiseks. Kauglaenutuse eesmärk on pakkuda arhiivi uurimissaalis töötavale uurijale teiste arhiivide säilikute kasutamist. Kauglaenutuse tellimuse esitamise ja täitmise ning laenutatud arhivaalide kasutamise korra kehtestab Rahvusarhiivi <a href="http://www.ra.ee/vau/upload/editor/day_170131/201701311423518126.pdf" target="_blank">uurimissaali ja&nbsp;kauglaenutuse eeskiri.</a> </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq110">Kui kiiresti kauglaenutuse tellimus täidetakse?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Säilikud toimetatakse teise arhiivi iga kuu 10. ja 25. kuupäevaks. Suveperioodil, 25. juunist kuni 1. septembrini kauglaenutust ei toimu. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq158">Kas kauglaenutamise eest peab maksma?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p><a href="https://www.ra.ee/vau/upload/editor/day_200102/202001020929049335.pdf" target="_blank">Haridus- ja teadusministri 22. detsembri 2011 määrusega nr 71</a> on kehtestatud ühe arhiivisäiliku kauglaenutamise hinnaks 2 eurot. Kui tellimus on vastu võetud ja komplekteeritud, saadetakse kliendile arve. Laenutatud arhivaalidega saab tutvuda alles pärast arve tasumist pangaülekandega või kohapeal.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq108">Kas kauglaenutuse teel saab tellida kõiki arhivaale?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Kauglaenutusse ei väljastata üldjuhul: <br></p>
+                      <p>a) halvas füüsilises seisundis olevaid arhivaale; <br></p>
+                      <p>b) fotosid ja klaasnegatiive, kaarte, plaane, pärgamentürikuid- ja köiteid ning vahapitsereid sisaldavaid arhivaale; <br></p>
+                      <p>c) suureformaadilisi ja esemelisi arhivaale; <br></p>
+                      <p>d) kartoteeke; <br></p>
+                      <p>e) tervikuna publitseeritud ja kasutuskoopiaid omavaid (mikrofilm, digikoopia) arhivaale; <br></p>
+                      <p>f) arhiivis kohapeal enamkasutatavaid arhivaale; <br></p>
+                      <p>g) Eesti riigi ajaloo ja kultuuri seisukohalt erilise tähtsusega arhivaale (nt Tartu rahuleping, Eestimaa rüütelkonna kapitulatsiooniakt 1710. aastast jt).</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq102">Kas kauglaenutuse teel on võimalik säilikuid tellida ka Valga ja Rakvere osakonnast ja sinna kohapelae?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Ei, see ei ole võimalik. Rakveres ja Valgas hoiul olevaid säilikuid saab vaadata üksnes kohapeal. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq112">Kui palju säilikuid võib korraga kauglaenutuse teel tellida ja kui pikk on kasutustähtaeg?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Korraga võib tellida üldjuhul kuni 15 säilikut tähtajaga üks kuu. Sageli kasutatavate arhivaalide puhul on laenutusaeg kaks nädalat. Tellimust võib pikendada veel kuni üheks kuuks. Tähtaega hakatakse arvestama alates tellitud säilikute jõudmisest sihtkohta. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq72">Leidsin AISist oma talu kinnistutoimiku. Mida ma pean tegema, et seda Tallinnasse tellida?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Selleks tuleb VAUs valida tellimuse liigina kauglaenutus ning uurimissaal, kuhu säilik tellida soovitakse. Kauglaenutus on tasuline (1 säilik=1 euro), tellimused toimetatakse sihtkohta iga kuu 10. ja 25. kuupäevaks.</p>
+                  </div>
+              </div>
+              <div class="mt-8 mb-4 text-lg font-bold text-gray-800" id="subject-8">Juurdepääsupiirangud</div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq50">Mis on kaalutlemine?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Kaalutlemine on juurdepääsu võimaldamise protseduur, millega tehakse kindlaks, kas avalik hüve, mis saadakse juurdepääsupiiranguga andmete kasutamisest uurimuses, kaalub üles eraisiku õiguste või huvide riive, mis nende andmete kasutamisega võib kaasneda. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq44">Milliseid piiranguid saab arhiiv ühepoolselt kehtestada?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Rahvusarhiiv peab kaitsma inimese õigust eraelu kaitsele ning tegema seda ka juhul, kui arhiivimoodustaja pole selliseid piiranguid kehtestanud või seda pole üleandmise-vastuvõtmise aktis või lepingus märgitud. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq46">Millistele isikuandmetele juurdepääsu piiratakse?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Juurdepääsu piiratakse eelkõige delikaatsetele ja eraelulistele isikuandmetele. Nende loetelu vaata <a target="_blank" href="https://www.riigiteataja.ee/ert/act.jsp?id=12909389"> isikuandmete kaitse seadusest</a>. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq48">Millistele isikuandmetele juurdepääsu ei piirata?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Juurdepääsu ei piirata reeglina lihtisikuandmetele (nimi, sünd, surm, abiellumine, ristimine, abikaasa, lapsed, vanemad, aadress, isikukood jms). </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq52">Kas uurija vastutab talle teatavaks saanud isikuandmete kasutamise eest?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Rahvusarhiivi arhivaalides on juhuslikult ja ebasüstemaatiliselt esinevaid isikuandmeid, mis võivad olla delikaatsed ja eraelulised ja millele kehtivad seadusest tulenevad juurdepääsupiirangud. Nõnda laialipaisatud infoühikuid on olemasoleva ressursi ja arhivaalide koguhulga tõttu praktiliselt võimatu kindlaks teha. Ka arhiiviuurija peab endale teadvustama isikute õigust perekonna- ja eraelu puutumatusele. Uurija vastutab talle juhuslikult teatavaks saanud delikaatsete ja eraeluliste isikuandmete kasutamise eest vastavalt kehtivale seadusandlusele. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq114">Miks mõnele avalikule arhivaalide juurdepääsu piiratakse?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Vastavalt <a href="https://www.riigiteataja.ee/akt/121032011001?leiaKehtiv" target="_blank">arhiiviseaduse § 42-le</a> tuleb üldist juurdepääsuõigust avalikele arhivaalidele piirata vaid kahel põhjusel: esiteks selleks, et kaitsta inimeste eraelu üksikasju avalikuks saamast, ja teiseks selleks, et kaitsta olulisi avalikke huvisid. Avalikul arhiivil tuleb kokku puutuda eelkõige esimese põhjusega. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq116">Milliseid juurdepääsupiirangute liike võib Rahvusarhiivis ette tulla?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Rahvusarhiivis võib esineda kolme liiki juurdepääsupiiranguid:
+                      1. Delikaatsed või eraelulised isikuandmed võivad esineda nii avalike kui eraarhivaalide hulgas.
+                      NB! üks osa neist on kehtestatud isikuandmete kaitse seadusega, teine osa selliste eriseadustega nagu perekonnaseadus, notariaadiseadus jms.
+                      2. Andmed asutusesiseseks kasutamiseks võivad esineda vaid Rahvusarhiivi üle antud uuemate avalike arhivaalide hulgas, sest kehtestatakse avaliku teabe seaduse alusel.
+                      3. Üleandja kehtestatud juurdepääsupiirang võib esineda vaid eraarhivaalide hulgas. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq118">Mis tingimustel pääseb juurde delikaatsetele või eraelulistele isikuandmetele?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Delikaatsetele või eraelulistele isikuandmetele tuleb juurdepääs võimaldada juhul kui:a) uurija juurdepääsuvajadus tuleneb õigusaktist; see selgub, kui on uurimist või järelevalvet korraldava või õnnetuse asjaolusid selgitava pädeva ametniku juurdepääsu võimaldav otsus; politsei, kohtu, prokuratuuri vms asutuse juurdepääsutaotlus; b) uurijal on kaalukas põhjus; see selgub kaalutlemise teel. </div>
+              </div>
+              <div class="mt-8 mb-4 text-lg font-bold text-gray-800" id="subject-10">AIS — arhiivi infosüsteem</div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq30">Mis on AIS?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Arhiivi infosüsteem ehk <a href="http://ais.ra.ee/" target="_blank">AIS</a> on Rahvusarhiivi andmebaas, kus on teave arhiivis hoitavate dokumentide kohta. Olemuselt on see sarnane raamatukogude elektrooniliste andmebaasidega, mille abil saab raamatuid üles leida. Nii on võimalik AISi kaudu otsisõnu kasutades üles leida dokumente ehk arhiivikeeli arhivaale. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq120">Kas AISi on sisestatud kõik Rahvusarhiivi arhivaalid?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>AISi on sisestatud kõik Rahvusarhiivis hoiul olevad ligikaudu 10 miljonit säilikut. Sisestamistöö jätkub, kuna arhiivi võetakse pidevalt juurde uusi säilikuid, millest moodustatakse uued arhiivid.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq198">Mis on kirjeldusüksus?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Kirjeldusüksus on arhivaal või arhivaalide&nbsp;kogum, mida on võimalik eraldi kirjeldada. Suuremad kirjeldusüksused on säilik,
+                          sari, arhiiv ning nende allüksused (nt allarhiiv, allsari).</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq199">Mis on leidandmed?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Leidandmeteks nimetatakse säiliku leidmist&nbsp;võimaldavat koodi. See koosneb arhiivi tunnusest (täheline tunnus koos
+                          numbriga), nimistu numbrist ja säiliku numbrist, näiteks "EAA.1.2.3",
+                          kus:</p>
+                      <p>1. EAA.1 tähistab arhiivi, praegusel juhul
+                          arhiivi nimega "Eestimaa rootsiaegne kindralkuberner".<br>2. Number 2 tähistab nimistut, praegusel juhul
+                          arhiivi "Eestimaa rootsiaegne kindralkuberner" teist nimistut.<br>3. Number 3 tähistab säilikut, praegusel juhul
+                          "Eestimaa rootsiaegne kindralkuberner" teise nimistu kolmandat
+                          säilikut.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq200">Mis on arhiiv ehk arhiivifond?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Arhiiv on arhiivimoodustaja ehk asutuse või isiku tegevuse käigus loodud&nbsp;või saadud arhivaalide terviklik kogum. Arhiiv koosneb üldjuhul ühe
+                          arhiivimoodustaja arhivaalidest.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq86">Kuidas leian mind huvitava dokumendi?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      AISist teabe saamiseks on kaks võimalust: lihtotsing ja detailotsing. Neil otsinguviisidel on oma eripärad, mille tõttu nad sobivad kasutamiseks erinevates olukordades. Otsisõna võib olla nimi (<em>Jaan Poska, Kuningaküla algkool</em>), märksõna (<em>hobusevargus, Võnnu lahing</em>), tegusõna tuletusvorm (<em>ratsutamine, perekonnanimede panemine</em>). Kindlasti leiate vastuseid ka ilusatele otsisõnadele, nagu <em>armastus</em> ja <em>õnn</em>. Otsingut saab teostada eesti, vene ja saksa keeles, kuna enamik Rahvusarhiivi arhivaalidest on koostatud nendes keeltes. Samuti võib katsetada ka rootsi-, prantsuse-, inglisekeelse sõnaga, sest ka nendes keeltes leidub üksikuid arhivaale. Loe lähemalt tulemusliku otsingu tegemise kohta <a href="http://ais.ra.ee/" target="_blank">AIS</a> kodulehelt. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq88">Kuidas on võimalik arhivaalidega tutvuda?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Arhivaale ei saa koju laenutada, neid saab lugeda üksnes arhiivis kohapeal või vaadata digiteeritud allikate portaalis Saaga, kus leiduvad enimkasutatavad Rahvusarhiivi allikad. Arhivaali pealkirjal klikates avaneb detailinfo, mille juures olev otselink "Telli" viib tellimiskeskkonda ehk virtuaalsesse uurimissaali. Kui arhivaal on digiteeritud kujul Saagas olemas, siis on AISis selle juurde kuvatud ka otselink kirjega "Vaata dokumenti". Rohkem infot teenuste kohta leiab virtuaalsest uurimissaalist&nbsp;<a href="https://www.ra.ee/vau/index.php/et" target="_blank">VAU</a>.</p>
+                  </div>
+              </div>
+              <div class="mt-8 mb-4 text-lg font-bold text-gray-800" id="subject-3">Saaga — digiteeritud arhiiviallikad</div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq8">Mis on Saaga ja miks peab end Saaga kasutamiseks registreerima?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p><a href="https://www.ra.ee/dgs/explorer.php" target="_blank">Saaga</a>&nbsp;on digiteeritud arhiiviallikaid sisaldav veebikeskkond, mis võimaldab kõigil huvilistel tutvuda enimkasutatavate ja huvipakkuvamate Rahvusarhiivi üksustes ja Tallinna Linnaarhiivis säilitatavate arhivaalide digitaalsete koopiatega.</p>
+                      <p>Registreeruda palume ka kõikidel Rahvusarhiivi uurimissaali külastajatel. Saaga kasutajana olete samamoodi arhiivi klient.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq10">Miks on Saagas osa lehti topeltkaadritena?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Mõned lehed on topelt filmitud, sest seda näeb ette filmimise kvaliteedistandard: juhul, kui info on lehe mõnes kohas paremini loetav ühel tihedusel ja teises kohas teisel tihedusel, valmistatakse lehest kaks kaadrit erinevate valgusparameetritega. Eesmärk on tuua terviklik tekst lugejani kahe või enama kaadri abil. Seega on nende kaadrite skannimine samuti vajalik, sest üks kaader toetab teist. Kui mikrofilmikaadrilt õnnestub skannimistingimuste (kaadri tumeduse/heleduse) reguleerimisega rohkem infot nähtavale tuua, siis skannitakse kaadrid topelt. Seega on topeltkaadrid jäetud Saagasse teadlikult, et oleks tagatud info täielikkus. See ei tähenda, et osa lehti oleks seetõttu pildistamata jäänud. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq14">Miks ei saa pilte säilikute kaupa alla laadida?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Saaga on loodud piltide vaatamiseks, mitte massiliseks allalaadimiseks.&nbsp; </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq12">Miks ühe kaadri jõudmine arvutisse võtab nii palju aega?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Tegemist on skannitud kujutisega ehk pildiga (<em>image</em>), kus kogu nähtav tekst on tegelikult halltoonides punktide kogum. Selleks, et mikrofilmilt skanneri abil ülesloetud punktide kogum suudaks edastada vanas ja sageli kahjustatud kirikuraamatus sisaldava informatsiooni, peab neid punkte olema võimalikult palju. See omakorda muudab faili väga suureks. Et skannitud pilte oleks võimalik Internetis vaadata, on nende mahtu tarkvara abil vähendatud nii palju, kui see on võimalik. Kuid vaatamata sellele on üks fail keskmiselt suurusega 800–900 kB ning selle jõudmine arvutisse võtab aega. Soovitame piltide kiiremaks ettelaadimiseks lülitada sisse vastav eelistus. Seda saate teha Saagas, kui valite ülalt paremast nurgast «Eelistused» ning teete linnukese lahtrisse «Kasuta piltide ettelaadimist». Et eelistused oleksid alati Teie kasutajakontoga seotud, tuleb need salvestada siis, kui olete sisse loginud. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq16">Kas ei ole võimalik leida mingit lahendust, mis võimaldaks teha otsinguid Saaga kogust?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>See pole võimalik seni, kuni tekstituvastuse tarkvara arendamine pole jõudnud tasemele, mis võimaldaks vanu käsikirju nagu on Saagas tekstiks muuta. Luteri koguduste personaalraamatute kasutamist hõlbustab <a href="http://www.ra.ee/dgs/addon/nimreg/" target="_blank">nimeregister. </a>See võimaldab otsida, millistes indekseeritud personaalraamatutes huvipakkuv nimi esineb ja sealt otse vastavat arhivaali lehitsema minna.</p>
+                      <p>Nimeregistrit indekseerib <a target="_blank" href="http://www.genealoogia.ee/">Eesti Genealoogia Selts</a>, tehnilist tuge pakub sellele Rahvusarhiiv.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq18">Miks on mõne koguduse puhul mõned aastad filmimata jäänud. Kas need ei tulegi Saagasse?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Kirikuraamatud on digiteeritud ja Saagas üleval. Seda, kas koguduse kõik aastakäigud on säilinud või mitte, saab kontrollida rahvusarhiivi infosüsteemi AIS vahendusel. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq34">Kas Rahvusarhiivi uurimissaalides saab vaadata ka Saagas olevate säilikute originaale?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Ei saa. Üks kogude digiteerimise eesmärke on kasutusfondi loomine, et säästa originaale ja kindlustada nende võimalikult pikaajaline säilimine. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq76">Kas on võimalik pilti või osa pildist välja printida? </a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>On küll võimalik. Parima kvaliteedi saamiseks avage kujutis&nbsp;pdf-formaadis. Seejärel saate välja printida kas kogu kujutise või osa sellest (osa välja printimisel tuleb see enne tähistada).<br>Kasutage oma arvutis leiduvat pdf lugemise programmi, et tähistada Teid huvitav
+                          osa kujutisest, valitu saate kopeerida &nbsp;parema
+                          hiireklahvi klikiga. Edasi avage tekstitöötlusprogramm, kleepige valitu&nbsp;sinna
+                          ning seejärel printige. <br>Hea tulemuse saamiseks kogu kujutise printimisel soovitame
+                          lehe äärised võrdsustada nulliga.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq124">Kas Saagast leitud andmeid tohib publitseerida?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Saagast pärit piltide või nende osade avaldamisel takistusi ei ole, kuid arvestada tuleb kehtivate õigusaktidega, näiteks isikuandmete kaitse seadus, autorikaitse seadus vm. Publitseeritav tekst või pilt tuleb varustada arhiiviviitega (nt kujul EAA.1248.1.38, l. 6). Täpsemalt saab viitamise kohta lugeda&nbsp;<a href="https://www.ra.ee/teadus-ja-publikatsioonid/viitamise-juhend/" target="_blank">viitamise juhendist</a>.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq32">Miks ei ole ühe säiliku kaadrid liidetud üheks kogumiks nagu seda tehakse veebis tekstide esitamisel?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>Kuna pildifailid on mitmeid kordi suuremad kui tekstifailid, siis tekiks nendest failidest ühe digitaalse säiliku moodustamisel nii suur fail, mille allalaadimine (serverist arvutisse jõudmine) võtaks mitu tundi aega. Suur osa arvuteid ei suudaks sellist faili avadagi, rääkimata kiirest lehekülgede vahel liikumisest. Mitmesajaleheküljeline tekstifail võib mahult olla umbes sama suur kui Saaga üksainus kaader.</p>
+                  </div>
+              </div>
+              <div class="mt-8 mb-4 text-lg font-bold text-gray-800" id="subject-12">VAU — virtuaalne uurimissaal</div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq56">Mis on VAU?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p><a href="https://www.ra.ee/vau/index.php/et" target="_blank">VAU ehk virtuaalne uurimissaal</a> on Rahvusarhiivi klientidele mõeldud universaalne veebikeskkond, mis koondab kõiki arhiivikasutajatele suunatud veebiressursse, olulist arhiiviteavet ning teenuseid. VAUs saab tutvuda arhiiviteatmestu AISiga, otsida ja lehitseda Saagat, kasutada eriandmebaase nagu näiteks Fotis, FIS jt, esitada arhiivipäringuid, esitada uurimissaali tellimusi, lugeda uudiseid jne.</p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq138">Mis on lingimärkmik?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Lingimärkmik on koht, kuhu te saate salvestada huvipakkuvate lehekülgede viiteid. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq140">Miks ma peaksin tahtma kasutada VAU lingimärkmikku, kui ma saan salvesta linke ka veebilehitsejas?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p title="https://www.ra.ee/vau/plugins/bookmark/img/admin.gif">
+                          Viiteid, mis on salvestatud oma veebilehitsejas, saab kasutada ainult selle arvutiga, millega need viited on salvestatud. VAU lingimärkmikku saab aga kasutada iga arvutiga, millel on Interneti-ühendus. Seega on VAU lingimärkmik uurijale kättesaadav nii arhiivi uurimissaalides kui ka kodu- ja tööarvutis. Pealegi on VAU lingimärkmik integreeritud paljude Rahvusarhiivi andmebaasidega. Kui veebilehel on ikoonid
+                          <img src="https://www.ra.ee/vau/plugins/bookmark/img/create.gif" border="0" alt="">&nbsp; ja &nbsp;<img src="https://www.ra.ee/vau/plugins/bookmark/img/admin.gif" border="0" alt="">, siis esimene neist võimaldab lehekülje viite lingimärkmikku lisada, teine aga olemasolevaid linke sirvida.
+                      </p>
+                  </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq136">Mis on kasutajate andmebaasid?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Kasutajate andmebaasideks nimetatakse VAU-keskkonnas andmebaase, mille on loonud isikud või organisatsioonid väljaspool Rahvusarhiivi. Andmebaaside sisu eest vastutavad nende autorid ning neile kuuluvad ka andmebaaside isiklikud õigused. Esmalt tuleb huvipakkuv andmebaas välja valida, seejärel saab teha otsingu selle andmebaasi piires. Tegemist on andmebaaside kollektsiooniga, mida on võimalik filtreerida metaandmete põhjal (autor, pealkiri, kirjeldus, teema, piirdaatumid, piirkond). </div>
+              </div>
+              <div class="mt-8 mb-4 text-lg font-bold text-gray-800" id="subject-13">Kaartide infosüsteem</div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq186">Kuidas on võimalik tutvuda kaardiga, mille digipilti kaartide infosüsteemist ei leia?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Sellisel juhul tuleb originaalkaart leidandmete järgi vastavasse uurimissaali välja tellida, telimuse saab teha VAUs. Korraga saab välja tellida kuni 10 kaarti. Tuletame meelde, et kaartide digiteerimisega seoses pole paljusid kaarte võimalik uurimissaali välja tellida, samuti võib viibida juba digitud kaartide kujutiste kaardiandmebaasis nähtavaks muutumine. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq188">Kas digiteeritud kaarte saab arhiivi uurimissaalis originaalina vaadata?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      Arhiiv digiteerib kaarte eelkõige selleks, et tagada nende säilivus ja teha need uurijaile kergemini kättesaadavaks. Sel põhjusel digiteeritud kaarte originaalidena uurimissaali välja ei tooda. </div>
+              </div>
+              <div class="mb-4 p-4 rounded bg-gray-50/60 hover:bg-gray-50" x-data="{ open: false }">
+                  <div class="flex items-center cursor-pointer" x-on:click="open = !open">
+                    <span>
+                    <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </span>
+                  <a class="font-medium text-blue-600 ml-2" href="#faq184">Kas kaardist saab tellida koopiat ja kuidas seda teha?</a> </div>
+                  <div class="mt-4 ml-6 prose" x-show="open" x-cloak>
+                      <p>• Kui kaartide infosüsteemis on kaardi digipilt olemas, siis saab sellest tellida üksnes digikoopiat. Koopiatellimuse esitamisel tuleb silmas pidada, et üks olulisemaid parameetreid on kaardi formaat, koopiatööde hinnakiri on leitav VAU-s. Digikoopia saab salvestada nii mälupulgale kui ka ftp-serveri kaudu alla laadida. NB! Digikoopia väljatrükki arhiiv ei paku. </p>
+                      <p>• Digiteerimata kaardist on võimalik tellida ka paberkoopiat juhul, kui selle formaat ja seisund võimaldab koopiamasinaga paljundamist. Iga koopiatellimus vajab eraldi käsitlemist ning arhivaarid teavitavad alati tellijat tingimustest ja võimalustest. </p>
+                      <p>Koopiatellimusi saab täita VAUs.</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Neljas valge ala -->
+    <div class="mt-2 flex shrink flex-col rounded-t bg-white shadow-md lg:mx-2 lg:mb-2 lg:mt-0 lg:rounded">
+      <!-- Jalus -->
+      <footer class="flex flex-wrap content-center sm:h-64">
+        <!-- Jaluse küljendus -->
+        <div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
+          <!-- Jaluse jaotus -->
+          <div class="block divide-y-2 divide-gray-700 sm:flex sm:items-center sm:justify-between sm:divide-x-2 sm:divide-y-0">
+            <!-- Lingid -->
+            <div class="py-6 sm:flex-1 sm:py-0">
+              <ul class="space-y-6">
+                <li x-data="{ url: 'https://www.ra.ee/vau/index.php/helpdesk/message/feedback?language=et&dialog=1&url='}">
+                  <button
+                    @click="window.open(url,'','top=100,left=100,width=800,height=600,resizable=yes,location=no,menubar=no,scrollbars=yes,status=no,toolbar=no,fullscreen=no,dependent=no')"
+                    class="inline-flex flex-nowrap items-center text-base font-medium text-blue-600 no-underline hover:text-blue-500 hover:focus:active:underline focus:active:text-blue-700">
+                    Tagasiside
+                    <svg class="h-4 w-4 ml-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 19H5V5H12V3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V12H19V19ZM14 3V5H17.59L7.76 14.83L9.17 16.24L19 6.41V10H21V3H14Z"></path>
+                    </svg>
+                  </button>
+                </li>
+                <li>
+                  <a target="_blank" href="https://www.ra.ee/" class="inline-flex flex-nowrap items-center text-base font-medium text-blue-600 no-underline hover:text-blue-500 hover:focus:active:underline focus:active:text-blue-700">
+                    Rahvusarhiiv
+                    <svg class="h-4 w-4 ml-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 19H5V5H12V3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V12H19V19ZM14 3V5H17.59L7.76 14.83L9.17 16.24L19 6.41V10H21V3H14Z"></path>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://ais.ra.ee/" class="inline-flex flex-nowrap items-center text-base font-medium text-blue-600 no-underline hover:text-blue-500 hover:focus:active:underline focus:active:text-blue-700">
+                    Arhiivi infosüsteem
+                    <svg class="h-4 w-4 ml-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 19H5V5H12V3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V12H19V19ZM14 3V5H17.59L7.76 14.83L9.17 16.24L19 6.41V10H21V3H14Z"></path>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://www.ra.ee/vau/" class="inline-flex flex-nowrap items-center text-base font-medium text-blue-600 no-underline hover:text-blue-500 hover:focus:active:underline focus:active:text-blue-700">
+                    Virtuaalne uurimissaal
+                    <svg class="h-4 w-4 ml-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 19H5V5H12V3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V12H19V19ZM14 3V5H17.59L7.76 14.83L9.17 16.24L19 6.41V10H21V3H14Z"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- Kontakt -->
+            <div class="py-6 sm:pt-3 sm:pb-1 sm:pl-12">
+              <div class="mb-5">
+                <h2 class="font-semibold">Rahvusarhiiv</h2>
+                <p class="mt-1">Nooruse 3, Tartu 50411</p>
+              </div>
+              <div class="mb-3">
+                <p>Tel: 738 7500</p>
+                <p>E-mail: rahvusarhiiv@ra.ee</p>
+              </div>
+              <nav class="-ml-2.5 flex text-gray-800">
+                <a class="w-10 h-10 rounded hover:bg-gray-100 inline-flex items-center justify-center" target="_blank" href="https://facebook.com/rahvusarhiiv">
+                  <svg class="w-10 h-10" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M36.001 24.075C36.001 17.406 30.628 12 24.001 12C17.371 12.0015 11.998 17.406 11.998 24.0765C11.998 30.102 16.387 35.097 22.123 36.003V27.5655H19.078V24.0765H22.126V21.414C22.126 18.3885 23.9185 16.7175 26.659 16.7175C27.973 16.7175 29.3455 16.953 29.3455 16.953V19.923H27.832C26.3425 19.923 25.8775 20.8545 25.8775 21.81V24.075H29.2045L28.6735 27.564H25.876V36.0015C31.612 35.0955 36.001 30.1005 36.001 24.075Z"></path>
+                  </svg>
+                </a>
+                <a class="w-10 h-10 rounded hover:bg-gray-100 inline-flex items-center justify-center" target="_blank" href="https://blog.ra.ee/">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.5717 9.6H9.57168C8.91168 9.6 8.37168 9.06 8.37168 8.4C8.37168 7.74 8.91168 7.2 9.57168 7.2H12.5717C13.2317 7.2 13.7717 7.74 13.7717 8.4C13.7717 9.06 13.2317 9.6 12.5717 9.6ZM15.5717 14.4C15.5717 13.74 15.0317 13.2 14.3717 13.2H9.57168C8.91168 13.2 8.37168 13.74 8.37168 14.4C8.37168 15.06 8.91168 15.6 9.57168 15.6H14.3717C15.0317 15.6 15.5717 15.06 15.5717 14.4ZM23.9717 2.4V21.6C23.9717 22.932 22.9037 24 21.5717 24H2.37168C1.03968 24 -0.0283203 22.932 -0.0283203 21.6V2.4C-0.0283203 1.068 1.03968 0 2.37168 0H21.5717C22.9037 0 23.9717 1.068 23.9717 2.4ZM19.1717 12C19.1717 12 19.1717 10.8 17.9717 10.8C16.8317 10.836 16.7717 9.6 16.7717 9.6V7.2C16.7717 5.208 15.1637 3.6 13.1717 3.6H8.37168C6.37968 3.6 4.77168 5.208 4.77168 7.2V15.6C4.77168 17.592 6.37968 19.2 8.37168 19.2H15.5717C17.5637 19.2 19.1717 17.592 19.1717 15.6V12Z"></path>
+                  </svg>
+                </a>
+                <a class="w-10 h-10 rounded hover:bg-gray-100 inline-flex items-center justify-center" target="_blank" href="https://www.flickr.com/photos/national_archives_of_estonia">
+                  <svg class="w-10 h-10" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M33.4003 13H14.5431C13.1235 13 11.9717 14.0994 11.9717 15.4545V33.4545C11.9717 34.8097 13.1235 35.9091 14.5431 35.9091H33.4003C34.8199 35.9091 35.9717 34.8097 35.9717 33.4545V15.4545C35.9717 14.0994 34.8199 13 33.4003 13ZM19.7128 27.6761C17.8324 27.6761 16.311 26.2239 16.311 24.429C16.311 22.6341 17.8324 21.1818 19.7128 21.1818C21.5931 21.1818 23.1145 22.6341 23.1145 24.429C23.1145 26.2239 21.5931 27.6761 19.7128 27.6761ZM28.2306 27.6761C26.3503 27.6761 24.8288 26.2239 24.8288 24.429C24.8288 22.6341 26.3503 21.1818 28.2306 21.1818C30.111 21.1818 31.6324 22.6341 31.6324 24.429C31.6324 26.2239 30.111 27.6761 28.2306 27.6761Z"></path>
+                  </svg>
+                </a>
+                <a class="w-10 h-10 rounded hover:bg-gray-100 inline-flex items-center justify-center" target="_blank" href="https://instagram.com/rahvusarhiiv">
+                  <svg class="w-10 h-10" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 12C20.7435 12 20.334 12.015 19.0545 12.072C17.775 12.132 16.9035 12.333 16.14 12.63C15.3391 12.9312 14.6137 13.4037 14.0145 14.0145C13.4041 14.614 12.9317 15.3394 12.63 16.14C12.333 16.902 12.1305 17.775 12.072 19.05C12.015 20.3325 12 20.7405 12 24.0015C12 27.2595 12.015 27.6675 12.072 28.947C12.132 30.225 12.333 31.0965 12.63 31.86C12.9375 32.649 13.347 33.318 14.0145 33.9855C14.6805 34.653 15.3495 35.064 16.1385 35.37C16.9035 35.667 17.7735 35.8695 19.0515 35.928C20.3325 35.985 20.7405 36 24 36C27.2595 36 27.666 35.985 28.947 35.928C30.2235 35.868 31.098 35.667 31.8615 35.37C32.6618 35.0686 33.3867 34.5961 33.9855 33.9855C34.653 33.318 35.0625 32.649 35.37 31.86C35.6655 31.0965 35.868 30.225 35.928 28.947C35.985 27.6675 36 27.2595 36 24C36 20.7405 35.985 20.3325 35.928 19.0515C35.868 17.775 35.6655 16.902 35.37 16.14C35.0684 15.3393 34.5959 14.614 33.9855 14.0145C33.3864 13.4035 32.661 12.931 31.86 12.63C31.095 12.333 30.222 12.1305 28.9455 12.072C27.6645 12.015 27.258 12 23.997 12H24.0015H24ZM22.9245 14.163H24.0015C27.2055 14.163 27.585 14.1735 28.8495 14.232C30.0195 14.2845 30.6555 14.481 31.0785 14.6365C31.638 14.862 32.0385 15.123 32.4585 15.543C32.8785 15.963 33.138 16.362 33.3555 16.923C33.4205 17.3365 33.7155 17.9805 33.768 19.1505C33.8265 20.415 33.8385 20.7945 33.8385 23.997C33.8385 27.1995 33.8265 27.5805 33.768 28.845C33.7155 30.015 33.519 30.6495 33.3555 31.0725C33.1631 31.5935 32.856 32.0647 32.457 32.451C32.037 32.871 31.638 33.1305 31.077 33.348C30.657 33.513 30.021 33.708 28.8495 33.762C27.585 33.819 27.2055 33.8325 24.0015 33.8325C20.7975 33.8325 20.4165 33.819 19.142 33.762C17.982 33.708 17.3475 33.513 16.9245 33.348C16.4032 33.1559 15.9317 32.8494 15.5365 32.451C15.1451 32.0641 14.8376 31.5925 14.6365 31.071C14.481 30.6495 14.2845 30.0135 14.232 28.8435C14.175 27.579 14.163 27.1995 14.163 23.994C14.163 20.79 14.175 20.412 14.232 19.1475C14.286 17.9775 14.481 17.3415 14.646 16.9185C14.8635 16.359 15.1245 15.9585 15.5365 15.5385C15.9645 15.1185 16.3635 14.859 16.9245 14.6415C17.3475 14.4765 17.982 14.2815 19.142 14.2275C20.259 14.1765 20.688 14.1615 22.9245 14.16V14.163ZM30.4065 16.155C30.2174 16.155 30.0301 16.1922 29.8554 16.2646C29.6807 16.337 29.422 16.363 29.3883 16.5768C29.2545 16.7105 29.1485 16.8692 29.0761 17.0439C29.0037 17.2186 28.9665 17.4059 28.9665 17.595C28.9665 17.7841 29.0037 17.9714 29.0761 18.1461C29.1485 18.3208 29.2545 18.4795 29.3883 18.6132C29.422 18.747 29.6807 18.853 29.8554 18.9254C30.0301 18.9978 30.2174 19.035 30.4065 19.035C30.7884 19.035 31.1547 18.8833 31.4247 18.6132C31.6948 18.3432 31.8465 17.9769 31.8465 17.595C31.8465 17.2131 31.6948 16.8468 31.4247 16.5768C31.1547 16.3067 30.7884 16.155 30.4065 16.155ZM24.0015 17.838C23.1841 17.8242 22.3723 17.9742 21.6135 18.2792C20.8546 18.5832 20.1638 19.0351 19.5812 19.6086C18.9987 20.1822 18.536 20.8659 18.2203 21.6199C17.9045 22.3739 17.7419 23.1833 17.7419 24.0007C17.7419 24.8182 17.9045 25.6276 18.2203 26.3816C18.536 27.1356 18.9987 27.8193 19.5812 28.3929C20.1638 28.9664 20.8546 29.4183 21.6135 29.7223C22.3723 30.0263 23.1841 30.1763 24.0015 30.1635C25.6193 30.1383 27.1623 29.4779 28.2975 28.3249C29.4326 27.1719 30.0689 25.6188 30.0689 24.0007C30.0689 22.3827 29.4326 20.8296 28.2975 19.6766C27.1623 18.4236 25.6193 17.8632 24.0015 17.838ZM24.0015 19.9995C25.0625 19.9995 26.08 20.421 26.8303 21.1712C27.5805 21.9215 28.002 22.939 28.002 24C28.002 25.061 27.5805 26.0785 26.8303 26.8288C26.08 27.579 25.0625 28.0005 24.0015 28.0005C22.9405 28.0005 21.923 27.579 21.1727 26.8288C20.4225 26.0785 20.001 25.061 20.001 24C20.001 22.939 20.4225 21.9215 21.1727 21.1712C21.923 20.421 22.9405 19.9995 24.0015 19.9995Z"></path>
+                  </svg>
+                </a>
+                <a class="w-10 h-10 rounded hover:bg-gray-100 inline-flex items-center justify-center" target="_blank" href="https://twitter.com/Rahvusarhiiv">
+                  <svg class="w-10 h-10" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.539 34.501C28.596 34.501 33.5505 26.9965 33.5505 20.5C33.5505 20.29 33.5505 20.077 33.5415 19.867C34.5061 19.1688 35.3386 18.3043 36 17.314C35.099 17.7113 34.1361 17.9731 33.1665 18.091C34.1963 17.4755 34.9676 16.507 35.337 15.3655C34.3695 15.9387 33.3105 16.3411 32.2065 16.555C31.4643 15.7646 30.4821 15.2409 29.4121 15.0642C28.3421 14.8894 27.2361 15.0714 26.288 15.5829C25.3319 16.0945 24.5712 16.907 24.1237 17.8946C23.6761 18.8823 23.5668 19.9899 23.8125 21.046C21.8546 20.9479 19.9392 20.4392 18.1906 19.5532C16.3619 18.6671 14.899 17.4233 13.662 15.9025C13.034 16.9872 12.8424 18.2701 13.126 19.4909C13.4096 20.7117 14.1472 21.7788 15.189 22.4755C14.4083 22.369 13.6368 22.2394 12.96 21.8635V21.931C12.9613 23.0673 13.355 24.1682 14.0743 25.0477C14.7937 25.9272 15.7946 26.5314 16.908 26.758C16.4854 26.8745 16.0488 26.9325 15.6105 26.9305C15.3015 26.9315 14.9931 26.9028 14.6895 26.845C15.0042 27.8231 15.6169 28.6783 16.3619 29.2908C17.2668 29.9032 18.2627 30.2423 19.29 30.2605C17.5368 31.6312 15.3891 32.3746 13.17 32.371C12.779 32.3727 12.3882 32.3501 12 32.3035C14.2423 33.7394 16.8679 34.5019 19.539 34.501Z"></path>
+                  </svg>
+                </a>
+                <a class="w-10 h-10 rounded hover:bg-gray-100 inline-flex items-center justify-center" target="_blank" href="https://youtube.com/channel/UCNJjKu863x4jBWGRCDQvyvA">
+                  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.0765 3H12.21C13.363 3.0045 19.6905 3.0495 21.375 3.5025C21.8842 3.64075 22.3483 3.91023 22.7207 4.28401C23.0932 4.65779 23.361 5.12278 23.4975 5.6325C23.649 6.2025 23.7555 6.957 23.8275 7.7355L23.8425 7.8915L23.8755 8.2815L23.8875 8.4375C23.985 9.8085 23.997 11.0925 23.9985 11.373V11.4855C23.997 11.7765 23.9835 13.1475 23.8755 14.5755L23.8635 14.733L23.85 14.889C23.775 15.747 23.664 16.599 23.4975 17.226C23.3615 17.7359 23.0938 18.2011 22.7212 18.575C22.3487 18.9488 21.8836 19.2182 21.375 19.356C19.635 19.824 13.0215 19.857 12.105 19.8585H11.892C11.4285 19.8585 9.5115 19.8495 7.5015 19.7805L7.2465 19.7715L7.116 19.7655L6.8595 19.755L6.603 19.7365C4.938 19.671 3.3425 19.5425 2.622 19.3545C2.11273 19.2168 1.6486 18.9477 1.27609 18.5741C0.903575 18.2005 0.63577 17.7357 0.4995 17.226C0.333 16.6005 0.222 15.747 0.147 14.889L0.135 14.7315L0.123 14.5755C0.0489714 13.5591 0.0079498 12.5406 0 11.4215L0 11.3385C0.003 11.016 0.015 9.9015 0.096 8.6715L0.1065 8.517L0.111 8.439L0.123 8.283L0.156 7.893L0.171 7.737C0.243 6.9585 0.3495 6.2025 0.501 5.634C0.63704 5.12407 0.904743 4.65887 1.27727 4.28502C1.6498 3.91118 2.11405 3.64184 2.6235 3.504C3.354 3.309 4.9395 3.189 6.6045 3.114L6.8595 3.1035L7.1175 3.0945L7.2465 3.09L7.503 3.0795C8.93055 3.03306 10.3587 3.00706 11.787 3.0015H12.0765V3ZM9.6 7.815V15.042L15.8355 11.43L9.6 7.815Z"></path>
+                  </svg>
+                </a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
