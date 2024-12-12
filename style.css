@@ -1670,10 +1670,6 @@ select {
   margin: 0.625rem;
 }
 
-.m-0 {
-  margin: 0px;
-}
-
 .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -1972,6 +1968,10 @@ select {
   margin-bottom: -1.5rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .mt-20 {
   margin-top: 5rem;
 }
@@ -1982,10 +1982,6 @@ select {
 
 .mb-0 {
   margin-bottom: 0px;
-}
-
-.mt-8 {
-  margin-top: 2rem;
 }
 
 .block {
