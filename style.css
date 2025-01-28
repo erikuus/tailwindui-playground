@@ -1760,6 +1760,11 @@ select {
   margin-bottom: -1.75rem;
 }
 
+.my-14 {
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -1982,6 +1987,10 @@ select {
 
 .mb-0 {
   margin-bottom: 0px;
+}
+
+.mb-0\.5 {
+  margin-bottom: 0.125rem;
 }
 
 .block {
@@ -2240,6 +2249,10 @@ select {
   max-width: 42rem;
 }
 
+.max-w-xl {
+  max-width: 36rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -2424,6 +2437,10 @@ select {
        column-gap: 0px;
 }
 
+.gap-y-3 {
+  row-gap: 0.75rem;
+}
+
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
@@ -2533,6 +2550,11 @@ select {
 .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(211 216 223 / var(--tw-divide-opacity));
+}
+
+.divide-gray-100 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(232 235 240 / var(--tw-divide-opacity));
 }
 
 .self-start {
@@ -3209,6 +3231,10 @@ select {
   font-family: Raleway, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+.font-body {
+  font-family: Roboto, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 .text-lg {
   font-size: 1.1875rem;
   line-height: 120%;
@@ -3528,6 +3554,14 @@ select {
   transition-duration: 150ms;
 }
 
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .duration-200 {
   transition-duration: 200ms;
 }
@@ -3623,6 +3657,10 @@ body {
 
 .hover\:bg-yellow-100\/60:hover {
   background-color: rgb(252 237 213 / 0.6);
+}
+
+.hover\:bg-gray-50\/60:hover {
+  background-color: rgb(240 243 246 / 0.6);
 }
 
 .hover\:bg-opacity-50:hover {
@@ -3855,6 +3893,10 @@ body {
   background-color: rgb(211 216 223 / var(--tw-bg-opacity));
 }
 
+.group:hover .group-hover\:bg-gray-50\/60 {
+  background-color: rgb(240 243 246 / 0.6);
+}
+
 .group:hover .group-hover\:opacity-70 {
   opacity: 0.7;
 }
@@ -3888,6 +3930,20 @@ body {
 .prose-h2\:text-green-700 :is(:where(h2):not(:where([class~="not-prose"] *))) {
   --tw-text-opacity: 1;
   color: rgb(32 93 54 / var(--tw-text-opacity));
+}
+
+.prose-p\:m-0 :is(:where(p):not(:where([class~="not-prose"] *))) {
+  margin: 0px;
+}
+
+.prose-p\:my-4 :is(:where(p):not(:where([class~="not-prose"] *))) {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose-p\:my-2 :is(:where(p):not(:where([class~="not-prose"] *))) {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .prose-p\:text-gray-700 :is(:where(p):not(:where([class~="not-prose"] *))) {
@@ -3949,6 +4005,16 @@ body {
 .prose-strong\:text-green-700 :is(:where(strong):not(:where([class~="not-prose"] *))) {
   --tw-text-opacity: 1;
   color: rgb(32 93 54 / var(--tw-text-opacity));
+}
+
+.prose-strong\:text-green-600 :is(:where(strong):not(:where([class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(48 131 77 / var(--tw-text-opacity));
+}
+
+.prose-strong\:text-gray-600 :is(:where(strong):not(:where([class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(95 104 116 / var(--tw-text-opacity));
 }
 
 .prose-ul\:text-gray-700 :is(:where(ul):not(:where([class~="not-prose"] *))) {
@@ -4188,6 +4254,10 @@ body {
     margin-top: 0.75rem;
   }
 
+  .sm\:ml-4 {
+    margin-left: 1rem;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -4232,12 +4302,24 @@ body {
     width: 8rem;
   }
 
+  .sm\:w-24 {
+    width: 6rem;
+  }
+
+  .sm\:w-28 {
+    width: 7rem;
+  }
+
   .sm\:max-w-lg {
     max-width: 32rem;
   }
 
   .sm\:max-w-sm {
     max-width: 24rem;
+  }
+
+  .sm\:max-w-2xl {
+    max-width: 42rem;
   }
 
   .sm\:flex-1 {
@@ -4276,6 +4358,15 @@ body {
 
   .sm\:gap-y-6 {
     row-gap: 1.5rem;
+  }
+
+  .sm\:gap-x-3 {
+    -moz-column-gap: 0.75rem;
+         column-gap: 0.75rem;
+  }
+
+  .sm\:gap-y-0 {
+    row-gap: 0px;
   }
 
   .sm\:space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -4344,6 +4435,10 @@ body {
 
   .sm\:pl-12 {
     padding-left: 3rem;
+  }
+
+  .sm\:text-left {
+    text-align: left;
   }
 
   .sm\:text-base {
@@ -4574,6 +4669,11 @@ body {
   .lg\:-mx-6 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
+  }
+
+  .lg\:-mx-4 {
+    margin-left: -1rem;
+    margin-right: -1rem;
   }
 
   .lg\:mt-0 {
@@ -4808,6 +4908,31 @@ body {
     margin-right: 1.5rem;
   }
 
+  .xl\:mx-44 {
+    margin-left: 11rem;
+    margin-right: 11rem;
+  }
+
+  .xl\:mx-40 {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+
+  .xl\:mx-32 {
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+
+  .xl\:-mx-24 {
+    margin-left: -6rem;
+    margin-right: -6rem;
+  }
+
+  .xl\:mx-24 {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+
   .xl\:mt-0 {
     margin-top: 0px;
   }
@@ -5007,6 +5132,16 @@ body {
   .\32xl\:mx-80 {
     margin-left: 20rem;
     margin-right: 20rem;
+  }
+
+  .\32xl\:mx-52 {
+    margin-left: 13rem;
+    margin-right: 13rem;
+  }
+
+  .\32xl\:mx-32 {
+    margin-left: 8rem;
+    margin-right: 8rem;
   }
 
   .\32xl\:mt-20 {
