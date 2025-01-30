@@ -146,16 +146,17 @@
             <!-- Sisu küljendus -->
             <div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 pt-6 pb-10 xl:pt-10 xl:pb-14">
               <!-- Sisu -->
-              <div class="flex">
+              <div class="flex xl:mx-24 2xl:mx-32">
                 <!-- Vasakpoolne fikseeritud ala -->
                 <div class="mr-10 hidden w-56 flex-initial flex-shrink-0 lg:block">
                   <!-- Otsing suur ekraan -->
                   <div class="mb-4 lg:-ml-4">
                     <div class="flex items-center space-x-2 rounded bg-white shadow-sm">
+                      <label for="BookmarkLink_title" class="sr-only">Otsi</label>
                       <input name="BookmarkLink[title]" id="BookmarkLink_title" type="text" maxlength="256" value="viik"
                       placeholder="Placeholder"
-                      class="w-full px-4 py-2 text-gray-700 bg-white border border-transparent rounded focus:outline-none focus:ring-0 focus:border-transparent">
-                      <button type="submit" name="yt0"
+                      class="w-full px-3 py-2 text-gray-700 bg-white border border-transparent rounded focus:outline-none focus:ring-0 focus:border-transparent">
+                      <button type="submit" aria-label="Otsi" name="yt0"
                       class="flex items-center justify-center p-2.5 text-gray-800 bg-gray-50 border border-transparent rounded hover:bg-gray-100">
                         <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17a6 6 0 100-12 6 6 0 000 12zm7-2l4 4" />
@@ -208,10 +209,11 @@
                     <!-- Otsing väike ekraan -->
                     <div class="flex-auto mb-6 lg:hidden">
                       <div class="flex items-center space-x-2 rounded bg-white shadow-sm">
-                        <input name="BookmarkLink[title]" id="BookmarkLink_title" type="text" maxlength="256" value="viik"
+                        <label for="BookmarkLink_title2" class="sr-only">Otsi</label>
+                        <input name="BookmarkLink[title]" id="BookmarkLink_title2" type="text" maxlength="256" value="viik"
                         placeholder="Placeholder"
                         class="w-full px-4 py-2 text-gray-700 bg-white border border-transparent rounded focus:outline-none focus:ring-0 focus:border-transparent">
-                        <button type="submit" name="yt0"
+                        <button type="submit" aria-label="Otsi" name="yt0"
                         class="flex items-center justify-center p-2.5 text-gray-800 bg-gray-50 border border-transparent rounded hover:bg-gray-100">
                           <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17a6 6 0 100-12 6 6 0 000 12zm7-2l4 4" />
