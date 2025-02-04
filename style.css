@@ -1993,6 +1993,14 @@ select {
   margin-bottom: 0.125rem;
 }
 
+.-mt-1 {
+  margin-top: -0.25rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .block {
   display: block;
 }
@@ -2375,6 +2383,10 @@ select {
 
 .justify-evenly {
   justify-content: space-evenly;
+}
+
+.justify-items-center {
+  justify-items: center;
 }
 
 .gap-5 {
@@ -4287,6 +4299,18 @@ body {
     margin-left: 1rem;
   }
 
+  .sm\:mt-4 {
+    margin-top: 1rem;
+  }
+
+  .sm\:ml-10 {
+    margin-left: 2.5rem;
+  }
+
+  .sm\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -4363,6 +4387,10 @@ body {
     flex-direction: row;
   }
 
+  .sm\:flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
   .sm\:items-center {
     align-items: center;
   }
@@ -4396,6 +4424,11 @@ body {
 
   .sm\:gap-y-0 {
     row-gap: 0px;
+  }
+
+  .sm\:gap-x-2 {
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
   }
 
   .sm\:space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -4464,6 +4497,10 @@ body {
 
   .sm\:pl-12 {
     padding-left: 3rem;
+  }
+
+  .sm\:pl-4 {
+    padding-left: 1rem;
   }
 
   .sm\:text-left {
@@ -5180,6 +5217,16 @@ body {
   .\32xl\:mx-32 {
     margin-left: 8rem;
     margin-right: 8rem;
+  }
+
+  .\32xl\:mx-40 {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+
+  .\32xl\:mx-44 {
+    margin-left: 11rem;
+    margin-right: 11rem;
   }
 
   .\32xl\:mt-20 {
