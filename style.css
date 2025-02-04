@@ -2241,6 +2241,10 @@ select {
   width: 2.25rem;
 }
 
+.w-36 {
+  width: 9rem;
+}
+
 .max-w-none {
   max-width: none;
 }
@@ -2255,6 +2259,10 @@ select {
 
 .max-w-xl {
   max-width: 36rem;
+}
+
+.max-w-md {
+  max-width: 28rem;
 }
 
 .flex-1 {
@@ -2977,6 +2985,14 @@ select {
 
 .p-0\.5 {
   padding: 0.125rem;
+}
+
+.p-12 {
+  padding: 3rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .px-3 {
@@ -4556,6 +4572,10 @@ body {
 
   .md\:w-56 {
     width: 14rem;
+  }
+
+  .md\:w-24 {
+    width: 6rem;
   }
 
   .md\:max-w-none {
