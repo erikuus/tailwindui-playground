@@ -4603,6 +4603,10 @@ body {
     width: 66.666667%;
   }
 
+  .md\:w-48 {
+    width: 12rem;
+  }
+
   .md\:max-w-none {
     max-width: none;
   }
