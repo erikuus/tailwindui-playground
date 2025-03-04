@@ -3,6 +3,8 @@
   <head>
     <title></title>
     <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../jquery-ui.css" />
+    <link rel="stylesheet" href="../../labels.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/foundation-icons@2.0.0/foundation-icons.min.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -186,17 +188,7 @@
               </li>
               <li class="whitespace-nowrap overflow-hidden text-ellipsis">
                 <button class="px-2 py-1.5 text-sm text-gray-900 font-bold rounded hover:bg-green-50">
-                  <a class="" href="#">Veebipood</a>
-                </button>
-              </li>
-              <li>
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                </svg>
-              </li>
-              <li class="whitespace-nowrap overflow-hidden text-ellipsis">
-                <button class="px-2 py-1.5 text-sm text-gray-900 font-bold rounded hover:bg-green-50">
-                  <a class="" href="#">Ostukorv</a>
+                  <a class="" href="#">Koostamisel</a>
                 </button>
               </li>
               <li>
@@ -205,7 +197,25 @@
                 </svg>
               </li>
               <li class="whitespace-nowrap">
-                <span class="px-3 py-2 text-sm text-gray-900">Vormista tellimus</span>
+                <span class="px-3 py-2 text-sm text-gray-900">Tellimuse kinnitamine</span>
+              </li>
+            </ul>
+            <!-- Sakid -->
+            <ul class="tabs flex mt-6 relative overflow-hidden">
+              <li class="mr-2">
+                <a href="#" class="inline-block py-3 px-6 text-sm sm:py-3 sm:px-8 sm:text-base text-gray-900 font-medium rounded-t bg-white shadow-md">
+                  Koostamisel <span class="hidden sm:inline">(10)</span>
+                </a>
+              </li>
+              <li class="mr-2">
+                <a href="#" class="inline-block py-3 px-6 text-sm sm:py-3 sm:px-8 sm:text-base font-medium rounded-t backdrop-brightness-105 backdrop-filter hover:bg-green-50">
+                  Esitatud <span class="hidden sm:inline">(7)</span>
+                </a>
+              </li>
+              <li class="mr-2">
+                <a href="#" class="inline-block py-3 px-6 text-sm sm:py-3 sm:px-8 sm:text-base text-gray-900 font-medium rounded-t backdrop-brightness-105 backdrop-filter hover:bg-green-50">
+                  Varasemad <span class="hidden sm:inline">(2)</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -215,228 +225,171 @@
           <!-- Sisu küljendus -->
           <div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 pt-6 pb-10 xl:pt-10 xl:pb-14">
             <!-- Sisu -->
-            <div class="xl:mx-32 2xl:mx-44">
-              <h1 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:mt-6 sm:text-xl xl:mt-0">
-                Vormista tellimus
-              </h1>
-              <div class="
-                rounded shadow-sm p-2
-                prose max-w-none
-                prose-thead:border-none prose-tbody:border-none
-                odd:prose-tr:bg-gray-50 prose-tr:border-none
-                prose-th:bg-white prose-th:px-3 first:prose-th:pb-2 last:prose-th:pt-2
-                first:prose-td:rounded-l last:prose-td:rounded-r prose-td:p-3
-              ">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Toode</th>
-                      <th class="hidden md:table-cell text-right">Hind</th>
-                      <th class="hidden md:table-cell text-center">Kogus</th>
-                      <th class="hidden md:table-cell text-right">Kokku</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div class="rounded sm:flex not-prose">
-                          <div class="mb-6 flex-shrink-0 sm:mb-0 sm:mr-6">
-                            <img class="w-40 rounded bg-white sm:w-24" src="https://www.ra.ee/vau/upload/shop/thumb/202109011443179812.jpg" alt="Tuna 2023 / 3" />
-                          </div>
-                          <div>
-                            <p class="text-sm font-medium leading-6 text-gray-600">
-                              Riigivanemad<br />
-                              Priit Rohtmets
-                            </p>
-                            <p class="my-2 text-base font-semibold leading-6 text-blue-600 hover:text-blue-500 focus:active:text-blue-700">Friedrich Akel — silmaarst, diplomaat ja riigimees</p>
-                          </div>
-                        </div>
-                        <dl class="flex gap-x-1 md:hidden py-2">
-                          <dt>Hind:</dt>
-                          <dd>0,40</dd>
-                        </dl>
-                        <dl class="flex gap-x-1 md:hidden">
-                          <dt>Kogus:</dt>
-                          <dd>8</dd>
-                        </dl>
-                      </td>
-                      <td class="hidden md:table-cell text-right align-top">0,40&nbsp;€</td>
-                      <td class="hidden md:table-cell text-center align-top">8</td>
-                      <td class="hidden md:table-cell text-right align-top">3,20&nbsp;€</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="rounded sm:flex not-prose">
-                          <div class="mb-6 flex-shrink-0 sm:mb-0 sm:mr-6">
-                            <img class="w-40 rounded bg-white sm:w-24" src="https://www.ra.ee/vau/upload/shop/thumb/202109011443179812.jpg" alt="Tuna 2023 / 3" />
-                          </div>
-                          <div>
-                            <p class="text-sm font-medium leading-6 text-gray-600">
-                              Riigivanemad<br />
-                              Priit Rohtmets
-                            </p>
-                            <p class="my-2 text-base font-semibold leading-6 text-blue-600 hover:text-blue-500 focus:active:text-blue-700">Friedrich Akel — silmaarst, diplomaat ja riigimees</p>
-                          </div>
-                        </div>
-                        <dl class="flex gap-x-1 md:hidden py-2">
-                          <dt>Hind:</dt>
-                          <dd>0,40</dd>
-                        </dl>
-                        <dl class="flex gap-x-1 md:hidden">
-                          <dt>Kogus:</dt>
-                          <dd>8</dd>
-                        </dl>
-                      </td>
-                      <td class="hidden md:table-cell text-right align-top">0,40&nbsp;€</td>
-                      <td class="hidden md:table-cell text-center align-top">8</td>
-                      <td class="hidden md:table-cell text-right align-top">3,20&nbsp;€</td>
-                    </tr>
-                    <tr>
-                      <th colspan="4" class="text-right">
-                        Maksumus kokku: 6,40&nbsp;€
-                      </th>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="mt-12 sm:mx-16 lg:mx-44 xl:mx-72 2xl:mx-80">
-              <form class="space-y-6" id="user-order-profile-form" action="/vau/index-dev.php/et/userOrderProfile/update?id=1776" method="post">
-                <p class="text-sm text-gray-700">Tärniga <span class="required">*</span> märgitud väljad on kohustuslikud</p>
-                <div class="text-lg font-medium">
-                  Tellija
-                </div>
-                <div>
-                  <label class="required mb-2 block text-base font-semibold leading-6 text-gray-800" for="User_firstname">Eesnimi <span class="required">*</span></label>
-                  <input class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" name="User[firstname]" id="User_firstname" type="text" maxlength="64" />
-                </div>
-                <div>
-                  <label class="required mb-2 block text-base font-semibold leading-6 text-gray-800" for="User_lastname">Perekonnanimi <span class="required">*</span></label>
-                  <input class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" name="User[lastname]" id="User_lastname" type="text" maxlength="64" />
-                </div>
-                <div>
-                  <label class="required mb-2 block text-base font-semibold leading-6 text-gray-800" for="User_email">E-post <span class="required">*</span></label>
-                  <input class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" name="User[email]" id="User_email" type="text" maxlength="128" />
-                </div>
-                <div>
-                  <label class="mb-2 block text-base font-semibold leading-6 text-gray-800" for="User_phone">Telefon <span class="required">*</span></label>
-                  <input class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6" name="User[phone]" id="User_phone" type="text" maxlength="64" />
-                </div>
-                <div class="text-lg font-medium">
-                  Tellimuse kättetoimetamise viis
-                  <span class="required">*</span>
-                </div>
-                <div class="dynamic-container">
-                  <input id="UserOrderProfile_delivery_type_code_0" value="1" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
-                  <label for="UserOrderProfile_delivery_type_code_0" class=" text-base leading-6 text-gray-800">Tulen ise järele</label>
-                </div>
-                <div>
-                  <input id="UserOrderProfile_delivery_type_code_2" value="3" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
-                  <label for="UserOrderProfile_delivery_type_code_2" class="text-base leading-6 text-gray-800">Pakiautomaadiga</label>
-                </div>
-                <div class="dynamic-container">
-                  <input id="UserOrderProfile_delivery_type_code_1" value="2" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3" checked="checked">
-                  <label for="UserOrderProfile_delivery_type_code_1" class=" text-base leading-6 text-gray-800">Postipakiga aadressil</label>
-                  <div class="ml-8 mt-4 mb-8 space-y-4">
-                    <div>
-                      <label for="UserOrderProfile_deliver_street" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Tänav/maja <span class="required">*</span></label>
-                      <input size="40" name="UserOrderProfile[deliver_street]" id="UserOrderProfile_deliver_street" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                    </div>
-                    <div>
-                      <label for="UserOrderProfile_deliver_city"  class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Linn/vald <span class="required">*</span></label>
-                      <input size="40" name="UserOrderProfile[deliver_city]" id="UserOrderProfile_deliver_city" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                    </div>
-                    <div>
-                      <label for="UserOrderProfile_deliver_county" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Maakond <span class="required">*</span></label>
-                      <input size="40" name="UserOrderProfile[deliver_county]" id="UserOrderProfile_deliver_county" type="text" maxlength="64" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                    </div>
-                    <div>
-                      <label for="UserOrderProfile_deliver_index" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Postiindeks <span class="required">*</span></label>
-                      <input size="16" name="UserOrderProfile[deliver_index]" id="UserOrderProfile_deliver_index" type="text" maxlength="16" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                    </div>
-                    <div>
-                      <label for="UserOrderProfile_deliver_country_id" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Riik <span class="required">*</span></label>
-                      <select name="UserOrderProfile[deliver_country_id]" id="UserOrderProfile_deliver_country_id" class="w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-green-300 sm:text-base sm:leading-6">
-                        <option value="1">Eesti Vabariik</option>
-                      </select>
+            <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:mt-6 sm:text-xl xl:mt-0">
+              Tellimuse kinnitamine
+            </h2>
+            <div class="flex items-start w-full flex-col gap-x-4 gap-y-6 xl:flex-row xl:gap-x-10 2xl:gap-x-12">
+              <div class="flex w-full flex-col gap-x-4 gap-y-6 lg:flex-row lg:gap-x-10 xl:gap-x-16 2xl:gap-x-28">
+                <div class="flex-1">
+                  <div class="flex justify-between items-start gap-x-6">
+                    <h3 class="text-lg font-medium">
+                      EAA.1414.1.272; Koopia; nr 903521
+                    </h3>
+                    <div class="flex flex-col gap-y-2 text-right sm:flex-row sm:gap-x-6 lg:flex-col lg:gap-x-0 xl:flex-row xl:gap-x-6 whitespace-nowrap">
+                      <a class="font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700 text-sm" href="#">
+                        Ava digitud säilik
+                      </a>
+                      <a class="font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700 text-sm" href="#">
+                        Ava säilik AIS-is
+                      </a>
                     </div>
                   </div>
+                  <ul class="my-6 space-y-3 list-inside list-disc text-gray-800 text-sm">
+                    <li>kuni A2 formaadis tarbekoopia (tekstidokumentidest jms), kaader: 0,60&nbsp;€</li>
+                    <li>kuni A3 formaadis, trükikvaliteediga (fotodest, kaartidest jms), kaader/foto: 3,50&nbsp;€</li>
+                  </ul>
+                  <div class="prose max-w-none prose-th:p-3 prose-td:p-3">
+                    <table class="order-detail-view" id="yw1">
+                      <tbody>
+                        <tr class="odd"><th>Kopeerida</th><td>Kogu säilik</td></tr>
+                        <tr class="even"><th>Säilik</th><td>Akropolise fotod</td></tr>
+                        <tr class="odd"><th>Tellija märkused</th><td>Selle tellimuse tegelik eesmärk on testida kaardimakset.</td></tr>
+                        <tr class="even"><th>Loodud</th><td>12.02.2025 14:09</td></tr>
+                        <tr class="odd"><th>Kasutuseesmärk</th><td>Uudishimu</td></tr>
+                        <tr class="even"><th>Märksõnad</th><td>kreeka, varemed</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-                <div class="text-lg font-medium pt-6 border-t border-gray-50">
-                  Tellimuse eest tasumise viis
-                  <span class="required">*</span>
-                </div>
-                <div>
-                  <input id="UserOrderProfile_billing_type_code_1" value="2" type="radio" name="UserOrderProfile[billing_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3" checked="checked">
-                  <label for="UserOrderProfile_billing_type_code_1" class="text-base leading-6 text-gray-800">Maksan arve alusel</label>
-                  <div class="ml-8 mt-4 mb-8 space-y-4">
-                    <div>
-                      <input id="UserOrderProfile_invoice_type_code_0" value="3" type="radio" name="UserOrderProfile[invoice_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
-                      <label for="UserOrderProfile_invoice_type_code_0" class="text-base leading-6 text-gray-800">Arve eraisikule e-postiga</label>
+                <div class="flex-1 space-y-10">
+                  <a class="block focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white py-3 pl-3 pr-4 text-center text-base font-medium text-gray-900 hover:bg-gray-100" href="/vau/index-dev.php/et/account/view">Kasuta varem salvestatud seadeid</a>
+                  <form class="space-y-6" id="user-order-profile-form" action="/vau/index-dev.php/et/userOrderProfile/update?id=1776" method="post">
+                    <p class="text-sm text-gray-700">Tärniga <span class="required">*</span> märgitud väljad on kohustuslikud</p>
+                    <div class="text-lg font-medium">
+                      Tellimuse kättetoimetamise viis
+                      <span class="required">*</span>
                     </div>
-                    <div>
-                      <input id="UserOrderProfile_invoice_type_code_2" value="2" type="radio" name="UserOrderProfile[invoice_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3" checked="checked">
-                      <label for="UserOrderProfile_invoice_type_code_2" class="text-base leading-6 text-gray-800">Arve asutusele</label>
+                    <!-- Hoiatus -->
+                    <div class="mb-6 rounded p-3 bg-yellow-100 text-yellow-800">
+                      <div class="flex items-center">
+                        <div class="flex-shrink-0 mr-3 rounded-full bg-yellow-200 p-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="w-5 h-5">
+                            <path d="m40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm302-40q17 0 28.5-11.5T520-280q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280q0 17 11.5 28.5T480-240Zm-40-120h80v-200h-80v200Zm40-100Z"></path>
+                          </svg>
+                        </div>
+                        <div class="flex-1 text-sm">
+                          Digikoopiad saate pärast makse laekumist VAUst alla laadida!
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dynamic-container">
+                      <input id="UserOrderProfile_delivery_type_code_0" value="1" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
+                      <label for="UserOrderProfile_delivery_type_code_0" class=" text-base leading-6 text-gray-800">Tulen ise järele</label>
+                    </div>
+                    <div class="dynamic-container">
+                      <input id="UserOrderProfile_delivery_type_code_1" value="2" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3" checked="checked">
+                      <label for="UserOrderProfile_delivery_type_code_1" class=" text-base leading-6 text-gray-800">Postipakiga aadressil</label>
                       <div class="ml-8 mt-4 mb-8 space-y-4">
+                        <div>
+                          <label for="UserOrderProfile_deliver_street" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Tänav/maja <span class="required">*</span></label>
+                          <input size="40" name="UserOrderProfile[deliver_street]" id="UserOrderProfile_deliver_street" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                        </div>
+                        <div>
+                          <label for="UserOrderProfile_deliver_city"  class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Linn/vald <span class="required">*</span></label>
+                          <input size="40" name="UserOrderProfile[deliver_city]" id="UserOrderProfile_deliver_city" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                        </div>
+                        <div>
+                          <label for="UserOrderProfile_deliver_county" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Maakond <span class="required">*</span></label>
+                          <input size="40" name="UserOrderProfile[deliver_county]" id="UserOrderProfile_deliver_county" type="text" maxlength="64" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                        </div>
+                        <div>
+                          <label for="UserOrderProfile_deliver_index" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Postiindeks <span class="required">*</span></label>
+                          <input size="16" name="UserOrderProfile[deliver_index]" id="UserOrderProfile_deliver_index" type="text" maxlength="16" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                        </div>
                         <div>
                           <label for="UserOrderProfile_deliver_country_id" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Riik <span class="required">*</span></label>
                           <select name="UserOrderProfile[deliver_country_id]" id="UserOrderProfile_deliver_country_id" class="w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-green-300 sm:text-base sm:leading-6">
                             <option value="1">Eesti Vabariik</option>
                           </select>
                         </div>
+                      </div>
+                    </div>
+                    <div>
+                      <input id="UserOrderProfile_delivery_type_code_2" value="3" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
+                      <label for="UserOrderProfile_delivery_type_code_2" class="text-base leading-6 text-gray-800">Interneti (ftp-serveri) kaudu</label>
+                    </div>
+                    <div class="text-lg font-medium pt-6 border-t border-gray-50">
+                      Tellimuse eest tasumise viis
+                      <span class="required">*</span>
+                    </div>
+                    <div>
+                      <input id="UserOrderProfile_billing_type_code_0" value="1" type="radio" name="UserOrderProfile[billing_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3" checked="checked">
+                      <label for="UserOrderProfile_billing_type_code_0" class="text-base leading-6 text-gray-800">Maksan kohapeal sularahas</label>
+                    </div>
+                    <div>
+                      <input id="UserOrderProfile_billing_type_code_1" value="2" type="radio" name="UserOrderProfile[billing_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3" checked="checked">
+                      <label for="UserOrderProfile_billing_type_code_1" class="text-base leading-6 text-gray-800">Maksan arve alusel</label>
+                      <div class="ml-8 mt-4 mb-8 space-y-4">
                         <div>
-                          <label for="UserOrderProfile_invoice_institution" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutus <span class="required">*</span></label>
-                          <input size="40" id="UserOrderProfile_invoice_institution" name="UserOrderProfile[invoice_institution]" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                          <input id="UserOrderProfile_invoice_type_code_0" value="3" type="radio" name="UserOrderProfile[invoice_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
+                          <label for="UserOrderProfile_invoice_type_code_0" class="text-base leading-6 text-gray-800">Arve eraisikule e-postiga</label>
                         </div>
                         <div>
-                          <label for="UserOrderProfile_invoice_institution_nr" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse registrikood <span class="required">*</span></label>
-                          <input size="40" name="UserOrderProfile[invoice_institution_nr]" id="UserOrderProfile_invoice_institution_nr" type="text" maxlength="32" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                        </div>
-                        <div>
-                          <label for="UserOrderProfile_invoice_email" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse e-post <span class="required">*</span></label>
-                          <input size="40" name="UserOrderProfile[invoice_email]" id="UserOrderProfile_invoice_email" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                        </div>
-                        <div class="pt-4">
-                          Asutuse juriidiline aadress:
-                        </div>
-                        <div>
-                          <label for="UserOrderProfile_invoice_street" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Tänav/maja <span class="required">*</span></label>
-                          <input size="40" name="UserOrderProfile[invoice_street]" id="UserOrderProfile_invoice_street" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                        </div>
-                        <div>
-                          <label for="UserOrderProfile_invoice_city" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Linn/vald <span class="required">*</span></label>
-                          <input size="40" name="UserOrderProfile[invoice_city]" id="UserOrderProfile_invoice_city" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                        </div>
-                        <div>
-                          <label for="UserOrderProfile_invoice_county" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Maakond <span class="required">*</span></label>
-                          <input size="40" name="UserOrderProfile[invoice_county]" id="UserOrderProfile_invoice_county" type="text" maxlength="64" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                        </div>
-                        <div>
-                          <label for="UserOrderProfile_invoice_index"  class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Postiindeks <span class="required">*</span></label>
-                          <input size="16" name="UserOrderProfile[invoice_index]" id="UserOrderProfile_invoice_index" type="text" maxlength="16" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                          <input id="UserOrderProfile_invoice_type_code_2" value="2" type="radio" name="UserOrderProfile[invoice_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3" checked="checked">
+                          <label for="UserOrderProfile_invoice_type_code_2" class="text-base leading-6 text-gray-800">Arve asutusele</label>
+                          <div class="ml-8 mt-4 mb-8 space-y-4">
+                            <div>
+                              <label for="UserOrderProfile_deliver_country_id" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Riik <span class="required">*</span></label>
+                              <select name="UserOrderProfile[deliver_country_id]" id="UserOrderProfile_deliver_country_id" class="w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-green-300 sm:text-base sm:leading-6">
+                                <option value="1">Eesti Vabariik</option>
+                              </select>
+                            </div>
+                            <div>
+                              <label for="UserOrderProfile_invoice_institution" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutus <span class="required">*</span></label>
+                              <input size="40" id="UserOrderProfile_invoice_institution" name="UserOrderProfile[invoice_institution]" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                            </div>
+                            <div>
+                              <label for="UserOrderProfile_invoice_institution_nr" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse registrikood <span class="required">*</span></label>
+                              <input size="40" name="UserOrderProfile[invoice_institution_nr]" id="UserOrderProfile_invoice_institution_nr" type="text" maxlength="32" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                            </div>
+                            <div>
+                              <label for="UserOrderProfile_invoice_email" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse e-post <span class="required">*</span></label>
+                              <input size="40" name="UserOrderProfile[invoice_email]" id="UserOrderProfile_invoice_email" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                            </div>
+                            <div class="pt-4">
+                              Asutuse juriidiline aadress:
+                            </div>
+                            <div>
+                              <label for="UserOrderProfile_invoice_street" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Tänav/maja <span class="required">*</span></label>
+                              <input size="40" name="UserOrderProfile[invoice_street]" id="UserOrderProfile_invoice_street" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                            </div>
+                            <div>
+                              <label for="UserOrderProfile_invoice_city" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Linn/vald <span class="required">*</span></label>
+                              <input size="40" name="UserOrderProfile[invoice_city]" id="UserOrderProfile_invoice_city" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                            </div>
+                            <div>
+                              <label for="UserOrderProfile_invoice_county" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Maakond <span class="required">*</span></label>
+                              <input size="40" name="UserOrderProfile[invoice_county]" id="UserOrderProfile_invoice_county" type="text" maxlength="64" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                            </div>
+                            <div>
+                              <label for="UserOrderProfile_invoice_index"  class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Postiindeks <span class="required">*</span></label>
+                              <input size="16" name="UserOrderProfile[invoice_index]" id="UserOrderProfile_invoice_index" type="text" maxlength="16" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                    <div>
+                      <input id="UserOrderProfile_billing_type_code_2" value="3" type="radio" name="UserOrderProfile[billing_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
+                      <label for="UserOrderProfile_billing_type_code_2" class="text-base leading-6 text-gray-800">Maksan krediitkaardi või pangalingiga (Swedbank, SEB, Luminor, LHV)</label>
+                    </div>
+                    <div class="flex flex-col gap-y-4 pt-6">
+                      <input class="focus-visible::ring-2 focus-visible::ring-green-300 w-full cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Kinnita" />
+                      <a class="w-full focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white py-3 pl-3 pr-4 text-center text-base font-medium text-gray-900 hover:bg-gray-100" href="/vau/index-dev.php/et/account/view">Loobu</a>
+                    </div>
+                  </form>
                 </div>
-                <div>
-                  <input id="UserOrderProfile_billing_type_code_2" value="3" type="radio" name="UserOrderProfile[billing_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
-                  <label for="UserOrderProfile_billing_type_code_2" class="text-base leading-6 text-gray-800">Maksan krediitkaardi või pangalingiga (Swedbank, SEB, Luminor, LHV)</label>
-                </div>
-                <div class="pt-6">
-                  <input id="ytEnquiryProperty_priceAgreement" type="hidden" value="0" name="EnquiryProperty[priceAgreement]" original-title="">
-                  <input class="h-4 w-4 -mt-0.5 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300" name="EnquiryProperty[priceAgreement]" id="EnquiryProperty_priceAgreement" value="1" type="checkbox" original-title="">
-                  <label class="ml-3 inline-block mb-2 block text-base font-semibold leading-6 text-gray-800 required" for="EnquiryProperty_priceAgreement">
-                    Nõustun
-                    <a class="openhelp font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">maksetingimustega</a>
-                    <span class="required">*</span>
-                  </label>
-                </div>
-                <div class="flex items-start w-full flex-col gap-x-4 gap-y-4 xl:flex-row">
-                  <input class="focus-visible::ring-2 focus-visible::ring-green-300 w-full cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Salvesta" />
-                  <a class="w-full focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white py-3 pl-3 pr-4 text-center text-base font-medium text-gray-900 hover:bg-gray-100" href="/vau/index-dev.php/et/account/view">Loobu</a>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
