@@ -231,32 +231,68 @@
             <div class="flex items-start w-full flex-col gap-x-4 gap-y-6 xl:flex-row xl:gap-x-10 2xl:gap-x-12">
               <div class="flex w-full flex-col gap-x-4 gap-y-6 lg:flex-row lg:gap-x-10 xl:gap-x-16 2xl:gap-x-28">
                 <div class="flex-1">
-                  <div class="flex justify-between items-start gap-x-6">
-                    <h3 class="text-lg font-medium">
-                      EAA.1414.1.272; Koopia; nr 903521
-                    </h3>
-                    <div class="flex flex-col gap-y-2 text-right sm:flex-row sm:gap-x-6 lg:flex-col lg:gap-x-0 xl:flex-row xl:gap-x-6 whitespace-nowrap">
-                      <a class="font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700 text-sm" href="#">
-                        Ava digitud säilik
-                      </a>
-                      <a class="font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700 text-sm" href="#">
-                        Ava säilik AIS-is
-                      </a>
-                    </div>
-                  </div>
-                  <ul class="my-6 space-y-3 list-inside list-disc text-gray-800">
-                    <li>kuni A2 formaadis tarbekoopia (tekstidokumentidest jms), kaader: 0,60&nbsp;€</li>
-                    <li>kuni A3 formaadis, trükikvaliteediga (fotodest, kaartidest jms), kaader/foto: 3,50&nbsp;€</li>
-                  </ul>
-                  <div class="prose max-w-none prose-th:p-3 prose-td:p-3">
-                    <table class="order-detail-view" id="yw1">
+                  <h3 class="font-semibold mb-2 text-gray-800">Valitud tellimused (2)</h3>
+                  <div class="
+                    rounded shadow-sm p-2
+                    prose max-w-none
+                    prose-table:m-0 prose-thead:border-none prose-tbody:border-none
+                    odd:prose-tr:bg-gray-50 prose-tr:border-none  hover:prose-tr:bg-green-50
+                    prose-th:bg-white prose-th:px-3 first:prose-th:pb-2 last:prose-th:pt-2
+                    first:prose-td:rounded-l last:prose-td:rounded-r prose-td:p-3 prose-td:align-top
+                  ">
+                    <table class="dataGrid">
                       <tbody>
-                        <tr class="odd"><th>Kopeerida</th><td>Kogu säilik</td></tr>
-                        <tr class="even"><th>Säilik</th><td>Akropolise fotod</td></tr>
-                        <tr class="odd"><th>Tellija märkused</th><td>Selle tellimuse tegelik eesmärk on testida kaardimakset.</td></tr>
-                        <tr class="even"><th>Loodud</th><td>12.02.2025 14:09</td></tr>
-                        <tr class="odd"><th>Kasutuseesmärk</th><td>Uudishimu</td></tr>
-                        <tr class="even"><th>Märksõnad</th><td>kreeka, varemed</td></tr>
+                        <tr>
+                          <td>
+                            <div class="flex flex-col gap-y-0.5">
+                              <span class="font-bold">EAA.1414.1.272, Akropolise fotod</span>
+                              <span class="text-gray-600">Kauglaenutus, Tartu uurimissaal</span>
+                            <div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="flex flex-col gap-y-0.5">
+                              <span class="font-bold">EAA.1414.1.272, Akropolise fotod</span>
+                              <span class="text-gray-600">Kauglaenutus, Tartu uurimissaal</span>
+                            <div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <h3 class="font-semibold mt-6 mb-1 text-gray-800">
+                    Seda tegevust ei saa rakendada järgmistele valitud tellimustele
+                  </h3>
+                  <p class="text-sm mb-3 text-gray-800">
+                    Sest need ei ole koostamisel kauglaentuse tellimused
+                  </p>
+                  <div class="
+                    rounded shadow-sm p-2
+                    prose max-w-none
+                    prose-table:m-0 prose-thead:border-none prose-tbody:border-none
+                    odd:prose-tr:bg-gray-50 prose-tr:border-none  hover:prose-tr:bg-green-50
+                    prose-th:bg-white prose-th:px-3 first:prose-th:pb-2 last:prose-th:pt-2
+                    first:prose-td:rounded-l last:prose-td:rounded-r prose-td:p-3 prose-td:align-top
+                  ">
+                    <table class="dataGrid">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="flex flex-col gap-y-0.5">
+                              <span class="font-bold">EAA.1414.1.272, Akropolise fotod</span>
+                              <span class="text-gray-600">Koopia, A2 digikoopia raamatuskanneriga (...</span>
+                            <div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="flex flex-col gap-y-0.5">
+                              <span class="font-bold">EAA.1414.1.272, Akropolise fotod</span>
+                              <span class="text-gray-600">Koopia, A2 digikoopia raamatuskanneriga (...</span>
+                            <div>
+                          </td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>
@@ -266,59 +302,6 @@
                   <form class="space-y-6" id="user-order-profile-form" action="/vau/index-dev.php/et/userOrderProfile/update?id=1776" method="post">
                     <p class="text-sm text-gray-700">Tärniga <span class="required">*</span> märgitud väljad on kohustuslikud</p>
                     <div class="text-lg font-medium">
-                      Tellimuse kättetoimetamise viis
-                      <span class="required">*</span>
-                    </div>
-                    <!-- Hoiatus -->
-                    <div class="mb-6 rounded p-3 bg-yellow-100 text-yellow-800">
-                      <div class="flex items-center">
-                        <div class="flex-shrink-0 mr-3 rounded-full bg-yellow-200 p-2">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="w-5 h-5">
-                            <path d="m40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm302-40q17 0 28.5-11.5T520-280q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280q0 17 11.5 28.5T480-240Zm-40-120h80v-200h-80v200Zm40-100Z"></path>
-                          </svg>
-                        </div>
-                        <div class="flex-1 text-sm">
-                          Digikoopiad saate pärast makse laekumist VAUst alla laadida!
-                        </div>
-                      </div>
-                    </div>
-                    <div class="dynamic-container">
-                      <input id="UserOrderProfile_delivery_type_code_0" value="1" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
-                      <label for="UserOrderProfile_delivery_type_code_0" class=" text-base leading-6 text-gray-800">Tulen ise järele</label>
-                    </div>
-                    <div class="dynamic-container">
-                      <input id="UserOrderProfile_delivery_type_code_1" value="2" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3" checked="checked">
-                      <label for="UserOrderProfile_delivery_type_code_1" class=" text-base leading-6 text-gray-800">Postipakiga aadressil</label>
-                      <div class="ml-8 mt-4 mb-8 space-y-4">
-                        <div>
-                          <label for="UserOrderProfile_deliver_street" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Tänav/maja <span class="required">*</span></label>
-                          <input size="40" name="UserOrderProfile[deliver_street]" id="UserOrderProfile_deliver_street" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                        </div>
-                        <div>
-                          <label for="UserOrderProfile_deliver_city"  class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Linn/vald <span class="required">*</span></label>
-                          <input size="40" name="UserOrderProfile[deliver_city]" id="UserOrderProfile_deliver_city" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                        </div>
-                        <div>
-                          <label for="UserOrderProfile_deliver_county" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Maakond <span class="required">*</span></label>
-                          <input size="40" name="UserOrderProfile[deliver_county]" id="UserOrderProfile_deliver_county" type="text" maxlength="64" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                        </div>
-                        <div>
-                          <label for="UserOrderProfile_deliver_index" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Postiindeks <span class="required">*</span></label>
-                          <input size="16" name="UserOrderProfile[deliver_index]" id="UserOrderProfile_deliver_index" type="text" maxlength="16" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                        </div>
-                        <div>
-                          <label for="UserOrderProfile_deliver_country_id" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Riik <span class="required">*</span></label>
-                          <select name="UserOrderProfile[deliver_country_id]" id="UserOrderProfile_deliver_country_id" class="w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-green-300 sm:text-base sm:leading-6">
-                            <option value="1">Eesti Vabariik</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <input id="UserOrderProfile_delivery_type_code_2" value="3" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
-                      <label for="UserOrderProfile_delivery_type_code_2" class="text-base leading-6 text-gray-800">Interneti (ftp-serveri) kaudu</label>
-                    </div>
-                    <div class="text-lg font-medium pt-6 border-t border-gray-50">
                       Tellimuse eest tasumise viis
                       <span class="required">*</span>
                     </div>
