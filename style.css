@@ -2020,6 +2020,10 @@ select {
   margin-bottom: -1rem;
 }
 
+.mt-7 {
+  margin-top: 1.75rem;
+}
+
 .block {
   display: block;
 }
@@ -4188,9 +4192,41 @@ body {
   color: rgb(95 104 116 / var(--tw-text-opacity));
 }
 
+.prose-ul\:space-y-12 :is(:where(ul):not(:where([class~="not-prose"] *))) > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(3rem * var(--tw-space-y-reverse));
+}
+
 .prose-ul\:text-gray-700 :is(:where(ul):not(:where([class~="not-prose"] *))) {
   --tw-text-opacity: 1;
   color: rgb(78 88 99 / var(--tw-text-opacity));
+}
+
+.prose-li\:my-3 :is(:where(li):not(:where([class~="not-prose"] *))) {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-li\:my-1 :is(:where(li):not(:where([class~="not-prose"] *))) {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.prose-li\:mt-1 :is(:where(li):not(:where([class~="not-prose"] *))) {
+  margin-top: 0.25rem;
+}
+
+.prose-li\:mb-1 :is(:where(li):not(:where([class~="not-prose"] *))) {
+  margin-bottom: 0.25rem;
+}
+
+.prose-li\:mt-12 :is(:where(li):not(:where([class~="not-prose"] *))) {
+  margin-top: 3rem;
+}
+
+.prose-li\:mb-12 :is(:where(li):not(:where([class~="not-prose"] *))) {
+  margin-bottom: 3rem;
 }
 
 .prose-table\:m-0 :is(:where(table):not(:where([class~="not-prose"] *))) {
@@ -4819,8 +4855,23 @@ body {
     padding-right: 3.5rem;
   }
 
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .md\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
   .md\:pr-7 {
     padding-right: 1.75rem;
+  }
+
+  .md\:text-lg {
+    font-size: 1.1875rem;
+    line-height: 120%;
   }
 
   .prose-th\:md\:table-cell :is(:where(th):not(:where([class~="not-prose"] *))) {
@@ -5015,6 +5066,11 @@ body {
   .lg\:px-2 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+
+  .lg\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
   .lg\:pr-10 {
@@ -5303,6 +5359,11 @@ body {
   .xl\:px-3 {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+  }
+
+  .xl\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .xl\:pt-10 {

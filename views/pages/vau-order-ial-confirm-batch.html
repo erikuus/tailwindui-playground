@@ -2,7 +2,7 @@
 <html>
   <head>
     <title></title>
-    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../style.css?v=1" />
     <link rel="stylesheet" href="../../jquery-ui.css" />
     <link rel="stylesheet" href="../../labels.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
@@ -228,9 +228,9 @@
             <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:mt-6 sm:text-xl xl:mt-0">
               Tellimuse kinnitamine
             </h2>
-            <div class="flex items-start w-full flex-col gap-x-4 gap-y-6 xl:flex-row xl:gap-x-10 2xl:gap-x-12">
-              <div class="flex w-full flex-col gap-x-4 gap-y-6 lg:flex-row lg:gap-x-10 xl:gap-x-16 2xl:gap-x-28">
-                <div class="flex-1">
+            <div class="flex w-full flex-col gap-x-4 gap-y-6 xl:flex-row lg:gap-x-10 xl:gap-x-16 2xl:gap-x-28">
+              <div class="flex-1">
+                <div class="xl:sticky xl:top-10">
                   <h3 class="font-semibold mb-2 text-gray-800">Valitud tellimused (2)</h3>
                   <div class="
                     rounded shadow-sm p-2
@@ -297,81 +297,81 @@
                     </table>
                   </div>
                 </div>
-                <div class="flex-1 space-y-10">
-                  <a class="block focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white py-3 pl-3 pr-4 text-center text-base font-medium text-gray-900 hover:bg-gray-100" href="/vau/index-dev.php/et/account/view">Kasuta varem salvestatud seadeid</a>
-                  <form class="space-y-6" id="user-order-profile-form" action="/vau/index-dev.php/et/userOrderProfile/update?id=1776" method="post">
-                    <p class="text-sm text-gray-700">Tärniga <span class="required">*</span> märgitud väljad on kohustuslikud</p>
-                    <div class="text-lg font-medium">
-                      Tellimuse eest tasumise viis
-                      <span class="required">*</span>
-                    </div>
-                    <div>
-                      <input id="UserOrderProfile_billing_type_code_0" value="1" type="radio" name="UserOrderProfile[billing_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3" checked="checked">
-                      <label for="UserOrderProfile_billing_type_code_0" class="text-base leading-6 text-gray-800">Maksan kohapeal sularahas</label>
-                    </div>
-                    <div>
-                      <input id="UserOrderProfile_billing_type_code_1" value="2" type="radio" name="UserOrderProfile[billing_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3" checked="checked">
-                      <label for="UserOrderProfile_billing_type_code_1" class="text-base leading-6 text-gray-800">Maksan arve alusel</label>
-                      <div class="ml-8 mt-4 mb-8 space-y-4">
-                        <div>
-                          <input id="UserOrderProfile_invoice_type_code_0" value="3" type="radio" name="UserOrderProfile[invoice_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
-                          <label for="UserOrderProfile_invoice_type_code_0" class="text-base leading-6 text-gray-800">Arve eraisikule e-postiga</label>
-                        </div>
-                        <div>
-                          <input id="UserOrderProfile_invoice_type_code_2" value="2" type="radio" name="UserOrderProfile[invoice_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3" checked="checked">
-                          <label for="UserOrderProfile_invoice_type_code_2" class="text-base leading-6 text-gray-800">Arve asutusele</label>
-                          <div class="ml-8 mt-4 mb-8 space-y-4">
-                            <div>
-                              <label for="UserOrderProfile_deliver_country_id" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Riik <span class="required">*</span></label>
-                              <select name="UserOrderProfile[deliver_country_id]" id="UserOrderProfile_deliver_country_id" class="w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-green-300 sm:text-base sm:leading-6">
-                                <option value="1">Eesti Vabariik</option>
-                              </select>
-                            </div>
-                            <div>
-                              <label for="UserOrderProfile_invoice_institution" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutus <span class="required">*</span></label>
-                              <input size="40" id="UserOrderProfile_invoice_institution" name="UserOrderProfile[invoice_institution]" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                            </div>
-                            <div>
-                              <label for="UserOrderProfile_invoice_institution_nr" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse registrikood <span class="required">*</span></label>
-                              <input size="40" name="UserOrderProfile[invoice_institution_nr]" id="UserOrderProfile_invoice_institution_nr" type="text" maxlength="32" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                            </div>
-                            <div>
-                              <label for="UserOrderProfile_invoice_email" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse e-post <span class="required">*</span></label>
-                              <input size="40" name="UserOrderProfile[invoice_email]" id="UserOrderProfile_invoice_email" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                            </div>
-                            <div class="pt-4">
-                              Asutuse juriidiline aadress:
-                            </div>
-                            <div>
-                              <label for="UserOrderProfile_invoice_street" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Tänav/maja <span class="required">*</span></label>
-                              <input size="40" name="UserOrderProfile[invoice_street]" id="UserOrderProfile_invoice_street" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                            </div>
-                            <div>
-                              <label for="UserOrderProfile_invoice_city" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Linn/vald <span class="required">*</span></label>
-                              <input size="40" name="UserOrderProfile[invoice_city]" id="UserOrderProfile_invoice_city" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                            </div>
-                            <div>
-                              <label for="UserOrderProfile_invoice_county" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Maakond <span class="required">*</span></label>
-                              <input size="40" name="UserOrderProfile[invoice_county]" id="UserOrderProfile_invoice_county" type="text" maxlength="64" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                            </div>
-                            <div>
-                              <label for="UserOrderProfile_invoice_index"  class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Postiindeks <span class="required">*</span></label>
-                              <input size="16" name="UserOrderProfile[invoice_index]" id="UserOrderProfile_invoice_index" type="text" maxlength="16" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
-                            </div>
+              </div>
+              <div class="mt-7 flex-1 md:px-14 lg:px-32 xl:px-0 space-y-10">
+                <a class="block focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white py-3 pl-3 pr-4 text-center text-base font-medium text-gray-900 hover:bg-gray-100" href="/vau/index-dev.php/et/account/view">Kasuta varem salvestatud seadeid</a>
+                <form class="space-y-6" id="user-order-profile-form" action="/vau/index-dev.php/et/userOrderProfile/update?id=1776" method="post">
+                  <p class="text-sm text-gray-700">Tärniga <span class="required">*</span> märgitud väljad on kohustuslikud</p>
+                  <div class="text-lg font-medium">
+                    Tellimuse eest tasumise viis
+                    <span class="required">*</span>
+                  </div>
+                  <div>
+                    <input id="UserOrderProfile_billing_type_code_0" value="1" type="radio" name="UserOrderProfile[billing_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3" checked="checked">
+                    <label for="UserOrderProfile_billing_type_code_0" class="text-base leading-6 text-gray-800">Maksan kohapeal sularahas</label>
+                  </div>
+                  <div>
+                    <input id="UserOrderProfile_billing_type_code_1" value="2" type="radio" name="UserOrderProfile[billing_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3" checked="checked">
+                    <label for="UserOrderProfile_billing_type_code_1" class="text-base leading-6 text-gray-800">Maksan arve alusel</label>
+                    <div class="ml-8 mt-4 mb-8 space-y-4">
+                      <div>
+                        <input id="UserOrderProfile_invoice_type_code_0" value="3" type="radio" name="UserOrderProfile[invoice_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
+                        <label for="UserOrderProfile_invoice_type_code_0" class="text-base leading-6 text-gray-800">Arve eraisikule e-postiga</label>
+                      </div>
+                      <div>
+                        <input id="UserOrderProfile_invoice_type_code_2" value="2" type="radio" name="UserOrderProfile[invoice_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3" checked="checked">
+                        <label for="UserOrderProfile_invoice_type_code_2" class="text-base leading-6 text-gray-800">Arve asutusele</label>
+                        <div class="ml-8 mt-4 mb-8 space-y-4">
+                          <div>
+                            <label for="UserOrderProfile_deliver_country_id" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Riik <span class="required">*</span></label>
+                            <select name="UserOrderProfile[deliver_country_id]" id="UserOrderProfile_deliver_country_id" class="w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-green-300 sm:text-base sm:leading-6">
+                              <option value="1">Eesti Vabariik</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label for="UserOrderProfile_invoice_institution" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutus <span class="required">*</span></label>
+                            <input size="40" id="UserOrderProfile_invoice_institution" name="UserOrderProfile[invoice_institution]" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                          </div>
+                          <div>
+                            <label for="UserOrderProfile_invoice_institution_nr" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse registrikood <span class="required">*</span></label>
+                            <input size="40" name="UserOrderProfile[invoice_institution_nr]" id="UserOrderProfile_invoice_institution_nr" type="text" maxlength="32" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                          </div>
+                          <div>
+                            <label for="UserOrderProfile_invoice_email" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Asutuse e-post <span class="required">*</span></label>
+                            <input size="40" name="UserOrderProfile[invoice_email]" id="UserOrderProfile_invoice_email" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                          </div>
+                          <div class="pt-4">
+                            Asutuse juriidiline aadress:
+                          </div>
+                          <div>
+                            <label for="UserOrderProfile_invoice_street" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Tänav/maja <span class="required">*</span></label>
+                            <input size="40" name="UserOrderProfile[invoice_street]" id="UserOrderProfile_invoice_street" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                          </div>
+                          <div>
+                            <label for="UserOrderProfile_invoice_city" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Linn/vald <span class="required">*</span></label>
+                            <input size="40" name="UserOrderProfile[invoice_city]" id="UserOrderProfile_invoice_city" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                          </div>
+                          <div>
+                            <label for="UserOrderProfile_invoice_county" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Maakond <span class="required">*</span></label>
+                            <input size="40" name="UserOrderProfile[invoice_county]" id="UserOrderProfile_invoice_county" type="text" maxlength="64" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                          </div>
+                          <div>
+                            <label for="UserOrderProfile_invoice_index"  class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Postiindeks <span class="required">*</span></label>
+                            <input size="16" name="UserOrderProfile[invoice_index]" id="UserOrderProfile_invoice_index" type="text" maxlength="16" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div>
-                      <input id="UserOrderProfile_billing_type_code_2" value="3" type="radio" name="UserOrderProfile[billing_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
-                      <label for="UserOrderProfile_billing_type_code_2" class="text-base leading-6 text-gray-800">Maksan krediitkaardi või pangalingiga (Swedbank, SEB, Luminor, LHV)</label>
-                    </div>
-                    <div class="flex flex-col gap-y-4 pt-6">
-                      <input class="focus-visible::ring-2 focus-visible::ring-green-300 w-full cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Kinnita" />
-                      <a class="w-full focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white py-3 pl-3 pr-4 text-center text-base font-medium text-gray-900 hover:bg-gray-100" href="/vau/index-dev.php/et/account/view">Loobu</a>
-                    </div>
-                  </form>
-                </div>
+                  </div>
+                  <div>
+                    <input id="UserOrderProfile_billing_type_code_2" value="3" type="radio" name="UserOrderProfile[billing_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3">
+                    <label for="UserOrderProfile_billing_type_code_2" class="text-base leading-6 text-gray-800">Maksan krediitkaardi või pangalingiga (Swedbank, SEB, Luminor, LHV)</label>
+                  </div>
+                  <div class="flex flex-col gap-y-4 pt-6">
+                    <input class="focus-visible::ring-2 focus-visible::ring-green-300 w-full cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Kinnita" />
+                    <a class="w-full focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white py-3 pl-3 pr-4 text-center text-base font-medium text-gray-900 hover:bg-gray-100" href="/vau/index-dev.php/et/account/view">Loobu</a>
+                  </div>
+                </form>
               </div>
             </div>
           </div>

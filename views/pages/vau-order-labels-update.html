@@ -228,111 +228,111 @@
             <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:mt-6 sm:text-xl xl:mt-0">
               Muuda märksõnu
             </h2>
-            <div class="flex items-start w-full flex-col gap-x-4 gap-y-6 xl:flex-row xl:gap-x-10 2xl:gap-x-12">
-              <div class="flex w-full flex-col gap-x-4 gap-y-6 lg:flex-row lg:gap-x-10 xl:gap-x-16 2xl:gap-x-28">
-                <div class="flex-1">
-                  <div class="flex justify-between items-start gap-x-6">
-                    <h3 class="text-lg font-medium">
-                      EAA.1414.1.272; Kauglaenutus; nr 903521
-                    </h3>
-                    <div class="flex flex-col gap-y-2 text-right sm:flex-row sm:gap-x-6 lg:flex-col lg:gap-x-0 xl:flex-row xl:gap-x-6 whitespace-nowrap">
-                      <a class="font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700 text-sm" href="#">
-                        Ava säilik AIS-is
-                      </a>
-                    </div>
+            <div class="flex w-full flex-col gap-x-4 gap-y-6 xl:flex-row lg:gap-x-10 xl:gap-x-16 2xl:gap-x-28">
+              <div class="flex-1">
+                <div class="flex justify-between items-start gap-x-6">
+                  <h3 class="text-sm md:text-lg font-medium">
+                    EAA.1414.1.272; Kauglaenutus; nr 903521
+                  </h3>
+                  <div class="flex flex-col gap-y-2 text-right sm:flex-row sm:gap-x-6 whitespace-nowrap">
+                    <a class="font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700 text-sm" href="#">
+                      Ava säilik AIS-is
+                    </a>
                   </div>
-                  <ul class="my-6 space-y-3 list-inside list-disc text-gray-800">
+                </div>
+                <div class="my-6 text-sm prose prose-li:mt-1 prose-li:mb-1 text-gray-800">
+                  <ul>
                     <li>Tartu uurimissaal</li>
                   </ul>
-                  <div class="prose max-w-none prose-th:p-3 prose-td:p-3">
-                    <table class="order-detail-view" id="yw1">
-                      <tbody>
-                        <tr class="even"><th>Säilik</th><td>Akropolise fotod</td></tr>
-                        <tr class="odd"><th>Tellija märkused</th><td>Selle tellimuse tegelik eesmärk on testida kaardimakset.</td></tr>
-                        <tr class="even"><th>Loodud</th><td>12.02.2025 14:09</td></tr>
-                        <tr class="odd"><th>Kasutuseesmärk</th><td>Uudishimu</td></tr>
-                        <tr class="even">
-                          <th>Märksõnad</th>
-                          <td>
-                            <span class="inline-flex items-center rounded-full px-1.5 py-0.5 text-xs font-medium text-gray-600 border border-gray-300">
-                              Pihiliste
-                            </span>
-                            <span class="inline-flex items-center rounded-full px-1.5 py-0.5 text-xs font-medium text-gray-600 border border-gray-300">
-                              nimekiri
-                            </span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                </div>
+                <div class="prose max-w-none prose-th:p-3 prose-td:p-3">
+                  <table class="order-detail-view" id="yw1">
+                    <tbody>
+                      <tr class="even"><th>Säilik</th><td>Akropolise fotod</td></tr>
+                      <tr class="odd"><th>Tellija märkused</th><td>Selle tellimuse tegelik eesmärk on testida kaardimakset.</td></tr>
+                      <tr class="even"><th>Loodud</th><td>12.02.2025 14:09</td></tr>
+                      <tr class="odd"><th>Kasutuseesmärk</th><td>Uudishimu</td></tr>
+                      <tr class="even">
+                        <th>Märksõnad</th>
+                        <td>
+                          <span class="inline-flex items-center rounded-full px-1.5 py-0.5 text-xs font-medium text-gray-600 border border-gray-300">
+                            Pihiliste
+                          </span>
+                          <span class="inline-flex items-center rounded-full px-1.5 py-0.5 text-xs font-medium text-gray-600 border border-gray-300">
+                            nimekiri
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="flex-1 space-y-10">
+                <form class="space-y-6" id="user-order-profile-form" action="/vau/index-dev.php/et/userOrderProfile/update?id=1776" method="post">
+                  <div>
+                    <label for="BookmarkLink_labels" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Märksõnad <span class="required">*</span></label>
+                    <input id="BookmarkLink_labels" name="BookmarkLink[labels]" type="text" value="suva" style="display: none;">
+                    <ul class="tagit ui-widget ui-widget-content ui-corner-all">
+                      <li class="tagit-choice ui-widget-content ui-state-default ui-corner-all">
+                        <span class="tagit-label">suva</span>
+                        <a class="tagit-close">
+                          <span class="text-icon">×</span>
+                          <span class="ui-icon ui-icon-close"></span>
+                        </a>
+                      </li>
+                      <li class="tagit-choice ui-widget-content ui-state-default ui-corner-all">
+                        <span class="tagit-label">suva</span>
+                        <a class="tagit-close">
+                          <span class="text-icon">×</span>
+                          <span class="ui-icon ui-icon-close"></span>
+                        </a>
+                      </li>
+                      <li class="tagit-new">
+                        <input type="text" class="ui-widget-content ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+                      </li>
+                    </ul>
+                    <span class="text-sm text-gray-300">Eralda märksõnad komadega</span>
                   </div>
-                </div>
-                <div class="flex-1 space-y-10">
-                  <form class="space-y-6" id="user-order-profile-form" action="/vau/index-dev.php/et/userOrderProfile/update?id=1776" method="post">
-                    <div>
-                      <label for="BookmarkLink_labels" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Märksõnad <span class="required">*</span></label>
-                      <input id="BookmarkLink_labels" name="BookmarkLink[labels]" type="text" value="suva" style="display: none;">
-                      <ul class="tagit ui-widget ui-widget-content ui-corner-all">
-                        <li class="tagit-choice ui-widget-content ui-state-default ui-corner-all">
-                          <span class="tagit-label">suva</span>
-                          <a class="tagit-close">
-                            <span class="text-icon">×</span>
-                            <span class="ui-icon ui-icon-close"></span>
-                          </a>
-                        </li>
-                        <li class="tagit-choice ui-widget-content ui-state-default ui-corner-all">
-                          <span class="tagit-label">suva</span>
-                          <a class="tagit-close">
-                            <span class="text-icon">×</span>
-                            <span class="ui-icon ui-icon-close"></span>
-                          </a>
-                        </li>
-                        <li class="tagit-new">
-                          <input type="text" class="ui-widget-content ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
-                        </li>
-                      </ul>
-                      <span class="text-sm text-gray-300">Eralda märksõnad komadega</span>
-                    </div>
-                    <p class="font-semibold leading-6 text-gray-800">
-                      Vali varem kasutatud märksõnade hulgast
-                    </p>
-                    <div class="leading-relaxed">
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300 hover:bg-gray-100 cursor-pointer">Optandid</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Perkonnakiri</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Passiregister</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">1922</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">1940</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">1939</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">1938</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Abielu/Meetrikaraamat</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Sünd/Meetrikaraamat</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Meetrikaraamat</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Armulaud</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Leerilapsed</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Surm/Meetrikaraamat</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Vallaelanike nimekiri</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Perekonnakirjad</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Valla nimejuhataja</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Adramaarevisjon</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Vakuraamat</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Kirikutäht</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Väkkekutsumise nimekiri</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Kaart</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Abielu</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Sünd</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Pihiliste nimekiri</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300" style="display: none;">Aadressilehed</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Elanike nimekiri</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Personaalraamat</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Surm</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Isikutunnistus</div>
-                        <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Hingeloend</div>
-                    </div>
-                    <div class="flex flex-col gap-y-4 pt-6">
-                      <input class="focus-visible::ring-2 focus-visible::ring-green-300 w-full cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Salvesta" />
-                      <a class="w-full focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white py-3 pl-3 pr-4 text-center text-base font-medium text-gray-900 hover:bg-gray-100" href="/vau/index-dev.php/et/account/view">Loobu</a>
-                    </div>
-                  </form>
-                </div>
+                  <p class="font-semibold leading-6 text-gray-800">
+                    Vali varem kasutatud märksõnade hulgast
+                  </p>
+                  <div class="leading-relaxed">
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300 hover:bg-gray-100 cursor-pointer">Optandid</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Perkonnakiri</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Passiregister</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">1922</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">1940</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">1939</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">1938</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Abielu/Meetrikaraamat</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Sünd/Meetrikaraamat</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Meetrikaraamat</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Armulaud</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Leerilapsed</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Surm/Meetrikaraamat</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Vallaelanike nimekiri</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Perekonnakirjad</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Valla nimejuhataja</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Adramaarevisjon</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Vakuraamat</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Kirikutäht</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Väkkekutsumise nimekiri</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Kaart</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Abielu</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Sünd</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Pihiliste nimekiri</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300" style="display: none;">Aadressilehed</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Elanike nimekiri</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Personaalraamat</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Surm</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Isikutunnistus</div>
+                      <div class="inline-flex items-center rounded-full px-1.5 py-0.5 text-sm font-medium text-gray-500 border border-gray-300">Hingeloend</div>
+                  </div>
+                  <div class="flex flex-col gap-y-4 pt-6">
+                    <input class="focus-visible::ring-2 focus-visible::ring-green-300 w-full cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Salvesta" />
+                    <a class="w-full focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white py-3 pl-3 pr-4 text-center text-base font-medium text-gray-900 hover:bg-gray-100" href="/vau/index-dev.php/et/account/view">Loobu</a>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
