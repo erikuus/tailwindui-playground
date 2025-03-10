@@ -2304,8 +2304,16 @@ select {
   width: 16rem;
 }
 
+.w-0 {
+  width: 0px;
+}
+
 .min-w-full {
   min-width: 100%;
+}
+
+.min-w-0 {
+  min-width: 0px;
 }
 
 .max-w-md {
@@ -2366,6 +2374,10 @@ select {
 
 .grow {
   flex-grow: 1;
+}
+
+.table-fixed {
+  table-layout: fixed;
 }
 
 .origin-top-right {
@@ -2705,6 +2717,12 @@ select {
 
 .overflow-y-hidden {
   overflow-y: hidden;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .overflow-ellipsis {
