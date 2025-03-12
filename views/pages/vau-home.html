@@ -3,7 +3,9 @@
   <head>
     <title>VAU - Rahvusarhiivi virtuaalne uurimissaal</title>
     <link rel="stylesheet" href="../../style.css?v=1" />
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.12.3/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
+    
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
   <body class="flex min-h-screen flex-col bg-gray-50">
@@ -743,6 +745,25 @@
                           </div>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- uses AlpineJS and plugin $persist for local Storage -->
+                <div x-data="{ cookies: $persist(false).as('accept-cookies') }">
+                  <div :class="cookies ? 'hidden' : 'block'" class="fixed bottom-0 left-0 right-0 z-[999] bg-gray-100">
+                    <div class="flex flex-col md:flex-row gap-y-6 gap-x-12 items-center justify-center py-12">
+                      <p class="text-sm">
+                        Lehekülg kasutab küpsiseid. See aitab meil meelde jätta sinu tehtud valikuid meie lehel. Jätkates nõustud küpsiste kasutamisega.
+                      </p>
+                      <button type="button" @click="cookies = !cookies" class="
+                        whitespace-nowrap items-center py-2 text-sm px-4
+                        font-medium text-center text-gray-900 bg-white rounded cursor-pointer
+                        border border-solid border-gray-200 focus:active:border-gray-900
+                        no-underline hover:focus:active:no-underline focus:active:ring-2 focus:active:ring-green-300
+                        hover:bg-gray-100 focus:active:bg-gray-200
+                      ">
+                        Saan aru
+                      </button>
                     </div>
                   </div>
                 </div>
