@@ -2,13 +2,14 @@
 <html>
   <head>
     <title></title>
-    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../style.css?v=123" />
     <link rel="stylesheet" href="../../jquery-ui.css" />
     <link rel="stylesheet" href="../../labels.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
     <script>
       document.addEventListener('alpine:init', () => {
-        Alpine.store('toggle', { checked: false });
+        Alpine.store('batch', { panel: false });
+        Alpine.store('filter', { panel: false });
       });
     </script>
     <link href="https://cdn.jsdelivr.net/npm/foundation-icons@2.0.0/foundation-icons.min.css" rel="stylesheet" />
@@ -507,7 +508,7 @@
                   </div>
 
                   <div>
-                    <a title="Abi" href="#" class="float-right mt-1 mr-1 text-gray-600">
+                    <a title="Abi" href="#" class="float-right mr-1 text-gray-600">
                       <i class="fi-info text-xl"></i>
                     </a>
                     <label for="Order_type" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">
@@ -573,6 +574,9 @@
                   </div>
 
                   <div class="Order_purpose_code selected_6">
+                    <a title="Abi" href="#" class="float-right mr-1 text-gray-600">
+                      <i class="fi-info text-xl"></i>
+                    </a>
                     <label for="Order_purpose_other" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Muu eesmärk <span class="required">*</span></label>
                     <input name="Order[purpose_other]" id="Order_purpose_other" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
                   </div>
@@ -619,14 +623,41 @@
                       </svg>
                     </a>
                   </div>
-                  <div class="alertBox flex items-start justify-between rounded p-4 text-sm mb-2 bg-yellow-100 text-yellow-800" role="alert">
-                    Tellimus koostatud. Tellimuse esitamiseks tuleb vajutada nuppu "Kinnita"!
+                  <!-- <div class="alertBox flex items-start justify-between rounded p-4 text-sm mb-2 bg-yellow-100 text-yellow-800" role="alert">
+                    <div>
+                      <h3 class="text-lg font-bold mb-1">Säilikust "EAA.1.2.357" leidub digikujutisi meie veebirakendustes!</h3>
+                      <p>Soovitame tasulise tellimuse esitamise asemel laadida faile tasuta alla järgmistes veebirakendustes:</p>
+                      <section class="mt-4 space-y-1.5">
+                        <h4 class="text-base font-medium">
+                          <a class="inline-flex items-center no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" target="_blank" href="#">
+                            <span>Kaardid</span>
+                            <svg class="h-4 w-4 ml-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M19 19H5V5H12V3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V12H19V19ZM14 3V5H17.59L7.76 14.83L9.17 16.24L19 6.41V10H21V3H14Z"></path>
+                            </svg>
+                          </a>
+                        </h4>
+                        <p>Kaartide infosüsteem sisaldab Rahvusarhiivis ja Tallinna Linnaarhiivis hoitavate kaartide kirjeldusi ja digikujutisi.</p>
+                        <p><a class="no-underline text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">Kuidas faile alla laadida?</a></p>
+                      </section>
+                      <section class="mt-4 space-y-1.5">
+                        <h4 class="text-base font-medium">
+                          <a class="inline-flex items-center no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" target="_blank" href="#">
+                            <span>Saaga</span>
+                            <svg class="h-4 w-4 ml-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M19 19H5V5H12V3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V12H19V19ZM14 3V5H17.59L7.76 14.83L9.17 16.24L19 6.41V10H21V3H14Z"></path>
+                            </svg>
+                          </a>
+                        </h4>
+                        <p>Saaga on digiteeritud arhiiviallikaid sisaldav veebikeskkond, mis võimaldab tutvuda enimkasutatavate ja huvipakkuvamate Rahvusarhiivi üksustes ja Tallinna Linnaarhiivis säilitatavate arhivaalide digitaalsete koopiatega.</p>
+                        <p><a class="no-underline text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">Kuidas faile alla laadida?</a></p>
+                      </section>
+                    </div>
                     <a class="close ml-4" href="" aria-label="Sulge teade">
                       <svg class="w-5 h-5 opacity-40 group-hover:opacity-70" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
                       </svg>
                     </a>
-                  </div>
+                  </div> -->
                   <div class="flex items-center rounded p-4 text-sm mb-2 p-3 bg-yellow-100 text-yellow-800">
                     <div class="flex-shrink-0 mr-2 rounded-full bg-yellow-200 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="w-4 h-4">
@@ -663,29 +694,72 @@
                 <h2 class="font-heading mb-6 md:mb-10 border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:text-xl">
                   Kinnitamata tellimused
                 </h2>
+                <!-- Filter -->
+                <div class="w-full mb-3 pt-3 pb-4 px-6 rounded bg-gray-50/60" x-cloak x-show="$store.filter.panel">
+                  <h2 class="flex w-full items-center justify-between mt-1 mb-4 border-b border-gray-500 pb-1 font-bold text-gray-700">
+                    <span>Filtreeri</span>
+                    <a class="close ml-4" href="#" @click.prevent="$store.filter.panel = false" aria-label="Sulge teade">
+                      <svg class="w-5 h-5 opacity-40 group-hover:opacity-70" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
+                      </svg>
+                    </a>
+                  </h2>
+                  <form id="order-search-form" action="#" method="get" class="grid grid-cols-2 gap-6">
+                    <div>
+                      <label for="OrderSearch_reference" class="block text-sm font-semibold leading-6 text-gray-800 mb-1">Leidandmed</label>
+                      <input name="OrderSearch[reference]" id="OrderSearch_reference" type="text" class="block w-full rounded px-3 py-1.5 text-gray-900 focus:outline-none focus:ring-2 sm:text-sm sm:leading-6 border border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 placeholder:text-gray-300">
+                    </div>
+                    <div>
+                      <label for="OrderSearch_submit_time" class="block text-sm font-semibold leading-6 text-gray-800 mb-1">Esitatud</label>
+                      <input autocomplete="off" id="OrderSearch_submit_time" name="OrderSearch[submit_time]" type="text" class="block w-full rounded px-3 py-1.5 text-gray-900 focus:outline-none focus:ring-2 sm:text-sm sm:leading-6 border border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 placeholder:text-gray-300">
+                    </div>
+                    <div>
+                      <label for="OrderSearch_labels" class="block text-sm font-semibold leading-6 text-gray-800 mb-1">Märksõnad</label>
+                      <input id="OrderSearch_labels" name="OrderSearch[labels]" type="text" class="block w-full rounded px-3 py-1.5 text-gray-900 focus:outline-none focus:ring-2 sm:text-sm sm:leading-6 border border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 placeholder:text-gray-300">
+                    </div>
+                    <div>
+                      <label for="OrderSearch_type" class="block text-sm font-semibold leading-6 text-gray-800 mb-1">Tellimuse liik</label>
+                      <input id="OrderSearch_type" name="OrderSearch[type]" type="text" class="block w-full rounded px-3 py-1.5 text-gray-900 focus:outline-none focus:ring-2 sm:text-sm sm:leading-6 border border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 placeholder:text-gray-300">
+                      <div class="m-1 text-gray-500 text-sm">
+                        Valides tellimuse liigi, saad valida (laenutuse) sihtruumi või (koopia)teenuse.
+                      </div>
+                    </div>
+                    <div class="col-span-2 text-right space-x-1">
+                      <input type="hidden" value="clientDraft" name="scope">
+                      <input class="inline-flex flex-nowrap items-center py-2 px-4 text-sm font-medium text-center text-gray-900 bg-transparent rounded cursor-pointer border-none no-underline hover:focus:active:no-underline focus:active:ring-2 focus:active:ring-green-300 hover:bg-gray-100/60 focus:active:bg-gray-100/80" type="submit" name="yt2" value="Loobu">
+                      <input class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" name="yt1" type="button" value="Puhasta">
+                      <input class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded bg-gray-900 py-2 px-3 text-center text-sm font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Filtreeri">
+                    </div>
+                  </form>
+                </div>
                 <!-- masstöötlus-->
-                <div class="flex items-center w-full gap-x-3 mb-2 px-4 py-3 rounded bg-gray-50" x-show="$store.toggle.checked">
-                  <a class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded bg-gray-900 py-2 px-3 text-center text-sm font-medium text-white hover:bg-gray-700" href="">
-                    Kinnita koopiatellimus
-                  </a>
-                  <a class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded bg-gray-900 py-2 px-3 text-center text-sm font-medium text-white hover:bg-gray-700" href="">
-                    Kinnita kauglaenutus
-                  </a>
-                  <a class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded bg-gray-900 py-2 px-3 text-center text-sm font-medium text-white hover:bg-gray-700" href="">
-                    Kinnita laenutus
-                  </a>
-                  <!-- <a class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
-                    Prindi
-                  </a> -->
-                  <a class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
-                    Lisa märksõnu
-                  </a>
-                  <a class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
-                    Eemalda märksõnu
-                  </a>
-                  <a class="inline-flex flex-nowrap items-center py-2 px-4 text-sm font-medium text-center text-gray-900 bg-transparent rounded cursor-pointer border-none no-underline hover:focus:active:no-underline focus:active:ring-2 focus:active:ring-green-300 hover:bg-gray-100/60 focus:active:bg-gray-100/80" href="">
-                    Kustuta
-                  </a>
+                <div class="w-full mb-3 pt-3 pb-4 px-6  rounded bg-gray-50" x-cloak x-show="$store.batch.panel">
+                  <h2 class="mt-1 mb-4 border-b border-gray-500 pb-1 font-bold text-gray-700">
+                    Masstöötlus
+                  </h2>
+                  <div class="flex items-center w-full gap-x-3">
+                    <a class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded bg-gray-900 py-2 px-3 text-center text-sm font-medium text-white hover:bg-gray-700" href="">
+                      Kinnita koopiatellimus
+                    </a>
+                    <a class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded bg-gray-900 py-2 px-3 text-center text-sm font-medium text-white hover:bg-gray-700" href="">
+                      Kinnita kauglaenutus
+                    </a>
+                    <a class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded bg-gray-900 py-2 px-3 text-center text-sm font-medium text-white hover:bg-gray-700" href="">
+                      Kinnita laenutus
+                    </a>
+                    <!-- <a class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
+                      Prindi
+                    </a> -->
+                    <a class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
+                      Lisa märksõnu
+                    </a>
+                    <a class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
+                      Eemalda märksõnu
+                    </a>
+                    <a class="inline-flex flex-nowrap items-center py-2 px-4 text-sm font-medium text-center text-gray-900 bg-transparent rounded cursor-pointer border-none no-underline hover:focus:active:no-underline focus:active:ring-2 focus:active:ring-green-300 hover:bg-gray-100/60 focus:active:bg-gray-100/80" href="">
+                      Kustuta
+                    </a>
+                  </div>
                 </div>
                 <!-- tabel -->
                 <div class="
@@ -702,6 +776,15 @@
                       <div class="text-sm font-medium">
                         1 - 100 / 190
                       </div>
+                      <a href="#"
+                        x-show="!$store.filter.panel"
+                        @click.prevent="$store.filter.panel = true"
+                        class="flex items-center gap-x-1 text-sm rounded bg-gray-50 pr-3 pl-2 py-2 font-normal">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M3 17V19H9V17H3ZM3 5V7H13V5H3ZM13 21V19H21V17H13V15H11V21H13ZM7 9V11H3V13H7V15H9V9H7ZM21 13V11H11V13H21ZM15 9H17V7H21V5H17V3H15V9Z"></path>
+                        </svg>
+                        <span>Filtreeri</span>
+                      </a>
                       <div class="text-right">
                         <div x-data="{ open: false }" class="relative not-prose">
                           <button @click="open = true" type="button" class="inline-flex items-center text-sm gap-x-2">
@@ -738,7 +821,7 @@
                         <thead>
                           <tr>
                             <th>
-                              <input type="checkbox" value="1" name="batch-id_all" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300" x-model="$store.toggle.checked">
+                              <input type="checkbox" value="1" name="batch-id_all" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300" x-model="$store.batch.panel">
                             </th>
                             <th>Leidandmed</th>
                             <th>Tellimuse liik</th>
