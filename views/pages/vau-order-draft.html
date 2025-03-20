@@ -768,7 +768,7 @@
                   prose-table:m-0 prose-thead:border-none prose-tbody:border-none prose-table:mb-2
                   prose-tr:border-b prose-tr:border-b-gray-100 hover:prose-tr:bg-green-50
                   prose-th:bg-white prose-th:px-3 first:prose-th:pb-2 last:prose-th:pt-2
-                  prose-td:p-3 prose-td:align-top
+                  prose-td:p-3
                   prose-a:no-underline
                 ">
                   <div id="link-grid" class="grid-view">
@@ -817,16 +817,16 @@
                       </div>
                     </div>
                     <form id="link-grid-form" action="#" method="post">
-                      <table>
+                      <table class="table-fixed w-full">
                         <thead>
                           <tr>
-                            <th>
+                            <th class="w-10">
                               <input type="checkbox" value="1" name="batch-id_all" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300" x-model="$store.batch.panel">
                             </th>
                             <th>Leidandmed</th>
                             <th>Tellimuse liik</th>
-                            <th>Loodud</th>
-                            <th></th>
+                            <th class="w-28">Loodud</th>
+                            <th class="w-32"></th>
                           </tr>
                         </thead>
                         <tbody>
@@ -835,17 +835,22 @@
                               <input value="903521" type="checkbox" name="batch-id[]" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300">
                             </td>
                             <td>
-                              <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">EAA.1414.1.272
-                                <i title="Digiteeritud" class="fi-photo" style="color:#00a6fc;font-size:12px"></i>
-                              </a><br>
-                              Akropolise fotod
+                              <div class="flex flex-col flex-1 min-w-0">
+                                <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">
+                                  <span class="mr-1">EAA.1414.1.272</span>
+                                  <i title="Digiteeritud" class="fi-photo" style="color:#00a6fc;"></i>
+                                </a>
+                                <span class="text-gray-600 truncate">Akropolise fotod</span>
+                              </div>
                             </td>
                             <td>
-                              <span>Koopia</span><br>
-                              kuni A2 formaadis tarbekoopia (teksti...
+                              <div class="flex flex-col flex-1 min-w-0">
+                                <span class="text-red-700">Koopia</span>
+                                <span class="text-gray-600 truncate">kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia</span>
+                              </div>
                             </td>
                             <td>
-                              <div class="whitespace-nowrap text-sm">12.02.2025 14:09</div>
+                              <div class="whitespace-nowrap text-sm" title="12.02.2025 14:09">12.02.2025</div>
                             </td>
                             <td>
                               <div class="flex items-center gap-x-2">
@@ -896,15 +901,19 @@
                               <input value="810524" type="checkbox" name="batch-id[]" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300">
                             </td>
                             <td>
-                              <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">ERA.5253.1.345</a><br>
-                              - pealkiri salastatud -
+                              <div class="flex flex-col flex-1 min-w-0">
+                                <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">ERA.5253.1.345</a>
+                                <span class="text-gray-600 truncate">- pealkiri salastatud -</span>
+                              </div>
                             </td>
                             <td>
-                              <span>Koopia</span><br>
-                              &lt;A3-formaadis lehele (must-valge):...
+                              <div class="flex flex-col flex-1 min-w-0">
+                                <span class="text-red-700">Koopia</span>
+                                <span class="text-gray-600 truncate">kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia</span>
+                              </div>
                             </td>
                             <td>
-                              <div class="whitespace-nowrap text-sm">18.10.2022 15:48</div>
+                              <div class="whitespace-nowrap text-sm">18.10.2022</div>
                             </td>
                             <td>
                               <div class="flex items-center gap-x-2">
@@ -955,15 +964,22 @@
                               <input value="742581" type="checkbox" name="batch-id[]" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300">
                             </td>
                             <td>
-                              <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">EAA.1362.1.1 <i title="Digiteeritud" class="fi-photo" style="color:#00a6fc;font-size:12px"></i></a><br>
-                              Spezifikation und Wackenbuch der von dem Gute R...
+                              <div class="flex flex-col flex-1 min-w-0">
+                                <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">
+                                  <span class="mr-1">EAA.1362.1.1</span> 
+                                  <i title="Digiteeritud" class="fi-photo" style="color:#00a6fc"></i>
+                                </a>
+                                <span class="text-gray-600 truncate">Spezifikation und Wackenbuch der von dem Gute und Wackenbuch der von dem Gute</span>
+                              </div>
                             </td>
                             <td>
-                              <span>Kauglaenutus</span><br>
-                              Tallinna uurimissaal
+                               <div class="flex flex-col flex-1 min-w-0">
+                                <span class="text-yellow-700">Kauglaenutus</span>
+                                <span class="text-gray-600 truncate">Tallinna uurimissaal</span>
+                              </div>
                             </td>
                             <td>
-                              <div class="whitespace-nowrap text-sm">27.10.2021 11:23</div>
+                              <div class="whitespace-nowrap text-sm">27.10.2021</div>
                             </td>
                             <td>
                               <div class="flex items-center gap-x-2">
@@ -1014,15 +1030,22 @@
                               <input value="740801" type="checkbox" name="batch-id[]" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300">
                             </td>
                             <td>
-                              <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">EAA.49.1.5 <i title="Digiteeritud" class="fi-photo" style="color:#00a6fc;font-size:12px"></i></a><br>
-                              Протоколы о выдаче пособий военнослужащим и их ...
+                              <div class="flex flex-col flex-1 min-w-0">
+                                <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">
+                                  <span class="mr-1">EAA.49.1.5</span> 
+                                  <i title="Digiteeritud" class="fi-photo" style="color:#00a6fc"></i>
+                                </a>
+                                <span class="text-gray-600 truncate">Протоколы о выдаче пособий военнослужащим и их о выдаче пособий военнослужащим</span>
+                              </div>
                             </td>
                             <td>
-                              <span>Laenutus</span><br>
-                              Tartu uurimissaal
+                               <div class="flex flex-col flex-1 min-w-0">
+                                <span class="text-green-600">Laenutus</span>
+                                <span class="text-gray-600 truncate">Tartu uurimissaal</span>
+                              </div>
                             </td>
                             <td>
-                              <div class="whitespace-nowrap text-sm">18.10.2021 17:47</div>
+                              <div class="whitespace-nowrap text-sm">18.10.2021</div>
                             </td>
                             <td>
                               <div class="flex items-center gap-x-2">
@@ -1073,15 +1096,22 @@
                               <input value="738855" type="checkbox" name="batch-id[]" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300">
                             </td>
                             <td>
-                              <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">EAA.2069.5.457 <i title="Digiteeritud" class="fi-photo" style="color:#00a6fc;font-size:12px"></i></a><br>
-                              W. D. L. B. Dr. Budberg'i mälestusmedal, sündin...
+                              <div class="flex flex-col flex-1 min-w-0">
+                                <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">
+                                  <span class="mr-1">EAA.2069.5.457</span> 
+                                  <i title="Digiteeritud" class="fi-photo" style="color:#00a6fc"></i>
+                                </a>
+                                <span class="text-gray-600 truncate">W. D. L. B. Dr. Budberg'i mälestusmedal, W. D. L. B. Dr. Budberg'i mälestusmedal</span>
+                              </div>
                             </td>
                             <td>
-                              <span>Laenutus</span><br>
-                              Tartu uurimissaal
+                               <div class="flex flex-col flex-1 min-w-0">
+                                <span class="text-green-600">Laenutus</span>
+                                <span class="text-gray-600 truncate">Tartu uurimissaal</span>
+                              </div>
                             </td>
                             <td>
-                              <div class="whitespace-nowrap text-sm">08.10.2021 13:48</div>
+                              <div class="whitespace-nowrap text-sm">08.10.2021</div>
                             </td>
                             <td>
                               <div class="flex items-center gap-x-2">
@@ -1132,15 +1162,19 @@
                               <input value="653939" type="checkbox" name="batch-id[]" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300">
                             </td>
                             <td>
-                              <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">LVMA.532RP.3.7332</a><br>
-                              2138 Märjamaa, Pikk 3; ER kood 109012584, 109...
+                              <div class="flex flex-col flex-1 min-w-0">
+                                <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">LVMA.532RP.3.7332</a>
+                                <span class="text-gray-600 truncate">2138 Märjamaa, Pikk 3; ER kood 109012584, 109 2138 Märjamaa, Pikk 3; ER kood 109012584, 109</span>
+                              </div>
                             </td>
                             <td>
-                              <span>Kauglaenutus</span><br>
-                              Tartu uurimissaal
+                               <div class="flex flex-col flex-1 min-w-0">
+                                <span class="text-yellow-700">Kauglaenutus</span>
+                                <span class="text-gray-600 truncate">Tartu uurimissaal</span>
+                              </div>
                             </td>
                             <td>
-                              <div class="whitespace-nowrap text-sm">14.07.2020 12:55</div>
+                              <div class="whitespace-nowrap text-sm">14.07.2020</div>
                             </td>
                             <td>
                               <div class="flex items-center gap-x-2">
@@ -1191,15 +1225,19 @@
                               <input value="653935" type="checkbox" name="batch-id[]" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300">
                             </td>
                             <td>
-                              <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">LVMA.532RP.3.7331</a><br>
-                              2137 Märjamaa, Pärnu mnt. 70; ER kood 1090125...
+                              <div class="flex flex-col flex-1 min-w-0">
+                                <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">LVMA.532RP.3.7331</a>
+                                <span class="text-gray-600 truncate">2137 Märjamaa, Pärnu mnt. 70; ER kood 1090125 2137 Märjamaa, Pärnu mnt. 70; ER kood 1090125</span>
+                              </div>
                             </td>
                             <td>
-                              <span>Kauglaenutus</span><br>
-                              Tartu uurimissaal
+                               <div class="flex flex-col flex-1 min-w-0">
+                                <span class="text-yellow-700">Kauglaenutus</span>
+                                <span class="text-gray-600 truncate">Tartu uurimissaal</span>
+                              </div>
                             </td>
                             <td>
-                              <div class="whitespace-nowrap text-sm">14.07.2020 12:49</div>
+                              <div class="whitespace-nowrap text-sm">14.07.2020</div>
                             </td>
                             <td>
                               <div class="flex items-center gap-x-2">
@@ -1250,15 +1288,19 @@
                               <input value="336447" type="checkbox" name="batch-id[]" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300">
                             </td>
                             <td>
-                              <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">ERA.4965.1.39</a><br>
-                              Pikavere Põhikooli õpilaste tööd
+                              <div class="flex flex-col flex-1 min-w-0">
+                                <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">ERA.4965.1.39</a>
+                                <span class="text-gray-600 truncate">Pikavere Põhikooli õpilaste tööd Pikavere Põhikooli õpilaste tööd</span>
+                              </div>
                             </td>
                             <td>
-                              <span>Kauglaenutus</span><br>
-                              Tallinna uurimissaal
+                               <div class="flex flex-col flex-1 min-w-0">
+                                <span class="text-yellow-700">Kauglaenutus</span>
+                                <span class="text-gray-600 truncate">Tallinna uurimissaal</span>
+                              </div>
                             </td>
                             <td>
-                              <div class="whitespace-nowrap text-sm">09.01.2017 12:07</div>
+                              <div class="whitespace-nowrap text-sm">09.01.2017</div>
                             </td>
                             <td>
                               <div class="flex items-center gap-x-2">
@@ -1309,15 +1351,22 @@
                               <input value="336445" type="checkbox" name="batch-id[]" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300">
                             </td>
                             <td>
-                              <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">EAA.1250.2.1 <i title="Digiteeritud" class="fi-photo" style="color:#00a6fc;font-size:12px"></i></a><br>
-                              Sünni-, abielu- ja surmameetrika ja andmed kogu...
+                              <div class="flex flex-col flex-1 min-w-0">
+                                <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">
+                                  <span class="mr-1">EAA.1250.2.1</span> 
+                                  <i title="Digiteeritud" class="fi-photo" style="color:#00a6fc"></i>
+                                </a>
+                                <span class="text-gray-600 truncate">Sünni-, abielu- ja surmameetrika ja andmed kogu Sünni-, abielu- ja surmameetrika ja andmed</span>
+                              </div>
                             </td>
                             <td>
-                              <span>Laenutus</span><br>
-                              Tartu uurimissaal
+                               <div class="flex flex-col flex-1 min-w-0">
+                                <span class="text-green-600">Laenutus</span>
+                                <span class="text-gray-600 truncate">Tartu uurimissaal</span>
+                              </div>
                             </td>
                             <td>
-                              <div class="whitespace-nowrap text-sm">09.01.2017 12:05</div>
+                              <div class="whitespace-nowrap text-sm">09.01.2017</div>
                             </td>
                             <td>
                               <div class="flex items-center gap-x-2">
@@ -1368,15 +1417,19 @@
                               <input value="335158" type="checkbox" name="batch-id[]" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300">
                             </td>
                             <td>
-                              <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">ERA.4927.1.105</a><br>
-                              Kupits, Herbert († 26.08.1958)
+                              <div class="flex flex-col flex-1 min-w-0">
+                                <a class="no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">ERA.4927.1.105</a>
+                                <span class="text-gray-600 truncate">Kupits, Herbert († 26.08.1958)</span>
+                              </div>
                             </td>
                             <td>
-                              <span>Laenutus</span><br>
-                              Tallinna uurimissaal
+                               <div class="flex flex-col flex-1 min-w-0">
+                                <span class="text-green-600">Laenutus</span>
+                                <span class="text-gray-600 truncate">Tallinna uurimissaal</span>
+                              </div>
                             </td>
                             <td>
-                              <div class="whitespace-nowrap text-sm">01.01.2017 18:02</div>
+                              <div class="whitespace-nowrap text-sm">01.01.2017</div>
                             </td>
                             <td>
                               <div class="flex items-center gap-x-2">

@@ -2268,6 +2268,14 @@ select {
   width: 18rem;
 }
 
+.w-28 {
+  width: 7rem;
+}
+
+.w-36 {
+  width: 9rem;
+}
+
 .min-w-0 {
   min-width: 0px;
 }
@@ -2757,6 +2765,10 @@ select {
   border-left-width: 2px;
 }
 
+.border-l {
+  border-left-width: 1px;
+}
+
 .border-solid {
   border-style: solid;
 }
@@ -2830,6 +2842,11 @@ select {
 .border-gray-400 {
   --tw-border-opacity: 1;
   border-color: rgb(121 132 146 / var(--tw-border-opacity));
+}
+
+.border-l-red-100 {
+  --tw-border-opacity: 1;
+  border-left-color: rgb(253 217 215 / var(--tw-border-opacity));
 }
 
 .bg-gray-50\/60 {
@@ -3546,6 +3563,16 @@ select {
   color: rgb(48 33 9 / var(--tw-text-opacity));
 }
 
+.text-blue-800 {
+  --tw-text-opacity: 1;
+  color: rgb(1 47 86 / var(--tw-text-opacity));
+}
+
+.text-blue-700 {
+  --tw-text-opacity: 1;
+  color: rgb(1 70 130 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -4185,6 +4212,10 @@ body {
   border-style: none;
 }
 
+.prose-tr\:border :is(:where(tr):not(:where([class~="not-prose"] *))) {
+  border-width: 1px;
+}
+
 .prose-tr\:border-b-2 :is(:where(tr):not(:where([class~="not-prose"] *))) {
   border-bottom-width: 2px;
 }
@@ -4195,6 +4226,11 @@ body {
 
 .prose-tr\:border-none :is(:where(tr):not(:where([class~="not-prose"] *))) {
   border-style: none;
+}
+
+.prose-tr\:border-gray-100 :is(:where(tr):not(:where([class~="not-prose"] *))) {
+  --tw-border-opacity: 1;
+  border-color: rgb(232 235 240 / var(--tw-border-opacity));
 }
 
 .prose-tr\:border-b-gray-200 :is(:where(tr):not(:where([class~="not-prose"] *))) {
@@ -4248,6 +4284,11 @@ body {
   padding-right: 0.75rem;
 }
 
+.prose-th\:px-2 :is(:where(th):not(:where([class~="not-prose"] *))) {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .prose-th\:align-top :is(:where(th):not(:where([class~="not-prose"] *))) {
   vertical-align: top;
 }
@@ -4272,8 +4313,17 @@ body {
   padding-top: 0.75rem;
 }
 
+.prose-td\:bg-green-50 :is(:where(td):not(:where([class~="not-prose"] *))) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 247 238 / var(--tw-bg-opacity));
+}
+
 .prose-td\:p-3 :is(:where(td):not(:where([class~="not-prose"] *))) {
   padding: 0.75rem;
+}
+
+.prose-td\:p-2 :is(:where(td):not(:where([class~="not-prose"] *))) {
+  padding: 0.5rem;
 }
 
 .prose-td\:align-top :is(:where(td):not(:where([class~="not-prose"] *))) {
