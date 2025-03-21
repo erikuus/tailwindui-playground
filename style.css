@@ -4772,6 +4772,10 @@ body {
     display: flex;
   }
 
+  .md\:inline-flex {
+    display: inline-flex;
+  }
+
   .md\:table-cell {
     display: table-cell;
   }
@@ -4828,6 +4832,10 @@ body {
     flex-direction: row;
   }
 
+  .md\:flex-wrap {
+    flex-wrap: wrap;
+  }
+
   .md\:justify-end {
     justify-content: flex-end;
   }
@@ -4858,6 +4866,11 @@ body {
   .md\:gap-x-6 {
     -moz-column-gap: 1.5rem;
          column-gap: 1.5rem;
+  }
+
+  .md\:gap-x-8 {
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
   }
 
   .md\:rounded-none {
@@ -5324,6 +5337,10 @@ body {
 
   .xl\:w-16 {
     width: 4rem;
+  }
+
+  .xl\:w-full {
+    width: 100%;
   }
 
   .xl\:flex-auto {
