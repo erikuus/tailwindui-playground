@@ -2260,6 +2260,10 @@ select {
   width: 7rem;
 }
 
+.w-36 {
+  width: 9rem;
+}
+
 .min-w-0 {
   min-width: 0px;
 }
