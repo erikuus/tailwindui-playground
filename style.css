@@ -5335,6 +5335,10 @@ body {
     width: 20rem;
   }
 
+  .xl\:w-64 {
+    width: 16rem;
+  }
+
   .xl\:flex-auto {
     flex: 1 1 auto;
   }
@@ -5550,6 +5554,10 @@ body {
 
   .\32xl\:w-96 {
     width: 24rem;
+  }
+
+  .\32xl\:w-36 {
+    width: 9rem;
   }
 
   .\32xl\:max-w-xxl {
