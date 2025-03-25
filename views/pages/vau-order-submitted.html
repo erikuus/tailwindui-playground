@@ -388,14 +388,14 @@
                           <input type="checkbox" value="1" name="batch-id_all" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300" x-model="$store.batch.panel">
                         </th>
                         <th>
-                          <span class="inline lg:hidden">Tellimus</span>
-                          <span class="hidden lg:inline">Leidandmed</span>
+                          <span class="inline md:hidden">Tellimus</span>
+                          <span class="hidden md:inline">Leidandmed</span>
                         </th>
                         <th class="hidden md:table-cell">Tellimuse liik</th>
                         <th class="hidden xl:table-cell w-28">Loodud</th>
-                        <th class="hidden md:table-cell">Olek</th>
-                        <th class="w-32"></th>
-                        <th class="w-32"></th>
+                        <th class="hidden lg:table-cell">Olek</th>
+                        <th class="hidden md:table-cell"></th>
+                        <th class="w-14 md:w-auto"></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -414,12 +414,16 @@
                             <span class="text-red-700 md:hidden">Koopia</span>
                             <span class="text-gray-600 truncate md:hidden">kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia</span>
                             <span class="md:hidden">Koopiad valmis</span>
+                            <a class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
+                              Arvestus
+                            </a>
                           </div>
                         </td>
                         <td class="hidden md:table-cell">
                           <div class="flex flex-col flex-1 min-w-0">
                             <span class="text-red-700">Koopia</span>
                             <span class="text-gray-600 truncate">kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia</span>
+                            <span class="hidden md:inline lg:hidden">Koopiad valmis</span>
                           </div>
                         </td>
                         <td class="hidden xl:table-cell align-middle">
@@ -428,7 +432,7 @@
                         <td class="hidden lg:table-cell align-middle">
                           Koopiad valmis
                         </td>
-                        <td rowspan="2" class="relative align-middle text-center">
+                        <td rowspan="2" class="hidden md:table-cell relative align-middle text-center">
                           <div class="z-0 absolute top-0 bottom-0 left-1/2 w-px my-4 border-l-2 border-dotted border-gray-100 group-hover:border-gray-200"></div>
                           <div class="z-10 relative bg-white py-4 group-hover:bg-green-50">
                               <a class=" justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
@@ -436,7 +440,7 @@
                             </a>
                           </div>
                         </td>
-                        <td class="align-middle">
+                        <td class="md:align-middle">
                           <div class="flex items-center gap-x-2 justify-end">
                             <div x-data="{ open: false }" class="relative not-prose inline-block">
                               <div>
@@ -478,26 +482,32 @@
                         </td>
                         <td>
                           <div class="flex flex-col flex-1 min-w-0">
-                            <a class="whitespace-nowrap no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">ERA.5253.1.345</a>
+                            <a class="whitespace-nowrap no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">
+                              ERA.5253.1.345
+                            </a>
                             <span class="text-gray-600 truncate">- pealkiri salastatud -</span>
                             <span class="text-red-700 md:hidden">Koopia</span>
                             <span class="text-gray-600 truncate md:hidden">kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia</span>
-                            <span class="text-green-600 md:hidden">Koopiad valmis</span>
+                            <span class="md:hidden">Koopiad valmis</span>
+                            <a class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
+                              Arvestus
+                            </a>
                           </div>
                         </td>
                         <td class="hidden md:table-cell">
                           <div class="flex flex-col flex-1 min-w-0">
                             <span class="text-red-700">Koopia</span>
                             <span class="text-gray-600 truncate">kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia</span>
+                            <span class="hidden md:inline lg:hidden">Koopiad valmis</span>
                           </div>
                         </td>
                         <td class="hidden xl:table-cell align-middle">
                           <div class="whitespace-nowrap text-sm">18.10.2022</div>
                         </td>
-                        <td class="hidden md:table-cell align-middle">
+                        <td class="hidden lg:table-cell align-middle">
                           Koopiad valmis
                         </td>
-                        <td class="align-middle">
+                        <td class="md:align-middle">
                           <div class="flex items-center gap-x-2 justify-end">
                             <div x-data="{ open: false }" class="relative not-prose inline-block">
                               <div>
@@ -547,22 +557,29 @@
                             <span class="text-gray-600 truncate">Akropolise fotod</span>
                             <span class="text-red-700 md:hidden">Koopia</span>
                             <span class="text-gray-600 truncate md:hidden">kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia</span>
-                            <span class="text-green-600 md:hidden">Koopiad valmis</span>
+                            <span class="md:hidden">Koopiad valmis</span>
+                            <a class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
+                              Laadi alla
+                            </a>
+                            <a href="#" class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                              Arhiveeri
+                            </a>
                           </div>
                         </td>
                         <td class="hidden md:table-cell">
                           <div class="flex flex-col flex-1 min-w-0">
                             <span class="text-red-700">Koopia</span>
                             <span class="text-gray-600 truncate">kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia</span>
+                            <span class="hidden md:inline lg:hidden">Koopiad valmis</span>
                           </div>
                         </td>
                         <td class="hidden xl:table-cell align-middle">
                           <div class="whitespace-nowrap text-sm" title="12.02.2025 14:09">12.02.2025</div>
                         </td>
-                        <td class="hidden md:table-cell align-middle">
+                        <td class="hidden lg:table-cell align-middle">
                           Koopiad valmis
                         </td>
-                        <td rowspan="3" class="relative align-middle text-center">
+                        <td rowspan="3" class="hidden md:table-cell relative align-middle text-center">
                           <div class="z-0 absolute top-0 bottom-0 left-1/2 w-px my-4 border-l-2 border-dotted border-gray-100 group-hover:border-gray-200"></div>
                           <div class="z-10 relative bg-white py-4 group-hover:bg-green-50">
                             <a class="justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
@@ -570,9 +587,9 @@
                             </a>
                           </div>
                         </td>
-                        <td class="align-middle">
+                        <td class="md:align-middle">
                           <div class="flex items-center gap-x-2 justify-end">
-                            <a href="#" class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                            <a href="#" class="hidden md:inline-flex focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
                               Arhiveeri
                             </a>
                             <div x-data="{ open: false }" class="relative not-prose inline-block">
@@ -619,24 +636,31 @@
                             <span class="text-gray-600 truncate">- pealkiri salastatud -</span>
                             <span class="text-red-700 md:hidden">Koopia</span>
                             <span class="text-gray-600 truncate md:hidden">kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia</span>
-                            <span class="text-green-600 md:hidden">Koopiad valmis</span>
+                            <span class="md:hidden">Koopiad valmis</span>
+                            <a class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
+                              Laadi alla
+                            </a>
+                            <a href="#" class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                              Arhiveeri
+                            </a>
                           </div>
                         </td>
                         <td class="hidden md:table-cell">
                           <div class="flex flex-col flex-1 min-w-0">
                             <span class="text-red-700">Koopia</span>
                             <span class="text-gray-600 truncate">kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia</span>
+                            <span class="hidden md:inline lg:hidden">Koopiad valmis</span>
                           </div>
                         </td>
                         <td class="hidden xl:table-cell align-middle">
                           <div class="whitespace-nowrap text-sm">18.10.2022</div>
                         </td>
-                        <td class="hidden md:table-cell align-middle">
+                        <td class="hidden lg:table-cell align-middle">
                           Koopiad valmis
                         </td>
-                        <td class="align-middle">
+                        <td class="md:align-middle">
                           <div class="flex items-center gap-x-2 justify-end">
-                            <a href="#" class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                            <a href="#" class="hidden md:inline-flex focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
                               Arhiveeri
                             </a>
                             <div x-data="{ open: false }" class="relative not-prose inline-block">
@@ -683,24 +707,31 @@
                             <span class="text-gray-600 truncate">- pealkiri salastatud -</span>
                             <span class="text-red-700 md:hidden">Koopia</span>
                             <span class="text-gray-600 truncate md:hidden">kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia</span>
-                            <span class="text-green-600 md:hidden">Koopiad valmis</span>
+                            <span class="md:hidden">Koopiad valmis</span>
+                            <a class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
+                              Laadi alla
+                            </a>
+                            <a href="#" class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                              Arhiveeri
+                            </a>
                           </div>
                         </td>
                         <td class="hidden md:table-cell">
                           <div class="flex flex-col flex-1 min-w-0">
                             <span class="text-red-700">Koopia</span>
                             <span class="text-gray-600 truncate">kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia</span>
+                            <span class="hidden md:inline lg:hidden">Koopiad valmis</span>
                           </div>
                         </td>
                         <td class="hidden xl:table-cell align-middle">
                           <div class="whitespace-nowrap text-sm">18.10.2022</div>
                         </td>
-                        <td class="hidden md:table-cell align-middle">
+                        <td class="hidden lg:table-cell align-middle">
                           Koopiad valmis
                         </td>
-                        <td class="align-middle">
+                        <td class="md:align-middle">
                           <div class="flex items-center gap-x-2 justify-end">
-                            <a href="#" class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                            <a href="#" class="hidden md:inline-flex focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
                               Arhiveeri
                             </a>
                             <div x-data="{ open: false }" class="relative not-prose inline-block">
@@ -751,29 +782,36 @@
                             <span class="text-gray-600 truncate">Akropolise fotod</span>
                             <span class="text-red-700 md:hidden">Koopia</span>
                             <span class="text-gray-600 truncate md:hidden">kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia</span>
-                            <span class="text-green-600 md:hidden">Koopiad valmis</span>
+                            <span class="md:hidden">Koopiad valmis</span>
+                            <a class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
+                              Laadi alla
+                            </a>
+                            <a href="#" class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                              Arhiveeri
+                            </a>
                           </div>
                         </td>
                         <td class="hidden md:table-cell">
                           <div class="flex flex-col flex-1 min-w-0">
                             <span class="text-red-700">Koopia</span>
                             <span class="text-gray-600 truncate">kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia kuni A2 formaadis tarbekoopia</span>
+                            <span class="hidden md:inline lg:hidden">Koopiad valmis</span>
                           </div>
                         </td>
                         <td class="hidden xl:table-cell align-middle">
                           <div class="whitespace-nowrap text-sm" title="12.02.2025 14:09">12.02.2025</div>
                         </td>
-                        <td class="hidden md:table-cell align-middle">
+                        <td class="hidden lg:table-cell align-middle">
                           Koopiad valmis
                         </td>
-                        <td class="align-middle text-center">
+                        <td class="hidden md:table-cell align-middle text-center">
                           <a class="justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
                             Laadi alla
                           </a>
                         </td>
-                        <td class="align-middle">
+                        <td class="md:align-middle">
                           <div class="flex items-center gap-x-2 justify-end">
-                            <a href="#" class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                            <a href="#" class="hidden md:inline-flex focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
                               Arhiveeri
                             </a>
                             <div x-data="{ open: false }" class="relative not-prose inline-block">
@@ -824,25 +862,29 @@
                             <span class="text-gray-600 truncate">Spezifikation und Wackenbuch der von dem Gute und Wackenbuch der von dem Gute</span>
                             <span class="text-yellow-700 md:hidden">Kauglaenutus</span>
                             <span class="text-gray-600 truncate md:hidden">Tallinna uurimissaal</span>
+                            <span class="md:hidden">Juurdepääsutaotluse ootel / Esitatud</span>
+                            <a href="#" class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                              Taotle juurdepääsu
+                            </a>
                           </div>
                         </td>
                         <td class="hidden md:table-cell">
                            <div class="flex flex-col flex-1 min-w-0">
                             <span class="text-yellow-700">Kauglaenutus</span>
                             <span class="text-gray-600 truncate">Tallinna uurimissaal</span>
-                            <span class="text-green-600 md:hidden"></span>
+                            <span class="hidden md:inline lg:hidden">Juurdepääsutaotluse ootel / Esitatud</span>
                           </div>
                         </td>
                         <td class="hidden xl:table-cell align-middle">
                           <div class="whitespace-nowrap text-sm">27.10.2021</div>
                         </td>
-                        <td class="hidden md:table-cell align-middle">
+                       <td class="hidden lg:table-cell align-middle">
                           Juurdepääsutaotluse ootel / Esitatud
                         </td>
-                        <td></td>
-                        <td class="align-middle">
+                        <td class="hidden md:table-cell"></td>
+                        <td class="md:align-middle">
                           <div class="flex items-center gap-x-2 justify-end">
-                            <a href="#" class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                            <a href="#" class="hidden md:inline-flex focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
                               Taotle juurdepääsu
                             </a>
                             <div x-data="{ open: false }" class="relative not-prose inline-block">
@@ -898,25 +940,29 @@
                             <span class="text-gray-600 truncate">Spezifikation und Wackenbuch der von dem Gute und Wackenbuch der von dem Gute</span>
                             <span class="text-yellow-700 md:hidden">Kauglaenutus</span>
                             <span class="text-gray-600 truncate md:hidden">Tallinna uurimissaal</span>
+                            <span class="hidden md:inline lg:hidden">Juurdepääsust keeldutud</span>
+                            <a href="#" class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                              Arhiveeri
+                            </a>
                           </div>
                         </td>
                         <td class="hidden md:table-cell">
                            <div class="flex flex-col flex-1 min-w-0">
                             <span class="text-yellow-700">Kauglaenutus</span>
                             <span class="text-gray-600 truncate">Tallinna uurimissaal</span>
-                            <span class="text-green-600 md:hidden"></span>
+                            <span class="text-green-600 md:hidden">Juurdepääsust keeldutud</span>
                           </div>
                         </td>
                         <td class="hidden xl:table-cell align-middle">
                           <div class="whitespace-nowrap text-sm">27.10.2021</div>
                         </td>
-                        <td class="hidden md:table-cell align-middle">
-                          Juurdepääsu keeldutud
+                        <td class="hidden lg:table-cell align-middle">
+                          Juurdepääsust keeldutud
                         </td>
-                        <td></td>
-                        <td class="align-middle">
+                        <td class="hidden md:table-cell"></td>
+                        <td class="md:align-middle">
                           <div class="flex items-center gap-x-2 justify-end">
-                            <a href="#" class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                            <a href="#" class="hidden md:inline-flex focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
                               Arhiveeri
                             </a>
                             <div x-data="{ open: false }" class="relative not-prose inline-block">
@@ -972,22 +1018,26 @@
                             <span class="text-gray-600 truncate">Протоколы о выдаче пособий военнослужащим и их о выдаче пособий военнослужащим</span>
                             <span class="text-green-600 md:hidden">Laenutus</span>
                             <span class="text-gray-600 truncate md:hidden">Tartu uurimissaal</span>
-                            <span class="text-green-600 md:hidden"></span>
+                            <span class="md:hidden">Juurdepääsutaotluse ootel / Esitatud</span>
+                            <a class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
+                              Esita taotlus
+                            </a>
                           </div>
                         </td>
                         <td class="hidden md:table-cell">
                           <div class="flex flex-col flex-1 min-w-0">
                             <span class="text-green-600">Laenutus</span>
                             <span class="text-gray-600 truncate">Tartu uurimissaal</span>
+                            <span class="hidden md:inline lg:hidden">Juurdepääsutaotluse ootel / Esitatud</span>
                           </div>
                         </td>
                         <td class="hidden xl:table-cell align-middle">
                           <div class="whitespace-nowrap text-sm">18.10.2021</div>
                         </td>
-                        <td class="hidden md:table-cell align-middle">
+                        <td class="hidden lg:table-cell align-middle">
                           Juurdepääsutaotluse ootel / Esitatud
                         </td>
-                        <td rowspan="2" class="relative align-middle text-center">
+                        <td rowspan="2" class="hidden md:table-cell relative align-middle text-center">
                           <div class="z-0 absolute top-0 bottom-0 left-1/2 w-px my-4 border-l-2 border-dotted border-gray-100 group-hover:border-gray-200"></div>
                           <div class="z-10 relative bg-white py-4 group-hover:bg-green-50">
                               <a class=" justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
@@ -995,7 +1045,7 @@
                             </a>
                           </div>
                         </td>
-                        <td class="align-middle">
+                        <td class="md:align-middle">
                           <div class="flex items-center gap-x-2 justify-end">
                             <div x-data="{ open: false }" class="relative not-prose inline-block">
                               <div>
@@ -1049,22 +1099,26 @@
                             <span class="text-gray-600 truncate">W. D. L. B. Dr. Budberg'i mälestusmedal, W. D. L. B. Dr. Budberg'i mälestusmedal</span>
                             <span class="text-green-600 md:hidden">Laenutus</span>
                             <span class="text-gray-600 truncate md:hidden">Tartu uurimissaal</span>
-                            <span class="text-green-600 md:hidden"></span>
+                            <span class="md:hidden">Juurdepääsutaotluse ootel / Esitatud</span>
+                            <a class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
+                              Esita taotlus
+                            </a>
                           </div>
                         </td>
                         <td class="hidden md:table-cell">
                            <div class="flex flex-col flex-1 min-w-0">
                             <span class="text-green-600">Laenutus</span>
                             <span class="text-gray-600 truncate">Tartu uurimissaal</span>
+                            <span class="hidden md:inline lg:hidden">Juurdepääsutaotluse ootel / Esitatud</span>
                           </div>
                         </td>
                         <td class="hidden xl:table-cell align-middle">
                           <div class="whitespace-nowrap text-sm">08.10.2021</div>
                         </td>
-                        <td class="hidden md:table-cell align-middle">
+                        <td class="hidden lg:table-cell align-middle">
                           Juurdepääsutaotluse ootel / Esitatud
                         </td>
-                        <td class="align-middle">
+                        <td class="md:align-middle">
                           <div class="flex items-center gap-x-2 justify-end">
                             <div x-data="{ open: false }" class="relative not-prose inline-block">
                               <div>
@@ -1116,27 +1170,31 @@
                             <span class="text-gray-600 truncate">2138 Märjamaa, Pikk 3; ER kood 109012584, 109 2138 Märjamaa, Pikk 3; ER kood 109012584, 109</span>
                             <span class="text-yellow-700 md:hidden">Kauglaenutus</span>
                             <span class="text-gray-600 truncate md:hidden">Tartu uurimissaal</span>
-                            <span class="text-green-600 md:hidden"></span>
+                            <span class="md:hidden">Juurdepääsutaotluse ootel / Menetluses</span>
+                            <a class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
+                              Täienda taotlust
+                            </a>
                           </div>
                         </td>
                         <td class="hidden md:table-cell">
                            <div class="flex flex-col flex-1 min-w-0">
                             <span class="text-yellow-700">Kauglaenutus</span>
                             <span class="text-gray-600 truncate">Tartu uurimissaal</span>
+                            <span class="hidden md:inline lg:hidden">Juurdepääsutaotluse ootel / Menetluses</span>
                           </div>
                         </td>
                         <td class="hidden xl:table-cell align-middle">
                           <div class="whitespace-nowrap text-sm">14.07.2020</div>
                         </td>
-                        <td class="hidden md:table-cell align-middle">
+                        <td class="hidden lg:table-cell align-middle">
                           Juurdepääsutaotluse ootel / Menetluses
                         </td>
-                        <td class="merge swOrder-copiesReady substitute-sheet-printed align-middle text-center">
+                        <td class="hidden md:table-cell align-middle text-center">
                           <a class="justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
                             Täienda taotlust
                           </a>
                         </td>
-                        <td class="align-middle">
+                        <td class="md:align-middle">
                           <div class="flex items-center gap-x-2 justify-end">
                             <div x-data="{ open: false }" class="relative not-prose inline-block">
                               <div>
@@ -1188,30 +1246,34 @@
                             <span class="text-gray-600 truncate">2137 Märjamaa, Pärnu mnt. 70; ER kood 1090125 2137 Märjamaa, Pärnu mnt. 70; ER kood 1090125</span>
                             <span class="text-yellow-700 md:hidden">Kauglaenutus</span>
                             <span class="text-gray-600 truncate md:hidden">Tartu uurimissaal</span>
-                            <span class="text-green-600 md:hidden"></span>
+                            <span class="md:hidden">Menetluses</span>
+                            <a class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
+                              Maksa
+                            </a>
                           </div>
                         </td>
                         <td class="hidden md:table-cell">
                            <div class="flex flex-col flex-1 min-w-0">
                             <span class="text-yellow-700">Kauglaenutus</span>
                             <span class="text-gray-600 truncate">Tartu uurimissaal</span>
+                            <span class="hidden md:inline lg:hidden">Menetluses</span>
                           </div>
                         </td>
                         <td class="hidden xl:table-cell align-middle">
                           <div class="whitespace-nowrap text-sm">14.07.2020</div>
                         </td>
-                        <td class="hidden md:table-cell align-middle">
+                        <td class="hidden lg:table-cell align-middle">
                           Menetluses
                         </td>
-                        <td rowspan="2" class="relative align-middle text-center">
+                        <td rowspan="2" class="hidden md:table-cell relative align-middle text-center">
                           <div class="z-0 absolute top-0 bottom-0 left-1/2 w-px my-4 border-l-2 border-dotted border-gray-100 group-hover:border-gray-200"></div>
                           <div class="z-10 relative bg-white py-4 group-hover:bg-green-50">
-                              <a class=" justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
+                            <a class=" justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
                               Maksa
                             </a>
                           </div>
                         </td>
-                        <td class="align-middle">
+                        <td class="md:align-middle">
                           <div class="flex items-center gap-x-2 justify-end">
                             <div x-data="{ open: false }" class="relative not-prose float-right inline-block">
                               <div>
@@ -1262,22 +1324,26 @@
                             <span class="text-gray-600 truncate">Pikavere Põhikooli õpilaste tööd Pikavere Põhikooli õpilaste tööd</span>
                             <span class="text-yellow-700 md:hidden">Kauglaenutus</span>
                             <span class="text-gray-600 truncate md:hidden">Tallinna uurimissaal</span>
-                            <span class="text-green-600 md:hidden"></span>
+                            <span class="md:hidden">Menetluses</span>
+                            <a class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100" href="">
+                              Maksa
+                            </a>
                           </div>
                         </td>
                         <td class="hidden md:table-cell">
                            <div class="flex flex-col flex-1 min-w-0">
                             <span class="text-yellow-700">Kauglaenutus</span>
                             <span class="text-gray-600 truncate">Tallinna uurimissaal</span>
+                            <span class="hidden md:inline lg:hidden">Menetluses</span>
                           </div>
                         </td>
                         <td class="hidden xl:table-cell align-middle">
                           <div class="whitespace-nowrap text-sm">09.01.2017</div>
                         </td>
-                        <td class="hidden md:table-cell align-middle">
+                        <td class="hidden lg:table-cell align-middle">
                           Menetluses
                         </td>
-                        <td class="align-middle">
+                        <td class="md:align-middle">
                           <div class="flex items-center gap-x-2 justify-end">
                             <div x-data="{ open: false }" class="relative not-prose float-right inline-block">
                               <div>
@@ -1322,28 +1388,35 @@
                             <span class="text-gray-600 truncate">Sünni-, abielu- ja surmameetrika ja andmed kogu Sünni-, abielu- ja surmameetrika ja andmed</span>
                             <span class="text-green-600 md:hidden">Laenutus</span>
                             <span class="text-gray-600 truncate md:hidden">Tartu uurimissaal</span>
-                            <span class="text-green-600 md:hidden"></span>
+                            <span class="md:hidden">Uurimissaalis</span>
+                            <a href="#" class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                              Pikenda
+                            </a>
+                            <a href="#" class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                              Arhiveeri
+                            </a>
                           </div>
                         </td>
                         <td class="hidden md:table-cell">
                            <div class="flex flex-col flex-1 min-w-0">
                             <span class="text-green-600">Laenutus</span>
                             <span class="text-gray-600 truncate">Tartu uurimissaal</span>
+                            <span class="hidden md:inline lg:hidden">Uurimissaalis</span>
                           </div>
                         </td>
                         <td class="hidden xl:table-cell align-middle">
                           <div class="whitespace-nowrap text-sm">09.01.2017</div>
                         </td>
-                        <td class="hidden md:table-cell align-middle">
+                        <td class="hidden lg:table-cell align-middle">
                           Uurimissaalis
                         </td>
-                        <td></td>
-                        <td class="align-middle">
+                        <td class="hidden md:table-cell"></td>
+                        <td class="md:align-middle">
                           <div class="flex items-center gap-x-2 justify-end">
-                            <a href="#" class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                            <a href="#" class="hidden md:inline-flex focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
                               Pikenda
                             </a>
-                            <a href="#" class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                            <a href="#" class="hidden md:inline-flex focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
                               Arhiveeri
                             </a>
                             <div x-data="{ open: false }" class="relative not-prose inline-block">
@@ -1377,39 +1450,49 @@
                       </tr>
                       <tr class="border-l-2 border-green-500">
                         <td>
-                          <input value="335158" type="checkbox" name="batch-id[]" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300">
+                          <input value="336445" type="checkbox" name="batch-id[]" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300">
                         </td>
                         <td>
                           <div class="flex flex-col flex-1 min-w-0">
-                            <a class="whitespace-nowrap no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">ERA.4927.1.105</a>
-                            <span class="text-gray-600 truncate">Kupits, Herbert († 26.08.1958)</span>
+                            <a class="whitespace-nowrap no-underline font-medium text-blue-600 hover:text-blue-500 focus:active:text-blue-700" href="#">
+                              <span class="mr-1">EAA.1250.2.1</span>
+                              <i title="Digiteeritud" class="fi-photo" style="color:#00a6fc"></i>
+                            </a>
+                            <span class="text-gray-600 truncate">Sünni-, abielu- ja surmameetrika ja andmed kogu Sünni-, abielu- ja surmameetrika ja andmed</span>
                             <span class="text-green-600 md:hidden">Laenutus</span>
-                            <span class="text-gray-600 truncate md:hidden">Tallinna uurimissaal</span>
-                            <span class="text-green-600 md:hidden"></span>
+                            <span class="text-gray-600 truncate md:hidden">Tartu uurimissaal</span>
+                            <span class="md:hidden">Uurimissaalis</span>
+                            <a href="#" class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                              Pikenda
+                            </a>
+                            <a href="#" class="md:hidden mt-1 justify-center focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                              Arhiveeri
+                            </a>
                           </div>
                         </td>
                         <td class="hidden md:table-cell">
                            <div class="flex flex-col flex-1 min-w-0">
                             <span class="text-green-600">Laenutus</span>
-                            <span class="text-gray-600 truncate">Tallinna uurimissaal</span>
+                            <span class="text-gray-600 truncate">Tartu uurimissaal</span>
+                            <span class="hidden md:inline lg:hidden">Uurimissaalis</span>
                           </div>
                         </td>
                         <td class="hidden xl:table-cell align-middle">
-                          <div class="whitespace-nowrap text-sm">01.01.2017</div>
+                          <div class="whitespace-nowrap text-sm">09.01.2017</div>
                         </td>
-                        <td class="hidden md:table-cell align-middle">
+                        <td class="hidden lg:table-cell align-middle">
                           Uurimissaalis
                         </td>
-                        <td></td>
-                        <td class="align-middle">
+                        <td class="hidden md:table-cell"></td>
+                        <td class="md:align-middle">
                           <div class="flex items-center gap-x-2 justify-end">
-                            <a href="#" class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                            <a href="#" class="hidden md:inline-flex focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
                               Pikenda
                             </a>
-                            <a href="#" class="focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                            <a href="#" class="hidden md:inline-flex focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer items-center rounded py-2 px-3 border border-gray-200 rounded bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
                               Arhiveeri
                             </a>
-                            <div x-data="{ open: false }" class="relative not-prose float-right inline-block">
+                            <div x-data="{ open: false }" class="relative not-prose inline-block">
                               <div>
                                 <button @click="open = true" type="button" class="mt-0.5 h-8 w-8 inline-flex flex-shrink-0 items-center justify-center rounded-full hover:bg-green-100" aria-label="Täiendavad tegevused">
                                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-gray-900">
