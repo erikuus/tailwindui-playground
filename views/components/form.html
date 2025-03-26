@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../jquery-ui.css" />
+  <link rel="stylesheet" href="../../labels.css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
+</head>
+<body class="m-10">
+
+  <!-- Algne  vorm -->
+  <form id="order-form" action="#" method="post" class="space-y-6">
+    <p class="text-sm text-gray-700">Tärniga <span class="required">*</span> märgitud väljad on kohustuslikud</p>
+    <input name="Order[refcode]" id="Order_refcode" type="hidden" value="">
+    <input name="Order[aisItemExists]" id="Order_aisItemExists" type="hidden">
+    <div class="flex flex-col gap-y-4 md:flex-row md:gap-x-8 xl:flex-col">
+      <div class="flex-1 space-y-4">
+        <div>
+          <label for="Order_reference" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Leidandmed <span class="required">*</span></label>
+          <input autocomplete="off" name="Order[reference]" id="Order_reference" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+        </div>
+        <div>
+          <a title="Abi" href="#" class="float-right mt-1 mr-1 text-gray-600">
+            <i class="fi-info text-xl"></i>
+          </a>
+          <label for="Order_type" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">
+            Tellimuse liik <span class="required">*</span>
+          </label>
+          <select name="Order[type]" id="Order_type" disabled="disabled" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6 disabled:bg-gray-50 disabled:text-gray-400 disabled:border-gray-100">
+            <option value=""></option>
+            <option value="1">Laenutus</option>
+            <option value="3">Kauglaenutus</option>
+            <option value="5">Koopia</option>
+          </select>
+        </div>
+        <div>
+          <label for="Order_purpose_code"  class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Kasutuseesmärk <span class="required">*</span></label>
+          <select name="Order[purpose_code]" id="Order_purpose_code" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+            <option value=""></option>
+            <option value="1">Teadustöö</option>
+            <option value="2">Kodu-uurimine</option>
+            <option value="3">Genealoogia</option>
+            <option value="4">Õppetöö</option>
+            <option value="5">Õiguste tõestamine</option>
+            <option value="6">Muu</option>
+            <option value="7">Genealoogia/Kodu-uurimine</option>
+            <option value="8">Teadustöö/Kodu-uurimine</option>
+          </select>
+        </div>
+      </div>
+      <div class="flex-1 space-y-4">
+        <div>
+          <label for="Order_client_comment" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Tellija märkused</label>
+          <textarea name="Order[client_comment]" id="Order_client_comment" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6"></textarea>
+        </div>
+        <div>
+          <label for="Order_labels" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Märksõnad</label>
+          <input id="Order_labels" name="BookmarkLink[labels]" type="text" value="suva" style="display: none;">
+          <ul class="tagit ui-widget ui-widget-content ui-corner-all">
+            <li class="tagit-choice ui-widget-content ui-state-default ui-corner-all">
+              <span class="tagit-label">suva</span>
+              <a class="tagit-close">
+                <span class="text-icon">×</span>
+                <span class="ui-icon ui-icon-close"></span>
+              </a>
+            </li>
+            <li class="tagit-choice ui-widget-content ui-state-default ui-corner-all">
+              <span class="tagit-label">suva</span>
+              <a class="tagit-close">
+                <span class="text-icon">×</span>
+                <span class="ui-icon ui-icon-close"></span>
+              </a>
+            </li>
+            <li class="tagit-new">
+              <input type="text" class="ui-widget-content ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+            </li>
+          </ul>
+          <span class="text-sm text-gray-300">Lisa komadega eraldatud märksõnad</span>
+          <a href="#" class="text-sm text-blue-600 hover:text-blue-500 focus:active:text-blue-700">või vali varem lisatud märksõnade hulgast</a>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-y-4 md:flex-row md:gap-x-4 md:justify-end">
+      <input class="w-full md:w-auto focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Lisa kinnitama tellimuste alla" />
+    </div>
+  </form>
+  <!-- Laenutus -->
+  <form id="order-form" action="#" method="post" class="space-y-6">
+    <p class="text-sm text-gray-700">Tärniga <span class="required">*</span> märgitud väljad on kohustuslikud</p>
+    <input name="Order[refcode]" id="Order_refcode" type="hidden" value="">
+    <input name="Order[aisItemExists]" id="Order_aisItemExists" type="hidden">
+    <div class="flex flex-col gap-y-4 md:flex-row md:gap-x-8 xl:flex-col">
+      <div class="flex-1 space-y-4">
+        <div>
+          <label for="Order_reference" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Leidandmed <span class="required">*</span></label>
+          <input autocomplete="off" name="Order[reference]" id="Order_reference" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+        </div>
+        <div>
+          <a title="Abi" href="#" class="float-right mt-1 mr-1 text-gray-600">
+            <i class="fi-info text-xl"></i>
+          </a>
+          <label for="Order_type" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">
+            Tellimuse liik <span class="required">*</span>
+          </label>
+          <select name="Order[type]" id="Order_type" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6 disabled:bg-gray-50 disabled:text-gray-400 disabled:border-gray-100">
+            <option value=""></option>
+            <option value="1" selected>Laenutus</option>
+            <option value="3">Kauglaenutus</option>
+            <option value="5">Koopia</option>
+          </select>
+        </div>
+        <div>
+          <label for="Order_room_id" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Sihtruum <span class="required">*</span></label>
+          <select name="Order[room_id]" id="Order_room_id" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+            <option value="1">Tartu uurimissaal</option>
+          </select>
+        </div>
+        <div>
+          <label for="Order_purpose_code"  class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Kasutuseesmärk <span class="required">*</span></label>
+          <select name="Order[purpose_code]" id="Order_purpose_code" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+            <option value=""></option>
+            <option value="1">Teadustöö</option>
+            <option value="2">Kodu-uurimine</option>
+            <option value="3">Genealoogia</option>
+            <option value="4">Õppetöö</option>
+            <option value="5">Õiguste tõestamine</option>
+            <option value="6" selected>Muu</option>
+            <option value="7">Genealoogia/Kodu-uurimine</option>
+            <option value="8">Teadustöö/Kodu-uurimine</option>
+          </select>
+        </div>
+        <div class="Order_purpose_code selected_6">
+          <label for="Order_purpose_other" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Muu eesmärk <span class="required">*</span></label>
+          <input name="Order[purpose_other]" id="Order_purpose_other" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+        </div>
+      </div>
+      <div class="flex-1 space-y-4">
+        <div>
+          <label for="Order_client_comment" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Tellija märkused</label>
+          <textarea name="Order[client_comment]" id="Order_client_comment" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6"></textarea>
+        </div>
+        <div>
+          <label for="Order_labels" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Märksõnad <span class="required">*</span></label>
+          <input id="Order_labels" name="BookmarkLink[labels]" type="text" value="suva" style="display: none;">
+          <ul class="tagit ui-widget ui-widget-content ui-corner-all">
+            <li class="tagit-choice ui-widget-content ui-state-default ui-corner-all">
+              <span class="tagit-label">suva</span>
+              <a class="tagit-close">
+                <span class="text-icon">×</span>
+                <span class="ui-icon ui-icon-close"></span>
+              </a>
+            </li>
+            <li class="tagit-choice ui-widget-content ui-state-default ui-corner-all">
+              <span class="tagit-label">suva</span>
+              <a class="tagit-close">
+                <span class="text-icon">×</span>
+                <span class="ui-icon ui-icon-close"></span>
+              </a>
+            </li>
+            <li class="tagit-new">
+              <input type="text" class="ui-widget-content ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+            </li>
+          </ul>
+          <span class="text-sm text-gray-300">Lisa komadega eraldatud märksõnad</span>
+          <a href="#" class="text-sm text-blue-600 hover:text-blue-500 focus:active:text-blue-700">või vali varem lisatud märksõnade hulgast</a>
+        </div>
+      </div>
+    </div>
+    <div class="text-right">
+      <input class="w-full md:w-auto xl:w-full focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Lisa kinnitama tellimuste alla" />
+    </div>
+  </form>
+  <!-- Kauglaenutus -->
+  <form id="order-form" action="#" method="post" class="space-y-6">
+    <p class="text-sm text-gray-700">Tärniga <span class="required">*</span> märgitud väljad on kohustuslikud</p>
+    <input name="Order[refcode]" id="Order_refcode" type="hidden" value="">
+    <input name="Order[aisItemExists]" id="Order_aisItemExists" type="hidden">
+    <div class="flex flex-col gap-y-4 md:flex-row md:gap-x-8 xl:flex-col">
+      <div class="flex-1 space-y-4">
+        <div>
+          <label for="Order_reference" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Leidandmed <span class="required">*</span></label>
+          <input autocomplete="off" name="Order[reference]" id="Order_reference" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+        </div>
+        <div>
+          <a title="Abi" href="#" class="float-right mt-1 mr-1 text-gray-600">
+            <i class="fi-info text-xl"></i>
+          </a>
+          <label for="Order_type" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">
+            Tellimuse liik <span class="required">*</span>
+          </label>
+          <select name="Order[type]" id="Order_type" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6 disabled:bg-gray-50 disabled:text-gray-400 disabled:border-gray-100">
+            <option value=""></option>
+            <option value="1">Laenutus</option>
+            <option value="3" selected>Kauglaenutus</option>
+            <option value="5">Koopia</option>
+          </select>
+          <div id="ial-alert" class="flex items-center gap-x-2 m-1">
+            <i class="fi-alert text-xl text-yellow-500"></i>
+            <span class="text-yellow-600">Kauglaenutamine on tasuline — 1 arhiivisäilik 3 eurot</span>
+          </div>
+        </div>
+        <div>
+          <label for="Order_room_id" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Sihtruum <span class="required">*</span></label>
+          <select name="Order[room_id]" id="Order_room_id" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+            <option value="1">Tartu uurimissaal</option>
+          </select>
+        </div>
+        <div>
+          <label for="Order_client_comment" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Tellija märkused</label>
+          <textarea name="Order[client_comment]" id="Order_client_comment" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6"></textarea>
+        </div>
+      </div>
+      <div class="flex-1 space-y-4">
+        <div>
+          <label for="Order_purpose_code"  class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Kasutuseesmärk <span class="required">*</span></label>
+          <select name="Order[purpose_code]" id="Order_purpose_code" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+            <option value=""></option>
+            <option value="1">Teadustöö</option>
+            <option value="2">Kodu-uurimine</option>
+            <option value="3">Genealoogia</option>
+            <option value="4">Õppetöö</option>
+            <option value="5">Õiguste tõestamine</option>
+            <option value="6" selected>Muu</option>
+            <option value="7">Genealoogia/Kodu-uurimine</option>
+            <option value="8">Teadustöö/Kodu-uurimine</option>
+          </select>
+        </div>
+        <div class="Order_purpose_code selected_6">
+          <label for="Order_purpose_other" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Muu eesmärk <span class="required">*</span></label>
+          <input name="Order[purpose_other]" id="Order_purpose_other" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+        </div>
+        <div>
+          <label for="Order_labels" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Märksõnad <span class="required">*</span></label>
+          <input id="Order_labels" name="BookmarkLink[labels]" type="text" value="suva" style="display: none;">
+          <ul class="tagit ui-widget ui-widget-content ui-corner-all">
+            <li class="tagit-choice ui-widget-content ui-state-default ui-corner-all">
+              <span class="tagit-label">suva</span>
+              <a class="tagit-close">
+                <span class="text-icon">×</span>
+                <span class="ui-icon ui-icon-close"></span>
+              </a>
+            </li>
+            <li class="tagit-choice ui-widget-content ui-state-default ui-corner-all">
+              <span class="tagit-label">suva</span>
+              <a class="tagit-close">
+                <span class="text-icon">×</span>
+                <span class="ui-icon ui-icon-close"></span>
+              </a>
+            </li>
+            <li class="tagit-new">
+              <input type="text" class="ui-widget-content ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+            </li>
+          </ul>
+          <span class="text-sm text-gray-300">Lisa komadega eraldatud märksõnad</span>
+          <a href="#" class="text-sm text-blue-600 hover:text-blue-500 focus:active:text-blue-700">või vali varem lisatud märksõnade hulgast</a>
+        </div>
+      </div>
+    </div>
+    <div class="text-right">
+      <input class="w-full md:w-auto xl:w-full focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Lisa kinnitama tellimuste alla" />
+    </div>
+  </form>
+  <!-- Koopia -->
+  <form id="order-form" action="#" method="post" class="space-y-6">
+    <p class="text-sm text-gray-700">Tärniga <span class="required">*</span> märgitud väljad on kohustuslikud</p>
+    <input name="Order[refcode]" id="Order_refcode" type="hidden" value="">
+    <input name="Order[aisItemExists]" id="Order_aisItemExists" type="hidden">
+    <div class="flex flex-col gap-y-6 md:flex-row md:gap-x-8 xl:flex-col">
+      <div class="flex-1 space-y-6">
+        <div>
+          <label for="Order_reference" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Leidandmed <span class="required">*</span></label>
+          <input autocomplete="off" name="Order[reference]" id="Order_reference" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+        </div>
+        <div>
+          <a title="Abi" href="#" class="float-right mr-1 text-gray-600">
+            <i class="fi-info text-xl"></i>
+          </a>
+          <label for="Order_type" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">
+            Tellimuse liik <span class="required">*</span>
+          </label>
+          <select name="Order[type]" id="Order_type" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6 disabled:bg-gray-50 disabled:text-gray-400 disabled:border-gray-100">
+            <option value=""></option>
+            <option value="1">Laenutus</option>
+            <option value="3">Kauglaenutus</option>
+            <option value="5" selected>Koopia</option>
+          </select>
+        </div>
+        <div>
+          <label for="Order_pricelistIds" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Teenus <span class="required">*</span></label>
+          <select multiple="multiple" name="Order[pricelistIds][]" id="Order_pricelistIds" class="hidden w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6"></select>
+          <button type="button" class="w-full focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer border border-gray-200 rounded bg-white py-4 px-4 text-left text-base text-gray-900 hover:bg-gray-100" aria-haspopup="true" tabindex="0"><span>&lt;A3-formaadis lehele (must-valge): 1,20&nbsp;€</span></button>
+          <div id="copy-alert" class="flex items-center gap-x-2 mt-1">
+            <i class="fi-alert text-xl text-yellow-500"></i>
+            <span class="text-yellow-600">Valitud teenuste hinnad võivad täpsustuda!</span>
+          </div>
+        </div>
+        <div>
+          <p class="mb-2 text-base font-semibold leading-6 text-gray-800">
+            Kopeerida <span class="required">*</span>
+          </p>
+          <div class="space-y-2">
+            <div class="dynamic-container">
+              <input id="UserOrderProfile_delivery_type_code_0" value="1" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3 -mt-0.5">
+              <label for="UserOrderProfile_delivery_type_code_0" class=" text-base leading-6 text-gray-800">Kogu säilik</label>
+            </div>
+            <div class="dynamic-container">
+              <input id="UserOrderProfile_delivery_type_code_1" value="2" type="radio" name="UserOrderProfile[delivery_type_code]" class="h-4 w-4 text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-gray-500 focus:ring-green-300 focus:ring-green-300 mr-3 -mt-0.5" checked="checked">
+              <label for="UserOrderProfile_delivery_type_code_1" class=" text-base leading-6 text-gray-800">Osa säilikust</label>
+              <div class="ml-8 mt-4">
+                <div>
+                  <input size="40" name="UserOrderProfile[deliver_street]" id="UserOrderProfile_deliver_street" type="text" maxlength="256" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="Order_purpose_code"  class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Kasutuseesmärk <span class="required">*</span></label>
+          <select name="Order[purpose_code]" id="Order_purpose_code" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+            <option value=""></option>
+            <option value="1">Teadustöö</option>
+            <option value="2">Kodu-uurimine</option>
+            <option value="3">Genealoogia</option>
+            <option value="4">Õppetöö</option>
+            <option value="5">Õiguste tõestamine</option>
+            <option value="6" selected>Muu</option>
+            <option value="7">Genealoogia/Kodu-uurimine</option>
+            <option value="8">Teadustöö/Kodu-uurimine</option>
+          </select>
+        </div>
+        <div class="Order_purpose_code selected_6">
+          <label for="Order_purpose_other" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Muu eesmärk <span class="required">*</span></label>
+          <input name="Order[purpose_other]" id="Order_purpose_other" type="text" maxlength="128" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6">
+        </div>
+      </div>
+      <div class="flex-1 space-y-6">
+        <div>
+          <label for="Order_client_comment" class="mb-2 block text-base font-semibold leading-6 text-gray-800">Tellija märkused</label>
+          <textarea name="Order[client_comment]" id="Order_client_comment" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6"></textarea>
+        </div>
+        <div>
+          <a title="Abi" href="#" class="float-right mr-1 text-gray-600">
+            <i class="fi-info text-xl"></i>
+          </a>
+          <label for="Order_labels" class="required mb-2 block text-base font-semibold leading-6 text-gray-800">Märksõnad <span class="required">*</span></label>
+          <input id="Order_labels" name="BookmarkLink[labels]" type="text" value="suva" style="display: none;">
+          <ul class="tagit ui-widget ui-widget-content ui-corner-all">
+            <li class="tagit-choice ui-widget-content ui-state-default ui-corner-all">
+              <span class="tagit-label">suva</span>
+              <a class="tagit-close">
+                <span class="text-icon">×</span>
+                <span class="ui-icon ui-icon-close"></span>
+              </a>
+            </li>
+            <li class="tagit-choice ui-widget-content ui-state-default ui-corner-all">
+              <span class="tagit-label">suva</span>
+              <a class="tagit-close">
+                <span class="text-icon">×</span>
+                <span class="ui-icon ui-icon-close"></span>
+              </a>
+            </li>
+            <li class="tagit-new">
+              <input type="text" class="ui-widget-content ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+            </li>
+          </ul>
+          <span class="text-sm text-gray-300">Lisa komadega eraldatud märksõnad</span>
+          <a href="#" class="text-sm text-blue-600 hover:text-blue-500 focus:active:text-blue-700">või vali varem lisatud märksõnade hulgast</a>
+        </div>
+      </div>
+    </div>
+    <div class="text-right">
+      <input class="w-full md:w-auto xl:w-full focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer rounded bg-gray-900 py-3 pl-3 pr-4 text-center text-base font-medium text-white hover:bg-gray-700" type="submit" name="yt0" value="Lisa kinnitama tellimuste alla" />
+    </div>
+  </form>
+
+</body>
+</html>
