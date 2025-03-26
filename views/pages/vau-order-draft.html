@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../../style.css?v=1234" />
     <link rel="stylesheet" href="../../jquery-ui.css" />
     <link rel="stylesheet" href="../../labels.css" />
+    <script src="https://unpkg.com/@alpinejs/persist@3.12.0/dist/cdn.min.js" defer></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
     <script>
       document.addEventListener('alpine:init', () => {
@@ -230,11 +231,49 @@
         <div class="flex grow flex-col rounded rounded-b bg-white shadow-md">
           <!-- Sisu küljendus -->
           <div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 pt-6 pb-10 xl:pt-10 xl:pb-14">
-            <div class="flex items-start w-full flex-col gap-x-4 gap-y-6 xl:flex-row xl:gap-x-10 2xl:gap-x-12">
-              <!-- Lisainfo -->
-              <div class="flex-1 w-full pt-4 pb-6 px-6 rounded bg-gray-50/60 xl:flex-auto xl:w-16 2xl:w-28">
-                <h2 class="mt-1 mb-4 border-b border-gray-300 pb-3 font-bold text-gray-700">
-                  KOOSTA TELLIMUS
+            <div
+              x-data="{
+                close_insert_panel: $persist(false).as('close_insert_panel'),
+
+                overridePanelIfNeeded() {
+                  let urlParams = new URLSearchParams(window.location.search);
+                  let condition = urlParams.has('forceOpen');
+
+                  if (condition) {
+                    this.close_insert_panel = false;
+                  }
+                }
+              }"
+              x-init="overridePanelIfNeeded()"
+              class="flex items-start w-full flex-col gap-x-4 gap-y-6 xl:flex-row xl:gap-x-10 2xl:gap-x-12"
+            >
+              <!-- Avamise nupp -->
+              <a
+                @click="close_insert_panel = false"
+                :class="close_insert_panel ? 'block' : 'hidden'"
+                class="flex items-center gap-x-1 pl-6 pr-5 py-6 rounded bg-gray-50/60 font-bold text-gray-700 hover:shadow-sm"
+                aria-label="Ava paneel"
+                href="#"
+              >
+                <span>KOOSTA</span>
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <polygon points="6.41,6 5,7.41 9.58,12 5,16.59 6.41,18 12.41,12"></polygon><polygon points="13,6 11.59,7.41 16.17,12 11.59,16.59 13,18 19,12"></polygon>
+                </svg>
+              </a>
+              <!-- Sisestusvorm -->
+              <div :class="close_insert_panel ? 'hidden' : 'block'" class="flex-1 w-full pt-4 pb-6 px-6 rounded bg-gray-50/60 xl:flex-auto xl:w-16 2xl:w-28">
+                <h2 class="flex w-full items-center justify-between mt-1 mb-4 border-b border-gray-300 pb-3 font-bold text-gray-700">
+                  <span>KOOSTA TELLIMUS</span>
+                  <a
+                    @click="close_insert_panel = true"
+                    class="ml-4 h-8 w-8 inline-flex flex-shrink-0 items-center justify-center rounded-full hover:bg-gray-100"
+                    aria-label="Sulge paneel"
+                    href="#"
+                  >
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <polygon points="17.59,18 19,16.59 14.42,12 19,7.41 17.59,6 11.59,12"></polygon><polygon points="11,18 12.41,16.59 7.83,12 12.41,7.41 11,6 5,12"></polygon>
+                    </svg>
+                  </a>
                 </h2>
                 <!-- Algne  vorm -->
                 <form id="order-form" action="#" method="post" class="space-y-4">
@@ -601,6 +640,7 @@
                   </div>
                 </form> -->
               </div>
+              <!-- Parempoolne ala -->
               <div class="flex-1 w-full pt-5 xl:flex-auto xl:w-80 2xl:w-96">
                 <!-- Teated -->
                 <!-- <div class="sm:mt-0 space-y-4 mb-10 xl:-mt-5 -mx-1">
@@ -687,8 +727,8 @@
                 <div class="w-full mb-3 pt-3 pb-4 px-6 rounded bg-gray-50/60" x-cloak x-show="$store.filter.panel">
                   <h2 class="flex w-full items-center justify-between mt-1 mb-4 border-b border-gray-300 pb-1 font-bold text-gray-700">
                     <span>Filtreeri</span>
-                    <a class="close ml-4" href="#" @click.prevent="$store.filter.panel = false" aria-label="Sulge teade">
-                      <svg class="w-5 h-5 opacity-40 group-hover:opacity-70" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <a class="ml-4 h-8 w-8 inline-flex flex-shrink-0 items-center justify-center rounded-full hover:bg-gray-100" href="#" @click.prevent="$store.filter.panel = false" aria-label="Sulge teade">
+                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
                       </svg>
                     </a>
@@ -1326,7 +1366,7 @@
                                 <span class="text-gray-600 truncate md:hidden">Tallinna uurimissaal</span>
                                 <a href="#" class="md:hidden my-3 w-auto self-start justify-center focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer items-center rounded bg-gray-900 py-2 px-3 text-center text-sm font-medium text-white hover:bg-gray-700">
                                   Kinnita
-                                </a>                                
+                                </a>
                               </div>
                             </td>
                             <td class="hidden md:table-cell">
@@ -1397,7 +1437,7 @@
                                 <span class="text-gray-600 truncate md:hidden">Tartu uurimissaal</span>
                                 <a href="#" class="md:hidden my-3 w-auto self-start justify-center focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer items-center rounded bg-gray-900 py-2 px-3 text-center text-sm font-medium text-white hover:bg-gray-700">
                                   Kinnita
-                                </a>                                
+                                </a>
                               </div>
                             </td>
                             <td class="hidden md:table-cell">
@@ -1465,7 +1505,7 @@
                                 <span class="text-gray-600 truncate md:hidden">Tallinna uurimissaal</span>
                                 <a href="#" class="md:hidden my-3 w-auto self-start justify-center focus-visible::ring-2 focus-visible::ring-green-300 cursor-pointer items-center rounded bg-gray-900 py-2 px-3 text-center text-sm font-medium text-white hover:bg-gray-700">
                                   Kinnita
-                                </a>                                
+                                </a>
                               </div>
                             </td>
                             <td class="hidden md:table-cell">
