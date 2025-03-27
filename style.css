@@ -4863,6 +4863,10 @@ body {
     flex-direction: row;
   }
 
+  .md\:flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
   .md\:justify-end {
     justify-content: flex-end;
   }
