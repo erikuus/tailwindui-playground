@@ -106,7 +106,7 @@ body {
     @apply shadow-none !important;
   }
   .ui-multiselect-menu {
-    @apply mr-4 p-0 w-auto min-w-[14rem] max-w-[42rem] max-h-80 overflow-y-auto !important;
+    @apply mr-4 p-0 w-auto min-w-[14rem] max-w-[42rem] max-h-80 overflow-y-auto shadow-md !important;
   }
   .ui-multiselect-menu.ui-widget-content {
     @apply border border-gray-200 !important;

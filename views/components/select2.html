@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="../../style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/vau/assets/5ebbfb53/select2.css"> -->
+  <link rel="stylesheet" type="text/css" href="/vau/css/themes/joyful/select2.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
+</head>
+<body class="m-10 space-y-10">
+
+  <select name="Order[type]" id="Order_type" class="block w-full rounded border border-gray-200 px-4 py-3 text-gray-900 hover:border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-green-300 sm:text-base sm:leading-6 disabled:bg-gray-50 disabled:text-gray-400 disabled:border-gray-100">
+    <option value=""></option>
+    <option value="1">Laenutus</option>
+    <option value="3">Kauglaenutus</option>
+    <option value="5">Koopia</option>
+  </select>
+
+  <div class="select2-container" id="s2id_OrderSearch_labels" style="width: 310px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">
+    <span></span>
+    <abbr class="select2-search-choice-close" style="display:none;"></abbr>
+    <div><b></b></div></a>
+    <input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen1">
+    <div class="select2-drop select2-with-searchbox" style="display:none"><div class="select2-search">
+      <input type="text" autocomplete="off" class="select2-input" tabindex="0"></div>
+      <ul class="select2-results"></ul>
+    </div>
+  </div>
+
+  <div class="select2-drop select2-drop-active" style="top: 120px; left: 40px; width: 310px; display: block;" id="select2-drop">
+    <div class="select2-search select2-search-hidden">
+      <input type="text" autocomplete="off" class="select2-input" tabindex="0">
+    </div>
+    <ul class="select2-results">
+      <li class="select2-results-dept-0 select2-result select2-result-selectable">
+        <div class="select2-result-label"><span class="select2-match"></span>Laenutus</div>
+      </li>
+      <li class="select2-results-dept-0 select2-result select2-result-selectable">
+        <div class="select2-result-label"><span class="select2-match"></span>Koopia</div>
+      </li>
+    </ul>
+  </div>
+
+</body>
+</html>
