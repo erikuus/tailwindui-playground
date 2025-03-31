@@ -118,7 +118,7 @@ body {
     @apply relative overflow-y-auto !important;
   }
   .ui-multiselect-checkboxes label {
-    @apply flex items-start gap-1 block p-4 py-3 font-body text-base text-gray-900 hover:bg-gray-100 cursor-pointer !important;
+    @apply flex items-start gap-1 block p-4 font-body text-base text-gray-900 hover:bg-gray-100 cursor-pointer !important;
   }
   .ui-multiselect-checkboxes input[type="checkbox"] {
     @apply mr-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0
