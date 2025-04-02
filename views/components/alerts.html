@@ -3,13 +3,16 @@
 <head>
   <title></title>
   <link rel="stylesheet" href="../../style.css">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+    [x-cloak] { display: none !important; }
+  </style>
 </head>
 <body class="m-10">
 
   <div class="sm:mt-0 space-y-4 mb-10 xl:-mt-5 -mx-1">
-    
+
     <div id="info" class="rounded p-4 bg-gray-50 text-gray-700 text-sm -mx-2">
       <div class="flex items-start">
         <div class="flex-1 space-y-2">
@@ -93,16 +96,21 @@
       </a>
     </div>
 
-    <div class="flex items-center rounded p-4 text-sm mb-2 p-3 bg-yellow-100 text-yellow-800">
-      <div class="flex-shrink-0 mr-2 rounded-full bg-yellow-200 p-2">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="w-4 h-4">
-          <path d="m40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm302-40q17 0 28.5-11.5T520-280q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280q0 17 11.5 28.5T480-240Zm-40-120h80v-200h-80v200Zm40-100Z"/>
-        </svg>
+    <div x-data="{ isOpen: false }">
+      <div class="flex items-center rounded p-4 text-sm mb-2 p-3 bg-yellow-100 text-yellow-800">
+        <div class="flex-shrink-0 mr-2 rounded-full bg-yellow-200 p-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="w-4 h-4">
+            <path d="m40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm302-40q17 0 28.5-11.5T520-280q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280q0 17 11.5 28.5T480-240Zm-40-120h80v-200h-80v200Zm40-100Z"/>
+          </svg>
+        </div>
+        <div class="flex-1 space-y-2">
+          Meeldetuletus! Sa oled seda säilikut ka varem tellinud.
+          <button @click="isOpen = !isOpen" class="font-bold text-blue-600 hover:text-blue-500 focus:active:text-blue-700">
+            <span x-text="isOpen ? 'Sulge' : 'Vaata'"></span>
+          </button>
+        </div>
       </div>
-      <div class="flex-1 space-y-2">
-        Meeldetuletus! Sa oled seda säilikut ka varem tellinud.
-        <a href="#preferences" class="text-blue-600 hover:text-blue-500 focus:active:text-blue-700">Vaata</a>
-      </div>
+      <div x-show="isOpen" x-cloak>Content</div>
     </div>
 
   </div>

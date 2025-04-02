@@ -248,32 +248,30 @@
               class="flex items-start w-full flex-col gap-x-4 gap-y-6 xl:flex-row xl:gap-x-10 2xl:gap-x-12"
             >
               <!-- Avamise nupp -->
-              <a
+              <button
                 @click="close_insert_panel = false"
                 :class="close_insert_panel ? 'block' : 'hidden'"
                 class="flex items-center gap-x-1 pl-6 pr-5 py-6 rounded bg-gray-50/60 font-bold text-gray-700 hover:shadow-sm"
                 aria-label="Ava paneel"
-                href="#"
               >
                 <span>KOOSTA</span>
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <polygon points="6.41,6 5,7.41 9.58,12 5,16.59 6.41,18 12.41,12"></polygon><polygon points="13,6 11.59,7.41 16.17,12 11.59,16.59 13,18 19,12"></polygon>
                 </svg>
-              </a>
+              </button>
               <!-- Sisestusvorm -->
               <div :class="close_insert_panel ? 'hidden' : 'block'" class="flex-1 w-full pt-4 pb-6 px-6 rounded bg-gray-50/60 xl:flex-auto xl:w-16 2xl:w-28">
-                <h2 class="flex w-full items-center justify-between mt-1 mb-4 border-b border-gray-300 pb-3 font-bold text-gray-700">
+                <h2 class="flex w-full items-center justify-between mt-1 mb-4 border-b border-gray-300 pb-1 font-bold text-gray-700">
                   <span>KOOSTA TELLIMUS</span>
-                  <a
+                  <button
                     @click="close_insert_panel = true"
-                    class="ml-4 h-8 w-8 inline-flex flex-shrink-0 items-center justify-center rounded-full hover:bg-gray-100"
+                    class="ml-4 h-8 w-8 inline-flex flex-shrink-0 items-center justify-center rounded-full hover:bg-gray-100 m-0"
                     aria-label="Sulge paneel"
-                    href="#"
                   >
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                       <polygon points="17.59,18 19,16.59 14.42,12 19,7.41 17.59,6 11.59,12"></polygon><polygon points="11,18 12.41,16.59 7.83,12 12.41,7.41 11,6 5,12"></polygon>
                     </svg>
-                  </a>
+                  </button>
                 </h2>
                 <!-- Ühendus puudub -->
                 <!-- <div class="rounded p-6 text-sm mb-2 bg-red-50 text-red-700" role="alert">
@@ -648,7 +646,7 @@
               <!-- Parempoolne ala -->
               <div class="flex-1 w-full pt-5 xl:flex-auto xl:w-80 2xl:w-96">
                 <!-- Teated -->
-                <!-- <div class="sm:mt-0 space-y-4 mb-10 xl:-mt-5 -mx-1">
+                <div class="sm:mt-0 space-y-4 mb-10 xl:-mt-5 -mx-1">
                   <div class="alertBox flex items-start justify-between rounded p-4 text-sm mb-2 bg-green-50 text-green-700" role="alert">
                     Tellimus koostatud. Tellimuse esitamiseks tuleb vajutada nuppu "Kinnita"!
                     <a class="close ml-4" href="" aria-label="Sulge teade">
@@ -703,7 +701,7 @@
                       <a href="#preferences" class="text-blue-600 hover:text-blue-500 focus:active:text-blue-700">Vaata</a>
                     </div>
                   </div>
-                </div> -->
+                </div>
                 <!-- Top menu -->
                 <div class="float-right flex gap-x-4 mt-2">
                   <a href="#" class="inline-flex items-center text-center text-sm font-medium text-gray-600">
