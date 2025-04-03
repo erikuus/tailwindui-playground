@@ -172,4 +172,8 @@ body {
   .ui-dialog .ui-dialog-titlebar-close:focus {
     @apply p-[1px] top-1/2 mt-[-10px] !important;
   }
+
+  .ui-dialog form input {
+    @apply text-base !important;
+  }
 }
