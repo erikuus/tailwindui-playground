@@ -172,8 +172,19 @@ body {
   .ui-dialog .ui-dialog-titlebar-close:focus {
     @apply p-[1px] top-1/2 mt-[-10px] !important;
   }
-
   .ui-dialog form input {
     @apply text-base !important;
+  }
+  .type1 {
+     @apply text-green-600; /* laenutus */
+  }
+  .type3 {
+     @apply text-yellow-700; /* kauglaentus */
+  }
+  .type4 {
+     @apply text-blue-600; /* deponeerimine */
+  }
+  .type5 {
+     @apply text-red-700; /* koopia */
   }
 }

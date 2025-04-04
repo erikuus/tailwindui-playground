@@ -1731,6 +1731,24 @@ select {
   line-height: 120% !important;
 }
 
+.type1 {
+  --tw-text-opacity: 1;
+  color: rgb(48 131 77 / var(--tw-text-opacity));
+  /* laenutus */
+}
+
+.type3 {
+  --tw-text-opacity: 1;
+  color: rgb(143 98 28 / var(--tw-text-opacity));
+  /* kauglaentus */
+}
+
+.type5 {
+  --tw-text-opacity: 1;
+  color: rgb(146 40 32 / var(--tw-text-opacity));
+  /* koopia */
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
