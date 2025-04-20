@@ -332,9 +332,9 @@
               prose-table:m-0 prose-thead:border-none prose-tbody:border-none prose-table:mb-2
               prose-tr:border-b prose-tr:border-b-gray-100 hover:prose-tr:bg-green-50
               prose-th:bg-white prose-th:px-3 first:prose-th:pb-2 last:prose-th:pt-2
-              prose-td:p-3
+              prose-td:p-3 prose-th:empty:hidden prose-td:empty:hidden
               prose-a:no-underline
-            ">
+            "><!-- prose-td:border prose-td:border-black -->
               <div id="link-grid" class="grid-view">
                 <div class="flex items-center justify-between mb-2 p-3 text-gray-600 border-b border-gray-100">
                   <div class="text-sm font-medium">
@@ -387,16 +387,15 @@
                         <th class="w-10">
                           <input type="checkbox" value="1" name="batch-id_all" class="ml-2 h-4 w-4 rounded-sm text-green-500 focus:ring-offset-0 focus:ring-2 border-gray-200 hover:border-gray-300 focus:border-green-500 focus:ring-green-300 focus:ring-green-300" x-model="$store.batch.panel">
                         </th>
-                        <th>
+                        <th id="order-list_c2">
                           <span class="inline md:hidden">Tellimus</span>
                           <span class="hidden md:inline">Leidandmed</span>
                         </th>
-                        <th class="hidden md:table-cell">Tellimuse liik</th>
-                        <th class="hidden xl:table-cell w-28">Loodud</th>
-                        <th class="hidden lg:table-cell">Olek</th>
-                        <th class="hidden md:table-cell"></th>
-                        <th class="w-14 md:w-auto"></th>
-                      </tr>
+                        <th class="hidden md:table-cell w-48" id="order-list_c4">Tellimuse liik</th>
+                        <th class="hidden xl:table-cell w-28" id="order-list_c6">Esitatud</th>
+                        <th class="hidden lg:table-cell w-42" id="order-list_c7">Olek</th>
+                        <th class="hidden md:table-cell w-28" id="order-list_c8">&nbsp;</th>
+                        <th class="w-14 md:w-56" id="order-list_c10"><span class="sr-only">Actions</span></th>
                     </thead>
                     <tbody>
                       <!-- Arvestus -->

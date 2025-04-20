@@ -12,24 +12,6 @@
           margin: 0;
           padding: 0;
         }
-        /* Peida printimise nupp */
-        .print\:hidden {
-          display: none !important;
-        }
-        /* Eemalda varjud ja piirangud */
-        .print\:shadow-none {
-          box-shadow: none !important;
-        }
-        .print\:w-full {
-          width: 100% !important;
-        }
-        .print\:max-w-none {
-          max-width: none !important;
-        }
-        .print\:px-0 {
-          padding-left: 0 !important;
-          padding-right: 0 !important;
-        }
       }
     </style>
   </head>
@@ -39,8 +21,8 @@
       <button onclick="window.print()" class="mx-auto my-6 focus-visible::ring-2 focus-visible::ring-green-300 inline-flex cursor-pointer items-center rounded bg-gray-900 py-2 pl-3 pr-4 text-center text-sm font-medium text-white hover:bg-gray-700">Prindi</button>
     </div>
     <!-- Trükitav sisu, mis säilitab ideaalsed mõõtmed ja on printimiseks kohandatud -->
-    <div class="mx-auto p-6 bg-white shadow-lg w-[210mm] h-[297mm] max-w-full max-h-[calc(100vh-2rem)] overflow-auto print:w-full print:max-w-none print:px-0 print:shadow-none">
-      sisu
+    <div class="mx-auto mb-6 p-6 bg-white w-[210mm] max-w-full print:w-full print:max-w-none print:px-0 print:shadow-none">
+      <div class="!shadow-none">We need this as we need dynamic print:shadow-none shadow-none</div>
     </div>
   </body>
 </html>

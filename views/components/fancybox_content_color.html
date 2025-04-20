@@ -15,19 +15,36 @@
 
     <table class="table-fixed w-full text-gray-700 text-sm">
       <tr class="border-b border-b-gray-100 border-l-2 border-yellow-400">
-        <td class="p-3">Tellimus on juurdepäästiaotluse või -otsuse ootel.</td>
+        <td class="p-3">Tellimus on juurdepäästaotluse või -otsuse ootel.</td>
       </tr>
       <tr class="border-b border-b-gray-100 border-l-2 border-green-500">
-        <td class="p-3">Tellimusele on taotluse alusel antud juurdepäästuluba.</td>
+        <td class="p-3">Tellimusele on taotluse alusel antud juurdepääsuluba.</td>
+      </tr>
+      <tr class="border-b border-b-gray-100 border-l-2 border-red-500">
+        <td class="p-3">Tellimusele ei antud taotluse alusel juurdepääsuluba.</td>
       </tr>
       <tr class="border-b border-b-gray-100 border-l-2 border-red-600">
-        <td class="p-3">Tellimusele ei antud taotluse alusel juurdepäästuluba.</td>
-      </tr>
-      <tr class="border-b border-b-gray-100 border-l-2 border-blue-600">
         <td class="p-3">Tellimus on tagasi lükatud (tellimuse täitmisest on keeldutud).</td>
       </tr>
     </table>
 
+    <div class="client-orders grid-view">
+      <table class="table-fixed w-full text-gray-700 text-sm ">
+        <tr class="access-manage">
+          <td class="p-3">Tellimus on juurdepäästiaotluse või -otsuse ootel.</td>
+        </tr>
+        <tr class="access-allowed">
+          <td class="p-3">Tellimusele on taotluse alusel antud juurdepäästuluba.</td>
+        </tr>
+        <tr class="swOrder-rejected access-denied">
+          <td class="p-3">Tellimusele ei antud taotluse alusel juurdepäästuluba.</td>
+        </tr>
+        <tr class="swOrder-rejected">
+          <td class="p-3">Tellimus on tagasi lükatud (tellimuse täitmisest on keeldutud).</td>
+        </tr>
+      </table>
+    </div>
   </div>
+
 </body>
 </html>

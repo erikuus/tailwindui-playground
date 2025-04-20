@@ -187,4 +187,20 @@ body {
   .type5 {
      @apply text-red-700; /* koopia */
   }
+  .client-orders.grid-view tr.access-manage
+  {
+    @apply border-b border-b-gray-100 border-l-2 border-yellow-400;
+  }
+  .client-orders.grid-view tr.access-allowed
+  {
+    @apply border-b border-b-gray-100 border-l-2 border-green-500;
+  }
+  .client-orders.grid-view tr.access-denied
+  {
+    @apply border-b border-b-gray-100 border-l-2 border-red-500 !important;
+  }
+  .client-orders.grid-view tr.swOrder-rejected
+  {
+    @apply border-b border-b-gray-100 border-l-2 border-red-600;
+  }
 }
