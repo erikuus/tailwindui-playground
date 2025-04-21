@@ -133,7 +133,7 @@
                 </svg>
               </li>
               <li class="whitespace-nowrap">
-                <span class="px-3 py-2 text-sm text-gray-900">Lingimärkmik</span>
+                <span class="px-3 py-2 text-sm text-gray-900">Tellimused</span>
               </li>
             </ul>
           </div>
@@ -144,24 +144,26 @@
           <div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 pt-6 pb-10 xl:pt-10 xl:pb-14">
             <!-- Sisu -->
             <div class="2xl:mx-42 sm:mx-36 lg:mx-12 xl:mx-36" x-data="{bookmarkLoginInfoHidden: $persist(false).as('vau_bookmark_login_info_hidden')}">
-              <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:mt-6 sm:text-xl xl:mt-0">Lingimärkmik</h2>
+              <h2 class="font-heading mb-10 mt-px border-b-2 border-gray-500 pb-2 text-lg font-bold text-gray-700 sm:mt-6 sm:text-xl xl:mt-0">Tellimused</h2>
 
-              <div :class="bookmarkLoginInfoHidden ? 'hidden' : 'block'"  class="flex w-full mb-10 flex-col-reverse gap-x-4 gap-y-6 lg:flex-row lg:gap-x-16 xl:gap-x-32 2xl:gap-x-40">
+              <div :class="orderLoginInfoHidden ? 'hidden' : 'block'"  class="flex w-full mb-10 flex-col-reverse gap-x-4 gap-y-6 lg:flex-row lg:gap-x-16 xl:gap-x-32 2xl:gap-x-40">
                 <div class="flex-1 prose">
-                  <p>Lingimärkmik on koht, kuhu te saate salvestada huvipakkuvate lehekülgede viiteid.</p>
-                  <h3>Lingimärkmiku eelised</h3>
+                  <p>Tellimiskeskkonnas saate esitada säilikute laenutus- ja koopiatellimusi.</p>
+
+                  <h3>Võimalused</h3>
                   <ul>
-                    <li>Saab kasutada iga arvutiga.</li>
-                    <li>Uurijale on kättesaadav nii arhiivi uurimissaalides kui ka kodu- ja tööarvutis.</li>
-                    <li>On integreeritud paljude Rahvusarhiivi andmebaasidega. (AIS, Kaardid)</li>
+                    <li>Laenutus – säilik tuuakse hoidlast lähimasse uurimissaali.</li>
+                    <li>Kauglaenutus – säilik saadetakse teise linna uurimissaali.</li>
+                    <li>Koopia – tellida saab paberkandjal või digitaalkoopiaid.</li>
                   </ul>
-                  <p>Lingimärkmiku kasutamiseks tuleb sisse logida.</p>
-                  <button type="button" @click="bookmarkLoginInfoHidden = true" class="font-medium text-blue-600">
+
+                  <p>Tellimiseks tuleb sisse logida.</p>
+                  <button type="button" @click="orderLoginInfoHidden = true" class="font-medium text-blue-600">
                     Ära näita uuesti
                   </button>
                 </div>
                 <div class="flex-1">
-                  <img class="w-full" src="../../images/login_bookmark.svg" />
+                  <img class="w-full" src="../../images/login_order.svg" />
                 </div>
               </div>
 
