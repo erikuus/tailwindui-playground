@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="../../style.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
+</head>
+<body>
+	
+	<div class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 pt-6 pb-10 xl:pt-10 xl:pb-14">
+		<div class="sm:mx-16 lg:mx-44 xl:mx-72 2xl:mx-80 sm:mt-6 xl:mt-0">
+			<div class="prose prose-h2:font-body prose-h2:text-lg max-w-none">
+				<div
+					class="2xl:max-w-xxl mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 pt-6 pb-10 xl:pt-10 xl:pb-14"
+					x-data="{ lightboxOpen: false, lightboxSrc: '' }"
+				>
+					<!-- Collage Grid -->
+					<div class="not-prose my-8 grid grid-cols-3 grid-rows-3 gap-4 h-96 sm:h-[620px] 2xl:h-[660px]">
+						<div class="overflow-hidden rounded shadow h-full">
+							<img
+								src="../../images/mockups/phone.jpg"
+								alt="Phone"
+								class="cursor-pointer w-full h-full object-cover opacity-60 transition-opacity duration-300 hover:opacity-100"
+								@click="lightboxSrc='../../images/mockups/phone.jpg'; lightboxOpen=true"
+							/>
+						</div>
+						<div class="overflow-hidden rounded shadow row-span-2 col-span-2 h-full">
+							<img
+								src="../../images/mockups/display.jpg"
+								alt="4K Monitor"
+								class="cursor-pointer w-full h-full object-cover opacity-60 transition-opacity duration-300 hover:opacity-100"
+								@click="lightboxSrc='../../images/mockups/display.jpg'; lightboxOpen=true"
+							/>
+						</div>
+						<div class="overflow-hidden rounded shadow h-full">
+							<img
+								src="../../images/mockups/tablet.jpg"
+								alt="Tablet"
+								class="cursor-pointer w-full h-full object-cover opacity-60 transition-opacity duration-300 hover:opacity-100"
+								@click="lightboxSrc='../../images/mockups/tablet.jpg'; lightboxOpen=true"
+							/>
+						</div>
+						<div class="overflow-hidden rounded shadow col-span-2 h-full">
+							<img
+								src="../../images/mockups/macbook.jpg"
+								alt="MacBook Pro"
+								class="cursor-pointer w-full h-full object-cover opacity-60 transition-opacity duration-300 hover:opacity-100"
+								@click="lightboxSrc='../../images/mockups/macbook.jpg'; lightboxOpen=true"
+							/>
+						</div>
+						<div class="overflow-hidden rounded shadow h-full">
+							<img
+								src="../../images/mockups/tablet-pro.jpg"
+								alt="iPad Pro"
+								class="cursor-pointer w-full h-full object-cover opacity-60 transition-opacity duration-300 hover:opacity-100"
+								@click="lightboxSrc='../../images/mockups/tablet-pro.jpg'; lightboxOpen=true"
+							/>
+						</div>
+					</div>
+					<!-- Lightbox Overlay -->
+					<div
+						x-show="lightboxOpen"
+						x-cloak
+						class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50"
+						@click.self="lightboxOpen = false"
+						x-transition.opacity
+					>
+						<div class="overflow-auto max-w-[500px] rounded">
+							<img
+							:src="lightboxSrc"
+							class="w-auto rounded"
+							/>
+						</div>
+						<button
+							class="absolute top-4 right-4 text-white text-3xl leading-none"
+							@click="lightboxOpen = false"
+							>&times;
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
