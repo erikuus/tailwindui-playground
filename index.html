@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en" id="top">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Tailwind CSS UI Playground – layouts, pages, and components." />
+    <title>UI Playground</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      :root {
+        --bg-page: #f6f7f9;
+        --bg-card: #ffffff;
+        --bg-hover: #eef1f5;
+        --border: #e1e5ea;
+        --border-hover: #cfd6de;
+        --text-primary: #1b1f24;
+        --text-secondary: #4b5563;
+        --text-muted: #7b8794;
+        --accent: #2f6df6;
+        --accent-soft: rgba(47, 109, 246, 0.14);
+        --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+        --shadow-md: 0 10px 28px rgba(15, 23, 42, 0.12);
+        --radius-lg: 20px;
+        --radius-md: 14px;
+      }
+      
+      body {
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        background: linear-gradient(180deg, #f7f8fa 0%, #eef1f5 100%);
+        color: var(--text-primary);
+        -webkit-font-smoothing: antialiased;
+        color-scheme: light;
+      }
+
+      .header-grid {
+        display: grid;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .brand-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      .brand-subtitle {
+        margin-top: 6px;
+        font-size: 0.95rem;
+        color: var(--text-muted);
+      }
+
+      .search-area {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+      }
+      
+      .search-input {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow-sm);
+        border-radius: var(--radius-md);
+        height: 44px;
+        max-width: 360px;
+        transition: all 0.2s ease;
+      }
+      .search-input:hover { border-color: var(--border-hover); }
+      .search-input:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px var(--accent-soft);
+      }
+      .search-input::placeholder { color: var(--text-muted); }
+
+      .controls-row {
+        margin-top: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .filters {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 4px;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        box-shadow: var(--shadow-sm);
+      }
+      
+      .filter-btn {
+        background: transparent;
+        border: 1px solid transparent;
+        color: var(--text-secondary);
+        border-radius: 999px;
+        box-shadow: none;
+        transition: all 0.15s ease;
+      }
+      .filter-btn:hover {
+        background: var(--bg-hover);
+        color: var(--text-primary);
+      }
+      .filter-btn.active {
+        background: var(--text-primary);
+        border-color: var(--text-primary);
+        color: white;
+        box-shadow: 0 6px 14px rgba(15, 23, 42, 0.18);
+      }
+      
+      .template-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow-sm);
+        border-radius: var(--radius-lg);
+        transition: all 0.2s ease;
+      }
+      .template-card:hover {
+        border-color: var(--border-hover);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+      .template-card:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px var(--accent-soft);
+      }
+      
+      .tag {
+        background: var(--bg-hover);
+        color: var(--text-secondary);
+        border-radius: 999px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.62rem;
+      }
+
+      .section-title {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+      }
+
+      .template-grid {
+        gap: 14px;
+      }
+
+      #emptyState {
+        box-shadow: var(--shadow-sm);
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(4px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-in { animation: fadeIn 0.25s ease forwards; }
+
+      @media (min-width: 768px) {
+        .header-grid {
+          grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--bg-page)]/95 backdrop-blur-md">
+      <div class="mx-auto w-full max-w-6xl px-5 py-5 md:px-8">
+        <div class="header-grid">
+          <div class="brand">
+            <h1 class="brand-title text-[var(--text-primary)]">UI Playground</h1>
+            <p class="brand-subtitle">Tailwind UI templates, organized for fast browsing.</p>
+          </div>
+
+          <div class="search-area">
+            <input
+              id="search"
+              type="search"
+              inputmode="search"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="Search templates or filenames..."
+              aria-label="Search templates"
+              class="search-input w-full max-w-xs rounded-xl px-4 py-2.5 text-sm text-[var(--text-primary)]"
+            />
+          </div>
+        </div>
+
+        <div class="controls-row">
+          <div class="filters">
+            <button type="button" data-filter="all" class="filterBtn filter-btn active rounded-xl px-3.5 py-2 text-sm font-medium">
+              All <span class="ml-1 opacity-50" data-count="all"></span>
+            </button>
+            <button type="button" data-filter="layouts" class="filterBtn filter-btn rounded-xl px-3.5 py-2 text-sm font-medium">
+              Layouts <span class="ml-1 opacity-50" data-count="layouts"></span>
+            </button>
+            <button type="button" data-filter="pages" class="filterBtn filter-btn rounded-xl px-3.5 py-2 text-sm font-medium">
+              Pages <span class="ml-1 opacity-50" data-count="pages"></span>
+            </button>
+            <button type="button" data-filter="components" class="filterBtn filter-btn rounded-xl px-3.5 py-2 text-sm font-medium">
+              Components <span class="ml-1 opacity-50" data-count="components"></span>
+            </button>
+          </div>
+
+          <p id="resultsMeta" class="text-sm text-[var(--text-muted)]" aria-live="polite"></p>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto w-full max-w-6xl px-5 py-8 md:px-8">
+      <section id="layouts" class="mb-10">
+        <h2 class="section-title">Layouts</h2>
+        <div id="grid-layouts" class="template-grid mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"></div>
+      </section>
+
+      <section id="pages" class="mb-10">
+        <h2 class="section-title">Pages</h2>
+        <div id="grid-pages" class="template-grid mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"></div>
+      </section>
+
+      <section id="components" class="mb-8">
+        <h2 class="section-title">Components</h2>
+        <div id="grid-components" class="template-grid mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"></div>
+      </section>
+
+      <div id="emptyState" class="hidden rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-10 text-center">
+        <p class="text-base font-medium text-[var(--text-primary)]">No matches</p>
+        <p class="mt-1 text-sm text-[var(--text-muted)]">Try a different search term</p>
+      </div>
+    </main>
+
+    <footer class="border-t border-[var(--border)] bg-[var(--bg-card)]">
+      <div class="mx-auto w-full max-w-6xl px-5 py-4 md:px-8">
+        <div class="flex items-center justify-between text-sm text-[var(--text-muted)]">
+          <span>views/</span>
+          <a class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors" href="https://github.com/erikuus/tailwindui-playground" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const TEMPLATE_PATHS = {
+        layouts: [
+          "views/layouts/advanced-layout-alt.html",
+          "views/layouts/advanced-layout.html",
+          "views/layouts/basic-layout.html",
+          "views/layouts/vau-layout.html",
+        ],
+        pages: [
+          "views/pages/print.html",
+          "views/pages/vau-access-files-refine.html",
+          "views/pages/vau-access-files.html",
+          "views/pages/vau-access-form-refine.html",
+          "views/pages/vau-access-form.html",
+          "views/pages/vau-access-purpose.html",
+          "views/pages/vau-access-sign.html",
+          "views/pages/vau-access-signed.html",
+          "views/pages/vau-account-company-invoice.html",
+          "views/pages/vau-account-company-update.html",
+          "views/pages/vau-account-company-view.html",
+          "views/pages/vau-account-order-template-update.html",
+          "views/pages/vau-account-order-templates.html",
+          "views/pages/vau-account.html",
+          "views/pages/vau-bookmark-folder-list.html",
+          "views/pages/vau-bookmark-folder-update.html",
+          "views/pages/vau-bookmark-labels-add.html",
+          "views/pages/vau-bookmark-labels-remove.html",
+          "views/pages/vau-bookmark-list-empty.html",
+          "views/pages/vau-bookmark-list.html",
+          "views/pages/vau-bookmark-update.html",
+          "views/pages/vau-connect-id.html",
+          "views/pages/vau-copy-payment-banklink.html",
+          "views/pages/vau-copy-payment-confirm.html",
+          "views/pages/vau-copy-payment-invoice.html",
+          "views/pages/vau-copy-payment-outdated-emp.html",
+          "views/pages/vau-copy-payment-outdated.html",
+          "views/pages/vau-copy-payment-pickup.html",
+          "views/pages/vau-disconnect-id.html",
+          "views/pages/vau-emp-connected.html",
+          "views/pages/vau-emp-not-connected.html",
+          "views/pages/vau-enquiry-form.html",
+          "views/pages/vau-enquiry-list.html",
+          "views/pages/vau-enquiry-payment-confirm-letter.html",
+          "views/pages/vau-enquiry-payment-confirm-notice.html",
+          "views/pages/vau-enquiry-payment-download.html",
+          "views/pages/vau-enquiry-payment.html",
+          "views/pages/vau-enquiry-preview.html",
+          "views/pages/vau-enquiry-refine.html",
+          "views/pages/vau-enquiry-refined.html",
+          "views/pages/vau-enquiry-submitted.html",
+          "views/pages/vau-feedback-faq.html",
+          "views/pages/vau-feedback-submit.html",
+          "views/pages/vau-home-emp-2.html",
+          "views/pages/vau-home-emp.html",
+          "views/pages/vau-home.html",
+          "views/pages/vau-ial-payment-confirm.html",
+          "views/pages/vau-ial-payment.html",
+          "views/pages/vau-login-bookmark.html",
+          "views/pages/vau-login-order.html",
+          "views/pages/vau-login.html",
+          "views/pages/vau-news-list.html",
+          "views/pages/vau-news.html",
+          "views/pages/vau-openid.html",
+          "views/pages/vau-order-archived-empty.html",
+          "views/pages/vau-order-archived.html",
+          "views/pages/vau-order-copy-confirm-batch.html",
+          "views/pages/vau-order-copy-confirm.html",
+          "views/pages/vau-order-draft-empty.html",
+          "views/pages/vau-order-draft-update.html",
+          "views/pages/vau-order-draft.html",
+          "views/pages/vau-order-ial-confirm-batch.html",
+          "views/pages/vau-order-ial-confirm.html",
+          "views/pages/vau-order-labels-add.html",
+          "views/pages/vau-order-labels-remove.html",
+          "views/pages/vau-order-labels-update.html",
+          "views/pages/vau-order-submitted-empty.html",
+          "views/pages/vau-order-submitted.html",
+          "views/pages/vau-page-2.html",
+          "views/pages/vau-page-3.html",
+          "views/pages/vau-page.html",
+          "views/pages/vau-password-change.html",
+          "views/pages/vau-password-forgot.html",
+          "views/pages/vau-pick-theme.html",
+          "views/pages/vau-register.html",
+          "views/pages/vau-shop-cart-empty.html",
+          "views/pages/vau-shop-cart.html",
+          "views/pages/vau-shop-category.html",
+          "views/pages/vau-shop-emp.html",
+          "views/pages/vau-shop-form.html",
+          "views/pages/vau-shop-home.html",
+          "views/pages/vau-shop-payment-banklink.html",
+          "views/pages/vau-shop-payment-confirm.html",
+          "views/pages/vau-shop-payment-invoice.html",
+          "views/pages/vau-shop-product-vert.html",
+          "views/pages/vau-shop-product.html",
+          "views/pages/vau-shop-search.html",
+          "views/pages/vau-social-media-connect-2.html",
+          "views/pages/vau-social-media-connect.html",
+          "views/pages/vau-theme-progress.html",
+          "views/pages/vau-virtual-order-apply-access-revise-selection.html",
+          "views/pages/vau-virtual-order-apply-access.html",
+        ],
+        components: [
+          "views/components/account-picker.html",
+          "views/components/alerts.html",
+          "views/components/autocomplete.html",
+          "views/components/carousel.html",
+          "views/components/collage.html",
+          "views/components/date-picker.html",
+          "views/components/fancybox.html",
+          "views/components/fancybox_content_color.html",
+          "views/components/fancybox_content_enquiry.html",
+          "views/components/fancybox_content_order_profile.html",
+          "views/components/fancybox_content_register.html",
+          "views/components/fancybox_content_shop.html",
+          "views/components/forms.html",
+          "views/components/id-disabled.html",
+          "views/components/jui-dialog.html",
+          "views/components/jui-order-dialog.html",
+          "views/components/multiselect.html",
+          "views/components/panel.html",
+          "views/components/print.html",
+          "views/components/radio-cards.html",
+          "views/components/select2.html",
+          "views/components/select2compact.html",
+          "views/components/spinner.html",
+        ],
+      };
+
+      const SPECIAL_UPPER = new Set(["vau", "ra", "id", "ui", "jui", "emp", "ial"]);
+
+      function humanize(path) {
+        const file = path.split("/").pop() || path;
+        const stem = file.replace(/\.html$/i, "");
+        const words = stem
+          .split(/[-_]+/g)
+          .filter(Boolean)
+          .map((w) => {
+            if (/^\d+$/.test(w)) return w;
+            const lower = w.toLowerCase();
+            if (SPECIAL_UPPER.has(lower)) return lower.toUpperCase();
+            return lower.charAt(0).toUpperCase() + lower.slice(1);
+          });
+        return words.join(" ");
+      }
+
+      function buildItems() {
+        const items = [];
+        for (const [group, paths] of Object.entries(TEMPLATE_PATHS)) {
+          for (const path of paths) {
+            const title = humanize(path);
+            items.push({
+              group,
+              path,
+              title,
+              haystack: `${title} ${path}`.toLowerCase(),
+            });
+          }
+        }
+        return items;
+      }
+
+      const allItems = buildItems();
+      let activeGroup = "all";
+      let query = "";
+
+      const grids = {
+        layouts: document.getElementById("grid-layouts"),
+        pages: document.getElementById("grid-pages"),
+        components: document.getElementById("grid-components"),
+      };
+
+      const emptyState = document.getElementById("emptyState");
+      const resultsMeta = document.getElementById("resultsMeta");
+      const searchEl = document.getElementById("search");
+
+      function updateCounts(filteredItems) {
+        const counts = { all: filteredItems.length, layouts: 0, pages: 0, components: 0 };
+        for (const it of filteredItems) counts[it.group] = (counts[it.group] || 0) + 1;
+        for (const key of ["all", "layouts", "pages", "components"]) {
+          const el = document.querySelector(`[data-count="${key}"]`);
+          if (el) el.textContent = counts[key] || 0;
+        }
+      }
+
+      function setActiveFilterButton() {
+        for (const btn of document.querySelectorAll(".filterBtn")) {
+          const isActive = btn.getAttribute("data-filter") === activeGroup;
+          btn.classList.toggle("active", isActive);
+        }
+      }
+
+      function card(item, index) {
+        const filename = item.path.split("/").pop();
+        return `
+          <a
+            class="template-card group block rounded-2xl p-5 animate-in"
+            style="animation-delay: ${Math.min(index * 15, 150)}ms"
+            href="${item.path}"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="${item.title}"
+          >
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="font-medium text-[var(--text-primary)] leading-snug group-hover:text-[var(--accent)] transition-colors">${item.title}</h3>
+              <span class="shrink-0 rounded-lg tag px-2 py-0.5 text-xs font-medium">${item.group}</span>
+            </div>
+            <p class="mt-2 text-sm text-[var(--text-muted)] truncate">${filename}</p>
+          </a>
+        `;
+      }
+
+      function render() {
+        const normalizedQuery = query.trim().toLowerCase();
+        const filtered = allItems.filter((it) => {
+          if (activeGroup !== "all" && it.group !== activeGroup) return false;
+          if (!normalizedQuery) return true;
+          return it.haystack.includes(normalizedQuery);
+        });
+
+        const byGroup = { layouts: [], pages: [], components: [] };
+        for (const it of filtered) byGroup[it.group].push(it);
+        
+        let cardIndex = 0;
+        for (const group of Object.keys(byGroup)) {
+          const grid = grids[group];
+          grid.innerHTML = byGroup[group].map((item) => card(item, cardIndex++)).join("");
+          const section = grid.closest("section");
+          section.classList.toggle("hidden", activeGroup !== "all" && activeGroup !== group);
+        }
+
+        const total = filtered.length;
+        if (normalizedQuery) {
+          resultsMeta.innerHTML = `${total} result${total === 1 ? "" : "s"} for "${query.trim()}"`;
+        } else {
+          resultsMeta.innerHTML = `${total} templates`;
+        }
+        emptyState.classList.toggle("hidden", total !== 0);
+
+        updateCounts(
+          allItems.filter((it) => {
+            if (!normalizedQuery) return true;
+            return it.haystack.includes(normalizedQuery);
+          })
+        );
+        setActiveFilterButton();
+      }
+
+      // Filter button handlers
+      document.querySelectorAll(".filterBtn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          activeGroup = btn.getAttribute("data-filter") || "all";
+          render();
+        });
+      });
+
+      // Search input handler
+      searchEl.addEventListener("input", (e) => {
+        query = e.target.value || "";
+        render();
+      });
+
+      // Keyboard shortcut: "/" to focus search
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "/" && document.activeElement !== searchEl) {
+          e.preventDefault();
+          searchEl.focus();
+        }
+        if (e.key === "Escape" && document.activeElement === searchEl) {
+          searchEl.blur();
+        }
+      });
+
+      // Initial render
+      render();
+    </script>
+  </body>
+</html>

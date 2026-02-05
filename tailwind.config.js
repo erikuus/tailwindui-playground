@@ -5,7 +5,8 @@ module.exports = {
   mode: 'jit',
   content: [
     './views/**/*.html',
-    './views/*.php'
+    './views/*.php',
+    './index.html'
   ],
   plugins: [
     require('@tailwindcss/forms'),
