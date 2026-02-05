@@ -526,6 +526,12 @@
       const WORD_OVERRIDES = {
         emp: "Employee",
       };
+      const LAYOUT_SUBTITLES = {
+        "views/layouts/basic-layout.html": "Lihtne raam: staatiline päis, sisu ja jalus.",
+        "views/layouts/advanced-layout.html": "Täisfunktsionaalne päis, mobiilne menüü ja rikkalik jalus.",
+        "views/layouts/advanced-layout-alt.html": "Mobiilne menüü avatakse ülemisest ribast, täisjalus.",
+        "views/layouts/vau-layout.html": "VAU bränd, mitmerealine navigeerimine ja asukohariba.",
+      };
 
       function humanizeStem(stem) {
         const words = stem
@@ -575,13 +581,15 @@
               subgroup = meta.subgroup;
               subgroupLabel = meta.subgroupLabel;
             }
+            const subtitle = group === "layouts" ? LAYOUT_SUBTITLES[path] || "" : "";
             items.push({
               group,
               path,
               title,
+              subtitle,
               subgroup,
               subgroupLabel,
-              haystack: `${title} ${subgroupLabel} ${path}`.toLowerCase(),
+              haystack: `${title} ${subgroupLabel} ${subtitle} ${path}`.toLowerCase(),
             });
           }
         }
@@ -625,6 +633,8 @@
         const subtitleRow =
           item.group === "pages"
             ? `<p class="card-subtitle" data-page-title="${item.path}">Laadin pealkirja…</p>`
+            : item.group === "layouts" && item.subtitle
+            ? `<p class="card-subtitle">${item.subtitle}</p>`
             : item.group === "components"
             ? ""
             : `<p class="mt-2 text-sm text-[var(--text-muted)] truncate">${filename}</p>`;
