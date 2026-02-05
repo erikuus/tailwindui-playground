@@ -150,8 +150,51 @@
         color: var(--text-muted);
       }
 
+      .outside-label {
+        margin-left: 12px;
+      }
+
       .template-grid {
         gap: 14px;
+      }
+
+      .page-groups {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .page-group-title {
+        margin-bottom: 10px;
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: var(--bg-hover);
+      }
+
+      .page-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      @media (min-width: 640px) {
+        .page-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .page-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
       }
 
       #emptyState {
@@ -177,8 +220,8 @@
       <div class="mx-auto w-full max-w-6xl px-5 py-5 md:px-8">
         <div class="header-grid">
           <div class="brand">
-            <h1 class="brand-title text-[var(--text-primary)]">UI Playground</h1>
-            <p class="brand-subtitle">Tailwind UI templates, organized for fast browsing.</p>
+            <h1 class="brand-title outside-label text-[var(--text-primary)]">Kasutajaliidese mallid</h1>
+            <p class="brand-subtitle outside-label">Figma põhjal VAU jaoks loodud TailwindCSS HTML-lehed</p>
           </div>
 
           <div class="search-area">
@@ -188,7 +231,7 @@
               inputmode="search"
               autocomplete="off"
               spellcheck="false"
-              placeholder="Search templates or filenames..."
+              placeholder="Otsi malle või failinimesid..."
               aria-label="Search templates"
               class="search-input w-full max-w-xs rounded-xl px-4 py-2.5 text-sm text-[var(--text-primary)]"
             />
@@ -198,54 +241,45 @@
         <div class="controls-row">
           <div class="filters">
             <button type="button" data-filter="all" class="filterBtn filter-btn active rounded-xl px-3.5 py-2 text-sm font-medium">
-              All <span class="ml-1 opacity-50" data-count="all"></span>
+              Kõik <span class="ml-1 opacity-50" data-count="all"></span>
             </button>
             <button type="button" data-filter="layouts" class="filterBtn filter-btn rounded-xl px-3.5 py-2 text-sm font-medium">
-              Layouts <span class="ml-1 opacity-50" data-count="layouts"></span>
+              Põhipaigutused <span class="ml-1 opacity-50" data-count="layouts"></span>
             </button>
             <button type="button" data-filter="pages" class="filterBtn filter-btn rounded-xl px-3.5 py-2 text-sm font-medium">
-              Pages <span class="ml-1 opacity-50" data-count="pages"></span>
+              Lehed <span class="ml-1 opacity-50" data-count="pages"></span>
             </button>
             <button type="button" data-filter="components" class="filterBtn filter-btn rounded-xl px-3.5 py-2 text-sm font-medium">
-              Components <span class="ml-1 opacity-50" data-count="components"></span>
+              Komponendid <span class="ml-1 opacity-50" data-count="components"></span>
             </button>
           </div>
 
-          <p id="resultsMeta" class="text-sm text-[var(--text-muted)]" aria-live="polite"></p>
+          <p id="resultsMeta" class="outside-label text-sm text-[var(--text-muted)]" aria-live="polite"></p>
         </div>
       </div>
     </header>
 
     <main class="mx-auto w-full max-w-6xl px-5 py-8 md:px-8">
       <section id="layouts" class="mb-10">
-        <h2 class="section-title">Layouts</h2>
+        <h2 class="section-title outside-label">Põhipaigutused</h2>
         <div id="grid-layouts" class="template-grid mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"></div>
       </section>
 
       <section id="pages" class="mb-10">
-        <h2 class="section-title">Pages</h2>
-        <div id="grid-pages" class="template-grid mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"></div>
+        <h2 class="section-title outside-label">Lehed</h2>
+        <div id="grid-pages" class="page-groups mt-3"></div>
       </section>
 
       <section id="components" class="mb-8">
-        <h2 class="section-title">Components</h2>
+        <h2 class="section-title outside-label">Komponendid</h2>
         <div id="grid-components" class="template-grid mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"></div>
       </section>
 
       <div id="emptyState" class="hidden rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-10 text-center">
-        <p class="text-base font-medium text-[var(--text-primary)]">No matches</p>
-        <p class="mt-1 text-sm text-[var(--text-muted)]">Try a different search term</p>
+        <p class="text-base font-medium text-[var(--text-primary)]">Ei leitud vasteid</p>
+        <p class="mt-1 text-sm text-[var(--text-muted)]">Proovi teist otsingusõna</p>
       </div>
     </main>
-
-    <footer class="border-t border-[var(--border)] bg-[var(--bg-card)]">
-      <div class="mx-auto w-full max-w-6xl px-5 py-4 md:px-8">
-        <div class="flex items-center justify-between text-sm text-[var(--text-muted)]">
-          <span>views/</span>
-          <a class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors" href="https://github.com/erikuus/tailwindui-playground" target="_blank" rel="noreferrer">GitHub</a>
-        </div>
-      </div>
-    </footer>
 
     <script>
       const TEMPLATE_PATHS = {
@@ -378,9 +412,7 @@
 
       const SPECIAL_UPPER = new Set(["vau", "ra", "id", "ui", "jui", "emp", "ial"]);
 
-      function humanize(path) {
-        const file = path.split("/").pop() || path;
-        const stem = file.replace(/\.html$/i, "");
+      function humanizeStem(stem) {
         const words = stem
           .split(/[-_]+/g)
           .filter(Boolean)
@@ -393,16 +425,47 @@
         return words.join(" ");
       }
 
+      function getPageMeta(path) {
+        const file = path.split("/").pop() || path;
+        const stem = file.replace(/\.html$/i, "");
+        if (stem.startsWith("vau-")) {
+          const rest = stem.slice(4);
+          const parts = rest.split(/[-_]+/g).filter(Boolean);
+          const subgroup = parts.shift() || "general";
+          return {
+            subgroup,
+            subgroupLabel: humanizeStem(subgroup),
+            title: humanizeStem([subgroup, ...parts].join("-")),
+          };
+        }
+        return {
+          subgroup: "general",
+          subgroupLabel: "General",
+          title: humanizeStem(stem),
+        };
+      }
+
       function buildItems() {
         const items = [];
         for (const [group, paths] of Object.entries(TEMPLATE_PATHS)) {
           for (const path of paths) {
-            const title = humanize(path);
+            const baseTitle = humanizeStem((path.split("/").pop() || path).replace(/\.html$/i, ""));
+            let title = baseTitle;
+            let subgroup = "";
+            let subgroupLabel = "";
+            if (group === "pages") {
+              const meta = getPageMeta(path);
+              title = meta.title;
+              subgroup = meta.subgroup;
+              subgroupLabel = meta.subgroupLabel;
+            }
             items.push({
               group,
               path,
               title,
-              haystack: `${title} ${path}`.toLowerCase(),
+              subgroup,
+              subgroupLabel,
+              haystack: `${title} ${subgroupLabel} ${path}`.toLowerCase(),
             });
           }
         }
@@ -441,6 +504,7 @@
 
       function card(item, index) {
         const filename = item.path.split("/").pop();
+        const badge = item.group === "pages" && item.subgroupLabel ? item.subgroupLabel : item.group;
         return `
           <a
             class="template-card group block rounded-2xl p-5 animate-in"
@@ -452,7 +516,7 @@
           >
             <div class="flex items-start justify-between gap-3">
               <h3 class="font-medium text-[var(--text-primary)] leading-snug group-hover:text-[var(--accent)] transition-colors">${item.title}</h3>
-              <span class="shrink-0 rounded-lg tag px-2 py-0.5 text-xs font-medium">${item.group}</span>
+              <span class="shrink-0 rounded-lg tag px-2 py-0.5 text-xs font-medium">${badge}</span>
             </div>
             <p class="mt-2 text-sm text-[var(--text-muted)] truncate">${filename}</p>
           </a>
@@ -473,17 +537,40 @@
         let cardIndex = 0;
         for (const group of Object.keys(byGroup)) {
           const grid = grids[group];
-          grid.innerHTML = byGroup[group].map((item) => card(item, cardIndex++)).join("");
+          if (group === "pages") {
+            const bySubgroup = {};
+            for (const item of byGroup[group]) {
+              const key = item.subgroupLabel || "General";
+              if (!bySubgroup[key]) bySubgroup[key] = [];
+              bySubgroup[key].push(item);
+            }
+            const subgroupKeys = Object.keys(bySubgroup).sort((a, b) => a.localeCompare(b));
+            grid.innerHTML = subgroupKeys
+              .map((key) => {
+                const items = bySubgroup[key].sort((a, b) => a.title.localeCompare(b.title));
+                const cards = items.map((item) => card(item, cardIndex++)).join("");
+                return `
+                  <div class="page-group">
+                    <div class="page-group-title">${key}</div>
+                    <div class="page-grid">${cards}</div>
+                  </div>
+                `;
+              })
+              .join("");
+          } else {
+            const items = byGroup[group].sort((a, b) => a.title.localeCompare(b.title));
+            grid.innerHTML = items.map((item) => card(item, cardIndex++)).join("");
+          }
           const section = grid.closest("section");
           section.classList.toggle("hidden", activeGroup !== "all" && activeGroup !== group);
         }
 
         const total = filtered.length;
         if (normalizedQuery) {
-          resultsMeta.innerHTML = `${total} result${total === 1 ? "" : "s"} for "${query.trim()}"`;
-        } else {
-          resultsMeta.innerHTML = `${total} templates`;
-        }
+      resultsMeta.innerHTML = `${total} tulemus${total === 1 ? "" : "t"} päringule "${query.trim()}"`;
+    } else {
+      resultsMeta.innerHTML = `${total} malli`;
+    }
         emptyState.classList.toggle("hidden", total !== 0);
 
         updateCounts(
